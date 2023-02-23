@@ -9,7 +9,7 @@ function App() {
     <Router>
       {/* <Navbar/> */}
       <Routes>
-        <Route index element={<Homepage/>}/>
+        <Route path="/" element={<Homepage/>}/>
       </Routes>
     </Router>
     // <div className="App">
