@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+}
+
+.dialog-box{
+  border-style: solid;
+  border-width: 1px;
+  width: 400px;
+  height: 600px;
+  background-color: #bcf;
+}
+
+input {
+  width: 350px;
+  height: 30px;
+  font-size: 12pt;
+  font-family: Roboto;
+  margin: 0 0 10px 0;
+}
+
+button {
+  padding: 8px 15px;
+  border: 1px;
+  border-color: #03f;
+  border-style: solid;
+  background-color: #46f;
+  font-size: 15pt;
+  font-family: Roboto;
+  font-weight: 500;
+  color: #fff;
+}
