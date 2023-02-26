@@ -41,12 +41,14 @@ const Login = () => {
                 <input
                     value={email}
                     onChange={(event) => setEmail(event.target.value)}
+                    placeholder={"Email"}
                 ></input>
                 <br></br>
                 <label htmlFor="password">Password</label>
                 <input
                     value={password}
                     onChange={(event) => setPassword(event.target.value)}
+                    placeholder={"Password"}
                 ></input>
                 <br></br>
                 <button type="submit">Login</button>
