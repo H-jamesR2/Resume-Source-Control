@@ -38,28 +38,70 @@ const Login = () => {
     return (
         <div>
             <form onSubmit={onSubmit}>
-                <div className="dialog-box">
-                <h1>
-                Welcome back!
-                </h1>
-                <span>
-                Prefer to login with an username?
-                </span>
-                <label htmlFor="email"></label>
-                <input
-                    value={email}
-                    onChange={(event) => setEmail(event.target.value)}
-                    placeholder={"Email"}
-                ></input>
-                <br></br>
-                <label htmlFor="password"></label>
-                <input
-                    value={password}
-                    onChange={(event) => setPassword(event.target.value)}
-                    placeholder={"Password"}
-                ></input>
-                <br></br>
-                <button type="submit">Login</button>
+                <div class={"dialog-box"}>
+                    <div class={"login-info"}>
+
+                        <div class={"partition"}>
+                            <span class={"header-1"}>
+                            Welcome back!
+                            </span>
+                        </div>
+
+                        <div class={"partition"}>
+                            <span class={"message"}>
+                            Prefer to login with an username?
+                            </span>
+                        </div>
+
+                        <br></br>
+
+                        <div class={"partition"}>
+                            <label htmlFor="email"></label>
+                            <input
+                                class={"text"}
+                                value={email}
+                                onChange={(event) => setEmail(event.target.value)}
+                                placeholder={"Email"}
+                            ></input>
+                        </div>
+
+                        <div class={"partition"} style={{padding:"0 0 5px 0"}}>
+                            <label htmlFor="password"></label>
+                            <input
+                                class={"text"}
+                                value={password}
+                                onChange={(event) => setPassword(event.target.value)}
+                                placeholder={"Password"}
+                                type={"password"}
+                            ></input>
+                        </div>
+
+                        <div class={"partition"} style={{height:"25px"}}>
+                            <span class={"checkbox-separators"}>
+                                <input
+                                    class={"checkbox"}
+                                    type={"checkbox"}
+                                    id={"choice1"}
+                                ></input>
+                                <label htmlFor="choice1">Remember me</label>
+                            </span>
+
+                            <span class={"checkbox-separators"}>
+                                <input
+                                    class={"checkbox"}
+                                    type={"checkbox"}
+                                    id={"choice2"}
+                                ></input>
+                                <label htmlFor="choice2">Stay logged in</label>
+                            </span>
+                        </div>
+                        
+                        <br></br>
+
+                        <div class={"partition"}>
+                            <button type="submit">Login</button>
+                        </div>
+                    </div>
                 </div>
             </form>
         </div>
