@@ -3,6 +3,36 @@
   font-family: Roboto;
 }
 
+.nav-bar-left{
+  text-align: left;
+}
+
+.nav-bar-right{   
+  text-align: right;
+}
+
+.nav-bar-right, .nav-bar-left{
+  list-style-type: none;
+  margin: 0;
+  padding: 10px 0;
+  background-color: #fff;
+  border-bottom: #03f;
+  border-style: solid;
+  border-width: 0 0 1px 0;
+}
+
+.nav-item {
+  padding: 12px 20px;
+  display: inline;
+  font-size: 20px;
+  color: #46f;
+}
+
+.nav-item:hover{    
+  background-color: #bcf;
+  transition: 0.25s;
+}
+
 .login-info{
   display: flexbox;
   width: 350px;
@@ -27,6 +57,7 @@
 .dialog-box{
   border-style: solid;
   border-width: 1px;
+  border-color: #03f;
   width: 400px;
   height: 400px;
   background-color: #bcf;

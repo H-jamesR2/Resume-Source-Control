@@ -37,6 +37,15 @@ const Login = () => {
     };
     return (
         <div>
+            <div class={"nav-bar"}>
+                <ul class={"nav-bar-left"}>                
+                    <li class={"nav-item"}>Home</li>
+                </ul>
+                <ul class={"nav-bar-right"}>
+                    <li class={"nav-item"}>Login</li>                
+                    <li class={"nav-item"}>Sign Up</li>
+                </ul>
+            </div>
             <form onSubmit={onSubmit}>
                 <div class={"dialog-box"}>
                     <div class={"login-info"}>
