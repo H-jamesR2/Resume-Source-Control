@@ -3,18 +3,34 @@
   font-family: Roboto;
 }
 
+.resume-logo{
+  height: 36px;
+  position: absolute;
+  top: 9px;
+  left: 9px;
+}
+
+.nav-bar{
+  overflow: hidden;
+}
+
 .nav-bar-left{
+  float: left;    
   text-align: left;
+  width: 200px;
+  padding: 0 0 0 54px;
 }
 
 .nav-bar-right{   
+  float: right;
   text-align: right;
+  width: calc(100% - 200px);
+  padding: 0;
 }
 
 .nav-bar-right, .nav-bar-left{
   list-style-type: none;
   margin: 0;
-  padding: 10px 0;
   background-color: #fff;
   border-bottom: #03f;
   border-style: solid;
@@ -22,10 +38,11 @@
 }
 
 .nav-item {
-  padding: 12px 20px;
-  display: inline;
+  padding: 15px 20px;
   font-size: 20px;
   color: #46f;
+  display: inline-block;
+  text-align: center;
 }
 
 .nav-item:hover{    

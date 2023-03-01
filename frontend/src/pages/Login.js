@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { CognitoUser, AuthenticationDetails } from "amazon-cognito-identity-js";
 import UserPool from "../UserPool";
 import './Login.css';
+import logo from '../../src/images/Resume-source-app.png';
 
 const Login = () => {
     const [email, setEmail] = useState("");
@@ -38,7 +39,8 @@ const Login = () => {
     return (
         <div>
             <div class={"nav-bar"}>
-                <ul class={"nav-bar-left"}>                
+                <ul class={"nav-bar-left"}>
+                    <li><img class = {"resume-logo"} src={logo}></img></li>               
                     <li class={"nav-item"}>Home</li>
                 </ul>
                 <ul class={"nav-bar-right"}>
