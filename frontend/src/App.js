@@ -4,7 +4,7 @@ import './App.css';
 import Homepage from './pages/Homepage';
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
-import './pages/Login.css';
+import './css/Login.css';
 import logo from './images/Resume-source-app.png'
 
 export default function App() {
