@@ -4,7 +4,7 @@ import './App.css';
 import Homepage from './pages/Homepage';
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
-import './css/Login.css';
+import './cssFiles/Login.css';
 import logo from './images/Resume-source-app.png'
 
 export default function App() {
@@ -21,6 +21,9 @@ export default function App() {
   );
 }
 
+// Resume Logo [Icon] should go to About-page [Extra]
+// Once logged in, User should have different nav-bar such that it is able to click to a:
+// User Profile [Icon]
 function Layout() {
   return (
     <div>
@@ -30,8 +33,8 @@ function Layout() {
           <li className='nav-item'><Link className='no-decor' to="/"             >Home</Link></li>
         </ul>
         <ul className="nav-bar-right">
-          <li className='nav-item'><Link className='no-decor' to="/login"         >Log In</Link></li>        
-          <li className='nav-item'><Link className='no-decor' to="/signup"        >Sign Up</Link></li>
+          <li className='nav-item'><Link className='no-decor' to="/login"         >Login</Link></li>        
+          <li className='nav-item'><Link className='no-decor' to="/signup"        >Sign-Up</Link></li>
         </ul>
       </div>
 
