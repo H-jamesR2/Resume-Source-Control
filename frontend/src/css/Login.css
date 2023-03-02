@@ -50,6 +50,11 @@
   transition: 0.25s;
 }
 
+.no-decor, .no-decor:visited, .no-decor:active, .no-decor:hover {
+  text-decoration: none;
+  color: #46f;
+}
+
 .login-info{
   display: flexbox;
   width: 350px;
