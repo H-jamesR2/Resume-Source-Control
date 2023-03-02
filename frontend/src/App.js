@@ -1,38 +1,41 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, Link, NavLink } from "react-router-dom";
-import logo from './images/logo.svg';
+import { BrowserRouter as Router, Routes, Route, Outlet, Link, NavLink } from "react-router-dom";
 import './App.css';
 import Homepage from './pages/Homepage';
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
+import './pages/Login.css';
+import logo from './images/Resume-source-app.png'
 
-function App() {
+export default function App() {
   return (
-    <Router>
-      {/* <Navbar/> */}
-      <Routes>
-        {/* <Route path="/" element={<Homepage/>}/> */}
-        {/* <Route path="/" element={<Signup/>}/> */}
-        <Route path="/" element={<Login/>}/>
-      </Routes>
-    </Router>
-    // <div className="App">
-    //   <header className="App-header">
-    //     <img src={logo} className="App-logo" alt="logo" />
-    //     <p>
-    //       Edit <code>src/App.js</code> and save to reload.
-    //     </p>
-    //     <a
-    //       className="App-link"
-    //       href="https://reactjs.org"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       Learn React
-    //     </a>
-    //   </header>
-    // </div>
+      <div>
+        <Routes>        
+          <Route path="/" element={<Layout/>}>            
+            <Route index element = {<Homepage/>} />
+            <Route path="/signup" element={<Signup/>}/>
+            <Route path="/login" element={<Login/>}/>
+          </Route>
+        </Routes>
+      </div>
   );
 }
 
-export default App;
+function Layout() {
+  return (
+    <div>
+      <div className="nav-bar">
+        <ul className="nav-bar-left">
+        <li><img class = {"resume-logo"} src={logo}></img></li>
+          <li className='nav-item'><Link className='no-decor' to="/"             >Home</Link></li>
+        </ul>
+        <ul className="nav-bar-right">
+          <li className='nav-item'><Link className='no-decor' to="/login"         >Log In</Link></li>        
+          <li className='nav-item'><Link className='no-decor' to="/signup"        >Sign Up</Link></li>
+        </ul>
+      </div>
+
+      <Outlet />
+      </div>
+  );
+}
