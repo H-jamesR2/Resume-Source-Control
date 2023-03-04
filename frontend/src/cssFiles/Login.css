@@ -1,0 +1,116 @@
+* {
+  box-sizing: border-box;
+  font-family: Roboto;
+}
+
+.resume-logo{
+  height: 36px;
+  position: absolute;
+  top: 9px;
+  left: 9px;
+}
+
+.nav-bar{
+  overflow: hidden;
+}
+
+.nav-bar-left{
+  float: left;    
+  text-align: left;
+  width: 200px;
+  padding: 0 0 0 54px;
+}
+
+.nav-bar-right{   
+  float: right;
+  text-align: right;
+  width: calc(100% - 200px);
+  padding: 0;
+}
+
+.nav-bar-right, .nav-bar-left{
+  list-style-type: none;
+  margin: 0;
+  background-color: #fff;
+  border-bottom: #03f;
+  border-style: solid;
+  border-width: 0 0 1px 0;
+}
+
+.nav-item {
+  padding: 15px 20px;
+  font-size: 20px;
+  color: #46f;
+  display: inline-block;
+  text-align: center;
+}
+
+.nav-item:hover{    
+  background-color: #bcf;
+  transition: 0.25s;
+}
+
+.no-decor, .no-decor:visited, .no-decor:active, .no-decor:hover {
+  text-decoration: none;
+  color: #46f;
+}
+
+.login-info{
+  display: flexbox;
+  width: 350px;
+  height: 100%;
+  padding: 20% 0px;
+}
+
+.header-1{
+  font-size: 18pt;
+  font-weight: 500;
+}
+
+.message{
+  font-size: 13.5pt;
+}
+
+.partition{
+  text-align: center;
+  margin: 0 0 0 50px;
+}
+
+.dialog-box{
+  border-style: solid;
+  border-width: 1px;
+  border-color: #03f;
+  width: 400px;
+  height: 400px;
+  background-color: #bcf;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%)
+}
+
+input.text {
+  width: 100%;
+  height: 32px;
+  font-size: 12pt;
+  margin: 0 0 10px 0;
+}
+
+input.checkbox {
+  font-size: 12pt;
+}
+
+button {
+  padding: 8px 15px;
+  border: 1px;
+  border-color: #03f;
+  border-style: solid;
+  background-color: #46f;
+  font-size: 15pt;
+  font-weight: 500;
+  color: #fff;
+}
+
+.checkbox-separators {
+  margin: 0 10px;
+}
