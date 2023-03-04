@@ -37,6 +37,16 @@ const Login = () => {
     };
     return (
         <div>
+            {/* <div class={"nav-bar"}>
+                <ul class={"nav-bar-left"}>
+                    <li><img class = {"resume-logo"} src={logo}></img></li>               
+                    <li class={"nav-item"}>Home</li>
+                </ul>
+                <ul class={"nav-bar-right"}>
+                    <li class={"nav-item"}>Login</li>                
+                    <li class={"nav-item"}>Sign Up</li>
+                </ul>
+            </div> */}
             <form onSubmit={onSubmit}>
                 <div class={"dialog-box"}>
                     <div class={"login-info"}>
@@ -44,6 +54,12 @@ const Login = () => {
                         <div class={"partition"}>
                             <span class={"header-1"}>
                             Welcome back!
+                            </span>
+                        </div>
+
+                        <div class={"partition"}>
+                            <span class={"message"}>
+                            Prefer to login with an username?
                             </span>
                         </div>
 
@@ -55,7 +71,7 @@ const Login = () => {
                                 class={"text"}
                                 value={email}
                                 onChange={(event) => setEmail(event.target.value)}
-                                placeholder={"Username"}
+                                placeholder={"Email"}
                             ></input>
                         </div>
 
