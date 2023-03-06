@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 import UserPool from "../UserPool";
+import '../cssFiles/Login.css';
 
-const Signup = () => {
+const Signup = () => {    
+    const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
     const onSubmit = (event) => {
         event.preventDefault();
 
-        UserPool.signUp(email, password, [], null, (err, data) => {
+        UserPool.signUp(username, email, password, [], null, (err, data) => {
             if(err) {
                 console.error(err);
             }
@@ -18,21 +20,56 @@ const Signup = () => {
     return (
         <div>
             <form onSubmit={onSubmit}>
-                <label htmlFor="email">Email</label>
-                <input
-                    value={email}
-                    onChange={(event) => setEmail(event.target.value)}
-                ></input>
-                <br></br>
-                <label htmlFor="password">Password</label>
-                <input
-                    value={password}
-                    onChange={(event) => setPassword(event.target.value)}
-                ></input>
-                <br></br>
-                <button type="submit">Signup</button>
+                <div class={"dialog-box"}>
+                    <div class={"login-info"}>
 
+                        <div class={"partition"}>
+                            <span class={"header-1"}>
+                            Welcome!
+                            </span>
+                        </div>
 
+                        <br></br>
+                        
+                        <div class={"partition"} style={{padding:"0 0 5px 0"}}>
+                            <label htmlFor="username"></label>
+                            <input
+                                class={"text"}
+                                value={username}
+                                onChange={(event) => setUsername(event.target.value)}
+                                placeholder={"Username"}
+                            ></input>      
+                        </div>
+                        
+                        <div class={"partition"} style={{padding:"0 0 5px 0"}}>
+                            <label htmlFor="email"></label>
+                            <input                        
+                                class={"text"}
+                                value={email}
+                                onChange={(event) => setEmail(event.target.value)}
+                                placeholder={"E-mail"}
+                            ></input>
+                        </div>
+
+                        <div class={"partition"}>
+                            <label htmlFor="password"></label>
+                            <input                        
+                                class={"text"}
+                                value={password}
+                                onChange={(event) => setPassword(event.target.value)}
+                                placeholder={"Password"}
+                                type={"password"}
+                            ></input>
+                        </div>
+
+                        <br></br>
+                        
+                        <div class={"partition"}>
+                            <button type="submit">Sign Up</button>
+                        </div>
+
+                    </div>
+                </div>
             </form>
         </div>
     );

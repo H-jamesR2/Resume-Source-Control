@@ -49,7 +49,7 @@ const Login = () => {
 
                         <br></br>
 
-                        <div class={"partition"}>
+                        <div class={"partition"} style={{padding:"0 0 5px 0"}}>
                             <label htmlFor="email"></label>
                             <input
                                 class={"text"}
@@ -59,7 +59,7 @@ const Login = () => {
                             ></input>
                         </div>
 
-                        <div class={"partition"} style={{padding:"0 0 5px 0"}}>
+                        <div class={"partition"}>
                             <label htmlFor="password"></label>
                             <input
                                 class={"text"}
