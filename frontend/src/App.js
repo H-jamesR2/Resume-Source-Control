@@ -3,6 +3,9 @@ import { BrowserRouter as Router, Routes, Route, Link, NavLink } from "react-rou
 import logo from './images/logo.svg';
 import './App.css';
 import Homepage from './pages/Homepage';
+import Mainpage from "./pages/Mainpage";
+import Resume from "./pages/Resume";
+import Blocks from "./pages/Blocks";
 
 function App() {
   return (
@@ -10,6 +13,9 @@ function App() {
       {/* <Navbar/> */}
       <Routes>
         <Route path="/" element={<Homepage/>}/>
+        <Route path="/mainpage" element={<Mainpage/>}/>
+        <Route path="/resume" element={<Resume/>}/>
+        <Route path="/blocks" element={<Blocks/>}/>
       </Routes>
     </Router>
     // <div className="App">
