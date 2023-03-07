@@ -5,8 +5,6 @@ import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from '@trendmicro/rea
 
 // Be sure to include styles at some point, probably during your bootstraping
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
-import Resume from "../pages/Resume";
-import Blocks from "../pages/Blocks";
 import backButton from "../images/left-arrow.png"
 
 
@@ -20,10 +18,11 @@ function NavBar(prop) {
 
     return (
         <div className="nav-wrapper">
+            <div className="sidebar-top">
+                <img src={backButton} onClick={OpenSideBar} className="icon"/>
+                <div>Menu</div>
+                </div>
         	<nav className="sidebar">
-                
-                <img src={backButton} onClick={OpenSideBar}/>
-                <li>Menu</li>
         		<li><Link to="/resume">Resumes</Link></li>
                 <li><Link to="/blocks">Blocks</Link></li>
                 <li><Link to="/applications">Application</Link></li>
