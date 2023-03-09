@@ -6,6 +6,9 @@ import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import './cssFiles/Login.css';
 import logo from './images/Resume-source-app.png'
+import Mainpage from "./pages/Mainpage";
+import Resume from "./pages/Resume";
+import Blocks from "./pages/Blocks";
 
 export default function App() {
   return (
@@ -15,9 +18,29 @@ export default function App() {
             <Route index element = {<Homepage/>} />
             <Route path="/signup" element={<Signup/>}/>
             <Route path="/login" element={<Login/>}/>
+            <Route path="/mainpage" element={<Mainpage/>}/>
+            <Route path="/resume" element={<Resume/>}/>
+            <Route path="/blocks" element={<Blocks/>}/>
           </Route>
         </Routes>
       </div>
+    
+    // <div className="App">
+    //   <header className="App-header">
+    //     <img src={logo} className="App-logo" alt="logo" />
+    //     <p>
+    //       Edit <code>src/App.js</code> and save to reload.
+    //     </p>
+    //     <a
+    //       className="App-link"
+    //       href="https://reactjs.org"
+    //       target="_blank"
+    //       rel="noopener noreferrer"
+    //     >
+    //       Learn React
+    //     </a>
+    //   </header>
+    // </div>
   );
 }
 

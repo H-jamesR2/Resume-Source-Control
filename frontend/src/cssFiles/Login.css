@@ -1,6 +1,15 @@
+@font-face {
+	font-family: Lekton;
+	src: url(../fonts/Lekton-Regular.ttf)
+}
+@font-face {
+	font-family: Lekton-Bold;
+	src: url(../fonts/Lekton-Bold.ttf)
+}
+
 * {
   box-sizing: border-box;
-  font-family: Roboto;
+  font-family: Lekton;
 }
 
 .resume-logo{
