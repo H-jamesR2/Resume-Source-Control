@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link, NavLink } from "react-router-dom";
 import NavBar from "../components/Navbar";
+import Settings from "./Settings";
 
 
 function Mainpage(prop)
@@ -12,6 +13,8 @@ function Mainpage(prop)
             <div className="main-content">
                 {/* add page content here */}
                 Main page after login
+                <br></br>                
+                <Link to="/settings">Account Settings</Link>
             </div>
         </div>
 
