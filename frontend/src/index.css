@@ -25,3 +25,11 @@ code {
     monospace;
 }
 
+.page-wrapper {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.main-content {
+  margin: 15px 25px;
+}
