@@ -1,10 +1,10 @@
 .settings-dialog-box{
   box-sizing: border-box;
-  padding: 10px;
+  padding: 20px;
   border-style: solid;
   border-width: 1px;
   border-color: #03f;
-  width: 400px;
+  width: 450px;
   background-color: #bcf;
   position: fixed;
   top: 50%;
@@ -27,8 +27,13 @@
 }
 
 .affirmative, .negative{
-    padding: 8px 15px;
-    font-size: 15pt;
+    padding: 6px 13px;
+    font-size: 13.5pt;
     font-weight: 700;
     color: #fff;
+}
+
+.button-partition{
+  display: flex;
+  justify-content: center;
 }
