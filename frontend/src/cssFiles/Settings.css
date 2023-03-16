@@ -1,0 +1,39 @@
+.settings-dialog-box{
+  box-sizing: border-box;
+  padding: 20px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #03f;
+  width: 450px;
+  background-color: #bcf;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%)
+}
+
+.affirmative {  
+  border: 1px;
+  border-style: solid;
+  border-color: #03f;  
+  background-color: #46f;
+}
+
+.negative {  
+  border: 1px;
+  border-style: solid;
+  border-color: #f00;  
+  background-color: #f66;
+}
+
+.affirmative, .negative{
+    padding: 6px 13px;
+    font-size: 13.5pt;
+    font-weight: 700;
+    color: #fff;
+}
+
+.button-partition{
+  display: flex;
+  justify-content: center;
+}

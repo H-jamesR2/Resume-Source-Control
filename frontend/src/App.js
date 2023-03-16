@@ -8,6 +8,7 @@ import './cssFiles/Login.css';
 import Mainpage from "./pages/Mainpage";
 import Resume from "./pages/Resume";
 import Blocks from "./pages/Blocks";
+import Settings from "./pages/Settings";
 import Application from "./pages/Application";
 
 export default function App() {
@@ -19,7 +20,8 @@ export default function App() {
             <Route path="/login" element={<Login/>}/>
             <Route path="/mainpage" element={<Mainpage/>}/>
             <Route path="/resume" element={<Resume/>}/>
-            <Route path="/blocks" element={<Blocks/>}/>
+            <Route path="/blocks" element={<Blocks/>}/>            
+            <Route path="/settings" element={<Settings/>}/>            
             <Route path="/applications" element={<Application/>}/>
         </Routes>
       </div>
