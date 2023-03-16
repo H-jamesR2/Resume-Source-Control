@@ -1,0 +1,62 @@
+@font-face {
+    font-family: Lekton;
+    src: url(../fonts/Lekton-Regular.ttf)
+}
+
+@font-face {
+    font-family: Lekton-Bold;
+    src: url(../fonts/Lekton-Bold.ttf)
+}
+
+@font-face {
+    font-family: Lekton-Italic;
+    src: url(../fonts/Lekton-Italic.ttf)
+}
+
+.nav-wrapper {
+    font-family: Lekton-Bold !important;
+    
+}
+#sidebar-wrapper {
+    width: 250px;
+    height: 100vh;
+    font-weight: 900;
+    background-color: #ECECEC;
+}
+#sidebar-wrapper.open {
+    width: 250px;
+    height: 100vh;
+    font-weight: 900;
+    background-color: #ECECEC;
+}
+
+.sidebar-bottom {
+    font-size: 30px;
+    padding: 10px;
+    text-align: left;
+}
+
+.sidebar-bottom>li {
+    padding: 5px;
+    list-style-type: none;
+}
+
+.sidebar-bottom>link {
+    text-decoration: none;
+}
+
+.sidebar-top {
+    font-size: 30px;
+    padding: 15px 15px 10px 15px;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    background-color: #6892FE;
+}
+
+.icon {
+    max-width: 24px;
+    max-height: 24px;
+}
