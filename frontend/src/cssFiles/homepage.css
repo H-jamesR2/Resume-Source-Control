@@ -1,0 +1,61 @@
+@font-face {
+    font-family: Lekton;
+    src: url(../fonts/Lekton-Regular.ttf)
+}
+
+@font-face {
+    font-family: Lekton-Bold;
+    src: url(../fonts/Lekton-Bold.ttf)
+}
+
+@font-face {
+    font-family: Lekton-Italic;
+    src: url(../fonts/Lekton-Italic.ttf)
+}
+
+.text-wrap {
+    display: flex;
+    flex-direction: column;
+    padding: 10vw;
+}
+.home-brandname {
+    font-family: Lekton-Bold;
+    font-weight: 900;
+    font-size: 80px;
+    padding-bottom: 50px;
+}
+.headline-wrapper {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+.home-desc {
+    font-family: Lekton-Bold;
+    font-size: 18px;
+    width: 60%;
+    align-self: flex-start;
+    margin: 30px 0;
+}
+.home-illu{
+    max-width: 200px;
+    width: 30vw;
+    align-self: flex-end;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+.home-illu img {
+    width: 100%;
+    height: auto;
+}
+.button-wrapper {
+    display: block;
+    text-align: center;
+    background-color: #436CFF;
+    font-family: Lekton-Bold;
+    font-size: 18px;
+    border-radius: 15px;
+    margin: auto 0;
+    width: 180px;
+    padding: 15px 35px;
+}

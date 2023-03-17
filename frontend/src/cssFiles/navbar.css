@@ -17,13 +17,10 @@
     font-family: Lekton-Bold !important;
     
 }
+/* #sidebar-wrapper {
+    display: none;
+} */
 #sidebar-wrapper {
-    width: 250px;
-    height: 100vh;
-    font-weight: 900;
-    background-color: #ECECEC;
-}
-#sidebar-wrapper.open {
     width: 250px;
     height: 100vh;
     font-weight: 900;
