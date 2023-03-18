@@ -19,10 +19,8 @@
 
 .resume-section{
   display: flex;
+  flex-wrap: wrap;
   width: 100%;
-  border-style: solid;
-  border-color: #46f;
-  border-width: 1px;
   background-color: #fff;
 }
 
@@ -36,7 +34,7 @@
   padding: 10px;
   display: inline-block;
   flex: 0 0 auto;
-  width: 185px;
+  width: 190px;
   height: 265px;  
   background-color: #cdf;
 }
