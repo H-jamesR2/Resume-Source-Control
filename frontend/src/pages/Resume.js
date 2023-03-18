@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link, NavLink } from "react-router-dom";
-import TopNav from "../components/TopNav";
+import TopNav2 from "../components/TopNav2";
 import NavBar from "../components/Navbar";
 import '../cssFiles/Resume-page.css';
 import ResumeTemplateIcon from '../images/Resume Template Icon.png';
@@ -10,7 +10,7 @@ function Resume(prop)
 {
     return(
         <div>
-            <TopNav/>
+            <TopNav2/>
             <div className="page-wrapper">                       
                 <NavBar/>           
                 <div className="main-content" style={{width:"calc(100% - 300px)"}}>

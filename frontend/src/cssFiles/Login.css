@@ -26,21 +26,21 @@
 .nav-bar-left{
   float: left;    
   text-align: left;
-  width: 200px;
+  width: 250px;
   padding: 0 0 0 54px;
 }
 
 .nav-bar-right{   
   float: right;
   text-align: right;
-  width: calc(100% - 200px);
+  width: calc(100% - 250px);
   padding: 0;
 }
 
 .nav-bar-right, .nav-bar-left{
   list-style-type: none;
   margin: 0;
-  background-color: #fff;
+  background-color: #ddeaff;
   border-bottom: #03f;
   border-style: solid;
   border-width: 0 0 1px 0;

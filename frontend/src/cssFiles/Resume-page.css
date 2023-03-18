@@ -30,13 +30,13 @@
 }
 
 .card-info{
-  margin: 10px 5px;
+  margin: 5px 5px;
   padding: 10px;
   display: inline-block;
   flex: 0 0 auto;
   width: 190px;
   height: 265px;  
-  background-color: #cdf;
+  background-color: #ddeaff;
 }
 
 .resume-caption{
