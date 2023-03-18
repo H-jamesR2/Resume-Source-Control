@@ -1,0 +1,53 @@
+.header-1{
+  font-family: Lekton-Bold;
+  font-size: 22pt;
+  color: #46f;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.resume-template-section{
+  display: flex;
+  flex-wrap: none;
+  overflow-x: auto;
+  width: 100%;
+  border-style: solid;
+  border-color: #46f;
+  border-width: 1px;
+  background-color: #fff;
+}
+
+.resume-section{
+  display: flex;
+  width: 100%;
+  border-style: solid;
+  border-color: #46f;
+  border-width: 1px;
+  background-color: #fff;
+}
+
+.resume-template-image, .resume-image {
+  width: 170px;
+  height: 225px;
+}
+
+.card-info{
+  margin: 10px 5px;
+  padding: 10px;
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 185px;
+  height: 265px;  
+  background-color: #cdf;
+}
+
+.resume-caption{
+  box-sizing: border-box;
+  position: relative;
+  top: -5px;
+  margin: 0 0px;
+  font-size: 14px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}

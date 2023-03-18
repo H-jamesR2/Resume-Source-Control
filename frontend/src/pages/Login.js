@@ -42,7 +42,7 @@ const Login = () => {
                     <div class={"login-info"}>
 
                         <div class={"partition"}>
-                            <span class={"header-1"}>
+                            <span class={"header-1-login"}>
                             Welcome back!
                             </span>
                         </div>
