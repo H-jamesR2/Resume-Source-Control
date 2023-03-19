@@ -50,6 +50,9 @@ function Resume(prop)
                         <ResumeCard text="Game Developer - Big Fish Games"/>
                         <ResumeCard text="Game Developer - Blizzard Entertainment"/>
                     </div>
+                        <div style={{display:"flex", justifyContent:"center"}}>
+                            <button>Show More</button>
+                        </div>
                 </div>
             </div>
         </div>
