@@ -18,17 +18,14 @@ function Resume(prop)
                     Resume Templates
                     </div>
                     <div className="resume-template-section">
-                        <ResumeTempCard text="Test 1"/>                        
-                        <ResumeTempCard text="Test 2"/>
-                        <ResumeTempCard text="Test 3"/>
-                        <ResumeTempCard text="Test 4"/>
-                        <ResumeTempCard text="Test 5"/>
-                        <ResumeTempCard text="Test 6"/>
-                        <ResumeTempCard text="Test 7"/>
-                        <ResumeTempCard text="Test 8"/>
-                        <ResumeTempCard text="Test 9"/>
-                        <ResumeTempCard text="Test 10"/>
-                        <ResumeTempCard text="Test 11"/>
+                        <ResumeTempCard text="Classical"/>                        
+                        <ResumeTempCard text="Modern"/>
+                        <ResumeTempCard text="Gayle McDowell"/>
+                        <ResumeTempCard text="Hybrid"/>
+                        <ResumeTempCard text="Colorful"/>
+                        <ResumeTempCard text="Monospaced"/>
+                        <ResumeTempCard text="SWE Check"/>
+                        <ResumeTempCard text="Gamer Resume"/>
                         <ResumeTempCard text="a long title that doesn't fit"/>
                     </div>
 
@@ -36,22 +33,22 @@ function Resume(prop)
                     Resumes
                     </div>
                     <div className="resume-section">
-                        <ResumeCard text="Test 1"/>                        
-                        <ResumeCard text="Test 2"/>
-                        <ResumeCard text="Test 3"/>
-                        <ResumeCard text="Test 4"/>
-                        <ResumeCard text="Test 5"/>
-                        <ResumeCard text="Test 6"/>
-                        <ResumeCard text="Test 7"/>
-                        <ResumeCard text="Test 8"/>
-                        <ResumeCard text="Test 9"/>
-                        <ResumeCard text="Test 10"/>
-                        <ResumeCard text="Test 11"/>
-                        <ResumeCard text="Test 12"/>
-                        <ResumeCard text="Test 13"/>
-                        <ResumeCard text="Test 14"/>
-                        <ResumeCard text="Test 15"/>
-                        <ResumeCard text="Test 16"/>
+                        <ResumeCard text="SWE - Google"/>                        
+                        <ResumeCard text="SWE - Apple"/>
+                        <ResumeCard text="SWE - Amazon"/>
+                        <ResumeCard text="UI/UX - Google"/>
+                        <ResumeCard text="UI/UX - Hunter College"/>
+                        <ResumeCard text="UI/UX - Meta"/>
+                        <ResumeCard text="Frontend - Discord"/>
+                        <ResumeCard text="Frontend - Google"/>
+                        <ResumeCard text="Backend - Microsoft"/>
+                        <ResumeCard text="Backend - Disney"/>
+                        <ResumeCard text="UI/UX - Disney"/>
+                        <ResumeCard text="Teacher - NYCDOE Schools"/>
+                        <ResumeCard text="Lecturer - Hunter College"/>
+                        <ResumeCard text="Game Developer - Gameloft"/>
+                        <ResumeCard text="Game Developer - Big Fish Games"/>
+                        <ResumeCard text="Game Developer - Blizzard Entertainment"/>
                     </div>
                 </div>
             </div>
