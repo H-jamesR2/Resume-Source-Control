@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { CognitoUser, AuthenticationDetails } from "amazon-cognito-identity-js";
 import UserPool from "../UserPool";
+import TopNav from "../components/TopNav";
 import '../cssFiles/Login.css';
 
 const Login = () => {
@@ -37,6 +38,7 @@ const Login = () => {
     };
     return (
         <div>
+            <TopNav/>
             <form onSubmit={onSubmit}>
                 <div class={"dialog-box"}>
                     <div class={"login-info"}>
