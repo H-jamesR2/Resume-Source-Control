@@ -19,12 +19,14 @@ function Homepage(prop) {
                             <div className="home-illu" ><img src={Illustration}/></div>
                         </div>
                         <div className="home-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-                        <div className="button-wrapper">Get Started</div>
+                        <Link className="button-wrapper" to="/signup">Get Started</Link>
                     </div>
                 </div>
             </div>
         </div>
     );
 }
+
+
 
 export default Homepage;

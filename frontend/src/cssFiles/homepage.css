@@ -59,3 +59,10 @@
     width: 180px;
     padding: 15px 35px;
 }
+.button-wrapper, a:link, a:visited {
+    text-decoration: none;
+    color: black;
+}
+.button-wrapper:hover {
+    background-color: #7492FF;
+}

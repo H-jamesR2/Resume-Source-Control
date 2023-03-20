@@ -17,14 +17,29 @@
     font-family: Lekton-Bold !important;
     
 }
-/* #sidebar-wrapper {
+#sidebar-wrapper.close{
+    width: 70px;
+    height: 100vh;
+    background-color: #6892FE;
+}
+#sidebar-wrapper.close #sidebar-top {
     display: none;
-} */
-#sidebar-wrapper {
+}
+#sidebar-wrapper.close .sidebar-text {
+    display: none;
+}
+#sidebar-wrapper.close #sidebar-top img {
+    display: none;
+}
+#sidebar-wrapper.open {
     width: 250px;
     height: 100vh;
     font-weight: 900;
     background-color: #ECECEC;
+}
+#sidebar-wrapper {
+    transition: width 1s, background-color 1s;
+    transition-timing-function: ease-in-out;
 }
 
 .sidebar-bottom {
@@ -42,7 +57,7 @@
     text-decoration: none;
 }
 
-.sidebar-top {
+#sidebar-top {
     font-size: 30px;
     padding: 15px 15px 10px 15px;
     height: 100px;
@@ -53,6 +68,12 @@
     background-color: #6892FE;
 }
 
+#openButton.close {
+    display: none;
+}
+#openButton.open {
+    display: block;
+}
 .icon {
     max-width: 24px;
     max-height: 24px;

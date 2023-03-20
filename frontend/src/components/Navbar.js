@@ -14,20 +14,22 @@ function NavBar(prop) {
     }
     function CloseSideBar() {
         setIsOpen(false);
+        console.log(true);
     }
 
     return (
         <div class="nav-wrapper">
             <FontAwesomeIcon icon="fa-solid fa-chevron-left" />
-            <div id="sidebar-wrapper" className={isOpen ? "open" : ""}>
-                <div className="sidebar-top">
-                    <img src={backButton} onClick={OpenSideBar} className="icon" />
-                    <div>Menu</div>
+            <div id="sidebar-wrapper" className={isOpen ? "open" : "close"}>
+                <button id="openButton" className={isOpen ? "close" : "open"} onClick={OpenSideBar}>Open</button>
+                <div id="sidebar-top" >
+                    <img src={backButton} onClick={CloseSideBar} className="icon" />
+                    <div className="sidebar-text">Menu</div>
                 </div>
                 <nav className="sidebar-bottom">
-                    <li><Link to="/resume">Resumes</Link></li>
-                    <li><Link to="/blocks">Blocks</Link></li>
-                    <li><Link to="/applications">Applications</Link></li>
+                    <li><Link to="/resume"><div className="sidebar-text">Resumes</div></Link></li>
+                    <li><Link to="/blocks"><div className="sidebar-text">Block</div></Link></li>
+                    <li><Link to="/applications"><div className="sidebar-text">Applications</div></Link></li>
                 </nav>
             </div>
         </div>
