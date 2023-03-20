@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Link, NavLink } from "react-router-dom";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleLeft, faBars } from '@fortawesome/free-solid-svg-icons'
 
 import backButton from "../images/left-arrow.png"
 import '../cssFiles/navbar.css';
@@ -19,11 +20,12 @@ function NavBar(prop) {
 
     return (
         <div class="nav-wrapper">
-            <FontAwesomeIcon icon="fa-solid fa-chevron-left" />
             <div id="sidebar-wrapper" className={isOpen ? "open" : "close"}>
-                <button id="openButton" className={isOpen ? "close" : "open"} onClick={OpenSideBar}>Open</button>
+                
+                <FontAwesomeIcon icon={faBars} size="2xl" id="openButton" className={isOpen ? "close" : "open"} onClick={OpenSideBar}/>
                 <div id="sidebar-top" >
-                    <img src={backButton} onClick={CloseSideBar} className="icon" />
+                    {/* <img src={backButton} onClick={CloseSideBar} className="icon" /> */}
+                    <FontAwesomeIcon icon={faAngleLeft} size="lg" className="icon" onClick={CloseSideBar} />
                     <div className="sidebar-text">Menu</div>
                 </div>
                 <nav className="sidebar-bottom">
