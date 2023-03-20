@@ -18,7 +18,7 @@ function TopNav(prop) {
                 </ul>
                 <ul className="nav-bar-right">
                     <li className='nav-item'>Hi, NAME!</li>
-                    <li className='nav-item'>Sign Out</li>
+                    <li className='nav-item'><Link className='no-decor' to="/">Sign Out</Link></li>
                 </ul>
             </div>
 

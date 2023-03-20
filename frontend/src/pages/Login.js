@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { CognitoUser, AuthenticationDetails } from "amazon-cognito-identity-js";
+import { BrowserRouter as Router, Routes, Route, Outlet, Link, NavLink } from "react-router-dom";
 import UserPool from "../UserPool";
 import TopNav from "../components/TopNav";
 import '../cssFiles/Login.css';
@@ -95,7 +96,7 @@ const Login = () => {
                         <br></br>
 
                         <div class={"partition"}>
-                            <button type="submit">Login</button>
+                            <button type="submit"><Link className='no-decor-button' to="/mainpage">Log In</Link></button>
                         </div>
                     </div>
                 </div>

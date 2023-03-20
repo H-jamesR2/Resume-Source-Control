@@ -64,6 +64,11 @@
   color: #46f;
 }
 
+.no-decor-button, .no-decor-button:visited, .no-decor-button:active, .no-decor-button:hover {
+  text-decoration: none;
+  color: #fff;
+}
+
 .login-info{
   display: flexbox;
   width: 350px;

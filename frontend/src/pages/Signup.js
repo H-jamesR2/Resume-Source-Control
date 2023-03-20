@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import UserPool from "../UserPool";
+import { BrowserRouter as Router, Routes, Route, Outlet, Link, NavLink } from "react-router-dom";
 import TopNav from "../components/TopNav";
 import '../cssFiles/Login.css';
 
@@ -67,7 +68,7 @@ const Signup = () => {
                         <br></br>
                         
                         <div class={"partition"}>
-                            <button type="submit">Sign Up</button>
+                            <button type="submit"><Link className='no-decor-button' to="/mainpage">Sign Up</Link></button>
                         </div>
 
                     </div>
