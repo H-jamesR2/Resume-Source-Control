@@ -12,7 +12,7 @@ function TopNav(prop) {
         <div>
             <div className="nav-bar">
                 <ul className="nav-bar-left">
-                    <li><img class={"resume-logo"} src={logo}></img></li>
+                    <li><img className={"resume-logo"} src={logo}></img></li>
                     <li className='nav-item'><Link className='no-decor' to="/">Home</Link></li>
                 </ul>
                 <ul className="nav-bar-right">

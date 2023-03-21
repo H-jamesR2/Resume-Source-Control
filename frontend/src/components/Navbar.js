@@ -5,7 +5,6 @@ import { faAngleLeft, faBars } from '@fortawesome/free-solid-svg-icons'
 
 import '../cssFiles/navbar.css';
 
-
 function NavBar(prop) {
     const [isOpen, setIsOpen] = useState(false);
 
@@ -18,7 +17,7 @@ function NavBar(prop) {
     }
 
     return (
-        <div class="nav-wrapper">
+        <div className="nav-wrapper">
             <div id="sidebar-wrapper" className={isOpen ? "open" : "close"}>
                 
                 <FontAwesomeIcon icon={faBars} size="2xl" id="openButton" className={isOpen ? "close" : "open"} onClick={OpenSideBar}/>
