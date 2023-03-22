@@ -5,6 +5,8 @@ import logo from '../images/Resume-source-app.png'
 import AddItems from "./AddContent";
 import UserMenu from "./UserMenu";
 
+const Username = "Anthony";
+
 class TopNav2 extends Component {
 constructor() {
     super();
@@ -45,7 +47,7 @@ render() {
                     <li onMouseOver={() => this.hideComponent("add_items")} className='nav-item'><b>+ ADD</b></li>
                 </ul>
                 <ul className="nav-bar-right">
-                    <li onMouseOver={() => this.hideComponent("user_settings")} className='nav-item'>Hi, NAME!</li>
+                    <li onMouseOver={() => this.hideComponent("user_settings")} className='nav-item'>Hi, {Username}</li>
                     {/* <li className='nav-item'><Link className='no-decor' to="/">Sign Out</Link></li> */}
                 </ul>
             </div>
