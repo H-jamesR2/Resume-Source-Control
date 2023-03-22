@@ -25,3 +25,8 @@
   top: 64px;
   left: 134px;
 }
+
+#user-menu.popup-menu{
+  top: 64px;
+  right: 0px;
+}
