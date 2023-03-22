@@ -1,0 +1,27 @@
+.popup-menu{
+  list-style-type: none;
+  margin: 0;
+  background-color: #ddeaff;
+  border: #03f;
+  border-style: solid;
+  border-width: 1px;
+  position: absolute;
+}
+
+.popup-menu-item{
+  padding: 8px 20px;
+  font-size: 18px;
+  color: #46f;
+  display: block;
+  text-align: left;
+}
+
+.popup-menu-item:hover{
+  background-color: #bcf;
+  transition: 0.25s;
+}
+
+#add-items.popup-menu{
+  top: 64px;
+  left: 134px;
+}
