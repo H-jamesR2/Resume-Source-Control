@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { BrowserRouter as Router, Routes, Route, Outlet, Link, NavLink } from "react-router-dom";
+import '../cssFiles/topbar.css';
   
 class UserMenu extends Component {
   constructor() {
@@ -9,9 +11,13 @@ class UserMenu extends Component {
   }
   
   render() {
-    return <div>
-      UserMenu
-    </div>;
+    return <div id="user-menu" class="popup-menu">
+    <div>
+      <li className="popup-menu-item">Profile</li>
+      <li className="popup-menu-item">Account Settings</li>
+      <li className="popup-menu-item">Log Out</li>
+    </div>
+  </div>;
   }
 }
   
