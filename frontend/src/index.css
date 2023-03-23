@@ -1,14 +1,36 @@
+@font-face {
+	font-family: Lekton;
+	src: url(./fonts/Lekton-Regular.ttf)
+}
+@font-face {
+	font-family: Lekton-Bold;
+	src: url(./fonts/Lekton-Bold.ttf)
+}
+@font-face {
+	font-family: Lekton-Italic;
+	src: url(./fonts/Lekton-Italic.ttf)
+}
+
 body {
-  background-color: gray;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: Lekton, Lekton-Bold, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale; 
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: Lekton, source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.page-wrapper {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.main-content {
+  margin: 15px 25px;
+  width: 100%;
 }
