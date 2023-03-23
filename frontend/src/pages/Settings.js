@@ -27,20 +27,20 @@ function Settings(prop)
                     <div className= "settings-partition" style={{padding:"0 0 5px 0"}}>
                       <span>Current email: EMAIL</span>
                         <input
-                          class={"text"}
+                          className={"text"}
                           placeholder={"Email"}
                         ></input>
                     </div>
                     <div className= "settings-partition" style={{padding:"0 0 5px 0"}}>
                         <input
-                          class={"text"}
+                          className={"text"}
                           placeholder={"Current password"}
                           type={"password"}
                         ></input>
                     </div>
                     <div className= "settings-partition" style={{padding:"0 0 5px 0"}}>
                         <input
-                          class={"text"}
+                          className={"text"}
                           placeholder={"New password"}                        
                           type={"password"}
                         ></input>
