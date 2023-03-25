@@ -10,6 +10,7 @@ import Resume from "./pages/Resume";
 import Blocks from "./pages/Blocks";
 import Settings from "./pages/Settings";
 import Application from "./pages/Application";
+import BlockEditor from "./pages/BlockEditor";
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
             <Route path="/blocks" element={<Blocks/>}/>            
             <Route path="/settings" element={<Settings/>}/>            
             <Route path="/applications" element={<Application/>}/>
+            <Route path="/blockeditor" element={<BlockEditor/>}/>
         </Routes>
       </div>
   );
