@@ -13,7 +13,7 @@ class UserMenu extends Component {
   render() {
     return <div id="user-menu" class="popup-menu">
     <div>
-      <li className="popup-menu-item">Profile</li>
+      <li className="popup-menu-item"><Link className='no-decor' to="/profile">Profile</Link></li>
       <li className="popup-menu-item"><Link className='no-decor' to="/settings">Account Settings</Link></li>
       <li className="popup-menu-item"><Link className='no-decor' to="/">Log Out</Link></li>
     </div>
