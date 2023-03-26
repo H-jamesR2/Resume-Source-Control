@@ -6,6 +6,14 @@
   margin-bottom: 10px;
 }
 
+.header-2{
+  font-family: Lekton-Bold;
+  font-size: 16.5pt;
+  color: #09f;
+  margin-top: 6px;
+  margin-bottom: 0px;
+}
+
 .resume-template-section{
   display: flex;
   flex-wrap: none;

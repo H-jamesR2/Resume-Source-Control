@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Routes, Route, Link, NavLink } from "react-rou
 import TopNav2 from "../components/TopNav2";
 import NavBar from "../components/Navbar";
 import Settings from "./Settings";
+import Person1 from "../images/Person-1.png";
+import "../cssFiles/Profile.css";
 
 
 function Profile(prop)
@@ -13,9 +15,47 @@ function Profile(prop)
             <div className="page-wrapper">
                 <NavBar/>
                 <div className="main-content">
-                Profile Page
+                  <div className="header-1">Edit your profile, username</div>                
+                  <div className="header-2">Profile picture</div>
+                  <img src={Person1} style={{width:"128px"}}></img>
+                  <button>Upload new</button>
+                  <button>Remove</button>
+                  <div className="header-2">Other information</div>
+                  <div className="name-split">
+                  <input
+                    className={"text"}
+                    placeholder={"First Name"}
+                  ></input>
+                  <input
+                    className={"text"}
+                    placeholder={"Middle Name"}
+                  ></input>
+                  <input
+                    className={"text"}
+                    placeholder={"Last Name"}
+                  ></input>
+                  <select
+                    placeholder={"Pronouns"} 
+                  >                  
+                    <option>Pronouns unset</option>
+                    <option>No pronouns</option>
+                    <option>Any pronouns</option>
+                    <option>he/his/him</option>
+                    <option>she/her</option>
+                    <option>they/their/them</option>
+                    <option>ze/zir</option>
+                    <option>xe/xem</option>
+                    <option>it/its</option>
+                  </select>
+                </div>                
+                <div className="header-2">What are your career preferences?</div>
+                <div>Career preferences are comma-separated</div>
+                <textarea id="career-pref"></textarea>
+                <div style={{display:"flex", justifyContent:"center"}}>
+                  <button>Save changes</button>
                 </div>
             </div>
+          </div>
         </div>
     );
 }
