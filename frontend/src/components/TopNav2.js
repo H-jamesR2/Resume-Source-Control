@@ -4,6 +4,7 @@ import '../cssFiles/Login.css';
 import logo from '../images/Resume-source-app.png'
 import AddItems from "./AddContent";
 import UserMenu from "./UserMenu";
+import Person1 from '../images/Person-1.png'
 
 const Username = "Anthony";
 
@@ -47,7 +48,12 @@ render() {
                     <li onMouseOver={() => this.hideComponent("add_items")} className='nav-item'><b>+ ADD</b></li>
                 </ul>
                 <ul className="nav-bar-right">
-                    <li onMouseOver={() => this.hideComponent("user_settings")} className='nav-item'>Hi, {Username}</li>
+                    <li 
+                        onMouseOver={() => this.hideComponent("user_settings")} 
+                        className='nav-item'
+                        style={{position: "relative", top: "-7px"}}>
+                        <img id={"profile-picture-w"} src={Person1} ></img> Hi, {Username}
+                    </li>
                     {/* <li className='nav-item'><Link className='no-decor' to="/">Sign Out</Link></li> */}
                 </ul>
             </div>
