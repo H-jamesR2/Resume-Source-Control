@@ -1,0 +1,25 @@
+@font-face {
+    font-family: Lekton;
+    src: url(../fonts/Lekton-Regular.ttf)
+}
+
+@font-face {
+    font-family: Lekton-Bold;
+    src: url(../fonts/Lekton-Bold.ttf)
+}
+
+@font-face {
+    font-family: Lekton-Italic;
+    src: url(../fonts/Lekton-Italic.ttf)
+}
+
+.table-container {
+    font-family: Lekton;
+}
+.tag-text{
+    padding: 5px 8px;
+}
+.resume-tag-text {
+    color: blue;
+    margin-left: 5px;
+}
