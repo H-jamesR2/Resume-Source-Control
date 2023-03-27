@@ -127,6 +127,39 @@ button {
   color: #fff;
 }
 
+button.negative {
+  padding: 8px 15px;
+  border: 1px;
+  border-style: solid;
+  border-color: #f00;  
+  background-color: #f66;
+  font-size: 15pt;
+  font-weight: 500;
+  color: #fff;
+}
+
+button.small {
+  padding: 6px 10px;
+  border: 1px;
+  border-color: #03f;
+  border-style: solid;
+  background-color: #46f;
+  font-size: 12pt;
+  font-weight: 500;
+  color: #fff;
+}
+
+button.smallnegative {
+  padding: 6px 10px;
+  border: 1px;
+  border-style: solid;
+  border-color: #f00;  
+  background-color: #f66;
+  font-size: 12pt;
+  font-weight: 500;
+  color: #fff;
+}
+
 .checkbox-separators {
   margin: 0 10px;
 }

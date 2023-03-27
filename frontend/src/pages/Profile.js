@@ -17,9 +17,13 @@ function Profile(prop)
                 <div className="main-content">
                   <div className="header-1">Edit your profile, username</div>                
                   <div className="header-2">Profile picture</div>
-                  <img src={Person1} style={{width:"128px"}}></img>
-                  <button>Upload new</button>
-                  <button>Remove</button>
+                  <div style={{display:"flex", flexDirection:"row"}}>
+                    <img src={Person1} style={{width:"128px"}}></img>
+                    <div style={{display:"flex", flexDirection:"column", width:"120px"}}>
+                      <button className="small" style={{margin:"6px 0px 3px 10px"}}>Upload new</button>
+                      <button className="smallnegative" style={{margin:"3px 0px 6px 10px"}}>Remove</button>
+                    </div>
+                  </div>
                   <div className="header-2">Other information</div>
                   <div className="name-split">
                   <input
