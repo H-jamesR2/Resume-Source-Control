@@ -4,7 +4,7 @@ import Pool from "../UserPool"
 import UserPool from "../UserPool"
 import {useNavigate} from "react-router-dom"
 
-const UserContext = createContext();
+const SessionContext = createContext();
 
 const Session = (props) =>{
     const navigate = useNavigate();
@@ -25,9 +25,9 @@ const Session = (props) =>{
         
                             }else {
                                 const content= {}
-                                for (item in attributes){
-                                    const{Name, Value} = attributes
-                                    content[Name] = Value
+                                for (let attribute in attributes){
+                                    const{Name, Value} = attribute;
+                                    content[Name] = Value;
                                 }
                                 resolve(content);
                                 console.log(user.getUsername())
@@ -58,7 +58,7 @@ const Session = (props) =>{
                 },
                 newPasswordRequired:(result)=>{
                     console.log(result);
-                    resolve(data);
+                    resolve(result);
                 }
             })
         });
@@ -67,17 +67,17 @@ const Session = (props) =>{
     const signout=()=>{
         const user = UserPool.getCurrentUser();
         if(user){
-            user.signOut;
+            user.signOut();
             console.log("Success: Signed Out")
             navigate('/login')
         } 
     }
 
     return(
-        <UserContext.Provider value={{authenticate, getUserSession, signout}}>
+        <SessionContext.Provider value={{authenticate, getUserSession, signout}}>
             {props.children}
-        </UserContext.Provider>
+        </SessionContext.Provider>
     )
 
 };
-export {Session, UserContext};
+export {Session, SessionContext};
