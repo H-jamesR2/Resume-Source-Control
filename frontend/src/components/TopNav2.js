@@ -5,7 +5,15 @@ import logo from '../images/Resume-source-app.png'
 import AddItems from "./AddContent";
 import UserMenu from "./UserMenu";
 
+import UserPool from "../UserPool";
+
 const Username = "Anthony";
+
+const temp = UserPool.getCurrentUser();
+
+//const [{getUserSession, signout}] = useContext(SessionContext);
+
+
 
 class TopNav2 extends Component {
 constructor() {
@@ -31,6 +39,10 @@ constructor() {
     }
   }
 
+  //const {getUserSession, signout} = useContext(SessionContext)
+
+
+
 render() {
     const {add_items, user_settings} = this.state;
     return (
@@ -47,7 +59,7 @@ render() {
                     <li onMouseOver={() => this.hideComponent("add_items")} className='nav-item'><b>+ ADD</b></li>
                 </ul>
                 <ul className="nav-bar-right">
-                    <li onMouseOver={() => this.hideComponent("user_settings")} className='nav-item'>Hi, {Username}</li>
+                    <li onMouseOver={() => this.hideComponent("user_settings")} className='nav-item'>Hi, {temp.getUsername()}</li>
                     {/* <li className='nav-item'><Link className='no-decor' to="/">Sign Out</Link></li> */}
                 </ul>
             </div>
