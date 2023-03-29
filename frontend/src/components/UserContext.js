@@ -1,5 +1,5 @@
 import React, {createContext} from "react"
-import {CognitoUser, AuthenticationDetails} from "amazon-cognito-identity-js"
+import {CognitoUser, AuthenticationDetails, CognitoUserAttribute} from "amazon-cognito-identity-js"
 import Pool from "../UserPool"
 import UserPool from "../UserPool"
 import {useNavigate} from "react-router-dom"
@@ -14,7 +14,7 @@ const Session = (props) =>{
             const user = Pool.getCurrentUser();
 
             if(user){
-                user.getUserSession(async(error, userSession)=>{
+                user.getSession(async(error, userSession)=>{
                 if(error){
                     reject(error);
                 }else{
@@ -24,16 +24,17 @@ const Session = (props) =>{
                                 reject(error);
         
                             }else {
-                                const content= {}
-                                for (let attribute in attributes){
-                                    const{Name, Value} = attribute;
+                                const content = {}
+                                for (let item of attributes){
+                                    const{Name, Value} = item;
                                     content[Name] = Value;
                                 }
                                 resolve(content);
-                                console.log(user.getUsername())
+                                console.log(user.getUsername());
                             }
                         })
                     })
+                    resolve({user, ...userSession, ...attributes})
 
                 }})
             }else{
@@ -44,9 +45,9 @@ const Session = (props) =>{
 
     const authenticate = async(Username, Email, Password)=>{
         return await new Promise((resolve, reject)=>{
-            const user = new CognitoUser({Username, Email, Password})
-            const userInfo = {Username, Email, Password}
-            const authenticateDetails = new AuthenticationDetails(userInfo)
+            const user = new CognitoUser({Username, Email, Pool})
+            //const userInfo = {Username, Email, Password};
+            const authenticateDetails = new AuthenticationDetails({Username, Email, Password})
             user.authenticateUser(authenticateDetails, {
                 onSuccess:(result)=>{
                     console.log(result);
