@@ -25,22 +25,10 @@ const LogIn = () => {
             navigate('/mainpage')
         }).catch(error=>{
             console.error(error);
-            window.location.reload();
+            //window.location.reload();
         })
         
     };
-
-
-
-
-
-
-
-
-
-
-
-
     return (
         <div>
             <TopNav/>
