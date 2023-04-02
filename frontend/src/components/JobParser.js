@@ -3,6 +3,21 @@ import axios from "axios";
 import { json } from "react-router-dom";
 import { faCommentsDollar } from "@fortawesome/free-solid-svg-icons";
 
+function KeywordList(props) {
+    // WARNING STILL NEEDS WORK TO POSSIBLY INCLUDE MORE KEYWORD LABELS
+    var output = props.keywordList.map((keyword) =>
+        <li>{keyword["word"]}</li>
+    );
+    return (
+        <div>
+            <h2>Skills</h2>
+            <ul>
+                {output}
+            </ul>
+        </div>
+    )
+}
+
 class JobParser extends Component {
     
     constructor(props) {
@@ -10,7 +25,6 @@ class JobParser extends Component {
         this.state = {
             jobDescription: "",
             keywordList: [],
-            error: null
         };
 
         this.HandleChange = this.HandleChange.bind(this);
@@ -22,16 +36,14 @@ class JobParser extends Component {
     }
 
     ParseJob() {
-        console.log("starting parse with: " + this.state.jobDescription);
-        
+        //Formatting Data
         var formData = new FormData()
         formData.append('jobDescription', this.state.jobDescription);
-
+        
+        // Making request for scanner
         axios.post("/AI/job-scan", formData)
         .then((response) => {
-            this.setState({
-                keywordList: response.data
-            })
+            this.setState({keywordList: response.data["entities"]});
         }).catch((error) => {
             if (error.response) {
                 console.log(error.response)
@@ -39,7 +51,6 @@ class JobParser extends Component {
                 console.log(error.response.headers)
             }
         })
-        console.log(this.keywordList)
     }
 
     render() {
@@ -54,9 +65,7 @@ class JobParser extends Component {
                     Run Scanner
                 </button>
                 <div>
-                    <ul>
-
-                    </ul>
+                    <KeywordList keywordList={this.state.keywordList}></KeywordList>
                 </div>
             </div>
         )
