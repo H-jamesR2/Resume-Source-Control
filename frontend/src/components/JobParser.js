@@ -1,13 +1,15 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { json } from "react-router-dom";
+import { faCommentsDollar } from "@fortawesome/free-solid-svg-icons";
 
 class JobParser extends Component {
     
     constructor(props) {
         super(props);
         this.state = {
-            value: "",
-            keywordList: {},
+            jobDescription: "",
+            keywordList: [],
             error: null
         };
 
@@ -16,22 +18,20 @@ class JobParser extends Component {
     }
 
     HandleChange(event) {
-        this.setState({value: event.target.value});
+        this.setState({jobDescription: event.target.value});
     }
 
     ParseJob() {
-        console.log("starting parse with: " + this.state.value);
+        console.log("starting parse with: " + this.state.jobDescription);
+        
+        var formData = new FormData()
+        formData.append('jobDescription', this.state.jobDescription);
 
-        axios({
-            method: "POST",
-            url:"/AI/job-scan",
-            body: JSON.stringify("TESTING STRING")
-        })
+        axios.post("/AI/job-scan", formData)
         .then((response) => {
             this.setState({
                 keywordList: response.data
             })
-            console.log(response.data)
         }).catch((error) => {
             if (error.response) {
                 console.log(error.response)
@@ -47,7 +47,7 @@ class JobParser extends Component {
             <div>
                 <input
                     type="text"
-                    value={this.state.value}
+                    value={this.state.jobDescription}
                     onChange={this.HandleChange}
                 />
                 <button onClick={this.ParseJob}>
