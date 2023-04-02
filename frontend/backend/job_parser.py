@@ -10,6 +10,13 @@ api = Flask(__name__)
 def my_package():
     jobDescription = request.form.get('jobDescription')
     doc = nerClassifier(jobDescription)
+
     entities = [{'word': ent.text, 'label': ent.label_} 
                 for ent in doc.ents]
+    
+    id = 0
+    for ent in entities:
+        ent['id'] = id
+        id += 1
+
     return {'entities': entities}

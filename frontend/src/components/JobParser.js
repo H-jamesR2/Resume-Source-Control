@@ -6,7 +6,7 @@ import { faCommentsDollar } from "@fortawesome/free-solid-svg-icons";
 function KeywordList(props) {
     // WARNING STILL NEEDS WORK TO POSSIBLY INCLUDE MORE KEYWORD LABELS
     var output = props.keywordList.map((keyword) =>
-        <li>{keyword["word"]}</li>
+        <li id={keyword["id"]}>{keyword["word"]}</li>
     );
     return (
         <div>
@@ -19,7 +19,6 @@ function KeywordList(props) {
 }
 
 class JobParser extends Component {
-    
     constructor(props) {
         super(props);
         this.state = {
@@ -44,6 +43,7 @@ class JobParser extends Component {
         axios.post("/AI/job-scan", formData)
         .then((response) => {
             this.setState({keywordList: response.data["entities"]});
+            console.log(response.data);
         }).catch((error) => {
             if (error.response) {
                 console.log(error.response)
@@ -56,14 +56,18 @@ class JobParser extends Component {
     render() {
         return(
             <div>
-                <input
-                    type="text"
-                    value={this.state.jobDescription}
-                    onChange={this.HandleChange}
-                />
-                <button onClick={this.ParseJob}>
-                    Run Scanner
-                </button>
+                <div>
+                    <input
+                        type="text"
+                        value={this.state.jobDescription}
+                        onChange={this.HandleChange}
+                    />
+                </div>
+                <div>
+                    <button onClick={this.ParseJob}>
+                        Run Scanner
+                    </button>
+                </div>
                 <div>
                     <KeywordList keywordList={this.state.keywordList}></KeywordList>
                 </div>
