@@ -12,8 +12,12 @@ import Blocks from "./pages/Blocks";
 import Settings from "./pages/Settings";
 import Application from "./pages/Application";
 import BlockEditor from "./pages/BlockEditor";
+import ChangePassword from "./pages/EditPassword";
+import ChangeEmail from "./pages/EditEmail";
+
 
 export default function App() {
+  
   return (
       <div>
         <Session>
@@ -24,9 +28,13 @@ export default function App() {
             <Route path="/mainpage" element={<Mainpage/>}/>
             <Route path="/resume" element={<Resume/>}/>
             <Route path="/blocks" element={<Blocks/>}/>            
-            <Route path="/settings" element={<Settings/>}/>            
+            <Route path="/settings" element={<Settings/>}/>
+            <Route path="/changepassword" element={<ChangePassword/>}/>
+            <Route path="/changeemail" element={<ChangeEmail/>}/>
             <Route path="/applications" element={<Application/>}/>
             <Route path="/blockeditor" element={<BlockEditor/>}/>
+            
+
         </Routes>
         </Session>
       </div>
