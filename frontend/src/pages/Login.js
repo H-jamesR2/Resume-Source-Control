@@ -8,10 +8,9 @@ import '../cssFiles/Login.css';
 
 const LogIn = () => {
     const navigate = useNavigate();
-    
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    
+
     const {authenticate} = useContext(SessionContext);
 
     const attributes=[]
@@ -20,14 +19,17 @@ const LogIn = () => {
     const onSubmit = (event) => {
         event.preventDefault();
         authenticate(email, email, password).then(result=>{
-            console.log(result)
+            console.log(result);
+
+            
             alert("Welcome")
+
             navigate('/mainpage')
         }).catch(error=>{
             console.error(error);
             //window.location.reload();
         })
-        
+
     };
     return (
         <div>
@@ -84,7 +86,7 @@ const LogIn = () => {
                                 <label htmlFor="choice2">Stay logged in</label>
                             </span>
                         </div>
-                        
+
                         <br></br>
 
                         <div className={"partition"}>
@@ -99,3 +101,5 @@ const LogIn = () => {
 };
 
 export default LogIn;
+
+
