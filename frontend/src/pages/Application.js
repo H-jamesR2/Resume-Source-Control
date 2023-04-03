@@ -8,6 +8,7 @@ import AppTable from "../components/AppTable";
 function Application(prop) {
     const dataSource = [
         {
+           id: 1,
            position: 'Software Engineer',
            company: 'Google',
            submissionDate: '03/05/2023',
@@ -15,6 +16,7 @@ function Application(prop) {
            resume: 'Software Engineer Resume',
         },
         {
+            id: 2,
             position: 'Game Developer',
             company: 'Roblox',
             submissionDate: '03/06/2023',
@@ -22,6 +24,7 @@ function Application(prop) {
             resume: 'Game Dev Resume',
          },
          {
+            id: 3,
             position: 'Software Engineer',
             company: 'Facebook',
             submissionDate: '03/09/2023',

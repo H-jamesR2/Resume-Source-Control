@@ -23,3 +23,22 @@
     color: blue;
     margin-left: 5px;
 }
+.action-icon {
+    margin-left: 10px;
+}
+.application-wrapper {
+    display: flex;
+    flex-direction: column;
+    
+}
+.addButton {
+    display: flex;
+    width: fit-content;
+    align-self: end;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.addButton-span {
+    
+    padding-top: 3px;
+}
