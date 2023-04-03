@@ -9,7 +9,7 @@ import UserPool from "../UserPool";
 
 const Username = "Anthony";
 
-const temp = UserPool.getCurrentUser();
+
 
 //const [{getUserSession, signout}] = useContext(SessionContext);
 
@@ -45,6 +45,9 @@ constructor() {
 
 render() {
     const {add_items, user_settings} = this.state;
+    const temp = UserPool.getCurrentUser();
+
+    
     return (
         // Resume Logo [Icon] should go to About-page [Extra]
         // Once logged in, User should have different nav-bar such that it is able to click to a:
