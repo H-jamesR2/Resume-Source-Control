@@ -9,6 +9,7 @@ import logo from './images/Resume-source-app.png'
 import Mainpage from "./pages/Mainpage";
 import Resume from "./pages/Resume";
 import Blocks from "./pages/Blocks";
+import TextEditor from "./pages/TextEditMCE";
 
 export default function App() {
   return (
@@ -21,6 +22,7 @@ export default function App() {
             <Route path="/mainpage" element={<Mainpage/>}/>
             <Route path="/resume" element={<Resume/>}/>
             <Route path="/blocks" element={<Blocks/>}/>
+            <Route path="/textEdit" element={<TextEditor/>}/>
           </Route>
         </Routes>
       </div>

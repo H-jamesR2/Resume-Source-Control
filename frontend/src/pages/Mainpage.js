@@ -12,6 +12,7 @@ function Mainpage(prop)
             <div className="main-content">
                 {/* add page content here */}
                 Main page after login
+                
             </div>
         </div>
 
