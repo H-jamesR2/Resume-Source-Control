@@ -11,6 +11,19 @@ import Resume from "./pages/Resume";
 import Blocks from "./pages/Blocks";
 import TextEditor from "./pages/TextEditMCE";
 
+//amplify: --> need to go up two folders..
+/*
+import { Amplify } from 'aws-amplify';
+import config from './aws-exports';
+//
+import { AmplifySignOut, withAuthenticator } from '@aws-amplify/ui-react';
+
+import { Auth } from "aws-amplify";
+// (await Auth.currentSession()).getIdToken().getJwtToken()
+// import testing1 from "./pages/testing1";
+
+Amplify.configure(config); */
+
 export default function App() {
   return (
       <div>
@@ -22,7 +35,7 @@ export default function App() {
             <Route path="/mainpage" element={<Mainpage/>}/>
             <Route path="/resume" element={<Resume/>}/>
             <Route path="/blocks" element={<Blocks/>}/>
-            <Route path="/textEdit" element={<TextEditor/>}/>
+            <Route path="/textEditMCE" element={<TextEditor/>}/>
           </Route>
         </Routes>
       </div>

@@ -13,6 +13,7 @@ function Mainpage(prop)
                 {/* add page content here */}
                 Main page after login
                 
+                <Link to="textEditMCE"> TEXT-EDITOR-BUTTON </Link>
             </div>
         </div>
 
