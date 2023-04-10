@@ -24,7 +24,7 @@
 
 import React, { useState, useEffect, useCallback, useMemo, useRef } from 'react'
 import { Editor } from '@tinymce/tinymce-react';
-import "../cssFiles/TextEditorMCE.css"
+//import "../cssFiles/TextEditorMCE.css"
 
 /*
     Access User Storage: from bucket
