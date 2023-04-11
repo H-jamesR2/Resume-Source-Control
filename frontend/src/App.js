@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Outlet, Link, NavLink } from "react-router-dom";
 import './App.css';
+import './cssFiles/Login.css';
 import Homepage from './pages/Homepage';
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
-import './cssFiles/Login.css';
 import Mainpage from "./pages/Mainpage";
 import Resume from "./pages/Resume";
 import Blocks from "./pages/Blocks";
