@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { CognitoUser, AuthenticationDetails } from "amazon-cognito-identity-js";
+import { BrowserRouter as Router, Routes, Route, Outlet, Link, NavLink } from "react-router-dom";
 import UserPool from "../UserPool";
+import TopNav from "../components/TopNav";
 import '../cssFiles/Login.css';
 
 const Login = () => {
@@ -37,32 +39,33 @@ const Login = () => {
     };
     return (
         <div>
+            <TopNav/>
             <form onSubmit={onSubmit}>
-                <div class={"dialog-box"}>
-                    <div class={"login-info"}>
+                <div className={"dialog-box"}>
+                    <div className={"login-info"}>
 
-                        <div class={"partition"}>
-                            <span class={"header-1"}>
+                        <div className={"partition"}>
+                            <span className={"header-1-login"}>
                             Welcome back!
                             </span>
                         </div>
 
                         <br></br>
 
-                        <div class={"partition"} style={{padding:"0 0 5px 0"}}>
+                        <div className={"partition"} style={{padding:"0 0 5px 0"}}>
                             <label htmlFor="email"></label>
                             <input
-                                class={"text"}
+                                className={"text"}
                                 value={email}
                                 onChange={(event) => setEmail(event.target.value)}
                                 placeholder={"Username"}
                             ></input>
                         </div>
 
-                        <div class={"partition"}>
+                        <div className={"partition"}>
                             <label htmlFor="password"></label>
                             <input
-                                class={"text"}
+                                className={"text"}
                                 value={password}
                                 onChange={(event) => setPassword(event.target.value)}
                                 placeholder={"Password"}
@@ -70,19 +73,19 @@ const Login = () => {
                             ></input>
                         </div>
 
-                        <div class={"partition"} style={{height:"25px"}}>
-                            <span class={"checkbox-separators"}>
+                        <div className={"partition"} style={{height:"25px"}}>
+                            <span className={"checkbox-separators"}>
                                 <input
-                                    class={"checkbox"}
+                                    className={"checkbox"}
                                     type={"checkbox"}
                                     id={"choice1"}
                                 ></input>
                                 <label htmlFor="choice1">Remember me</label>
                             </span>
 
-                            <span class={"checkbox-separators"}>
+                            <span className={"checkbox-separators"}>
                                 <input
-                                    class={"checkbox"}
+                                    className={"checkbox"}
                                     type={"checkbox"}
                                     id={"choice2"}
                                 ></input>
@@ -92,8 +95,8 @@ const Login = () => {
                         
                         <br></br>
 
-                        <div class={"partition"}>
-                            <button type="submit">Login</button>
+                        <div className={"partition"}>
+                            <button type="submit"><Link className='no-decor-button' to="/mainpage">Log In</Link></button>
                         </div>
                     </div>
                 </div>

@@ -1,0 +1,18 @@
+.settings-dialog-box{
+  box-sizing: border-box;
+  padding: 20px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #03f;
+  width: 450px;
+  background-color: #bcf;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%)
+}
+
+.button-partition{
+  display: flex;
+  justify-content: center;
+}

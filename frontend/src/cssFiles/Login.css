@@ -9,7 +9,6 @@
 
 * {
   box-sizing: border-box;
-  font-family: Lekton;
 }
 
 .resume-logo{
@@ -26,42 +25,50 @@
 .nav-bar-left{
   float: left;    
   text-align: left;
-  width: 200px;
-  padding: 0 0 0 54px;
+  width: 250px;
+  padding: 0 0 0 54px;  
 }
 
 .nav-bar-right{   
   float: right;
   text-align: right;
-  width: calc(100% - 200px);
+  width: calc(100% - 250px);
   padding: 0;
 }
 
 .nav-bar-right, .nav-bar-left{
   list-style-type: none;
   margin: 0;
-  background-color: #fff;
+  background-color: #bcf;
   border-bottom: #03f;
   border-style: solid;
-  border-width: 0 0 1px 0;
+  border-width: 0 0 1px 0;  
+  height: 65px;
 }
 
 .nav-item {
   padding: 15px 20px;
   font-size: 20px;
+  font-weight: 700;
   color: #46f;
-  display: inline-block;
-  text-align: center;
+  display: inline-flex;
+  text-align: center;  
+  align-items: center;
 }
 
 .nav-item:hover{    
-  background-color: #bcf;
+  background-color: #99b4ff;
   transition: 0.25s;
 }
 
 .no-decor, .no-decor:visited, .no-decor:active, .no-decor:hover {
   text-decoration: none;
   color: #46f;
+}
+
+.no-decor-button, .no-decor-button:visited, .no-decor-button:active, .no-decor-button:hover {
+  text-decoration: none;
+  color: #fff;
 }
 
 .login-info{
@@ -71,10 +78,9 @@
   padding: 20% 0px;
 }
 
-.header-1{
+.header-1-login{
   font-family: Lekton-Bold;
   font-size: 18pt;
-  font-weight: 500;
 }
 
 .message{
@@ -99,7 +105,7 @@
   transform: translate(-50%, -50%)
 }
 
-input.text {
+input.text, select {
   width: 100%;
   height: 32px;
   font-size: 12pt;
@@ -117,6 +123,39 @@ button {
   border-style: solid;
   background-color: #46f;
   font-size: 15pt;
+  font-weight: 500;
+  color: #fff;
+}
+
+button.negative {
+  padding: 8px 15px;
+  border: 1px;
+  border-style: solid;
+  border-color: #f00;  
+  background-color: #f66;
+  font-size: 15pt;
+  font-weight: 500;
+  color: #fff;
+}
+
+button.small {
+  padding: 6px 10px;
+  border: 1px;
+  border-color: #03f;
+  border-style: solid;
+  background-color: #46f;
+  font-size: 12pt;
+  font-weight: 500;
+  color: #fff;
+}
+
+button.smallnegative {
+  padding: 6px 10px;
+  border: 1px;
+  border-style: solid;
+  border-color: #f00;  
+  background-color: #f66;
+  font-size: 12pt;
   font-weight: 500;
   color: #fff;
 }

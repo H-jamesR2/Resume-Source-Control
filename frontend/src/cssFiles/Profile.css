@@ -1,0 +1,28 @@
+.name-split{
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr 150px;
+  grid-column-gap: 14px;
+}
+
+@media (max-width: 900px) {
+  .name-split{
+    display: grid;
+    grid-template-columns: 1fr 200px;
+    grid-column-gap: 14px;
+  }
+}
+
+@media (max-width: 560px) {
+  .name-split{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column-gap: 14px;
+  }
+}
+
+#career-pref {
+  width: 100%;
+  height: 200px;
+  font-family: Lekton-Bold, sans-serif;
+  font-size: 16px;
+}

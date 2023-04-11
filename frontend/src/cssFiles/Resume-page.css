@@ -1,0 +1,82 @@
+.header-1{
+  font-family: Lekton-Bold;
+  font-size: 22pt;
+  color: #46f;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.header-2{
+  font-family: Lekton-Bold;
+  font-size: 16.5pt;
+  color: #09f;
+  margin-top: 6px;
+  margin-bottom: 0px;
+}
+
+.resume-template-section{
+  display: flex;
+  flex-wrap: none;
+  overflow-x: auto;
+  width: 100%;
+  border-style: solid;
+  border-color: #46f;
+  border-width: 1px;
+  background-color: #fff;
+}
+
+.resume-section{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  background-color: #fff;
+}
+
+.resume-template-image, .resume-image {
+  width: 170px;
+  height: 225px;
+}
+
+.card-info{
+  margin: 15px 15px;
+  padding: 20px;
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 210px;
+  height: 285px;  
+  background-color: #ddeaff;
+}
+
+.resume-caption{
+  box-sizing: border-box;
+  position: relative;
+  top: 0px;
+  margin: 0 0px;
+  font-size: 14px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* Custom Scrollbars - credit to W3Schools */
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: #cdf; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background-color: #69f; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #46f;
+  transition: 3s;
+}
