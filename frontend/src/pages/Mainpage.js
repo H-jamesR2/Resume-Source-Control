@@ -7,7 +7,7 @@ import Settings from "./Settings";
 
 function Mainpage(prop)
 {
-    return(    
+    return(                    
         <div>
             <TopNav2/>
             <div className="page-wrapper">
@@ -15,7 +15,8 @@ function Mainpage(prop)
                 <div className="main-content">
                     {/* add page content here */}
                     Main page after login
-                    <br></br>                
+                    <br></br>
+                    <Link to="/mainpage/textEditorMCE"> TextEditMCE-placeholder-button </Link>                
                     <Link to="/settings">Account Settings</Link>
                 </div>
             </div>
