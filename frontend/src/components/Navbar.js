@@ -13,7 +13,6 @@ function NavBar(prop) {
     }
     function CloseSideBar() {
         setIsOpen(false);
-        console.log(true);
     }
 
     return (

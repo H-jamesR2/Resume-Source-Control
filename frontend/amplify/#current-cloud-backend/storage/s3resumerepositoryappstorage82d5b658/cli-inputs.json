@@ -1,0 +1,12 @@
+{
+  "resourceName": "s3resumerepositoryappstorage82d5b658",
+  "bucketName": "resume-repository-app-storage-82d5b658",
+  "policyUUID": "9c76c173",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ]
+}
