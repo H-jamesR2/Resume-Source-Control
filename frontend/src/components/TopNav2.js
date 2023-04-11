@@ -5,7 +5,8 @@ import logo from '../images/Resume-source-app.png'
 import AddItems from "./AddContent";
 import UserMenu from "./UserMenu";
 import Person1 from '../images/Person-1.png'
-import Person1 from '../images/Person-1.png'
+
+import UserPool from "../UserPool";
 
 import { useNavigate } from "react-router-dom";
 

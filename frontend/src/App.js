@@ -13,7 +13,7 @@ import Resume from "./pages/Resume";
 import Blocks from "./pages/Blocks";
 import Settings from "./pages/Settings";
 import Application from "./pages/Application";
-import BlockEditor from "./pages/BlockEditor";
+//import BlockEditor from "./pages/BlockEditor";
 import ChangePassword from "./pages/EditPassword";
 import ChangeEmail from "./pages/EditEmail";
 
@@ -38,7 +38,6 @@ export default function App() {
             <Route path="/changepassword" element={<ChangePassword/>}/>
             <Route path="/changeemail" element={<ChangeEmail/>}/>
             <Route path="/applications" element={<Application/>}/>
-            <Route path="/blockeditor" element={<BlockEditor/>}/>
 
             <Route path="/profile" element={<Profile />} />
 
