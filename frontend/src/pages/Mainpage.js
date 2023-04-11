@@ -18,18 +18,20 @@ function Mainpage(prop)
     return(    
         <div>
             {isLoggedIn && (
-                <>   
-                <TopNav2/>
-                <div className="page-wrapper">
-                    <NavBar/>
-                    <div className="main-content">
-                        {/* add page content here */}
-                        Main page after login
-                        <br></br>                
-                        <Link to="/settings">Account Settings</Link>
-                    </div>
+                <>
+            <TopNav2/>
+            <div className="page-wrapper">
+                <NavBar/>
+                <div className="main-content">
+                    {/* add page content here */}
+                    Main page after login
+                    <br></br>
+                    
+                    <Link to="/mainpage/textEditorMCE"> TextEditMCE-placeholder-button </Link>                
+                    <Link to="/settings">Account Settings</Link>
                 </div>
-                </>
+            </div>
+            </>
             )}
         </div>
     );
