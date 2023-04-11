@@ -18,6 +18,7 @@ function Mainpage(prop)
     return(    
         <div>
             {isLoggedIn && (
+<<<<<<< HEAD
                 <>
             <TopNav2/>
             <div className="page-wrapper">
@@ -29,6 +30,20 @@ function Mainpage(prop)
                     
                     <Link to="/mainpage/textEditorMCE"> TextEditMCE-placeholder-button </Link>                
                     <Link to="/settings">Account Settings</Link>
+=======
+                <>   
+                <TopNav2/>
+                <div className="page-wrapper">
+                    <NavBar/>
+                    <div className="main-content">
+                        {/* add page content here */}
+                        Main page after login
+                        <br></br>
+                        
+                        <Link to="/mainpage/textEditorMCE"> TextEditMCE-placeholder-button </Link>                                
+                        <Link to="/settings">Account Settings</Link>
+                    </div>
+>>>>>>> 3c34647345a71b33b5ebffbd378117fec898f8e8
                 </div>
             </div>
             </>

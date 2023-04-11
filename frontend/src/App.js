@@ -39,7 +39,11 @@ export default function App() {
             <Route path="/applications" element={<Application/>}/>
             <Route path="/blockeditor" element={<BlockEditor/>}/>
             
+<<<<<<< HEAD
             <Route path="/profile" element={<Profile />} />
+=======
+             <Route path="/profile" element={<Profile />} />
+>>>>>>> 3c34647345a71b33b5ebffbd378117fec898f8e8
         </Routes>
         </Session>
       </div>
