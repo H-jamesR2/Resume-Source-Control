@@ -6,6 +6,9 @@ import AddItems from "./AddContent";
 import UserMenu from "./UserMenu";
 import Person1 from '../images/Person-1.png'
 
+// should pull Username once authenticated here ...
+/* 
+*/
 const Username = "Anthony";
 
 
