@@ -1,0 +1,85 @@
+@font-face {
+  font-family: Lekton;
+  src: url(../fonts/Lekton-Regular.ttf)
+}
+
+@font-face {
+  font-family: Lekton-Bold;
+  src: url(../fonts/Lekton-Bold.ttf)
+}
+
+@font-face {
+  font-family: Lekton-Italic;
+  src: url(../fonts/Lekton-Italic.ttf)
+}
+
+.nav-wrapper {
+  font-family: Lekton-Bold !important;
+  
+}
+#sidebar-sc-wrapper.close{
+  width: 70px;
+  height: calc(100vh - 65px);
+  background-color: #6892FE;
+}
+#sidebar-sc-wrapper.close #sidebar-sc-top {
+  display: none;
+}
+#sidebar-sc-wrapper.close .sidebar-sc-text {
+  display: none;
+}
+#sidebar-sc-wrapper.close #sidebar-sc-top img {
+  display: none;
+}
+#sidebar-sc-wrapper.open {
+  width: 250px;
+  height: calc(100vh - 65px);
+  font-weight: 900;
+  background-color: #ECECEC;
+}
+#sidebar-sc-wrapper {
+  transition: width 1s, background-color 1s;
+  transition-timing-function: ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-end;
+}
+
+#openButton.close {
+  display: none;
+}
+#openButton.open {
+  display: block;
+  padding: 20px;
+  align-self: flex-end;
+}
+
+.sidebar-sc-bottom {
+  font-size: 30px;
+  padding: 15px;
+  text-align: left;
+}
+
+.sidebar-sc-bottom>li {
+  padding: 5px;
+  list-style-type: none;
+}
+
+.sidebar-sc-bottom>link {
+  text-decoration: none;
+}
+
+#sidebar-sc-top {
+  font-size: 30px;
+  padding: 15px 15px 10px 20px;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-direction: column;
+  background-color: #6892FE;
+}
+
+.icon {
+  width: 17px;
+}
