@@ -7,27 +7,7 @@ import UserMenu from "./UserMenu";
 import Person1 from '../images/Person-1.png'
 import Person1 from '../images/Person-1.png'
 
-
-
 import { useNavigate } from "react-router-dom";
-
-// should pull Username once authenticated here ...
-/* 
-*/
-
-//const {add_items, user_settings} = this.state;
-
-//const [{getUserSession, signout}] = useContext(SessionContext);
-
-
-const Username = "Anthony";
-
-
-
-//const [{getUserSession, signout}] = useContext(SessionContext);
-
-
-<<<<<<< HEAD
 
 
 function TopNav2(props) {
@@ -87,3 +67,5 @@ const signout=()=>{
     );
 
 }
+
+export default TopNav2;
