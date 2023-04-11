@@ -81,7 +81,9 @@ const TextEditMCE = () => {
         <div name="Editor_MCE">
             <Editor
                 //use diff apiKey for renewing premium feature;
-                apiKey='1j3wp2mvnlew5lkynzdndnzangmi9xfjg4yerztdh39llgew'
+                //key1: 1j3wp2mvnlew5lkynzdndnzangmi9xfjg4yerztdh39llgew
+                //current: 2njwaznbravfvg70hgzv0dmeqfengiiqh340hmrb9vm262vm
+                apiKey='2njwaznbravfvg70hgzv0dmeqfengiiqh340hmrb9vm262vm'
                 onInit={(evt, editor) => (editorRef.current = editor)}
                 initialValue={initialValue}
 
