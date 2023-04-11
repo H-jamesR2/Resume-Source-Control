@@ -2,7 +2,7 @@ import React, {useState, useContext, useEffect} from "react";
 import { SessionContext } from "../components/UserContext";
 import TopNav2 from "../components/TopNav2";
 import NavBar from "../components/Navbar";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Navigate } from "react-router-dom";
 import{Link} from "react-router-dom"
 import UserPool from "../UserPool";
 
@@ -61,7 +61,7 @@ const ChangePassword = () =>{
   
     return(
       <div>
-        {isLoggedIn && (
+        {isLoggedIn &&
             <>
         <TopNav2/>
             <div className="page-wrapper">
@@ -115,13 +115,8 @@ const ChangePassword = () =>{
                   </form>
                 </div>
             </div>
-        
-  
-  
-  
-  
-  </>
-        )}
+            </>
+        }
         
       </div>
     )
