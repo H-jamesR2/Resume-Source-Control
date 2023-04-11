@@ -7,7 +7,6 @@ import UserMenu from "./UserMenu";
 import Person1 from '../images/Person-1.png'
 
 import UserPool from "../UserPool";
-import UserPool from "../UserPool";
 
 import { useNavigate } from "react-router-dom";
 
