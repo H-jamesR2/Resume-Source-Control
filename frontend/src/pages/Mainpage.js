@@ -16,7 +16,7 @@ function Mainpage(prop)
                     {/* add page content here */}
                     Main page after login
                     <br></br>
-                    <Link to="textEditorMCE"> TextEditMCE-placeholder-button </Link>                
+                    <Link to="/mainpage/textEditorMCE"> TextEditMCE-placeholder-button </Link>                
                     <Link to="/settings">Account Settings</Link>
                 </div>
             </div>
