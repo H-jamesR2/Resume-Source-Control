@@ -5,6 +5,7 @@ import NavBar from "../components/Navbar";
 import '../cssFiles/Settings.css';
 import UserPool from "../UserPool";
 import { SessionContext } from "../components/UserContext";
+import { Navigate } from "react-router-dom";
 
 //const temp = UserPool.getCurrentUser();
 //temp.getUserAttributes
@@ -25,7 +26,7 @@ function Settings(prop)
   
     return(    
         <div>
-          {isLoggedIn && (
+          {isLoggedIn &&
             <>
             <TopNav2/>
             <div className="page-wrapper">
@@ -59,7 +60,7 @@ function Settings(prop)
                     </div>
               </div>
             </> 
-          )}
+          }
         </div>
     );
 }
