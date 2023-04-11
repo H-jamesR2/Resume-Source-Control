@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route, Outlet, Link, NavLink } from "react-router-dom";
 import './App.css';
 import './cssFiles/Login.css';
+import './cssFiles/Login.css';
 import Homepage from './pages/Homepage';
 import {Session} from "./components/UserContext"
 import SignUp from "./pages/Signup";
@@ -38,12 +39,9 @@ export default function App() {
             <Route path="/changeemail" element={<ChangeEmail/>}/>
             <Route path="/applications" element={<Application/>}/>
             <Route path="/blockeditor" element={<BlockEditor/>}/>
-            
-<<<<<<< HEAD
+
             <Route path="/profile" element={<Profile />} />
-=======
-             <Route path="/profile" element={<Profile />} />
->>>>>>> 3c34647345a71b33b5ebffbd378117fec898f8e8
+
         </Routes>
         </Session>
       </div>
