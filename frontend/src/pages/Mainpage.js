@@ -18,6 +18,8 @@ function Mainpage(prop)
                     <br></br>
                     <Link to="/mainpage/textEditorMCE"> TextEditMCE-placeholder-button </Link>                
                     <Link to="/settings">Account Settings</Link>
+                    <br></br>
+                    <Link to="/testpage">Test Page</Link>
                 </div>
             </div>
         </div>

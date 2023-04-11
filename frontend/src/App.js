@@ -12,6 +12,7 @@ import Settings from "./pages/Settings";
 import Application from "./pages/Application";
 //import BlockEditor from "./pages/BlockEditor";
 import Profile from "./pages/Profile";
+import TestPage from "./pages/TestPage";
 
 import TextEditMCE from "./pages/TextEditMCE";
 
@@ -31,6 +32,7 @@ export default function App() {
         <Route path="/applications" element={<Application />} />
         
         <Route path="/profile" element={<Profile />} />
+        <Route path="/testpage" element={<TestPage />} />
         
       </Routes>
     </div>
