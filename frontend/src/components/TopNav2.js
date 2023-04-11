@@ -7,16 +7,17 @@ import UserMenu from "./UserMenu";
 import Person1 from '../images/Person-1.png'
 
 import UserPool from "../UserPool";
+import UserPool from "../UserPool";
 
 import { useNavigate } from "react-router-dom";
 
 
 function TopNav2(props) {
   const temp = UserPool.getCurrentUser();
-
-const navigate = useNavigate();
-const signout=()=>{
+  const navigate = useNavigate();
+  const signout=()=>{
   const user = UserPool.getCurrentUser();
+  
   if(user){
       user.signOut();
       console.log("Success: Signed Out")
@@ -25,10 +26,6 @@ const signout=()=>{
       navigate('/login')
   } 
 }
-
-  
-  //const {getUserSession, signout} = useContext(SessionContext)
-
     return (
         // Resume Logo [Icon] should go to About-page [Extra]
         // Once logged in, User should have different nav-bar such that it is able to click to a:
@@ -56,7 +53,7 @@ const signout=()=>{
                         <div>
                             <li className="popup-menu-item"><Link className='no-decor' to="/profile">Profile</Link></li>
                             <li className="popup-menu-item"><Link className='no-decor' to="/settings">Account Settings</Link></li>
-                            <li className="popup-menu-item" onClick={signout}>Log Out</li>
+                            <li className="popup-menu-item" onClick={signout}><Link className='no-decor'>Log out</Link></li>
                         </div>
                     </div>
                     </li>

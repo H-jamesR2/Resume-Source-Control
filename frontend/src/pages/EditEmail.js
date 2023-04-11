@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { CognitoUser, CognitoUserAttribute } from "amazon-cognito-identity-js";
 import TopNav2 from "../components/TopNav2";
 import NavBar from "../components/Navbar";
+import { Navigate } from "react-router-dom";
 
 
 const ChangeEmail=()=>{
@@ -41,8 +42,8 @@ const ChangeEmail=()=>{
 
     return(
         <div>
-          {isLoggedIn && (
-              <>
+          {isLoggedIn &&
+          <>
           <TopNav2/>
               <div className="page-wrapper">
                   <NavBar/>
@@ -94,8 +95,8 @@ const ChangeEmail=()=>{
                     </form>
                   </div>
               </div>
-    </>
-          )}
+          </>
+          }
           
         </div>
       )

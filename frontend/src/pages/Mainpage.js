@@ -4,10 +4,10 @@ import TopNav2 from "../components/TopNav2";
 import NavBar from "../components/Navbar";
 import Settings from "./Settings";
 import { SessionContext } from "../components/UserContext";
+import { Navigate } from "react-router-dom";
 
 
-
-function Mainpage(prop)
+function Mainpage()
 {
     const {getUserSession} = useContext(SessionContext);
     const [isLoggedIn, setIsLoggedIn] = useState(false)

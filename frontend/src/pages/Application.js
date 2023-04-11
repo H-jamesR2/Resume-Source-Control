@@ -1,11 +1,25 @@
-import React from "react";
+import React, {useContext, useEffect, useState} from "react";
 import { BrowserRouter as Router, Routes, Route, Link, NavLink } from "react-router-dom";
 import TopNav2 from "../components/TopNav2";
 import NavBar from "../components/Navbar";
 import TopNav from "../components/TopNav";
 import AppTable from "../components/AppTable";
+import { Navigate } from "react-router-dom";
+import { SessionContext } from "../components/UserContext";
 
 function Application(prop) {
+
+    const {getUserSession} = useContext(SessionContext);
+  
+    const[isLoggedIn, setIsLoggedIn] = useState(false);
+  
+  
+    useEffect(()=>{
+       getUserSession().then(()=>{setIsLoggedIn(true);
+       });
+  
+     },[]);
+
     const dataSource = [
         {
            id: 1,
@@ -34,6 +48,8 @@ function Application(prop) {
     ];
     return (
         <div>
+            {isLoggedIn &&
+                <>
             <TopNav2 />
             <div className="page-wrapper">
                 <NavBar />
@@ -43,6 +59,8 @@ function Application(prop) {
                     <AppTable data={dataSource}/>
                 </div>
             </div>
+            </>
+            }
         </div>
     );
 }
