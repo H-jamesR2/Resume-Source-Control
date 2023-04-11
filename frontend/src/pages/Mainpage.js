@@ -4,10 +4,10 @@ import TopNav2 from "../components/TopNav2";
 import NavBar from "../components/Navbar";
 import Settings from "./Settings";
 import { SessionContext } from "../components/UserContext";
+import { Navigate } from "react-router-dom";
 
 
-
-function Mainpage(prop)
+function Mainpage()
 {
     const {getUserSession} = useContext(SessionContext)
     const [isLoggedIn, setIsLoggedIn] = useState(false)
@@ -17,8 +17,7 @@ function Mainpage(prop)
     
     return(    
         <div>
-            {isLoggedIn && (
-<<<<<<< HEAD
+            {isLoggedIn && 
                 <>
             <TopNav2/>
             <div className="page-wrapper">
@@ -27,27 +26,12 @@ function Mainpage(prop)
                     {/* add page content here */}
                     Main page after login
                     <br></br>
-                    
-                    <Link to="/mainpage/textEditorMCE"> TextEditMCE-placeholder-button </Link>                
-                    <Link to="/settings">Account Settings</Link>
-=======
-                <>   
-                <TopNav2/>
-                <div className="page-wrapper">
-                    <NavBar/>
-                    <div className="main-content">
-                        {/* add page content here */}
-                        Main page after login
-                        <br></br>
-                        
-                        <Link to="/mainpage/textEditorMCE"> TextEditMCE-placeholder-button </Link>                                
-                        <Link to="/settings">Account Settings</Link>
-                    </div>
->>>>>>> 3c34647345a71b33b5ebffbd378117fec898f8e8
+                    <Link to="/mainpage/textEditorMCE"> TextEditMCE-placeholder-button </Link>
+                
                 </div>
             </div>
             </>
-            )}
+           }
         </div>
     );
 }
