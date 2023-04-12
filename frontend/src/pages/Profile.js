@@ -1,16 +1,31 @@
-import React from "react";
+import React, {useContext, useEffect, useState} from "react";
 import { BrowserRouter as Router, Routes, Route, Link, NavLink } from "react-router-dom";
 import TopNav2 from "../components/TopNav2";
 import NavBar from "../components/Navbar";
 import Settings from "./Settings";
 import Person1 from "../images/Person-1.png";
 import "../cssFiles/Profile.css";
-
+import { Navigate } from "react-router-dom";
+import { SessionContext } from "../components/UserContext";
 
 function Profile(prop)
 {
+  const {getUserSession} = useContext(SessionContext);
+  
+  const[isLoggedIn, setIsLoggedIn] = useState(false);
+
+
+  useEffect(()=>{
+     getUserSession().then(()=>{setIsLoggedIn(true);
+     });
+
+   },[]);
+
+
     return(    
         <div>
+          {isLoggedIn &&
+            <>
             <TopNav2/>
             <div className="page-wrapper">
                 <NavBar/>
@@ -60,6 +75,8 @@ function Profile(prop)
                 </div>
             </div>
           </div>
+          </>
+          }
         </div>
     );
 }

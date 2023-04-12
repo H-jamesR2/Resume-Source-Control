@@ -1,41 +1,35 @@
-import React, { useState } from "react";
-import { CognitoUser, AuthenticationDetails } from "amazon-cognito-identity-js";
-import { BrowserRouter as Router, Routes, Route, Outlet, Link, NavLink } from "react-router-dom";
-import UserPool from "../UserPool";
+import React, {useState, useContext} from "react";
+import {CognitoUserAttribute} from "amazon-cognito-identity-js";
+//import { BrowserRouter as Router, Routes, Route, Outlet, Link, NavLink } from "react-router-dom";
 import TopNav from "../components/TopNav";
+import {SessionContext} from "../components/UserContext";
+import { useNavigate } from "react-router-dom";
 import '../cssFiles/Login.css';
 
-const Login = () => {
+const LogIn = () => {
+    const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
+    const {authenticate} = useContext(SessionContext);
+
+    const attributes=[]
+    attributes.push(new CognitoUserAttribute({Name: 'email', Value: email }))
+
     const onSubmit = (event) => {
         event.preventDefault();
+        authenticate(email, email, password).then(result=>{
+            console.log(result);
 
-        const user = new CognitoUser({
-            Username: email,
-            Pool: UserPool,
+            
+            alert("Welcome")
 
-        });
-        
-        const authDetails = new AuthenticationDetails({
-            Username: email,
-            Password: password,
+            navigate('/mainpage')
+        }).catch(error=>{
+            console.error(error);
+            //window.location.reload();
         })
 
-        user.authenticateUser(authDetails, {
-            onSuccess: (data) => {
-                console.log("onSuccess: ", data);
-            },
-            onFailure: (err) => {
-                console.error("onFailure:", err);
-            },
-            newPasswordRequired: (data) => {
-                console.log("newPasswordRequired: ", data);
-            }
-        });
-
-        
     };
     return (
         <div>
@@ -58,7 +52,7 @@ const Login = () => {
                                 className={"text"}
                                 value={email}
                                 onChange={(event) => setEmail(event.target.value)}
-                                placeholder={"Username"}
+                                placeholder={"Username or email"}
                             ></input>
                         </div>
 
@@ -92,11 +86,12 @@ const Login = () => {
                                 <label htmlFor="choice2">Stay logged in</label>
                             </span>
                         </div>
-                        
+
                         <br></br>
 
                         <div className={"partition"}>
-                            <button type="submit"><Link className='no-decor-button' to="/mainpage">Log In</Link></button>
+                            {/* <button type="submit"><Link className='no-decor-button' to="/mainpage">Log In</Link></button> */}
+                            <button type = "submit">Log In</button>
                         </div>
                     </div>
                 </div>
@@ -105,4 +100,6 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default LogIn;
+
+
