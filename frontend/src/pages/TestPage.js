@@ -12,9 +12,9 @@ function TestPage(prop)
             <TopNav2/>
             <div className="page-wrapper">
                 <NavBar/>
-                <SourceControl/>
                 <div className="main-content">
-                </div>
+                </div>                
+                <SourceControl/>
             </div>
         </div>
     );

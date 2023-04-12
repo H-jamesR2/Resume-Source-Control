@@ -18,8 +18,6 @@ import Profile from "./pages/Profile";
 import TestPage from "./pages/TestPage";
 import ChangePassword from "./pages/EditPassword";
 import ChangeEmail from "./pages/EditEmail";
-
-import Profile from "./pages/Profile";
 import TextEditMCE from "./pages/TextEditMCE";
 
 //<Route path="/blockeditor" element={<BlockEditor />} />
