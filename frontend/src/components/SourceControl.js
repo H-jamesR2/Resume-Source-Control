@@ -15,11 +15,20 @@ function SourceControl(prop) {
         setIsOpen(false);
     }
 
+function SelectSubBranch(props) {
+  return (
+    <label className="version-control-container" for={props.name}>{props.display}                  
+      <input type="radio" className="sidebar-sc-branch" id={props.name} name="subbranch" value="{props.value}"></input>
+      <span className="custom-radio"></span><br/>
+    </label>
+  )
+}
+
 function SelectBranch(props) {
   return (
     <label className="version-control-container" for={props.name}>{props.display}                  
-      <input type="radio" className="sidebar-sc-branch" id={props.name} checked={props.default} name="branch" value="{props.value}"></input>
-      <span className="custom-radio"></span><br/>
+      <input type="radio" className="sidebar-sc-subbranch" id={props.name} name="branch" value="{props.value}"></input>
+      <span className="custom-radio-large"></span><br/>
     </label>
   )
 }
@@ -35,27 +44,37 @@ function SelectBranch(props) {
                     <FontAwesomeIcon icon={faAngleRight} size="lg" className="icon" onClick={CloseSideBar} style={{marginLeft:"15px"}}/>
                 </div>
                 <nav className="sidebar-sc-bottom">
-                    <li><div className="sidebar-sc-text">Software Engineering</div></li>
+                    <SelectBranch name="branch-1" value="branch-1" display="Software Engineer"/>
                     <div className="sidebar-sc-text" style={{marginBottom:"15px"}}>
-                      <SelectBranch name="branch-1-s1" value="branch-1-sub-branch-1" display="A software engineer takes it place"/>
-                      <SelectBranch name="branch-1-s2" value="branch-1-sub-branch-2" default="checked" display="Another one, but this time, it more of frontend"/>
+                      <SelectSubBranch name="branch-1-s1" value="branch-1-sub-branch-1" display="A software engineer takes it place"/>
+                      <SelectSubBranch name="branch-1-s2" value="branch-1-sub-branch-2" display="Another one, but this time, it more of frontend"/>
                     </div>
-                    <li><div className="sidebar-sc-text">Branch 2</div></li>
+                    <SelectBranch name="branch-2" value="branch-2" display="Branch 2"/>
                     <div className="sidebar-sc-text" style={{marginBottom:"15px"}}>
-                      <SelectBranch name="branch-2-s1" value="branch-2-sub-branch-1" display="Sub-Branch 1"/>
-                      <SelectBranch name="branch-2-s2" value="branch-2-sub-branch-2" display="Sub-Branch 2"/>
-                      <SelectBranch name="branch-2-s3" value="branch-2-sub-branch-3" display="Sub-Branch 3"/>
-                      <SelectBranch name="branch-2-s4" value="branch-2-sub-branch-4" display="Sub-Branch 4"/>
+                      <SelectSubBranch name="branch-2-s1" value="branch-2-sub-branch-1" display="Sub-Branch 1"/>
+                      <SelectSubBranch name="branch-2-s2" value="branch-2-sub-branch-2" display="Sub-Branch 2"/>
+                      <SelectSubBranch name="branch-2-s3" value="branch-2-sub-branch-3" display="Sub-Branch 3"/>
+                      <SelectSubBranch name="branch-2-s4" value="branch-2-sub-branch-4" display="Sub-Branch 4"/>                      
+                      <SelectSubBranch name="branch-2-s5" value="branch-2-sub-branch-4" display="Sub-Branch 5"/>                      
+                      <SelectSubBranch name="branch-2-s6" value="branch-2-sub-branch-4" display="Sub-Branch 6"/>
                     </div>
-                    <li><div className="sidebar-sc-text">Branch 3</div></li>
+                    <SelectBranch name="branch-3" value="branch-3" display="UI/UX Designer"/>
                     <div className="sidebar-sc-text" style={{marginBottom:"15px"}}>
-                      <SelectBranch name="branch-3-s1" value="branch-3-sub-branch-1" display="Sub-Branch 1"/>
+                      <SelectSubBranch name="branch-3-s1" value="branch-3-sub-branch-1" display="Junior UI/UX designer"/>
+                      <SelectSubBranch name="branch-3-s2" value="branch-3-sub-branch-2" display="Associate UI/UX designer"/>
+                      <SelectSubBranch name="branch-3-s3" value="branch-3-sub-branch-3" display="Associate UI/UX designer for Google"/>
+                    </div>
+                    <SelectBranch name="branch-1" value="branch-1" display="Web Developer"/>
+                    <div className="sidebar-sc-text" style={{marginBottom:"15px"}}>
+                      <SelectSubBranch name="branch-4-s1" value="branch-4-sub-branch-1" display="Junior web developer"/>
+                      <SelectSubBranch name="branch-4-s2" value="branch-4-sub-branch-2" display="Associate web developer"/>
+                      <SelectSubBranch name="branch-4-s3" value="branch-4-sub-branch-3" display="Associate web developer for Meta"/>
                     </div>
                 </nav>
 
-                <div className="sidebar-sc-text">
-                  <button className="small">Use this version</button>
-                  <button className="small">Create new branch</button>
+                <div style={{position:"fixed", bottom:"16px", display:"flex", flexDirection:"column", alignItems:"center", width:"inherit"}}>
+                  <button className="sidebar-sc-text" style={{margin:"16px 8px 0 8px"}}>Use this version</button>
+                  <button className="sidebar-sc-text" style={{margin:"16px 8px 0 8px"}}>Create new branch</button>
                 </div>
             </div>
         </div>

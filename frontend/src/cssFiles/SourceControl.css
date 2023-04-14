@@ -28,6 +28,9 @@
 #sidebar-sc-wrapper.close .sidebar-sc-text {
   display: none;
 }
+#sidebar-sc-wrapper.close .version-control-container {
+  display: none;
+}
 #sidebar-sc-wrapper.close .sidebar-sc-text > .version-control-container {
   display: none;
 }
@@ -35,10 +38,10 @@
   display: none !important;
 }
 #sidebar-sc-wrapper.open {
-  width: 300px;
-  height: calc(100vh - 65px);
-  font-weight: 900;
+  width: 350px;
+  min-height: calc(100vh - 65px);
   background-color: #ECECEC;
+  font-weight: 400;
 }
 #sidebar-sc-wrapper {
   transition: width 0.25s, background-color 0.25s;
@@ -61,12 +64,13 @@
 
 .sidebar-sc-bottom {
   font-size: 30px;
-  padding: 15px;
+  padding: 15px 15px 125px 15px;
   text-align: left;
 }
 
 .sidebar-sc-bottom .sidebar-sc-text {
   font-family: Lekton;
+  font-size: 22px;
 }
 
 .sidebar-sc-bottom>li, .version-control-container>li {
@@ -92,6 +96,12 @@
 }
 
 .sidebar-sc-branch{
+  font-size: 28px;
+  list-style-type: none;
+  margin-left: 32px;
+}
+
+.sidebar-sc-subbranch{
   font-size: 22px;
   list-style-type: none;
   margin-left: 32px;
@@ -102,7 +112,6 @@
   position: relative;
   padding-left: 36px;
   cursor: pointer;
-  font-size: 22px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -128,32 +137,56 @@ position: absolute;
   border: #46F 2px solid;
 }
 
-.version-control-container:hover input ~ .custom-radio {
+.version-control-container:hover input ~ .custom-radio, .version-control-container:hover input ~ .custom-radio-large {
   background-color: #cdf;
 }
 
-.version-control-container input:checked ~ .custom-radio {
+.version-control-container input:checked ~ .custom-radio, .version-control-container input:checked ~ .custom-radio-large {
   background-color: #FFF;
 }
 
-.custom-radio:after {
+.custom-radio:after, .custom-radio-large:after {
   content: "";
   position: absolute;
   display: none;
 }
 
-.version-control-container input:checked ~ .custom-radio:after {
+.version-control-container input:checked ~ .custom-radio:after, .version-control-container input:checked ~ .custom-radio-large:after {
   display: block;
 }
 
-.version-control-container .custom-radio:after {
- 	top: 3px;
-	left: 3px;
-	width: 15px;
-	height: 15px;
+.version-control-container .custom-radio:after, .version-control-container .custom-radio-large:after {
+ 	top: 5px;
+	left: 5px;
+	width: 21px;
+	height: 21px;
 	border-radius: 50%;
 	background: #46F;
 }
+
+.custom-radio-large {
+  position: absolute;
+    top: 4px;
+    left: -5px;
+    height: 35px;
+    width: 35px;
+    background-color: #fff;
+    border-radius: 50%;
+    border: #46F 2px solid;
+  }
+  
+  .version-control-container input:checked ~ .custom-radio:after {
+    display: block;
+  }
+  
+  .version-control-container .custom-radio:after {
+    top: 3px;
+    left: 3px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #46F;
+  }
 
 .version-control-container#text {
   margin-left: 12px;
