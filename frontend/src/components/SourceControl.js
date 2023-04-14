@@ -45,12 +45,12 @@ function SelectBranch(props) {
                 </div>
                 <nav className="sidebar-sc-bottom">
                     <SelectBranch name="branch-1" value="branch-1" display="Software Engineer"/>
-                    <div className="sidebar-sc-text" style={{marginBottom:"15px"}}>
+                    <div className="sidebar-sc-text" style={{marginBottom:"35px"}}>
                       <SelectSubBranch name="branch-1-s1" value="branch-1-sub-branch-1" display="A software engineer takes it place"/>
                       <SelectSubBranch name="branch-1-s2" value="branch-1-sub-branch-2" display="Another one, but this time, it more of frontend"/>
                     </div>
                     <SelectBranch name="branch-2" value="branch-2" display="Branch 2"/>
-                    <div className="sidebar-sc-text" style={{marginBottom:"15px"}}>
+                    <div className="sidebar-sc-text" style={{marginBottom:"35px"}}>
                       <SelectSubBranch name="branch-2-s1" value="branch-2-sub-branch-1" display="Sub-Branch 1"/>
                       <SelectSubBranch name="branch-2-s2" value="branch-2-sub-branch-2" display="Sub-Branch 2"/>
                       <SelectSubBranch name="branch-2-s3" value="branch-2-sub-branch-3" display="Sub-Branch 3"/>
@@ -59,13 +59,13 @@ function SelectBranch(props) {
                       <SelectSubBranch name="branch-2-s6" value="branch-2-sub-branch-4" display="Sub-Branch 6"/>
                     </div>
                     <SelectBranch name="branch-3" value="branch-3" display="UI/UX Designer"/>
-                    <div className="sidebar-sc-text" style={{marginBottom:"15px"}}>
+                    <div className="sidebar-sc-text" style={{marginBottom:"35px"}}>
                       <SelectSubBranch name="branch-3-s1" value="branch-3-sub-branch-1" display="Junior UI/UX designer"/>
                       <SelectSubBranch name="branch-3-s2" value="branch-3-sub-branch-2" display="Associate UI/UX designer"/>
                       <SelectSubBranch name="branch-3-s3" value="branch-3-sub-branch-3" display="Associate UI/UX designer for Google"/>
                     </div>
-                    <SelectBranch name="branch-1" value="branch-1" display="Web Developer"/>
-                    <div className="sidebar-sc-text" style={{marginBottom:"15px"}}>
+                    <SelectBranch name="branch-1" value="branch-4" display="Web Developer"/>
+                    <div className="sidebar-sc-text" style={{marginBottom:"35px"}}>
                       <SelectSubBranch name="branch-4-s1" value="branch-4-sub-branch-1" display="Junior web developer"/>
                       <SelectSubBranch name="branch-4-s2" value="branch-4-sub-branch-2" display="Associate web developer"/>
                       <SelectSubBranch name="branch-4-s3" value="branch-4-sub-branch-3" display="Associate web developer for Meta"/>
