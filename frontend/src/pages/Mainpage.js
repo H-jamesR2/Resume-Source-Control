@@ -27,8 +27,12 @@ function Mainpage()
                         Main page after login
                         <br></br>
                         
-                        <Link to="/mainpage/textEditorMCE"> TextEditMCE-placeholder-button </Link>                                
+                        <Link to="/mainpage/textEditorMCE"> TextEditMCE-placeholder-button </Link> 
+                        <br></br>
+                                                  
                         <Link to="/settings">Account Settings</Link>
+                        
+                       
                     </div>
                 </div>
             </div>
