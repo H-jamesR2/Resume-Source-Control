@@ -22,6 +22,8 @@ function Blocks(prop) {
                 <div className="main-content">
                     {/* add page content here */}
                     Blocks
+                    <br></br>
+                    <Link to="/blockeditor">blockeditor(wip)</Link>
                 </div>
             </div>
             </>
