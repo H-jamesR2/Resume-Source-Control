@@ -30,7 +30,7 @@ const Session = (props) =>{
                                     content[Name] = Value;
                                 }
                                 resolve(content);
-                                console.log(user.getUsername());
+                                
                             }
                         })
                     })
