@@ -4,6 +4,8 @@ import { Button, Table, Tag, Form, Modal, Input, Select, DatePicker, ConfigProvi
 import { FileTextTwoTone, CloseCircleTwoTone, ScheduleOutlined, EditTwoTone, DeleteTwoTone, PlusOutlined, ClockCircleOutlined, CheckCircleOutlined, CarryOutOutlined } from '@ant-design/icons';
 import "../cssFiles/application.css";
 
+import dayjs from 'dayjs';
+
 
 function AppTable(prop) {
     const [isEditing, setIsEditing] = useState(false);
@@ -104,8 +106,8 @@ function AppTable(prop) {
             resume: 'Resume' + randomNumber,
         };
         setAddingRecord(newApplication);
+        console.log(addingRecord);
         setIsAdding(true);
-        console.log({...newApplication, addingRecord});
         // setDataSource((pre) => {
         //     console.log([...pre, newApplication]);
         //     return [...pre, newApplication];
@@ -159,12 +161,10 @@ function AppTable(prop) {
                     }}
                     onOk={() => {
                         setDataSource((pre) => {
-                            //console.log([...pre, newApplication]);
                             return [...pre, addingRecord];
                         });
-                        
-                        setIsAdding(false);
                         setAddingRecord(null);
+                        setIsAdding(false);
                     }}
                 >
                     <Input placeholder='Position' style={{ width: 250 }} size='large' onChange={(e)=>{
@@ -172,18 +172,21 @@ function AppTable(prop) {
                             return {...pre, position:e.target.value};
                         })
                     }}/>
-                    <Input placeholder='Company' style={{ width: 250 }} size='large'onChange={(e)=>{
+                    <Input placeholder='Company' style={{ width: 250 }} size='large' onChange={(e)=>{
                         setAddingRecord((pre)=>{
+                            console.log(e);
                             return {...pre, company:e.target.value};
                         })
                     }}/><br />
-                    <DatePicker format='MM/DD/YYYY' onChange={(e)=>{
+                    <DatePicker format='MM/DD/YYYY' allowClear={false} locale onChange={(e)=>{
                         setAddingRecord((pre)=>{
-                            return {...pre, date:e};
+                            //console.log(e.$d.getMonth()+1 + '/' + e.$d.getDate() + '/' + e.$d.getYear());
+                            return {...pre, submissionDate:e.$d.getMonth()+1 + '/' + e.$d.getDate() + '/' + e.$d.getYear()};
                         })
                     }}/><br />
                     <Select 
                         placeholder='Applied' 
+                        defaultValue='Applied'
                         style={{ width: 250 }}
                         size='large'
                         options={[
@@ -213,7 +216,7 @@ function AppTable(prop) {
                                 return {...pre, status:e};
                             })
                         }}/>
-                    <Input placeholder='Resume' style={{ width: 250 }} size='large'onChange={(e)=>{
+                    <Input placeholder='Resume'  style={{ width: 250 }} size='large' onChange={(e)=>{
                         setAddingRecord((pre)=>{
                             return {...pre, resume:e.target.value};
                         })
