@@ -7,7 +7,17 @@ import NavBar from "../components/Navbar";
 // UploadToS3 is a reusable component
 
 // Temp.js is a temporary file just to verify that uploadResume function works
+/*
+// To get current user's objects
+const result = await Storage.get('filename.txt', { level: 'protected' });
 
+// To get other users' objects
+const result = await Storage.get('filename.txt', { 
+    level: 'protected', 
+    identityId: 'xxxxxxx' // the identityId of that user
+});
+ 
+*/
 
 class UploadToS3 extends Component {
   state = {
@@ -15,7 +25,17 @@ class UploadToS3 extends Component {
     resumeFile: "",
     response: ""
   };
-
+  listResumes = () => {
+    SetS3Config("resumeapps3", "protected");
+    Storage.list('userFiles/')
+      .then(({ result }) => {
+        console.log(result);
+        alert(String(result));
+      })
+      .catch((err) => {
+        console.log(err)
+      });
+  };
   uploadResume = () => {
     SetS3Config("resumeapps3", "protected");
     Storage.put(`userFiles/${this.upload.files[0].name}`,
@@ -58,17 +78,24 @@ class UploadToS3 extends Component {
         <br></br>
         <br></br>
         <button className="button-partition"
-          onClick={e => {
-            this.upload.value = null;
-            this.upload.click();
-          }}
-          loading={this.state.uploading}
-        >
-          Browse
+            onClick={e => {
+              this.upload.value = null;
+              this.upload.click();
+            }}
+            loading={this.state.uploading}
+          > Browse
         </button>
-        <br></br>
-        <button 
-        className="button-partition" onClick={this.uploadResume}> Upload file </button>
+          <br></br>
+        <button className="button-partition" 
+            onClick={this.uploadResume}
+            > Upload file 
+        </button>
+          <br></br>
+        <button className="button-partition"
+            onClick={this.listResumes}
+            > List Resumes
+        </button>
+
 
         {!!this.state.response && <div>{this.state.response}</div>}
         </div>
