@@ -18,7 +18,7 @@ function SourceControl(prop) {
 function SelectBranch(props) {
   return (
     <label className="version-control-container" for={props.name}>{props.display}                  
-      <input type="radio" className="sidebar-sc-resume" id={props.name} name="resume" value="{props.value}"></input>
+      <input type="radio" className="sidebar-sc-resume" id={props.name} name="branch" value="{props.value}"></input>
       <span className="custom-radio"></span><br/>
     </label>
   )
@@ -64,7 +64,7 @@ function SelectResume(props) {
                       <SelectBranch name="resume-3-s2" value="resume-3-branch-2" display="Associate UI/UX designer"/>
                       <SelectBranch name="resume-3-s3" value="resume-3-branch-3" display="Associate UI/UX designer for Google"/>
                     </div>
-                    <SelectResume name="resume-1" value="resume-4" display="Web Developer"/>
+                    <SelectResume name="resume-4" value="resume-4" display="Web Developer"/>
                     <div className="sidebar-sc-text" style={{marginBottom:"35px"}}>
                       <SelectBranch name="resume-4-s1" value="resume-4-branch-1" display="Junior web developer"/>
                       <SelectBranch name="resume-4-s2" value="resume-4-branch-2" display="Associate web developer"/>
