@@ -4,6 +4,7 @@ import TopNav2 from "../components/TopNav2";
 import NavBar from "../components/Navbar";
 import TopNav from "../components/TopNav";
 import AppTable from "../components/AppTable";
+import AppInfoSideBar from "../components/AppInfoSideBar";
 
 function Application(prop) {
     const dataSource = [
@@ -36,7 +37,7 @@ function Application(prop) {
         <div>
             <TopNav2 />
             <div className="page-wrapper">
-                <NavBar />
+                <AppInfoSideBar />
                 <div className="main-content">
                     {/* add page content here */}
                     Applications
