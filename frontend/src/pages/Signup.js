@@ -22,10 +22,10 @@ const SignUp = () => {
             } else{
             var user = result.user;
             console.log(result);
-            console.log("Success: " + user.getUsername() + " has signed up.");
+            console.log(user.getUsername() + " has signed up.");
             alert("Please verify your email. We sent an email to " + email);
             }
-            //window.location.reload();
+            window.location.reload();
         }) 
     };
     return (

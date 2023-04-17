@@ -1,0 +1,44 @@
+{
+    "time": 1681680040972,
+    "blocks": [
+        {
+            "id": "mSyIj-JM2h",
+            "type": "class",
+            "data": {
+                "text": "Fellow, Esports and Game Design Collective",
+                "level": 2
+            }
+        },
+        {
+            "id": "_TjFGCK4yj",
+            "type": "header",
+            "data": {
+                "style": "unordered",
+                "items": [
+                    "<b>Developing games with a large multi-disciplinary team over the course of a year</b>",
+                    "<b>Designed and implemented core gameplay systems and mechanic such as AI agents, turn-based combat, and player movement in Unity.</b>"
+                ]
+            }
+        },
+        {
+            "id": "4eMQ4l0i1d",
+            "type": "class",
+            "data": {
+                "text": "Coding Tutor, The Coder School",
+                "level": 2
+            }
+        },
+        {
+            "id": "CdtKqaC6fy",
+            "type": "header",
+            "data": {
+                "style": "unordered",
+                "items": [
+                    "<b>Developing games with a large multi-disciplinary team over the course of a year</b>",
+                    "<b>Designed and implemented core gameplay systems and mechanic such as AI agents, turn-based combat, and player movement in Unity.</b>"
+                ]
+            }
+        }
+    ],
+    "version": "2.26.5"
+}

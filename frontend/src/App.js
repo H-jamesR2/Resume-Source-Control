@@ -16,9 +16,13 @@ import Application from "./pages/Application";
 //import BlockEditor from "./pages/BlockEditor";
 import Profile from "./pages/Profile";
 import TestPage from "./pages/TestPage";
+import BlockEditor from "./pages/BlockEditor";
 import ChangePassword from "./pages/EditPassword";
 import ChangeEmail from "./pages/EditEmail";
 import TextEditMCE from "./pages/TextEditMCE";
+
+//New Component
+import UploadToS3 from "./pages/Temp";
 
 //<Route path="/blockeditor" element={<BlockEditor />} />
 export default function App() {
@@ -38,9 +42,15 @@ export default function App() {
             <Route path="/changepassword" element={<ChangePassword/>}/>
             <Route path="/changeemail" element={<ChangeEmail/>}/>
             <Route path="/applications" element={<Application/>}/>
+            <Route path="/blockeditor" element={<BlockEditor />} />
 
             <Route path="/profile" element={<Profile />} />
             <Route path="/testpage" element={<TestPage />} />
+
+
+            {/* New route for upload Temp page */}
+            <Route path="/upload" element={<UploadToS3 />} />
+
 
         </Routes>
         </Session>

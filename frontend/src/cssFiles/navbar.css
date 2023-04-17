@@ -70,7 +70,7 @@
 }
 
 #sidebar-top {
-    font-size: 30px;
+    font-size: 26px;
     padding: 15px 15px 10px 20px;
     height: 100px;
     display: flex;
@@ -82,4 +82,9 @@
 
 .icon {
     width: 17px;
+}
+
+.sidebar-bottom .sidebar-text{
+    font-size: 22px;
+    font-weight: 400px;
 }

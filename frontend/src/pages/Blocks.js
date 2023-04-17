@@ -5,6 +5,8 @@ import NavBar from "../components/Navbar";
 import TopNav from "../components/TopNav";
 import { Navigate } from "react-router-dom";
 import { SessionContext } from "../components/UserContext";
+import Editor from "../components/BlockEditor"
+
 
 function Blocks(prop) {
     const {getUserSession} = useContext(SessionContext)
@@ -21,7 +23,7 @@ function Blocks(prop) {
                 <NavBar />
                 <div className="main-content">
                     {/* add page content here */}
-                    Blocks
+                    <Editor />
                 </div>
             </div>
             </>
