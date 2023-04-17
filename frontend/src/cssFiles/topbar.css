@@ -1,17 +1,37 @@
+.nav-item:hover .popup-menu, .nav-item-right:hover .popup-menu{
+  display:block;
+}
+
+.nav-item-right{
+  padding: 15px 20px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #46f;
+  display: inline-flex;
+  text-align: center;  
+  align-items: center;
+}
+
+.nav-item-right :not(div.popup-menu, div, li.popup-menu-item, a.no-decor){
+  position: relative;
+  top: -7px;
+}
+
 .popup-menu{
   list-style-type: none;
   margin: 0;
   background-color: #ddeaff;
   border: #03f;
   border-style: solid;
-  border-width: 1px;
+  border-width: 1px;  
   position: absolute;
+  display: none;
 }
 
 .popup-menu-item{
   padding: 8px 20px;
   font-size: 18px;
-  color: #46f;
+  color: #46f;  
   display: block;
   text-align: left;
 }
@@ -29,4 +49,10 @@
 #user-menu.popup-menu{
   top: 64px;
   right: 0px;
+}
+
+#profile-picture-w{
+  overflow: none;
+  width: 48px;
+  margin: 0 20px 0 0;
 }

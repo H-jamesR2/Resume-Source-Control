@@ -13,9 +13,8 @@ class AddContent extends Component {
   render() {
     return <div id="add-items" class="popup-menu">
       <div>
-        <li className="popup-menu-item">Create Resume Template</li>
+        <li className="popup-menu-item">Upload Resume</li>
         <li className="popup-menu-item">Create Resume</li>
-        <li className="popup-menu-item">Track Application</li>
       </div>
     </div>;
   }

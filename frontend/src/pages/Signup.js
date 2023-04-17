@@ -2,21 +2,30 @@ import React, { useState } from "react";
 import UserPool from "../UserPool";
 import { BrowserRouter as Router, Routes, Route, Outlet, Link, NavLink } from "react-router-dom";
 import TopNav from "../components/TopNav";
+import {CognitoUserAttribute} from "amazon-cognito-identity-js";
 import '../cssFiles/Login.css';
 
-const Signup = () => {    
+const SignUp = () => {    
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
     const onSubmit = (event) => {
         event.preventDefault();
+        const attributes = [];
+        attributes.push(new CognitoUserAttribute({Name:'email', Value: email}));
 
-        UserPool.signUp(username, email, password, [], null, (err, data) => {
-            if(err) {
-                console.error(err);
+        UserPool.signUp(username, password, attributes, null, (error, result) => {
+            if(error) {
+                console.error(error);
+                alert(error)
+            } else{
+            var user = result.user;
+            console.log(result);
+            console.log(user.getUsername() + " has signed up.");
+            alert("Please verify your email. We sent an email to " + email);
             }
-            console.log(data);
+            window.location.reload();
         }) 
     };
     return (
@@ -68,7 +77,8 @@ const Signup = () => {
                         <br></br>
                         
                         <div className={"partition"}>
-                            <button type="submit"><Link className='no-decor-button' to="/mainpage">Sign Up</Link></button>
+                            {/* <button type="submit"><Link className='no-decor-button' to="/mainpage">Sign Up</Link></button> */}
+                            <button type="submit">Sign Up</button>
                         </div>
 
                     </div>
@@ -78,4 +88,4 @@ const Signup = () => {
     );
 };
 
-export default Signup;
+export default SignUp;

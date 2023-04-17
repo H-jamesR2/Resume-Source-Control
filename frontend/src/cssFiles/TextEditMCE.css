@@ -1,0 +1,28 @@
+
+#Editor_MCE {
+    border: 1px solid #bbb;
+    border-radius: 3px;
+    margin: 0;
+    padding: 0.4em 0.6em;
+    min-height: 5em;
+    outline: none;
+    width: 100%;
+}
+
+/* Untested */
+body#tinymce {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 3px;
+}
+
+#footer-section{
+    max-height: 10%;
+    width: 100%;
+}
+
+button:disabled,
+button[disabled] {
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+}
