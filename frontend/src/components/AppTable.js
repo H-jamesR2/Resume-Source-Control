@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Link, NavLink } from "react-router-dom";
-import { Button, Table, Tag, Form, Modal, Input, Select, ConfigProvider, theme } from "antd";
+import { Button, Table, Tag, Form, Modal, Input, Select, DatePicker, ConfigProvider, theme } from "antd";
 import { FileTextTwoTone, CloseCircleTwoTone, ScheduleOutlined, EditTwoTone, DeleteTwoTone, PlusOutlined, ClockCircleOutlined, CheckCircleOutlined, CarryOutOutlined } from '@ant-design/icons';
 import "../cssFiles/application.css";
 
@@ -103,12 +103,13 @@ function AppTable(prop) {
             status: 'Applied',
             resume: 'Resume' + randomNumber,
         };
-        //setAddingRecord(newApplication);
-        //setIsAdding(true);
-        //console.log({...newApplication, addingRecord});
-        setDataSource((pre) => {
-            return [...pre, newApplication];
-        });
+        setAddingRecord(newApplication);
+        setIsAdding(true);
+        console.log({...newApplication, addingRecord});
+        // setDataSource((pre) => {
+        //     console.log([...pre, newApplication]);
+        //     return [...pre, newApplication];
+        // });
     };
     const deleteData = (record) => {
         Modal.confirm({
@@ -157,27 +158,64 @@ function AppTable(prop) {
                         setIsAdding(false);
                     }}
                     onOk={() => {
-                        setDataSource((pre)=>{
-                            console.log({...pre, addingRecord});
-                            return {...pre, addingRecord};
-                        })
+                        setDataSource((pre) => {
+                            //console.log([...pre, newApplication]);
+                            return [...pre, addingRecord];
+                        });
+                        
                         setIsAdding(false);
                         setAddingRecord(null);
                     }}
                 >
-                    <Input value='Position' onChange={(e)=>{
+                    <Input placeholder='Position' style={{ width: 250 }} size='large' onChange={(e)=>{
                         setAddingRecord((pre)=>{
                             return {...pre, position:e.target.value};
                         })
                     }}/>
-                    <Input value='Company' onChange={(e)=>{
+                    <Input placeholder='Company' style={{ width: 250 }} size='large'onChange={(e)=>{
                         setAddingRecord((pre)=>{
                             return {...pre, company:e.target.value};
                         })
-                    }}/>
-                    <Input value='Date' onChange={(e)=>{
+                    }}/><br />
+                    <DatePicker format='MM/DD/YYYY' onChange={(e)=>{
                         setAddingRecord((pre)=>{
-                            return {...pre, date:e.target.value};
+                            return {...pre, date:e};
+                        })
+                    }}/><br />
+                    <Select 
+                        placeholder='Applied' 
+                        style={{ width: 250 }}
+                        size='large'
+                        options={[
+                            {
+                                value: 'Applied',
+                                label: 'Applied'
+                            },
+                            {
+                                value: 'Interviewing',
+                                label: 'Interviewing'
+                            },
+                            {
+                                value: 'Under Consideration',
+                                label: 'Under Consideration'
+                            },
+                            {
+                                value: 'Hired',
+                                label: 'Hired'
+                            },
+                            {
+                                value: 'No Offer',
+                                label: 'No Offer'
+                            }
+                        ]}
+                        onChange={(e)=>{
+                            setEditingRecord((pre)=>{
+                                return {...pre, status:e};
+                            })
+                        }}/>
+                    <Input placeholder='Resume' style={{ width: 250 }} size='large'onChange={(e)=>{
+                        setAddingRecord((pre)=>{
+                            return {...pre, resume:e.target.value};
                         })
                     }}/>
                     
