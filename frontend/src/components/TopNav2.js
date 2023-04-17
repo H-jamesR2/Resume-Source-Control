@@ -6,11 +6,25 @@ import AddItems from "./AddContent";
 import UserMenu from "./UserMenu";
 import Person1 from '../images/Person-1.png'
 
-const Username = "Anthony";
+import UserPool from "../UserPool";
+
+import { useNavigate } from "react-router-dom";
 
 
 function TopNav2(props) {
+  const temp = UserPool.getCurrentUser();
+  const navigate = useNavigate();
+  const signout=()=>{
+  const user = UserPool.getCurrentUser();
+  
+  if(user){
+      user.signOut();
+      console.log("Success: Signed Out")
+      alert("Signed out")
 
+      navigate('/login')
+  } 
+}
     return (
         // Resume Logo [Icon] should go to About-page [Extra]
         // Once logged in, User should have different nav-bar such that it is able to click to a:
@@ -24,7 +38,7 @@ function TopNav2(props) {
                         <b>+ ADD</b>
                     <div id="add-items" class="popup-menu">
                         <div>
-                        <li className="popup-menu-item">Upload Resume</li>
+                        <li className="popup-menu-item"><Link className='no-decor' to="/upload">Upload Resume</Link></li>
                         <li className="popup-menu-item">Create Resume</li>
                         </div>
                     </div>
@@ -33,20 +47,22 @@ function TopNav2(props) {
                 <ul className="nav-bar-right">
                     <li 
                         className='nav-item-right'>
-                        <img id={"profile-picture-w"} src={Person1} ></img> Hi, {Username}
+                        <img id={"profile-picture-w"} src={Person1} ></img> Hi, {temp.getUsername()}
                     <div id="user-menu" class="popup-menu">
                         <div>
                             <li className="popup-menu-item"><Link className='no-decor' to="/profile">Profile</Link></li>
                             <li className="popup-menu-item"><Link className='no-decor' to="/settings">Account Settings</Link></li>
-                            <li className="popup-menu-item"><Link className='no-decor' to="/">Log Out</Link></li>
+                            <li className="popup-menu-item" onClick={signout}><Link className='no-decor'>Log out</Link></li>
                         </div>
                     </div>
                     </li>
+                    
                 </ul>
             </div>
             <Outlet />
         </div>
     );
+
 }
 
 export default TopNav2;
