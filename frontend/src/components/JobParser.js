@@ -6,7 +6,7 @@ import { faCommentsDollar } from "@fortawesome/free-solid-svg-icons";
 function KeywordList(props) {
     // WARNING STILL NEEDS WORK TO POSSIBLY INCLUDE MORE KEYWORD LABELS
     var output = props.keywordList.map((keyword) =>
-        <li id={keyword["id"]}>{keyword["word"]}</li>
+        <li key={keyword["id"]}>{keyword["word"]}</li>
     );
     return (
         <div>
@@ -61,6 +61,7 @@ class JobParser extends Component {
                         type="text"
                         value={this.state.jobDescription}
                         onChange={this.HandleChange}
+                        
                     />
                 </div>
                 <div>
