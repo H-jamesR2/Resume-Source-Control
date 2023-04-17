@@ -64,7 +64,7 @@ class UploadToS3 extends Component {
         <h2>Upload Resume</h2>
         <input
           type="file"
-          accept=".txt, .pdf"
+          accept=".txt, .pdf, .html"
           style={{ display: "none" }}
           ref={ref => (this.upload = ref)}
           onChange={e =>
