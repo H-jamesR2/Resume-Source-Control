@@ -64,7 +64,7 @@
 
 .sidebar-sc-bottom {
   font-size: 30px;
-  padding: 15px 15px 125px 15px;
+  padding: 15px 15px 160px 15px;
   text-align: left;
 }
 
@@ -95,13 +95,13 @@
   width: 17px;
 }
 
-.sidebar-sc-branch{
+.sidebar-sc-resume{
   font-size: 28px;
   list-style-type: none;
   margin-left: 32px;
 }
 
-.sidebar-sc-subbranch{
+.sidebar-sc-branch{
   font-size: 22px;
   list-style-type: none;
   margin-left: 32px;

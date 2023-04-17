@@ -15,19 +15,19 @@ function SourceControl(prop) {
         setIsOpen(false);
     }
 
-function SelectSubBranch(props) {
+function SelectBranch(props) {
   return (
     <label className="version-control-container" for={props.name}>{props.display}                  
-      <input type="radio" className="sidebar-sc-branch" id={props.name} name="subbranch" value="{props.value}"></input>
+      <input type="radio" className="sidebar-sc-resume" id={props.name} name="resume" value="{props.value}"></input>
       <span className="custom-radio"></span><br/>
     </label>
   )
 }
 
-function SelectBranch(props) {
+function SelectResume(props) {
   return (
     <label className="version-control-container" for={props.name}>{props.display}                  
-      <input type="radio" className="sidebar-sc-subbranch" id={props.name} name="branch" value="{props.value}"></input>
+      <input type="radio" className="sidebar-sc-branch" id={props.name} name="resume" value="{props.value}"></input>
       <span className="custom-radio-large"></span><br/>
     </label>
   )
@@ -44,37 +44,38 @@ function SelectBranch(props) {
                     <FontAwesomeIcon icon={faAngleRight} size="lg" className="icon" onClick={CloseSideBar} style={{marginLeft:"15px"}}/>
                 </div>
                 <nav className="sidebar-sc-bottom">
-                    <SelectBranch name="branch-1" value="branch-1" display="Software Engineer"/>
+                    <SelectResume name="resume-1" value="resume-1" display="Software Engineer"/>
                     <div className="sidebar-sc-text" style={{marginBottom:"35px"}}>
-                      <SelectSubBranch name="branch-1-s1" value="branch-1-sub-branch-1" display="A software engineer takes it place"/>
-                      <SelectSubBranch name="branch-1-s2" value="branch-1-sub-branch-2" display="Another one, but this time, it more of frontend"/>
+                      <SelectBranch name="resume-1-s1" value="resume-1-branch-1" display="A software engineer takes it place"/>
+                      <SelectBranch name="resume-1-s2" value="resume-1-branch-2" display="Another one, but this time, it more of frontend"/>
                     </div>
-                    <SelectBranch name="branch-2" value="branch-2" display="Branch 2"/>
+                    <SelectResume name="resume-2" value="resume-2" display="Resume 2"/>
                     <div className="sidebar-sc-text" style={{marginBottom:"35px"}}>
-                      <SelectSubBranch name="branch-2-s1" value="branch-2-sub-branch-1" display="Sub-Branch 1"/>
-                      <SelectSubBranch name="branch-2-s2" value="branch-2-sub-branch-2" display="Sub-Branch 2"/>
-                      <SelectSubBranch name="branch-2-s3" value="branch-2-sub-branch-3" display="Sub-Branch 3"/>
-                      <SelectSubBranch name="branch-2-s4" value="branch-2-sub-branch-4" display="Sub-Branch 4"/>                      
-                      <SelectSubBranch name="branch-2-s5" value="branch-2-sub-branch-4" display="Sub-Branch 5"/>                      
-                      <SelectSubBranch name="branch-2-s6" value="branch-2-sub-branch-4" display="Sub-Branch 6"/>
+                      <SelectBranch name="resume-2-s1" value="resume-2-branch-1" display="Branch 1"/>
+                      <SelectBranch name="resume-2-s2" value="resume-2-branch-2" display="Branch 2"/>
+                      <SelectBranch name="resume-2-s3" value="resume-2-branch-3" display="Branch 3"/>
+                      <SelectBranch name="resume-2-s4" value="resume-2-branch-4" display="Branch 4"/>                      
+                      <SelectBranch name="resume-2-s5" value="resume-2-branch-4" display="Branch 5"/>                      
+                      <SelectBranch name="resume-2-s6" value="resume-2-branch-4" display="Branch 6"/>
                     </div>
-                    <SelectBranch name="branch-3" value="branch-3" display="UI/UX Designer"/>
+                    <SelectResume name="resume-3" value="resume-3" display="UI/UX Designer"/>
                     <div className="sidebar-sc-text" style={{marginBottom:"35px"}}>
-                      <SelectSubBranch name="branch-3-s1" value="branch-3-sub-branch-1" display="Junior UI/UX designer"/>
-                      <SelectSubBranch name="branch-3-s2" value="branch-3-sub-branch-2" display="Associate UI/UX designer"/>
-                      <SelectSubBranch name="branch-3-s3" value="branch-3-sub-branch-3" display="Associate UI/UX designer for Google"/>
+                      <SelectBranch name="resume-3-s1" value="resume-3-branch-1" display="Junior UI/UX designer"/>
+                      <SelectBranch name="resume-3-s2" value="resume-3-branch-2" display="Associate UI/UX designer"/>
+                      <SelectBranch name="resume-3-s3" value="resume-3-branch-3" display="Associate UI/UX designer for Google"/>
                     </div>
-                    <SelectBranch name="branch-1" value="branch-4" display="Web Developer"/>
+                    <SelectResume name="resume-1" value="resume-4" display="Web Developer"/>
                     <div className="sidebar-sc-text" style={{marginBottom:"35px"}}>
-                      <SelectSubBranch name="branch-4-s1" value="branch-4-sub-branch-1" display="Junior web developer"/>
-                      <SelectSubBranch name="branch-4-s2" value="branch-4-sub-branch-2" display="Associate web developer"/>
-                      <SelectSubBranch name="branch-4-s3" value="branch-4-sub-branch-3" display="Associate web developer for Meta"/>
+                      <SelectBranch name="resume-4-s1" value="resume-4-branch-1" display="Junior web developer"/>
+                      <SelectBranch name="resume-4-s2" value="resume-4-branch-2" display="Associate web developer"/>
+                      <SelectBranch name="resume-4-s3" value="resume-4-branch-3" display="Associate web developer for Meta"/>
                     </div>
                 </nav>
 
                 <div style={{position:"fixed", bottom:"16px", display:"flex", flexDirection:"column", alignItems:"center", width:"inherit"}}>
                   <button className="sidebar-sc-text" style={{margin:"16px 8px 0 8px"}}>Use this version</button>
-                  <button className="sidebar-sc-text" style={{margin:"16px 8px 0 8px"}}>Create new branch</button>
+                  <button className="sidebar-sc-text" style={{margin:"16px 8px 0 8px"}}>Create new branch</button>                  
+                  <button className="sidebar-sc-text" style={{margin:"16px 8px 0 8px"}}>Create new resume</button>
                 </div>
             </div>
         </div>
