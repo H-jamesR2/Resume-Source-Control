@@ -53,7 +53,7 @@ function Application(prop) {
                 <>
             <TopNav2 />
             <div className="page-wrapper">
-                <AppInfoSideBar />
+                <NavBar />
                 <div className="main-content">
                     {/* add page content here */}
                     Applications
