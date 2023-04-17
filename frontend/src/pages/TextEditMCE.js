@@ -181,7 +181,7 @@ const TextEditMCE = () => {
                 resumeName: "jake_testResume_noGET.html"
             });*/
             const file = new Blob([content], { type: 'text/html' });
-            DocumentState.resumeName = "jake_testResume_noGET.html";
+            DocumentState.resumeName = "jake_testResumeDEMO_noGET.html";
             DocumentState.resumeContent = file;
 
             uploadDocument();
@@ -238,10 +238,10 @@ const TextEditMCE = () => {
                                 'fullscreen',
                                 'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
                                 'insertdatetime', 'media', 'table', 'code', 'help', 'wordcount',
-                                'save'
+                                'save', 'export'
 
                             ],
-                            toolbar: 'undo redo save | blocks fontfamily fontsize | ' +
+                            toolbar: 'undo redo save export | blocks fontfamily fontsize | ' +
                                 'bold italic forecolor backcolor | link image | alignleft aligncenter ' +
                                 'alignright alignjustify lineheight | bullist numlist outdent indent | ' +
                                 'removeformat | help',
