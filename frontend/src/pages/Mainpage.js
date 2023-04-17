@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route, Link, NavLink } from "react-rou
 import TopNav2 from "../components/TopNav2";
 import NavBar from "../components/Navbar";
 import Settings from "./Settings";
-import JobParser from "../components/JobParser";
 import { SessionContext } from "../components/UserContext";
 import { Navigate } from "react-router-dom";
 
@@ -32,7 +31,6 @@ function Mainpage()
                         <br></br>
                                                   
                         <Link to="/settings">Account Settings</Link>
-                        <JobParser></JobParser>
                         
                        
                     </div>
