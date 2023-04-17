@@ -12,7 +12,7 @@ function Application(prop) {
            position: 'Software Engineer',
            company: 'Google',
            submissionDate: '03/05/2023',
-           status: 'Scheduling Interview',
+           status: 'Interviewing',
            resume: 'Software Engineer Resume',
         },
         {
@@ -20,7 +20,7 @@ function Application(prop) {
             position: 'Game Developer',
             company: 'Roblox',
             submissionDate: '03/06/2023',
-            status: 'Scheduling Interview',
+            status: 'Interviewing',
             resume: 'Game Dev Resume',
          },
          {
