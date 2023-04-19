@@ -51,7 +51,7 @@
 .button-wrapper {
     display: block;
     text-align: center;
-    background-color: #436CFF;
+    background-color: var(--primary-4);
     font-family: Lekton-Bold;
     font-size: 18px;
     border-radius: 15px;
@@ -64,5 +64,25 @@
     color: black;
 }
 .button-wrapper:hover {
-    background-color: #7492FF;
+    background-color: var(--primary-3);
 }
+
+:root {
+    --primary-0: #ddeaff;
+    --primary-1: #bcf;
+    --primary-2: #9af;
+    --primary-3: #68f;
+    --primary-4: #46f;
+    --primary-5: #03f;
+    --warning-1: #f99;
+    --warning-2: #f66;
+    --warning-3: #f33;
+    --warning-4: #f00;
+    --gray-0: #eee;
+    --gray-1: #ccc;
+    --gray-2: #999;
+    --gray-3: #666;
+    --gray-4: #333;
+    --lekton-reg: Lekton-Regular, Roboto Regular, Helvetica, Arial, sans-serif;
+    --lekton-bold: Lekton-Bold, Roboto Bold, Helvetica Bold, Arial Bold, sans-serif;
+  }

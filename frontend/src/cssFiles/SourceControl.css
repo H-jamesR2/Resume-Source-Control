@@ -20,7 +20,7 @@
 #sidebar-sc-wrapper.close{
   width: 70px;
   height: calc(100vh - 65px);
-  background-color: #6892FE;
+  background-color: var(--primary-3);
 }
 #sidebar-sc-wrapper.close #sidebar-sc-top {
   display: none !important;
@@ -40,7 +40,7 @@
 #sidebar-sc-wrapper.open {
   width: 350px;
   min-height: calc(100vh - 65px);
-  background-color: #ECECEC;
+  background-color: var(--gray-0);
   font-weight: 400;
 }
 #sidebar-sc-wrapper {
@@ -88,7 +88,7 @@
   justify-content: space-between;
   align-items: flex-end;
   flex-direction: column;
-  background-color: #6892FE;
+  background-color: var(--primary-3);
 }
 
 .icon {
@@ -134,11 +134,11 @@ position: absolute;
   width: 25px;
   background-color: #fff;
   border-radius: 50%;
-  border: #46F 2px solid;
+  border: var(--primary-4) 2px solid;
 }
 
 .version-control-container:hover input ~ .custom-radio, .version-control-container:hover input ~ .custom-radio-large {
-  background-color: #cdf;
+  background-color: var(--primary-1);
 }
 
 .version-control-container input:checked ~ .custom-radio, .version-control-container input:checked ~ .custom-radio-large {
@@ -161,7 +161,7 @@ position: absolute;
 	width: 21px;
 	height: 21px;
 	border-radius: 50%;
-	background: #46F;
+	background: var(--primary-4);
 }
 
 .custom-radio-large {
@@ -172,7 +172,7 @@ position: absolute;
     width: 35px;
     background-color: #fff;
     border-radius: 50%;
-    border: #46F 2px solid;
+    border: var(--primary-4) 2px solid;
   }
   
   .version-control-container input:checked ~ .custom-radio:after {
@@ -185,9 +185,29 @@ position: absolute;
     width: 15px;
     height: 15px;
     border-radius: 50%;
-    background: #46F;
+    background: var(--primary-4);
   }
 
 .version-control-container#text {
   margin-left: 12px;
+}
+
+:root {
+  --primary-0: #ddeaff;
+  --primary-1: #bcf;
+  --primary-2: #9af;
+  --primary-3: #68f;
+  --primary-4: #46f;
+  --primary-5: #03f;
+  --warning-1: #f99;
+  --warning-2: #f66;
+  --warning-3: #f33;
+  --warning-4: #f00;
+  --gray-0: #eee;
+  --gray-1: #ccc;
+  --gray-2: #999;
+  --gray-3: #666;
+  --gray-4: #333;
+  --lekton-reg: Lekton-Regular, Roboto Regular, Helvetica, Arial, sans-serif;
+  --lekton-bold: Lekton-Bold, Roboto Bold, Helvetica Bold, Arial Bold, sans-serif;
 }
