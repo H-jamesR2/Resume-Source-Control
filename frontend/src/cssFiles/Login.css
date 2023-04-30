@@ -39,8 +39,8 @@
 .nav-bar-right, .nav-bar-left{
   list-style-type: none;
   margin: 0;
-  background-color: #bcf;
-  border-bottom: #03f;
+  background-color: var(--primary-1);
+  border-bottom: var(--primary-5);
   border-style: solid;
   border-width: 0 0 1px 0;  
   height: 65px;
@@ -50,25 +50,25 @@
   padding: 15px 20px;
   font-size: 20px;
   font-weight: 700;
-  color: #46f;
+  color: var(--primary-4);
   display: inline-flex;
   text-align: center;  
   align-items: center;
 }
 
 .nav-item:hover{    
-  background-color: #99b4ff;
+  background-color: var(--primary-2);
   transition: 0.25s;
 }
 
 .no-decor, .no-decor:visited, .no-decor:active, .no-decor:hover {
   text-decoration: none;
-  color: #46f;
+  color: var(--primary-4);
 }
 
 .no-decor-button, .no-decor-button:visited, .no-decor-button:active, .no-decor-button:hover {
   text-decoration: none;
-  color: #fff;
+  color: #fff !important;
 }
 
 .login-info{
@@ -95,10 +95,10 @@
 .dialog-box{
   border-style: solid;
   border-width: 1px;
-  border-color: #03f;
+  border-color: var(--primary-5);
   width: 400px;
   height: 400px;
-  background-color: #bcf;
+  background-color: var(--primary-1);
   position: fixed;
   top: 50%;
   left: 50%;
@@ -118,10 +118,10 @@ input.checkbox {
 
 button {
   padding: 8px 15px;
-  border: 1px;
-  border-color: #03f;
+  border: 1px;  
   border-style: solid;
-  background-color: #46f;
+  border-color: var(--primary-5);
+  background-color: var(--primary-4);
   font-size: 15pt;
   font-weight: 500;
   color: #fff;
@@ -131,8 +131,8 @@ button.negative {
   padding: 8px 15px;
   border: 1px;
   border-style: solid;
-  border-color: #f00;  
-  background-color: #f66;
+  border-color: var(--warning-4);  
+  background-color: var(--warning-2);
   font-size: 15pt;
   font-weight: 500;
   color: #fff;
@@ -141,9 +141,9 @@ button.negative {
 button.small {
   padding: 6px 10px;
   border: 1px;
-  border-color: #03f;
   border-style: solid;
-  background-color: #46f;
+  border-color: var(--primary-5);
+  background-color: var(--primary-4);
   font-size: 12pt;
   font-weight: 500;
   color: #fff;
@@ -153,8 +153,8 @@ button.smallnegative {
   padding: 6px 10px;
   border: 1px;
   border-style: solid;
-  border-color: #f00;  
-  background-color: #f66;
+  border-color: var(--warning-4);  
+  background-color: var(--warning-2);
   font-size: 12pt;
   font-weight: 500;
   color: #fff;
@@ -162,4 +162,24 @@ button.smallnegative {
 
 .checkbox-separators {
   margin: 0 10px;
+}
+
+:root {
+  --primary-0: #ddeaff;
+  --primary-1: #bcf;
+  --primary-2: #9af;
+  --primary-3: #68f;
+  --primary-4: #46f;
+  --primary-5: #03f;
+  --warning-1: #f99;
+  --warning-2: #f66;
+  --warning-3: #f33;
+  --warning-4: #f00;
+  --gray-0: #eee;
+  --gray-1: #ccc;
+  --gray-2: #999;
+  --gray-3: #666;
+  --gray-4: #333;
+  --lekton-reg: Lekton-Regular, Roboto Regular, Helvetica, Arial, sans-serif;
+  --lekton-bold: Lekton-Bold, Roboto Bold, Helvetica Bold, Arial Bold, sans-serif;
 }

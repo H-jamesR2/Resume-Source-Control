@@ -3,9 +3,9 @@
   padding: 20px;
   border-style: solid;
   border-width: 1px;
-  border-color: #03f;
+  border-color: var(--primary-5);
   width: 450px;
-  background-color: #bcf;
+  background-color: var(--primary-1);
   position: fixed;
   top: 50%;
   left: 50%;
@@ -15,4 +15,24 @@
 .button-partition{
   display: flex;
   justify-content: center;
+}
+
+:root {
+  --primary-0: #ddeaff;
+  --primary-1: #bcf;
+  --primary-2: #9af;
+  --primary-3: #68f;
+  --primary-4: #46f;
+  --primary-5: #03f;
+  --warning-1: #f99;
+  --warning-2: #f66;
+  --warning-3: #f33;
+  --warning-4: #f00;
+  --gray-0: #eee;
+  --gray-1: #ccc;
+  --gray-2: #999;
+  --gray-3: #666;
+  --gray-4: #333;
+  --lekton-reg: Lekton-Regular, Roboto Regular, Helvetica, Arial, sans-serif;
+  --lekton-bold: Lekton-Bold, Roboto Bold, Helvetica Bold, Arial Bold, sans-serif;
 }
