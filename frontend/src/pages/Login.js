@@ -157,7 +157,7 @@ const LogIn=()=>{
             //updateState({user:user, isLoggedIn: true});
             console.log("Success")
             console.log(user)
-            navigate('/mainpage')
+            navigate('/resume')
           }
 
         } catch(error){

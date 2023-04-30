@@ -86,7 +86,8 @@
 
 .sidebar-bottom .sidebar-text{
     font-size: 22px;
-    font-weight: 400px;
+    font-weight: 400;
+    color: #000;
 }
 
 :root {
