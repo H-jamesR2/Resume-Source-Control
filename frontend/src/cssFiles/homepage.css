@@ -70,10 +70,11 @@
     margin: auto 0;
     width: 210px;
     padding: 15px 35px;
+    color: white !important;
 }
-.button-wrapper, a:link, a:visited {
+a:link, a:visited {
     text-decoration: none;
-    color: white;
+    color: black;
 }
 .button-wrapper:hover {
     background-color: var(--primary-5);

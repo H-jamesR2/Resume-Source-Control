@@ -68,7 +68,7 @@
 
 .no-decor-button, .no-decor-button:visited, .no-decor-button:active, .no-decor-button:hover {
   text-decoration: none;
-  color: #fff;
+  color: #fff !important;
 }
 
 .login-info{

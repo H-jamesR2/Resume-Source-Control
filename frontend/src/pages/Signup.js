@@ -25,7 +25,7 @@ const SignUp = () => {
             console.log(user.getUsername() + " has signed up.");
             alert("Please verify your email. We sent an email to " + email);
             }            
-            navigate('/blocks')
+            navigate('/blocks');
             // window.location.reload();
         }) 
     };
