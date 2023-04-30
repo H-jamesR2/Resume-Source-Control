@@ -21,7 +21,7 @@
 .home-brandname {
     font-family: Lekton-Bold;
     font-weight: 900;
-    font-size: 80px;
+    font-size: 72px;
     padding-bottom: 50px;
 }
 .headline-wrapper {
@@ -31,7 +31,7 @@
 }
 .home-desc {
     font-family: Lekton-Bold;
-    font-size: 18px;
+    font-size: 32px;
     width: 60%;
     align-self: flex-start;
     margin: 30px 0;
@@ -44,6 +44,18 @@
     top: 50%;
     left: 50%;
 }
+.home-subheader {
+    font-family: Lekton-Bold;
+    font-weight: 900;
+    font-size: 48px;
+    margin-bottom: 0px;
+    padding-bottom: 8px;
+}
+.home-subdesc {
+    font-family: Lekton;
+    font-size: 24px;
+    align-self: flex-start;
+}
 .home-illu img {
     width: 100%;
     height: auto;
@@ -53,18 +65,18 @@
     text-align: center;
     background-color: var(--primary-4);
     font-family: Lekton-Bold;
-    font-size: 18px;
+    font-size: 24px;
     border-radius: 15px;
     margin: auto 0;
-    width: 180px;
+    width: 210px;
     padding: 15px 35px;
 }
 .button-wrapper, a:link, a:visited {
     text-decoration: none;
-    color: black;
+    color: white;
 }
 .button-wrapper:hover {
-    background-color: var(--primary-3);
+    background-color: var(--primary-5);
 }
 
 :root {
