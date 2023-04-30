@@ -157,7 +157,8 @@ const LogIn=()=>{
             //updateState({user:user, isLoggedIn: true});
             console.log("Success")
             console.log(user)
-            navigate('/resume')
+            localStorage.setItem('my-key', currCreds.identityId);
+            navigate('/mainpage')
           }
 
         } catch(error){
