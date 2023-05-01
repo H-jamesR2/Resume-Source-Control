@@ -21,8 +21,12 @@ import ChangePassword from "./pages/EditPassword";
 import ChangeEmail from "./pages/EditEmail";
 import TextEditMCE from "./pages/TextEditMCE";
 
-//New Component
+
 import UploadToS3 from "./pages/Temp";
+
+//Method for listing objects
+import ListResumesFromS3 from "./pages/ListResumes";
+
 
 //<Route path="/blockeditor" element={<BlockEditor />} />
 export default function App() {
@@ -50,6 +54,10 @@ export default function App() {
 
             {/* New route for upload Temp page */}
             <Route path="/upload" element={<UploadToS3 />} />
+
+            <Route path="/list" element={<ListResumesFromS3 />} />
+
+
 
 
         </Routes>
