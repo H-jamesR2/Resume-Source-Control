@@ -158,7 +158,9 @@ const LogIn=()=>{
             console.log("Success")
             console.log(user)
             localStorage.setItem('my-key', currCreds.identityId);
-            navigate('/mainpage')
+            setTimeout( function(){
+              navigate('/mainpage')
+            }, 1500)
           }
 
         } catch(error){
