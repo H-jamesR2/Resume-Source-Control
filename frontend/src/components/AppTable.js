@@ -4,6 +4,7 @@ import { Button, Table, Tag, Form, Modal, Input, Select, DatePicker, ConfigProvi
 import { FileTextTwoTone, CloseCircleTwoTone, ScheduleOutlined, EditTwoTone, DeleteTwoTone, PlusOutlined, ClockCircleOutlined, CheckCircleOutlined, CarryOutOutlined } from '@ant-design/icons';
 import "../cssFiles/application.css";
 
+
 import dayjs from 'dayjs';
 
 
@@ -13,6 +14,16 @@ function AppTable(prop) {
     const [isAdding, setIsAdding] = useState(false);
     const [addingRecord, setAddingRecord] = useState(null);
     const [dataSource, setDataSource] = useState(prop.data);
+    const [form] = Form.useForm();
+    const currentDate = new Date();
+    const currentDateFormatted = new Date(currentDate.getFullYear(), (currentDate.getMonth()), currentDate.getDate());
+    let resumeData = [];
+
+    form.setFieldsValue({
+        status: 'Applied',
+        submissionDate: dayjs(currentDateFormatted)
+    });
+    console.log(currentDateFormatted);
 
     //setDataSource(prop.data);
     const columns = [
@@ -94,7 +105,7 @@ function AppTable(prop) {
             }
         }
     ].filter(item => !item.hidden);
-    
+
     const addData = () => {
         const randomNumber = parseInt(Math.random() * 1000);
         const newApplication = {
@@ -105,8 +116,13 @@ function AppTable(prop) {
             status: 'Applied',
             resume: 'Resume' + randomNumber,
         };
-        setAddingRecord(newApplication);
+
+        //setAddingRecord(newApplication);
         console.log(addingRecord);
+        console.log(dataSource.length);
+        for (let i = 0; i < dataSource.length; i++) {
+            resumeData.push(dataSource[0].resume);
+        }
         setIsAdding(true);
         // setDataSource((pre) => {
         //     console.log([...pre, newApplication]);
@@ -129,7 +145,7 @@ function AppTable(prop) {
     };
     const editApplicationRecord = (record) => {
         setIsEditing(true);
-        setEditingRecord({...record});
+        setEditingRecord({ ...record });
     };
     const resetEditing = () => {
         setIsEditing(false);
@@ -150,8 +166,8 @@ function AppTable(prop) {
                 </Button>
 
                 <Table className="table-container" columns={columns} dataSource={dataSource} />
-                <Modal 
-                    title='Add new application record' 
+                <Modal
+                    title='Add new application record'
                     open={isAdding}
                     closable={false}
                     keyboard={false}
@@ -160,68 +176,144 @@ function AppTable(prop) {
                         setIsAdding(false);
                     }}
                     onOk={() => {
-                        setDataSource((pre) => {
-                            return [...pre, addingRecord];
-                        });
-                        setAddingRecord(null);
-                        setIsAdding(false);
+                        form
+                            .validateFields()
+                            .then(values => {
+                                form.resetFields();
+                                setDataSource((pre) => {
+                                    console.log([...pre, values]);
+                                    setAddingRecord(null);
+                                    setIsAdding(false);
+                                    return [...pre, values];
+                                });
+                            })
+                            .catch(info => {
+                                console.log('Validate Failed:', info);
+                            });
                     }}
                 >
-                    <Input placeholder='Position' style={{ width: 250 }} size='large' onChange={(e)=>{
-                        setAddingRecord((pre)=>{
-                            return {...pre, position:e.target.value};
-                        })
-                    }}/>
-                    <Input placeholder='Company' style={{ width: 250 }} size='large' onChange={(e)=>{
-                        setAddingRecord((pre)=>{
-                            console.log(e);
-                            return {...pre, company:e.target.value};
-                        })
-                    }}/><br />
-                    <DatePicker format='MM/DD/YYYY' allowClear={false} locale onChange={(e)=>{
-                        setAddingRecord((pre)=>{
-                            //console.log(e.$d.getMonth()+1 + '/' + e.$d.getDate() + '/' + e.$d.getYear());
-                            return {...pre, submissionDate:e.$d.getMonth()+1 + '/' + e.$d.getDate() + '/' + e.$d.getYear()};
-                        })
-                    }}/><br />
-                    <Select 
-                        placeholder='Applied' 
-                        defaultValue='Applied'
-                        style={{ width: 250 }}
-                        size='large'
-                        options={[
-                            {
-                                value: 'Applied',
-                                label: 'Applied'
-                            },
-                            {
-                                value: 'Interviewing',
-                                label: 'Interviewing'
-                            },
-                            {
-                                value: 'Under Consideration',
-                                label: 'Under Consideration'
-                            },
-                            {
-                                value: 'Hired',
-                                label: 'Hired'
-                            },
-                            {
-                                value: 'No Offer',
-                                label: 'No Offer'
-                            }
-                        ]}
-                        onChange={(e)=>{
-                            setEditingRecord((pre)=>{
-                                return {...pre, status:e};
+                    <Form form={form} layout="vertical">
+
+                        <Form.Item name='position' label='Position' style={{ width: 250 }} size='large'
+                            rules={[
+                                { required: true, message: "Please input the title of job position!" }
+                            ]}
+                        // onChange={(e) => {
+                        //     setAddingRecord((pre) => {
+                        //         return { ...pre, position: e.target.value };
+                        //     })
+                        // }} 
+                        >
+                            <Input />
+                        </Form.Item>
+                        <Form.Item name='company' label='Company' style={{ width: 250 }} size='large'
+                            rules={[
+                                { required: true, message: "Please input the company name!" }
+                            ]}
+                        >
+                            <Input />
+                        </Form.Item>
+                        <Form.Item name='submissionDate' label='Date Applied' size='large'
+                            rules={[
+                                { required: true, message: "Please input the date applied!" }
+                            ]}
+                        >
+                            <DatePicker  format='MM/DD/YYYY' allowClear={false} locale style={{ width: 250 }} />
+                        </Form.Item>
+                        <Form.Item name='status' label='Status' style={{ width: 250 }} size='large'
+                            rules={[
+                                { required: true, message: "Please select your application status!" }
+                            ]}
+                        >
+                            <Select
+                                placeholder='Applied'
+                                defaultValue='Applied'
+                                options={[
+                                    {
+                                        value: 'Applied',
+                                        label: 'Applied'
+                                    },
+                                    {
+                                        value: 'Interviewing',
+                                        label: 'Interviewing'
+                                    },
+                                    {
+                                        value: 'Under Consideration',
+                                        label: 'Under Consideration'
+                                    },
+                                    {
+                                        value: 'Hired',
+                                        label: 'Hired'
+                                    },
+                                    {
+                                        value: 'No Offer',
+                                        label: 'No Offer'
+                                    }
+                                ]} />
+                        </Form.Item>
+                        <Form.Item name='resume' label='Resume Used' style={{ width: 250 }} size='large'
+                            rules={[
+                                { required: true, message: "Required!" }
+                            ]}
+                        >
+                            <Select
+                                options={[
+                                    {
+                                        value: dataSource[0].resume,
+                                        label: dataSource[0].resume
+                                    }
+                                ]} />
+                        </Form.Item>
+                        {/* <Input placeholder='Company' style={{ width: 250 }} size='large' onChange={(e) => {
+                            setAddingRecord((pre) => {
+                                return { ...pre, company: e.target.value };
                             })
-                        }}/>
-                    <Input placeholder='Resume'  style={{ width: 250 }} size='large' onChange={(e)=>{
-                        setAddingRecord((pre)=>{
-                            return {...pre, resume:e.target.value};
-                        })
-                    }}/>
-                    
+                        }} /><br />
+                        <DatePicker format='MM/DD/YYYY' allowClear={false} locale onChange={(e) => {
+                            setAddingRecord((pre) => {
+                                //console.log(e.$d.getMonth()+1 + '/' + e.$d.getDate() + '/' + e.$d.getYear());
+                                return { ...pre, submissionDate: e.$d.getMonth() + 1 + '/' + e.$d.getDate() + '/' + e.$d.getYear() };
+                            })
+                        }} /><br />
+                        <Select
+                            placeholder='Applied'
+                            defaultValue='Applied'
+                            style={{ width: 250 }}
+                            size='large'
+                            options={[
+                                {
+                                    value: 'Applied',
+                                    label: 'Applied'
+                                },
+                                {
+                                    value: 'Interviewing',
+                                    label: 'Interviewing'
+                                },
+                                {
+                                    value: 'Under Consideration',
+                                    label: 'Under Consideration'
+                                },
+                                {
+                                    value: 'Hired',
+                                    label: 'Hired'
+                                },
+                                {
+                                    value: 'No Offer',
+                                    label: 'No Offer'
+                                }
+                            ]}
+                            onChange={(e) => {
+                                console.log(e);
+                                setAddingRecord((pre) => {
+                                    return { ...pre, status: e };
+                                })
+                            }} />
+                        <Input placeholder='Resume' style={{ width: 250 }} size='large' onChange={(e) => {
+                            setAddingRecord((pre) => {
+                                return { ...pre, resume: e.target.value };
+                            })
+                        }} /> */}
+                    </Form>
                 </Modal>
                 <Modal
                     title='Edit Status'
@@ -233,12 +325,12 @@ function AppTable(prop) {
                         resetEditing();
                     }}
                     onOk={() => {
-                        setDataSource((pre)=>{
-                            return pre.map(record=>{
-                                if(record.id === editingRecord.id){
+                        setDataSource((pre) => {
+                            return pre.map(record => {
+                                if (record.id === editingRecord.id) {
                                     //code to update database
                                     return editingRecord;
-                                }else{
+                                } else {
                                     return record;
                                 }
                             })
@@ -246,8 +338,8 @@ function AppTable(prop) {
                         resetEditing();
                     }}
                 >
-                    <Select 
-                        placeholder={editingRecord?.status} 
+                    <Select
+                        placeholder={editingRecord?.status}
                         style={{ width: 250 }}
                         size='large'
                         options={[
@@ -272,11 +364,11 @@ function AppTable(prop) {
                                 label: 'No Offer'
                             }
                         ]}
-                        onChange={(e)=>{
-                            setEditingRecord((pre)=>{
-                                return {...pre, status:e};
+                        onChange={(e) => {
+                            setEditingRecord((pre) => {
+                                return { ...pre, status: e };
                             })
-                        }}/>
+                        }} />
                 </Modal>
             </Form>
         </ConfigProvider>
