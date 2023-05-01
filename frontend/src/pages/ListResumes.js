@@ -75,7 +75,15 @@ const ListResumesFromS3 = () => {
         listResumes();
     }, []);
     
+    function getResumeCardName(urlString){
+        let items = String(urlString).split('/');
 
+        const object_path = items.slice(-1)[0];
+        //console.log(object_path);
+        const object_name = object_path.split('?').slice(0)[0];
+        console.log(object_name);
+        return object_name
+    }
     return(
     
         <div>
@@ -87,7 +95,9 @@ const ListResumesFromS3 = () => {
                     <ul>
                     {urls.map((url, index) => (
                         <a href={url} target="_blank">
-                        <ResumeCard text={index}/>
+                        <ResumeCard text={
+                            getResumeCardName(url)
+                        }/>
                         </a>
 
                     ))}
