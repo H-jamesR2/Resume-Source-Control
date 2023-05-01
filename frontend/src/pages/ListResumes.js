@@ -8,6 +8,7 @@ import ResumeIcon from '../images/Resume Icon.png';
 import Resume from "./Resume";
 import {Amplify, Auth} from 'aws-amplify';
 
+import { useNavigate } from "react-router-dom";
 
 const AWS_ACCESS_KEY_ID='AKIA6DOFALTAH2DSHQGB'
 const AWS_SECRET_ACCESS_KEY ='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'
@@ -19,6 +20,7 @@ console.log(identityId);
 
 const ListResumesFromS3 = () => {
     
+    const navigate = useNavigate();
     //const identityId = currentCreds.identityId;
     // const currentCreds = Auth.signIn({})
     // const identityId = currentCreds.identityId;
@@ -84,6 +86,14 @@ const ListResumesFromS3 = () => {
         console.log(object_name);
         return object_name
     }
+
+    function getObjectFileType(objectName) {
+        let items = String(objectName).split('.');
+
+        const object_type = items.slice(-1)[0];
+        return object_type
+    }
+
     return(
     
         <div>
@@ -91,15 +101,33 @@ const ListResumesFromS3 = () => {
         <div className="page-wrapper">
             <NavBar/>
             <div className="main-content">
-                <div className="resume-section">
+                <div className="resume-section" >
                     <ul>
+                    
                     {urls.map((url, index) => (
-                        <a href={url} target="_blank">
+                        <div className ="card-info" onClick={e => {
+                            let urlFileName = getResumeCardName(url);
+                            let urlFileType = getObjectFileType(urlFileName);
+
+                            localStorage.setItem('myURLObject', JSON.stringify(
+                                [urlFileName, url]))
+                            console.log("Filetype: ", urlFileType);
+                            console.log(index, urlFileName, url);
+                            console.log(JSON.parse(localStorage.getItem('myURLObject')));
+
+                            // if document editable..
+                            if (urlFileType == "html") {
+                                navigate('/mainpage/textEditorMCE');
+                                console.log("Navigating to: /mainpage/textEditorMCE")
+                            }
+                        }}> 
+                        <a href={url} target="_blank" 
+                        >
                         <ResumeCard text={
                             getResumeCardName(url)
                         }/>
                         </a>
-
+                        </div>
                     ))}
                     </ul>
                 </div>
@@ -115,10 +143,22 @@ export default ListResumesFromS3;
 
 function ResumeCard(props) {
     return (
-    <div className="card-info">
+    <div>
         <img className="resume-image" src={ResumeIcon}></img>
         <div className="resume-caption">{props.text}</div>
     </div>
     )
 }
 
+/*
+                        <div className={"resumeCard-" + 
+                            JSON.stringify({index}["index"])}
+                            onClick={e => {
+                                localStorage.setItem('myURLObject', JSON.stringify(
+                                    [getResumeCardName(url), url]))
+                                console.log(index, getResumeCardName(url), url);
+                                console.log(JSON.parse(localStorage.getItem('myURLObject')))
+                            }}
+                        >
+
+*/
