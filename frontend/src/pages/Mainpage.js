@@ -92,7 +92,7 @@ function Mainpage()
     }, []);
 
     function getResumeCardName(urlString) {
-        let items = String(urlString).toLowerCase().split('/');
+        let items = String(urlString).split('/');
 
         const object_path = items.slice(-1)[0];
         //console.log(object_path);
