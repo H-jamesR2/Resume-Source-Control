@@ -23,7 +23,6 @@ function AppTable(prop) {
         status: 'Applied',
         submissionDate: dayjs(currentDateFormatted)
     });
-    console.log(currentDateFormatted);
 
     //setDataSource(prop.data);
     const columns = [

@@ -2,7 +2,10 @@ import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Outlet, Link, NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleLeft, faChevronRight, faBars } from '@fortawesome/free-solid-svg-icons'
+import Dropdown from 'react-dropdown';
+import 'react-dropdown/style.css';
 import '../cssFiles/navbar.css';
+import { Button, Input } from "antd";
 
   
 function AppInfoSideBar(prop) {
@@ -27,11 +30,17 @@ function AppInfoSideBar(prop) {
                 </div>
                 <nav className="sidebar-bottom">
                     <div classname="sidebar-bottom-text">
+                        
                         <div className="sidebar-text">Company: </div>
                         <div className="sidebar-text">Status: </div>
                         <div className="sidebar-text">Date Applied: </div>
                     </div>
                 </nav>
+                <div id="sidebar-bottom2">
+                    <div className="sidebar-text">Job Description Scanner</div>
+                </div>
+                <Input id="scanner" placeholder="Paste the job description"></Input>
+                
             </div>
         </div>
 );
