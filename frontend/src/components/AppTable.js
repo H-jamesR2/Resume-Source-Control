@@ -180,7 +180,7 @@ function AppTable(prop) {
                             .then(values => {
                                 form.resetFields();
                                 setDataSource((pre) => {
-                                    console.log([...pre, values]);
+                                    values.submissionDate = values.submissionDate.format('MM/DD/YYYY');
                                     setAddingRecord(null);
                                     setIsAdding(false);
                                     return [...pre, values];
@@ -217,7 +217,7 @@ function AppTable(prop) {
                                 { required: true, message: "Please input the date applied!" }
                             ]}
                         >
-                            <DatePicker  format='MM/DD/YYYY' allowClear={false} locale style={{ width: 250 }} />
+                            <DatePicker  format='MM/DD/YYYY' allowClear={false} locale style={{ width: 250 }}/>
                         </Form.Item>
                         <Form.Item name='status' label='Status' style={{ width: 250 }} size='large'
                             rules={[
