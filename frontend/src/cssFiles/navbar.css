@@ -29,6 +29,9 @@
 #sidebar-wrapper.close .sidebar-text {
     display: none;
 }
+#sidebar-wrapper.close .collapse-wrapper {
+    display: none;
+}
 #sidebar-wrapper.close #sidebar-top img {
     display: none;
 }
@@ -54,10 +57,16 @@
     padding: 20px;
     align-self: flex-start;
 }
+.sidebar-tophalf{
+    flex-grow: 1;
+}
+.sidebar-bottomhalf{
+    flex-grow: 2;
+}
 
 .sidebar-bottom {
     font-size: 30px;
-    padding: 15px;
+    padding: 10px;
     text-align: left;
 }
 
@@ -86,7 +95,7 @@
 }
 
 .sidebar-bottom .sidebar-text{
-    font-size: 22px;
+    font-size: 16px;
     font-weight: 400px;
 }
 
@@ -103,4 +112,25 @@
     margin: 15px 15px 10px 20px;
     width: 80%;
     font-family: Lekton;
+}
+.collapse-wrapper{
+    display: flex;
+    border: solid black;
+    background-color: #D9D9D9;
+    font-size:  16px;
+    padding: 3px 5px;
+    margin-bottom: 5px;
+    flex-direction: column;
+}
+.collapse-close{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.collapse-text{
+    padding-top: 15px;
+}
+.collapse-icon{
+    margin: 0px 10px 0px 0px;
 }
