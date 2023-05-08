@@ -1,7 +1,7 @@
 .header-1{
   font-family: Lekton-Bold;
   font-size: 22pt;
-  color: #46f;
+  color: var(--primary-4);
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -20,7 +20,7 @@
   overflow-x: auto;
   width: 100%;
   border-style: solid;
-  border-color: #46f;
+  border-color: var(--primary-4);
   border-width: 1px;
   background-color: #fff;
 }
@@ -44,7 +44,7 @@
   flex: 0 0 auto;
   width: 210px;
   height: 285px;  
-  background-color: #ddeaff;
+  background-color: var(--primary-0);
 }
 
 .resume-caption{
@@ -67,16 +67,36 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background-color: #cdf; 
+  background-color: var(--primary-1); 
 }
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background-color: #69f; 
+  background-color: var(--primary-3);
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #46f;
+  background-color: var(--primary-4);
   transition: 3s;
+}
+
+:root {
+  --primary-0: #ddeaff;
+  --primary-1: #bcf;
+  --primary-2: #9af;
+  --primary-3: #68f;
+  --primary-4: #46f;
+  --primary-5: #03f;
+  --warning-1: #f99;
+  --warning-2: #f66;
+  --warning-3: #f33;
+  --warning-4: #f00;
+  --gray-0: #eee;
+  --gray-1: #ccc;
+  --gray-2: #999;
+  --gray-3: #666;
+  --gray-4: #333;
+  --lekton-reg: Lekton-Regular, Roboto Regular, Helvetica, Arial, sans-serif;
+  --lekton-bold: Lekton-Bold, Roboto Bold, Helvetica Bold, Arial Bold, sans-serif;
 }
