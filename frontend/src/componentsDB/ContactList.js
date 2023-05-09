@@ -29,7 +29,7 @@ const ContactList = (props) => {
 
     }
 }
-const handleUpdate = (e, id) => {
+const handleEdit = (e, id) => {
   navigate(`/data/${id}/updateContact`);
 }
 
@@ -60,7 +60,7 @@ const handleUpdate = (e, id) => {
                         <td>{contact.linkedin}</td>
                         <td>{contact.github}</td>
                         <td>{contact.portfolio_website}</td>
-                        <td><button onClick={(e)=> handleUpdate(e, contact.id)}>Update</button></td>
+                        <td><button onClick={(e)=> handleEdit(e, contact.id)}>Edit</button></td>
                         <td><button onClick={(e) => handleDelete(e, contact.id)} >Delete</button></td>
                       </tr>
 

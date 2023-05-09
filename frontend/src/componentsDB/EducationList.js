@@ -31,7 +31,7 @@ const EducationList = (props) => {
     }
 }
 
-const handleUpdate = (e, id) => {
+const handleEdit = (e, id) => {
   navigate(`/data/${id}/updateEducation`);
 }
   
@@ -61,7 +61,7 @@ const handleUpdate = (e, id) => {
                         <td>{educationCenter.end_date}</td>
                         <td>{educationCenter.degree}</td>
                         <td>{educationCenter.relevant_coursework}</td>
-                        <td><button onClick={(e)=> handleUpdate(e, educationCenter.id)}> Update</button></td>
+                        <td><button onClick={(e)=> handleEdit(e, educationCenter.id)}>Edit</button></td>
                         <td><button onClick={(e) => handleDelete(e, educationCenter.id)}>Delete</button></td>
                     </tr>
                     )             

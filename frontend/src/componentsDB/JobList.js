@@ -31,7 +31,7 @@ const JobList = (props) => {
 
     }
 }
-const handleUpdate = (e, id) => {
+const handleEdit = (e, id) => {
   navigate(`/data/${id}/updateJob`);
 }
 
@@ -60,7 +60,7 @@ const handleUpdate = (e, id) => {
                         <td>{job.start_date}</td>
                         <td>{job.end_date}</td>
                         <td>{job.description}</td>
-                        <td><button onClick={(e)=> handleUpdate(e, job.id)}>Update</button></td>
+                        <td><button onClick={(e)=> handleEdit(e, job.id)}>Edit</button></td>
                         <td><button onClick={(e) => handleDelete(e, job.id)}>Delete</button></td>
                     </tr>
 

@@ -30,7 +30,7 @@ const ProjectList = (props) => {
     }
 }
 
-const handleUpdate = (e, id) => {
+const handleEdit = (e, id) => {
   navigate(`/data/${id}/updateProject`);
 }
 
@@ -59,7 +59,7 @@ const handleUpdate = (e, id) => {
                         <td>{project.start_date}</td>
                         <td>{project.end_date}</td>
                         <td>{project.description}</td>
-                        <td><button onClick={(e)=> handleUpdate(e, project.id)}>Update</button></td>
+                        <td><button onClick={(e)=> handleEdit(e, project.id)}>Edit</button></td>
                         <td><button onClick={(e) => handleDelete(e, project.id)}>Delete</button></td>
                         </tr>
 

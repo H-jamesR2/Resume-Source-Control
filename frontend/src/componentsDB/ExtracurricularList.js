@@ -30,7 +30,7 @@ const ExtracurricularList = (props) => {
     }
 }
 
-const handleUpdate = (e, id) => {
+const handleEdit = (e, id) => {
   navigate(`/data/${id}/updateExtracurricular`);
 }
 
@@ -60,7 +60,7 @@ const handleUpdate = (e, id) => {
                         <td>{extracurricular.start_date}</td>
                         <td>{extracurricular.end_date}</td>
                         <td>{extracurricular.description}</td>
-                        <td><button onClick={(e)=> handleUpdate(e, extracurricular.id)}>Update</button></td>
+                        <td><button onClick={(e)=> handleEdit(e, extracurricular.id)}>Edit</button></td>
                         <td><button onClick={(e) => handleDelete(e, extracurricular.id)}>Delete</button></td>
                         </tr>
 
