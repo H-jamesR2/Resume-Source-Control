@@ -18,5 +18,4 @@ def my_package():
     for ent in entities:
         ent['id'] = id
         id += 1
-
     return {'entities': entities}

@@ -5,14 +5,27 @@ import { faCommentsDollar } from "@fortawesome/free-solid-svg-icons";
 
 function KeywordList(props) {
     // WARNING STILL NEEDS WORK TO POSSIBLY INCLUDE MORE KEYWORD LABELS
-    var output = props.keywordList.map((keyword) =>
-        <li key={keyword["id"]}>{keyword["word"]}</li>
+    var outputHardSkills = props.keywordList.map((keyword) =>{
+        if(keyword["label"]=="Hard Skill")
+            return <li key={keyword["id"]}>{keyword["word"]}</li>
+        return
+    }
+    );
+    var outputSoftSkills = props.keywordList.map((keyword) => {
+        if(keyword["label"]=="Soft Skill")
+            return <li key={keyword["id"]}>{keyword["word"]}</li>
+        return
+    }
     );
     return (
         <div>
-            <h2>Skills</h2>
+            <h2>Hard Skills</h2>
             <ul>
-                {output}
+                {outputHardSkills}
+            </ul>
+            <h2>Soft Skills</h2>
+            <ul>
+                {outputSoftSkills}
             </ul>
         </div>
     )
