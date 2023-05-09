@@ -13,6 +13,7 @@ import '../cssFiles/Resume-page.css';
 import ResumeIcon from '../images/Resume Icon.png';
 import Resume from "./Resume";
 import { Amplify, Auth } from 'aws-amplify';
+import JobParser from "../components/JobParser"
 
 // Need to parse better;
 const AWS_ACCESS_KEY_ID = 'AKIA6DOFALTAH2DSHQGB'
@@ -127,7 +128,7 @@ function Mainpage()
                         <br></br>
                                          
                         <Link to="/settings">Account Settings</Link>
-
+                        <JobParser></JobParser>
                         <div className="resume-section" >
                             <ul>
                                 {urls.map((url, index) => (
