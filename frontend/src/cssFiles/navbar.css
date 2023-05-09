@@ -19,9 +19,8 @@
 }
 #sidebar-wrapper.close{
     width: 70px;
-    height: 100%;
-    min-height: 100vh;
-    background-color: #6892FE;
+    height: calc(100vh - 65px);
+    background-color: var(--primary-3);
 }
 #sidebar-wrapper.close #sidebar-top {
     display: none;
@@ -34,9 +33,9 @@
 }
 #sidebar-wrapper.open {
     width: 250px;
-    height: 100vh;
+    height: calc(100vh - 65px);
     font-weight: 900;
-    background-color: #ECECEC;
+    background-color: var(--gray-0);
 }
 #sidebar-wrapper {
     transition: width 1s, background-color 1s;
@@ -71,16 +70,42 @@
 }
 
 #sidebar-top {
-    font-size: 30px;
+    font-size: 26px;
     padding: 15px 15px 10px 20px;
     height: 100px;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     flex-direction: column;
-    background-color: #6892FE;
+    background-color: var(--primary-3);
 }
 
 .icon {
     width: 17px;
 }
+
+.sidebar-bottom .sidebar-text{
+    font-size: 22px;
+    font-weight: 400;
+    color: #000;
+}
+
+:root {
+    --primary-0: #ddeaff;
+    --primary-1: #bcf;
+    --primary-2: #9af;
+    --primary-3: #68f;
+    --primary-4: #46f;
+    --primary-5: #03f;
+    --warning-1: #f99;
+    --warning-2: #f66;
+    --warning-3: #f33;
+    --warning-4: #f00;
+    --gray-0: #eee;
+    --gray-1: #ccc;
+    --gray-2: #999;
+    --gray-3: #666;
+    --gray-4: #333;
+    --lekton-reg: Lekton-Regular, Roboto Regular, Helvetica, Arial, sans-serif;
+    --lekton-bold: Lekton-Bold, Roboto Bold, Helvetica Bold, Arial Bold, sans-serif;
+  }

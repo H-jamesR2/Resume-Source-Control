@@ -4,6 +4,7 @@ import TopNav2 from "../components/TopNav2";
 import NavBar from "../components/Navbar";
 import TopNav from "../components/TopNav";
 import AppTable from "../components/AppTable";
+import AppInfoSideBar from "../components/AppInfoSideBar";
 import { Navigate } from "react-router-dom";
 import { SessionContext } from "../components/UserContext";
 
@@ -26,7 +27,7 @@ function Application(prop) {
            position: 'Software Engineer',
            company: 'Google',
            submissionDate: '03/05/2023',
-           status: 'Scheduling Interview',
+           status: 'Interviewing',
            resume: 'Software Engineer Resume',
         },
         {
@@ -34,7 +35,7 @@ function Application(prop) {
             position: 'Game Developer',
             company: 'Roblox',
             submissionDate: '03/06/2023',
-            status: 'Scheduling Interview',
+            status: 'Interviewing',
             resume: 'Game Dev Resume',
          },
          {

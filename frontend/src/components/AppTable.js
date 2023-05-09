@@ -1,12 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Link, NavLink } from "react-router-dom";
-import { Button, Table, Tag, Form, Modal, ConfigProvider } from "antd";
-import { FileTextTwoTone, CloseCircleTwoTone, ScheduleTwoTone, EditTwoTone, DeleteTwoTone, PlusOutlined} from '@ant-design/icons';
+import { Button, Table, Tag, Form, Modal, Input, Select, ConfigProvider, theme } from "antd";
+import { FileTextTwoTone, CloseCircleTwoTone, ScheduleOutlined, EditTwoTone, DeleteTwoTone, PlusOutlined, ClockCircleOutlined, CheckCircleOutlined, CarryOutOutlined } from '@ant-design/icons';
 import "../cssFiles/application.css";
+
 
 function AppTable(prop) {
     const [isEditing, setIsEditing] = useState(false);
+    const [editingRecord, setEditingRecord] = useState(null);
+    const [isAdding, setIsAdding] = useState(false);
+    const [addingRecord, setAddingRecord] = useState(null);
     const [dataSource, setDataSource] = useState(prop.data);
+
     //setDataSource(prop.data);
     const columns = [
         {
@@ -37,9 +42,21 @@ function AppTable(prop) {
             render: (_, record) => {
                 let tagColor;
                 let icon;
-                if (record.status === "Scheduling Interview") {
-                    tagColor = "orange";
-                    icon = <ScheduleTwoTone twoToneColor="orange" />;
+                if (record.status === "Applied") {
+                    tagColor = "default";
+                    icon = <ClockCircleOutlined color="gray" />;
+                }
+                if (record.status === "Interviewing") {
+                    tagColor = "cyan";
+                    icon = <ScheduleOutlined color="cyan" />;
+                }
+                if (record.status === "Under Consideration") {
+                    tagColor = "gold";
+                    icon = <CarryOutOutlined color="gray" />;
+                }
+                if (record.status === "Hired") {
+                    tagColor = "green";
+                    icon = <CheckCircleOutlined color="green" />;
                 }
                 if (record.status === "No Offer") {
                     tagColor = "red";
@@ -69,30 +86,34 @@ function AppTable(prop) {
             title: "Action",
             render: (_, record) => {
                 return <>
-                    <EditTwoTone onClick={() => { editApplicationRecord(record) }}/>
+                    <EditTwoTone onClick={() => { editApplicationRecord(record) }} />
                     <DeleteTwoTone onClick={() => { deleteData(record) }} className="action-icon" twoToneColor="red" />
                 </>
             }
         }
     ].filter(item => !item.hidden);
+    
     const addData = () => {
         const randomNumber = parseInt(Math.random() * 1000);
         const newApplication = {
             id: randomNumber,
-            position: 'position'+randomNumber,
-            company: 'company'+randomNumber,
-            submissionDate: 'date'+randomNumber,
-            status: 'Status'+randomNumber,
-            resume: 'Resume'+randomNumber,
+            position: 'position' + randomNumber,
+            company: 'company' + randomNumber,
+            submissionDate: 'date' + randomNumber,
+            status: 'Applied',
+            resume: 'Resume' + randomNumber,
         };
+        //setAddingRecord(newApplication);
+        //setIsAdding(true);
+        //console.log({...newApplication, addingRecord});
         setDataSource((pre) => {
-            console.log("add");
             return [...pre, newApplication];
         });
     };
     const deleteData = (record) => {
         Modal.confirm({
             title: 'Are you sure you want to delete this application record?',
+            className: 'modal-style',
             okText: 'Yes',
             onOk: () => {
                 setDataSource((pre) => {
@@ -104,18 +125,13 @@ function AppTable(prop) {
         })
     };
     const editApplicationRecord = (record) => {
-        Modal.confirm({
-            title: 'Update Status',
-            okText: 'Save',
-            onOk: () => {
-                setDataSource((pre) => {
-                    console.log(record.id);
-                    // insert code to delete data row
-                    return pre;
-                });
-            }
-        })
+        setIsEditing(true);
+        setEditingRecord({...record});
     };
+    const resetEditing = () => {
+        setIsEditing(false);
+        setEditingRecord(null);
+    }
     return (
         <ConfigProvider
             theme={{
@@ -123,25 +139,104 @@ function AppTable(prop) {
                     colorPrimary: "#6892FE",
                     fontFamily: "Lekton",
                     fontSize: "18px",
-                    fontWeightStrong: "900",
-                    colorSuccessBg: "red",
                 },
             }}>
             <Form className="application-wrapper">
-                <Button className="addButton" type="primary" icon={<PlusOutlined /> } onClick={() => { addData() }}>
+                <Button className="addButton" type="primary" icon={<PlusOutlined />} onClick={() => { addData() }}>
                     <span className="addButton-span">Add</span>
                 </Button>
-                
+
                 <Table className="table-container" columns={columns} dataSource={dataSource} />
                 <Modal 
+                    title='Add new application record' 
+                    open={isAdding}
+                    closable={false}
+                    keyboard={false}
+                    okText='Add'
+                    onCancel={() => {
+                        setIsAdding(false);
+                    }}
+                    onOk={() => {
+                        setDataSource((pre)=>{
+                            console.log({...pre, addingRecord});
+                            return {...pre, addingRecord};
+                        })
+                        setIsAdding(false);
+                        setAddingRecord(null);
+                    }}
+                >
+                    <Input value='Position' onChange={(e)=>{
+                        setAddingRecord((pre)=>{
+                            return {...pre, position:e.target.value};
+                        })
+                    }}/>
+                    <Input value='Company' onChange={(e)=>{
+                        setAddingRecord((pre)=>{
+                            return {...pre, company:e.target.value};
+                        })
+                    }}/>
+                    <Input value='Date' onChange={(e)=>{
+                        setAddingRecord((pre)=>{
+                            return {...pre, date:e.target.value};
+                        })
+                    }}/>
+                    
+                </Modal>
+                <Modal
                     title='Edit Status'
-                    onCancel={()=>{
-                        setIsEditing(false);
+                    open={isEditing}
+                    closable={false}
+                    keyboard={false}
+                    okText='Save'
+                    onCancel={() => {
+                        resetEditing();
                     }}
-                    onOk={()=>{
-                        setIsEditing(false);
+                    onOk={() => {
+                        setDataSource((pre)=>{
+                            return pre.map(record=>{
+                                if(record.id === editingRecord.id){
+                                    //code to update database
+                                    return editingRecord;
+                                }else{
+                                    return record;
+                                }
+                            })
+                        })
+                        resetEditing();
                     }}
-                    ></Modal>
+                >
+                    <Select 
+                        placeholder={editingRecord?.status} 
+                        style={{ width: 250 }}
+                        size='large'
+                        options={[
+                            {
+                                value: 'Applied',
+                                label: 'Applied'
+                            },
+                            {
+                                value: 'Interviewing',
+                                label: 'Interviewing'
+                            },
+                            {
+                                value: 'Under Consideration',
+                                label: 'Under Consideration'
+                            },
+                            {
+                                value: 'Hired',
+                                label: 'Hired'
+                            },
+                            {
+                                value: 'No Offer',
+                                label: 'No Offer'
+                            }
+                        ]}
+                        onChange={(e)=>{
+                            setEditingRecord((pre)=>{
+                                return {...pre, status:e};
+                            })
+                        }}/>
+                </Modal>
             </Form>
         </ConfigProvider>
 
