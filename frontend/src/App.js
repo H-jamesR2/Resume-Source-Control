@@ -28,6 +28,21 @@ import UploadToS3 from "./pages/Temp";
 import ListResumesFromS3 from "./pages/ListResumes";
 
 
+//DB
+import Data from "./pages/Data";
+
+import {UniContextProvider} from './context/UniContext'
+
+import UpdateContact from "./componentsDB/UpdateContact";
+
+import UpdateEducation from "./componentsDB/UpdateEducation";
+
+import UpdateJob from "./componentsDB/UpdateJob";
+import UpdateProject from "./componentsDB/UpdateProject";
+import UpdateExtracurricular from "./componentsDB/UpdateExtracurricular";
+
+
+import UpdateSkill from "./componentsDB/UpdateSkill";
 //<Route path="/blockeditor" element={<BlockEditor />} />
 export default function App() {
   
@@ -62,6 +77,19 @@ export default function App() {
 
         </Routes>
         </Session>
+
+        <UniContextProvider>
+        <Routes>
+            <Route path="/data" element={<Data/>} />
+            <Route path="/data/:id/updateContact" element={<UpdateContact/>}/>
+            <Route path="/data/:id/updateEducation" element={<UpdateEducation/>}/>
+            <Route path="/data/:id/updateJob" element={<UpdateJob/>}/>
+            <Route path="/data/:id/updateProject" element={<UpdateProject/>}/>
+            <Route path="/data/:id/updateExtracurricular" element={<UpdateExtracurricular/>}/>
+            <Route path="/data/:id/updateSkill" element={<UpdateSkill/>}/>
+
+        </Routes>
+        </UniContextProvider>
       </div>
   );
 }
