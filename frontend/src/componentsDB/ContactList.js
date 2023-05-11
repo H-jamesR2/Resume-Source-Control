@@ -2,6 +2,7 @@ import React, {useContext, useEffect} from 'react';
 import ResumeUrl from '../api/ResumeUrl';
 import { UniContext } from '../context/UniContext';
 import { useNavigate } from 'react-router-dom';
+import ToggleSwitch from '../components/Toogle';
 
 const ContactList = (props) => {
   const {contacts, setContacts} = useContext(UniContext)
@@ -39,6 +40,7 @@ const handleEdit = (e, id) => {
       <table>
         <thead>
           <tr>
+            <th></th>
             <th>Name</th>
             <th>Email</th>
             <th>Phone number</th>
@@ -53,7 +55,9 @@ const handleEdit = (e, id) => {
         {contacts && 
                     contacts.map(contact =>{
                     return(
+                        
                         <tr key={contact.id}>
+                        <td><ToggleSwitch/></td>
                         <td>{contact.name}</td>
                         <td>{contact.email}</td>
                         <td>{contact.phone_number}</td>

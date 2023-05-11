@@ -13,6 +13,7 @@ import AddJob from '../componentsDB/AddJob'
 import AddExtracurricular from '../componentsDB/AddExtracurricular'
 import AddEducation from '../componentsDB/AddEducation'
 import AddSkill from '../componentsDB/AddSkill'
+import AddFieldResume from '../componentsDB/AddFieldResume'
 
 const Data = () => {
   return (
@@ -50,6 +51,9 @@ const Data = () => {
       <SkillList/>
       <AddSkill/>
 
+      <h1>Field Resumes</h1>
+      {/* <SkillList/> */}
+      <AddFieldResume/>
 
       </div>
       </div>

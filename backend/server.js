@@ -607,6 +607,795 @@ app.put("/api/v1/skills/:id", asyncHandler(async(req, res)=>{
 }))
 
 
+//*********** Field Resumes *****************
+//Get all field resumes
+app.get("/api/v1/field_resumes", asyncHandler(async(req, res)=>{
+    const results = await  db.query("select * from field_resume");
+    console.log(results)
+    res.status(200).json({
+        status: "Success",
+        results: results.rows.length,
+        data: {
+            field_resumes: results.rows
+        }
+    })
+
+}))
+
+//Get a field resume
+app.get("/api/v1/field_resumes/:id", asyncHandler(async(req, res)=>{
+    //console.log(req)
+
+    console.log(req.params.id)
+    const field_resume = await db.query("select * from field_resume where id = $1", [req.params.id])
+    console.log(field_resume.rows[0])
+
+    const contacts = await db.query(
+        "SELECT c.name, c.email, c.phone_number, c.linkedin, c.github, c.portfolio_website FROM field_resume fr JOIN field_resume_contact frc ON fr.id = frc.field_resume_id JOIN contacts c ON  c.id = frc.contact_id where fr.id = $1", [req.params.id] 
+    )
+
+    const educationCenters = await db.query(
+        "SELECT e.name, e.start_date, e.end_date, e.degree, e.relevant_coursework FROM field_resume fr JOIN field_resume_education fre ON fr.id = fre.field_resume_id JOIN education e ON e.id = fre.education_id where fr.id = $1", [req.params.id]
+
+
+    )
+    const projects = await db.query(
+        "SELECT p.name, p.role, p.start_date, p.end_date, p.description FROM field_resume fr JOIN field_resume_project frp ON fr.id = frp.field_resume_id JOIN projects p ON p.id = frp.project_id where fr.id = $1", [req.params.id]
+
+
+    )
+    const jobs = await db.query(
+        "SELECT fr.name, j.name, j.role, j.start_date, j.end_date, j.description FROM field_resume fr JOIN field_resume_job frj ON fr.id = frj.field_resume_id JOIN jobs j ON j.id = frj.job_id where fr.id = $1", [req.params.id]
+
+
+    )
+
+    const extracurriculars = await db.query(
+        "SELECT ex.name, ex.role, ex.start_date, ex.end_date, ex.description FROM field_resume fr JOIN field_resume_extracurricular frex ON fr.id = frex.field_resume_id JOIN extracurriculars ex ON ex.id = frex.extracurricular_id where fr.id = $1", [req.params.id]
+
+    )
+
+    const skills= await db.query(
+        "SELECT s.hard_skills, s.soft_skills, s.technology, s.languages FROM field_resume fr JOIN field_resume_skill frs ON fr.id = frs.field_resume_id JOIN skills s ON s.id = frs.skill_id where fr.id = $1", [req.params.id]
+
+    )
+
+    res.status(200).json({
+        status: "success",
+        data: {
+            field_resume: field_resume.rows[0],
+            contacts: contacts.rows,
+            educationCenters: educationCenters.rows,
+            projects: projects.rows,
+            jobs: jobs.rows,
+            extracurriculars: extracurriculars.rows,
+            skills: skills.rows
+        }
+
+    })
+
+}))
+
+//***************************************Test*********************************
+
+// app.get("/api/v1/field_resumes/:id", asyncHandler(async(req, res)=>{
+//     //console.log(req)
+
+//     console.log(req.params.id)
+//     const field_resume = await db.query("select * from field_resume where name = $1", [req.params.name])
+//     console.log(field_resume.rows[0])
+//     res.status(200).json({
+//         status: "success",
+//         data: {
+//             field_resume: field_resume.rows[0],
+//         }
+
+//     })
+
+// }))
+
+
+// app.get("/api/v2/field_resumes/frc", asyncHandler(async(req, res)=>{
+//     const results = await  db.query("select * from field_resume");
+//     console.log(results)
+//     res.status(200).json({
+//         status: "Success",
+//         results: results.rows.length,
+//         data: {
+//             field_resumes: results.rows
+//         }
+//     })
+
+// }))
+
+// app.get("/api/v2/field_resumes/:id", asyncHandler(async(req, res)=>{
+//     //console.log(req)
+
+//     //console.log(req.params.name)
+//     const field_resume = await db.query(
+//         "SELECT fr.name, ex.name, ex.role, ex.start_date, ex.end_date, ex.description FROM field_resume fr JOIN field_resume_extracurricular frex ON fr.id = frex.field_resume_id JOIN extracurriculars ex ON ex.id = frex.extracurricular_id where fr.name = $1", [req.params.name])
+//     console.log(field_resume.rows[0])
+//     res.status(200).json({
+//         status: "success",
+//         data: {
+//             field_resume: field_resume.rows[0],
+//         }
+
+//     })
+
+// }))
+
+
+
+
+//****-****-***- */
+
+
+
+
+
+
+
+//Create a field_resume
+app.post("/api/v1/field_resumes", asyncHandler(async(req, res)=>{
+    console.log(req.body)
+    const field_resume = await db.query("INSERT INTO field_resume (name) VALUES ($1) returning *", [req.body.name]);
+    console.log(field_resume);
+    res.status(201).json({
+        status: "success",
+        data: {
+            field_resume: field_resume.rows[0]
+        }
+
+    })
+}))
+
+// Delete a field_resume
+app.delete("/api/v1/field_resumes/:id", asyncHandler(async(req, res) => {
+    const field_resume = await db.query("DELETE FROM field_resume WHERE id = $1", [req.params.id]);
+    console.log(field_resume);
+    res.status(204).json({
+        status: "success"
+    });
+}));
+
+
+
+//Update a field_resume
+app.put("/api/v1/field_resumes/:id", asyncHandler(async(req, res)=>{
+    const field_resume = await db.query(
+        "UPDATE field_resume SET name = $1 WHERE id = $2 returning *", 
+        [req.body.name, req.params.id])
+    console.log(field_resume)
+    res.status(200).json({
+        status: "success",
+        data: {
+            field_resume: field_resume.rows[0]
+        }
+
+    })
+}))
+
+
+//*********** Field Resume Education *****************
+//Get all field resume education records
+app.get("/api/v1/field_resume_educationCenters", asyncHandler(async(req, res)=>{
+    const results = await  db.query("select * from field_resume_education");
+    console.log(results)
+    res.status(200).json({
+        status: "Success",
+        results: results.rows.length,
+        data: {
+            results: results.rows
+        }
+    })
+
+}))
+
+//Get a field resume education record
+app.get("/api/v1/field_resume_educationCenters/:id", asyncHandler(async(req, res)=>{
+    //console.log(req)
+
+    console.log(req.params.id)
+    const result = await db.query("select * from field_resume_education where id = $1", [req.params.id])
+    console.log(result.rows[0])
+    res.status(200).json({
+        status: "success",
+        data: {
+            result: result.rows[0],
+        }
+
+    })
+
+}))
+
+//Create a field resume education record
+app.post("/api/v1/field_resume_educationCenters", asyncHandler(async(req, res)=>{
+    console.log(req.body)
+    const result = await db.query(
+        "INSERT INTO field_resume_education (field_resume_id, education_id) VALUES ($1, $2) returning *", 
+        [req.body.field_resume_id, req.body.education_id]);
+    console.log(result);
+    res.status(201).json({
+        status: "success",
+        data: {
+            result: result.rows[0]
+        }
+
+    })
+}))
+
+// Delete a record
+app.delete("/api/v1/field_resume_educationCenters/:id", asyncHandler(async(req, res) => {
+    const result = await db.query("DELETE FROM field_resume_education WHERE id = $1", [req.params.id]);
+    console.log(result);
+    res.status(204).json({
+        status: "success"
+    });
+}));
+
+
+
+//Update a record
+app.put("/api/v1/field_resume_educationCenters/:id", asyncHandler(async(req, res)=>{
+    const result = await db.query(
+        "UPDATE field_resume_education SET field_resume_id = $1, education_id = $2 WHERE id = $3 returning *", 
+        [req.body.field_resume_id, req.body.education_id, req.params.id])
+    console.log(result)
+    res.status(200).json({
+        status: "success",
+        data: {
+            result: result.rows[0]
+        }
+
+    })
+}))
+
+
+//*********** Field Resume Contact *****************
+//Get all field resume contact records
+app.get("/api/v1/field_resume_contacts", asyncHandler(async(req, res)=>{
+    const results = await  db.query("select * from field_resume_contact");
+    console.log(results)
+    res.status(200).json({
+        status: "Success",
+        results: results.rows.length,
+        data: {
+            results: results.rows
+        }
+    })
+
+}))
+
+//Get a field resume contact record
+app.get("/api/v1/field_resume_contacts/:id", asyncHandler(async(req, res)=>{
+    //console.log(req)
+
+    console.log(req.params.id)
+    const result = await db.query("select * from field_resume_contact where id = $1", [req.params.id])
+    console.log(result.rows[0])
+    res.status(200).json({
+        status: "success",
+        data: {
+            result: result.rows[0],
+        }
+
+    })
+
+}))
+
+//Create a field resume contact record
+app.post("/api/v1/field_resume_contacts", asyncHandler(async(req, res)=>{
+    console.log(req.body)
+    const result = await db.query(
+        "INSERT INTO field_resume_contact (field_resume_id, contact_id) VALUES ($1, $2) returning *", 
+        [req.body.field_resume_id, req.body.contact_id]);
+    console.log(result);
+    res.status(201).json({
+        status: "success",
+        data: {
+            result: result.rows[0]
+        }
+
+    })
+}))
+
+// Delete a record
+app.delete("/api/v1/field_resume_contacts/:id", asyncHandler(async(req, res) => {
+    const result = await db.query("DELETE FROM field_resume_contact WHERE id = $1", [req.params.id]);
+    console.log(result);
+    res.status(204).json({
+        status: "success"
+    });
+}));
+
+
+
+//Update a record
+app.put("/api/v1/field_resume_contacts/:id", asyncHandler(async(req, res)=>{
+    const result = await db.query(
+        "UPDATE field_resume_contact SET field_resume_id = $1, contact_id = $2 WHERE id = $3 returning *", 
+        [req.body.field_resume_id, req.body.contact_id, req.params.id])
+    console.log(result)
+    res.status(200).json({
+        status: "success",
+        data: {
+            result: result.rows[0]
+        }
+
+    })
+}))
+
+
+//*********** Field Resume Project *****************
+//Get all field resume project records
+app.get("/api/v1/field_resume_projects", asyncHandler(async(req, res)=>{
+    const results = await  db.query("select * from field_resume_project");
+    console.log(results)
+    res.status(200).json({
+        status: "Success",
+        results: results.rows.length,
+        data: {
+            results: results.rows
+        }
+    })
+
+}))
+
+//Get a field resume project record
+app.get("/api/v1/field_resume_projects/:id", asyncHandler(async(req, res)=>{
+    //console.log(req)
+
+    console.log(req.params.id)
+    const result = await db.query("select * from field_resume_project where id = $1", [req.params.id])
+    console.log(result.rows[0])
+    res.status(200).json({
+        status: "success",
+        data: {
+            result: result.rows[0],
+        }
+
+    })
+
+}))
+
+//Create a field resume project record
+app.post("/api/v1/field_resume_projects", asyncHandler(async(req, res)=>{
+    console.log(req.body)
+    const result = await db.query(
+        "INSERT INTO field_resume_project (field_resume_id, project_id) VALUES ($1, $2) returning *", 
+        [req.body.field_resume_id, req.body.project_id]);
+    console.log(result);
+    res.status(201).json({
+        status: "success",
+        data: {
+            result: result.rows[0]
+        }
+
+    })
+}))
+
+// Delete a record
+app.delete("/api/v1/field_resume_projects/:id", asyncHandler(async(req, res) => {
+    const result = await db.query("DELETE FROM field_resume_project WHERE id = $1", [req.params.id]);
+    console.log(result);
+    res.status(204).json({
+        status: "success"
+    });
+}));
+
+
+
+//Update a record
+app.put("/api/v1/field_resume_projects/:id", asyncHandler(async(req, res)=>{
+    const result = await db.query(
+        "UPDATE field_resume_project SET field_resume_id = $1, project_id = $2 WHERE id = $3 returning *", 
+        [req.body.field_resume_id, req.body.project_id, req.params.id])
+    console.log(result)
+    res.status(200).json({
+        status: "success",
+        data: {
+            result: result.rows[0]
+        }
+
+    })
+}))
+
+//*********** Field Resume Job *****************
+//Get all field resume job records
+app.get("/api/v1/field_resume_jobs", asyncHandler(async(req, res)=>{
+    const results = await  db.query("select * from field_resume_job");
+    console.log(results)
+    res.status(200).json({
+        status: "Success",
+        results: results.rows.length,
+        data: {
+            results: results.rows
+        }
+    })
+
+}))
+
+//Get a field resume job record
+app.get("/api/v1/field_resume_jobs/:id", asyncHandler(async(req, res)=>{
+    //console.log(req)
+
+    console.log(req.params.id)
+    const result = await db.query("select * from field_resume_job where id = $1", [req.params.id])
+    console.log(result.rows[0])
+    res.status(200).json({
+        status: "success",
+        data: {
+            result: result.rows[0],
+        }
+
+    })
+
+}))
+
+//Create a field resume job record
+app.post("/api/v1/field_resume_jobs", asyncHandler(async(req, res)=>{
+    console.log(req.body)
+    const result = await db.query(
+        "INSERT INTO field_resume_job (field_resume_id, job_id) VALUES ($1, $2) returning *", 
+        [req.body.field_resume_id, req.body.job_id]);
+    console.log(result);
+    res.status(201).json({
+        status: "success",
+        data: {
+            result: result.rows[0]
+        }
+
+    })
+}))
+
+// Delete a record
+app.delete("/api/v1/field_resume_jobs/:id", asyncHandler(async(req, res) => {
+    const result = await db.query("DELETE FROM field_resume_job WHERE id = $1", [req.params.id]);
+    console.log(result);
+    res.status(204).json({
+        status: "success"
+    });
+}));
+
+
+
+//Update a record
+app.put("/api/v1/field_resume_jobs/:id", asyncHandler(async(req, res)=>{
+    const result = await db.query(
+        "UPDATE field_resume_job SET field_resume_id = $1, job_id = $2 WHERE id = $3 returning *", 
+        [req.body.field_resume_id, req.body.job_id, req.params.id])
+    console.log(result)
+    res.status(200).json({
+        status: "success",
+        data: {
+            result: result.rows[0]
+        }
+
+    })
+}))
+
+
+//*********** Field Resume Skill *****************
+//Get all field resume skill records
+app.get("/api/v1/field_resume_skills", asyncHandler(async(req, res)=>{
+    const results = await  db.query("select * from field_resume_skill");
+    console.log(results)
+    res.status(200).json({
+        status: "Success",
+        results: results.rows.length,
+        data: {
+            results: results.rows
+        }
+    })
+
+}))
+
+//Get a field resume skill record
+app.get("/api/v1/field_resume_skills/:id", asyncHandler(async(req, res)=>{
+    //console.log(req)
+
+    console.log(req.params.id)
+    const result = await db.query("select * from field_resume_skill where id = $1", [req.params.id])
+    console.log(result.rows[0])
+    res.status(200).json({
+        status: "success",
+        data: {
+            result: result.rows[0],
+        }
+
+    })
+
+}))
+
+//Create a field resume skill record
+app.post("/api/v1/field_resume_skills", asyncHandler(async(req, res)=>{
+    console.log(req.body)
+    const result = await db.query(
+        "INSERT INTO field_resume_skill (field_resume_id, skill_id) VALUES ($1, $2) returning *", 
+        [req.body.field_resume_id, req.body.skill_id]);
+    console.log(result);
+    res.status(201).json({
+        status: "success",
+        data: {
+            result: result.rows[0]
+        }
+
+    })
+}))
+
+// Delete a record
+app.delete("/api/v1/field_resume_skills/:id", asyncHandler(async(req, res) => {
+    const result = await db.query("DELETE FROM field_resume_skill WHERE id = $1", [req.params.id]);
+    console.log(result);
+    res.status(204).json({
+        status: "success"
+    });
+}));
+
+
+
+//Update a record
+app.put("/api/v1/field_resume_skills/:id", asyncHandler(async(req, res)=>{
+    const result = await db.query(
+        "UPDATE field_resume_skill SET field_resume_id = $1, skill_id = $2 WHERE id = $3 returning *", 
+        [req.body.field_resume_id, req.body.skill_id, req.params.id])
+    console.log(result)
+    res.status(200).json({
+        status: "success",
+        data: {
+            result: result.rows[0]
+        }
+
+    })
+}))
+
+
+//*********** Field Resume Extracurricular *****************
+//Get all field resume extracurricular records
+app.get("/api/v1/field_resume_extracurriculars", asyncHandler(async(req, res)=>{
+    const results = await  db.query("select * from field_resume_extracurricular");
+    console.log(results)
+    res.status(200).json({
+        status: "Success",
+        results: results.rows.length,
+        data: {
+            results: results.rows
+        }
+    })
+
+}))
+
+//Get a field resume extracurricular record
+app.get("/api/v1/field_resume_extracurriculars/:id", asyncHandler(async(req, res)=>{
+    //console.log(req)
+
+    console.log(req.params.id)
+    const result = await db.query("select * from field_resume_extracurricular where id = $1", [req.params.id])
+    console.log(result.rows[0])
+    res.status(200).json({
+        status: "success",
+        data: {
+            result: result.rows[0],
+        }
+
+    })
+
+}))
+
+//Create a field resume extracurricular record
+app.post("/api/v1/field_resume_extracurriculars", asyncHandler(async(req, res)=>{
+    console.log(req.body)
+    const result = await db.query(
+        "INSERT INTO field_resume_extracurricular (field_resume_id, extracurricular_id) VALUES ($1, $2) returning *", 
+        [req.body.field_resume_id, req.body.extracurricular_id]);
+    console.log(result);
+    res.status(201).json({
+        status: "success",
+        data: {
+            result: result.rows[0]
+        }
+
+    })
+}))
+
+// Delete a record
+app.delete("/api/v1/field_resume_extracurriculars/:id", asyncHandler(async(req, res) => {
+    const result = await db.query("DELETE FROM field_resume_extracurricular WHERE id = $1", [req.params.id]);
+    console.log(result);
+    res.status(204).json({
+        status: "success"
+    });
+}));
+
+
+
+//Update a record
+app.put("/api/v1/field_resume_extracurriculars/:id", asyncHandler(async(req, res)=>{
+    const result = await db.query(
+        "UPDATE field_resume_extracurricular SET field_resume_id = $1, extracurricular_id = $2 WHERE id = $3 returning *", 
+        [req.body.field_resume_id, req.body.extracurricular_id, req.params.id])
+    console.log(result)
+    res.status(200).json({
+        status: "success",
+        data: {
+            result: result.rows[0]
+        }
+
+    })
+}))
+
+
+//Queries for a specific field resume: contact, education, projects, jobs, extracurriculars, skill
+
+
+//Contact
+app.get("/api/v1/field_resume_contact/", asyncHandler(async(req, res)=>{
+    let name = req.query.name;
+    const result = await db.query(
+        "SELECT fr.name, c.name, c.email, c.phone_number, c.linkedin, c.github, c.portfolio_website FROM field_resume fr JOIN field_resume_contact frc ON fr.id = frc.field_resume_id JOIN contacts c ON  c.id = frc.contact_id where fr.name = $1", [name] 
+
+        
+    )
+    res.status(200).json({
+        status: 'success',
+        data: {
+            result: result.rows
+        }
+    })
+}))
+
+
+//Education
+app.get("/api/v1/field_resume_education/", asyncHandler(async(req, res)=>{
+    let name = req.query.name;
+    const result = await db.query(
+        "SELECT fr.name, e.name, e.start_date, e.end_date, e.degree, e.relevant_coursework FROM field_resume fr JOIN field_resume_education fre ON fr.id = fre.field_resume_id JOIN education e ON e.id = fre.education_id where fr.name = $1", [name]
+
+        
+    )
+    res.status(200).json({
+        status: 'success',
+        data: {
+            result: result.rows
+        }
+    })
+}))
+
+//Project
+app.get("/api/v1/field_resume_project/", asyncHandler(async(req, res)=>{
+    let name = req.query.name;
+    const result = await db.query(
+        "SELECT fr.name, p.name, p.role, p.start_date, p.end_date, p.description FROM field_resume fr JOIN field_resume_project frp ON fr.id = frp.field_resume_id JOIN projects p ON p.id = frp.project_id where fr.name = $1", [name]
+
+        
+    )
+    res.status(200).json({
+        status: 'success',
+        data: {
+            result: result.rows
+        }
+    })
+}))
+//Job
+
+app.get("/api/v1/field_resume_job/", asyncHandler(async(req, res)=>{
+    let name = req.query.name;
+    const result = await db.query(
+        "SELECT fr.name, j.name, j.role, j.start_date, j.end_date, j.description FROM field_resume fr JOIN field_resume_job frj ON fr.id = frj.field_resume_id JOIN jobs j ON j.id = frj.job_id where fr.name = $1", [name]
+
+        
+    )
+    res.status(200).json({
+        status: 'success',
+        data: {
+            result: result.rows
+        }
+    })
+}))
+
+
+
+//Skill
+app.get("/api/v1/field_resume_skill/", asyncHandler(async(req, res)=>{
+    let name = req.query.name;
+    const result = await db.query(
+        "SELECT fr.name, s.hard_skills, s.soft_skills, s.technology, s.languages FROM field_resume fr JOIN field_resume_skill frs ON fr.id = frs.field_resume_id JOIN skills s ON s.id = frs.skill_id where fr.name = $1", [name]
+
+        
+    )
+    res.status(200).json({
+        status: 'success',
+        data: {
+            result: result.rows
+        }
+    })
+}))
+
+
+
+//Extracurricular
+app.get("/api/v1/field_resume_extracurricular/", asyncHandler(async(req, res)=>{
+    let name = req.query.name;
+    const result = await db.query(
+        "SELECT fr.name as resume_name, ex.name, ex.role, ex.start_date, ex.end_date, ex.description FROM field_resume fr JOIN field_resume_extracurricular frex ON fr.id = frex.field_resume_id JOIN extracurriculars ex ON ex.id = frex.extracurricular_id where fr.name = $1", [name]
+
+    )
+    res.status(200).json({
+        status: 'success',
+        data: {
+            result: result.rows
+        }
+    })
+}))
+
+
+// app.get("/api/v1/field_resume_extracurricular/", asyncHandler(async(req, res)=>{
+//     //let name = req.query.name;
+//     const result = await db.query(
+//         "SELECT fr.name as resume_name, ex.name, ex.role, ex.start_date, ex.end_date, ex.description FROM field_resume fr JOIN field_resume_extracurricular frex ON fr.id = frex.field_resume_id JOIN extracurriculars ex ON ex.id = frex.extracurricular_id where fr.name = $1", [req.query.name]
+
+//     )
+//     res.status(200).json({
+//         status: 'success',
+//         data: {
+//             result: result.rows
+//         }
+//     })
+// }))
+
+
+
+
+
+
+
+
+// app.get("/api/v1/field_resumes/", asyncHandler(async(req, res)=>{
+//     //console.log(req)
+
+//     console.log(req.params.id)
+//     const q=
+//     "SELECT fr.name, ex.name, ex.role, ex.start_date, ex.end_date, ex.description FROM field_resume fr JOIN field_resume_extracurricular frex ON fr.id = frex.field_resume_id JOIN extracurriculars ex ON ex.id = frex.extracurricular_id where fr.name = $1"
+
+//     const field_resume = await db.query(
+//         q, [req.params.name])
+//     console.log(field_resume.rows[0])
+//     res.status(200).json({
+//         status: "success",
+//         data: {
+//             field_resume: field_resume.rows[0],
+//         }
+
+//     })
+
+// }))
+
+
+// app.get('/api/v1/field_resumes/:name', async (req, res) => {
+//     try {
+//       const name = req.params.name;
+  
+//       Your code to execute the SQL query and fetch the data
+//       const result = await db.query(
+//         'SELECT fr.name, s.hard_skills, s.soft_skills, s.technology, s.languages FROM field_resume fr JOIN field_resume_skill frs ON fr.id = frs.field_resume_id JOIN skills s ON s.id = frs.skill_id WHERE fr.name = $1',
+//         [name]
+//       );
+  
+//       Send the result as a JSON response
+//       res.status(200).json({
+//         status: 'success',
+//         data: result.rows,
+//       });
+//     } catch (err) {
+//       Handle any errors that occur during the query execution
+//       console.error(err);
+//       res.status(500).json({
+//         status: 'error',
+//         message: 'An error occurred while processing your request.',
+//       });
+//     }
+//   });
 
 
 

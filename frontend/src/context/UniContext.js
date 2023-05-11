@@ -56,6 +56,14 @@ export const UniContextProvider = (props) => {
         setSkills([...skills, skill])
     }
 
+    //Field Resumes
+    const [fieldResumes, setFieldResumes] = useState([]);
+
+    const [selectedFieldResume, setSelectedFieldResume] = useState(null);
+
+    const addFieldResumes = (fieldResume) => {
+        setFieldResumes([...fieldResumes, fieldResume])
+    }
 
 
     return(
@@ -87,7 +95,13 @@ export const UniContextProvider = (props) => {
 
             skills, 
             setSkills, 
-            addSkills
+            addSkills,
+
+            fieldResumes,
+            setFieldResumes,
+            addFieldResumes,
+            selectedFieldResume,
+            setSelectedFieldResume
             
 
             }}>

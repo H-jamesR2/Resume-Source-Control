@@ -43,6 +43,11 @@ import UpdateExtracurricular from "./componentsDB/UpdateExtracurricular";
 
 
 import UpdateSkill from "./componentsDB/UpdateSkill";
+
+import FieldResumes from "./pages/FieldResumes";
+
+import FieldResumeBlocks from "./pages/FieldResumeBlocks";
+
 //<Route path="/blockeditor" element={<BlockEditor />} />
 export default function App() {
   
@@ -87,6 +92,10 @@ export default function App() {
             <Route path="/data/:id/updateProject" element={<UpdateProject/>}/>
             <Route path="/data/:id/updateExtracurricular" element={<UpdateExtracurricular/>}/>
             <Route path="/data/:id/updateSkill" element={<UpdateSkill/>}/>
+            <Route path="/fieldResumes" element={<FieldResumes/>} />
+            <Route path="/fieldResumes/:id" element={<FieldResumeBlocks/>} />
+
+
 
         </Routes>
         </UniContextProvider>
