@@ -95,7 +95,7 @@
 }
 
 .sidebar-bottom .sidebar-text{
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 400px;
 }
 
@@ -130,6 +130,7 @@
 }
 .collapse-text{
     padding-top: 15px;
+    font-size: 16px !important;
 }
 .collapse-icon{
     margin: 0px 10px 0px 0px;

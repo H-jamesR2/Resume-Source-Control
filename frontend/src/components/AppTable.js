@@ -197,11 +197,6 @@ function AppTable(prop) {
                             rules={[
                                 { required: true, message: "Please input the title of job position!" }
                             ]}
-                        // onChange={(e) => {
-                        //     setAddingRecord((pre) => {
-                        //         return { ...pre, position: e.target.value };
-                        //     })
-                        // }} 
                         >
                             <Input />
                         </Form.Item>
@@ -263,55 +258,6 @@ function AppTable(prop) {
                                     }
                                 ]} />
                         </Form.Item>
-                        {/* <Input placeholder='Company' style={{ width: 250 }} size='large' onChange={(e) => {
-                            setAddingRecord((pre) => {
-                                return { ...pre, company: e.target.value };
-                            })
-                        }} /><br />
-                        <DatePicker format='MM/DD/YYYY' allowClear={false} locale onChange={(e) => {
-                            setAddingRecord((pre) => {
-                                //console.log(e.$d.getMonth()+1 + '/' + e.$d.getDate() + '/' + e.$d.getYear());
-                                return { ...pre, submissionDate: e.$d.getMonth() + 1 + '/' + e.$d.getDate() + '/' + e.$d.getYear() };
-                            })
-                        }} /><br />
-                        <Select
-                            placeholder='Applied'
-                            defaultValue='Applied'
-                            style={{ width: 250 }}
-                            size='large'
-                            options={[
-                                {
-                                    value: 'Applied',
-                                    label: 'Applied'
-                                },
-                                {
-                                    value: 'Interviewing',
-                                    label: 'Interviewing'
-                                },
-                                {
-                                    value: 'Under Consideration',
-                                    label: 'Under Consideration'
-                                },
-                                {
-                                    value: 'Hired',
-                                    label: 'Hired'
-                                },
-                                {
-                                    value: 'No Offer',
-                                    label: 'No Offer'
-                                }
-                            ]}
-                            onChange={(e) => {
-                                console.log(e);
-                                setAddingRecord((pre) => {
-                                    return { ...pre, status: e };
-                                })
-                            }} />
-                        <Input placeholder='Resume' style={{ width: 250 }} size='large' onChange={(e) => {
-                            setAddingRecord((pre) => {
-                                return { ...pre, resume: e.target.value };
-                            })
-                        }} /> */}
                     </Form>
                 </Modal>
                 <Modal

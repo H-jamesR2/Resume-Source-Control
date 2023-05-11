@@ -4,7 +4,6 @@ import TopNav2 from "../components/TopNav2";
 import NavBar from "../components/Navbar";
 import TopNav from "../components/TopNav";
 import AppTable from "../components/AppTable";
-import AppInfoSideBar from "../components/AppInfoSideBar";
 import { Navigate } from "react-router-dom";
 import { SessionContext } from "../components/UserContext";
 
@@ -54,7 +53,7 @@ function Application(prop) {
                 <>
                     <TopNav2 />
                     <div className="page-wrapper">
-                        <AppInfoSideBar />
+                        <NavBar />
                         <div className="main-content">
                             <div>Applications Tracker</div>
                             <AppTable data={dataSource} />
