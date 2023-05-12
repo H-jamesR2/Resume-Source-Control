@@ -3,6 +3,24 @@ Capstone Repository for Resume Source Control Project
 
 [App Name] Resume Source Control [Github Trees-esque]	[Approved]
 ===
+## Build Instructions
+First you need to clone repository then run:
+```
+pip install Flask
+cd frontend
+npm install
+```
+In another terminal instance run the python backend by running:
+```
+cd frontend
+npm run start-backend
+```
+In another terminal instance start the react app by running:
+```
+cd frontend
+npm run start
+```
+Then you can sign in with your own information
 
 ## Table of Contents
 1. [Overview](#Overview)
