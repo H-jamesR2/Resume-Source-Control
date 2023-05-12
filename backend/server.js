@@ -611,7 +611,7 @@ app.put("/api/v1/skills/:id", asyncHandler(async(req, res)=>{
 
 
 
-const port = process.env.PORT || 3009;
+const port = process.env.PORT || 3008;
 app.listen(port, ()=>{
     console.log(`Server is up and listening on port ${port}`)
 });
