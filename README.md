@@ -4,7 +4,7 @@ Capstone Repository for Resume Source Control Project by:
 
 Resume Source Control 
 ===
-## Build Instructions
+## Run Locally
 First you need to clone repository then at the root directory "CS499_Capstone_Repository" run:
 ```
 npm run initalize-app
