@@ -1,7 +1,7 @@
 # [App Name]
 Capstone Repository for Resume Source Control Project
 
-[App Name] Resume Source Control [Github Trees-esque]	[Approved]
+Resume Source Control 
 ===
 ## Build Instructions
 First you need to clone repository then run:
