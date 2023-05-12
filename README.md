@@ -5,6 +5,7 @@ Capstone Repository for Resume Source Control Project by:
 Resume Source Control 
 ===
 ## Run Locally
+Assuming you have [Python](https://www.python.org/downloads/) and [React](https://react.dev/learn/installation) installed:  
 First you need to clone repository then at the root directory "CS499_Capstone_Repository" run:
 ```
 npm run initalize-app
