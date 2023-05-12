@@ -1,5 +1,6 @@
 # [App Name]
-Capstone Repository for Resume Source Control Project by: Antonio Diez, Qian He, Nelson Lieu, Hilarion Reyes, Anthony Regner, William Mak
+Capstone Repository for Resume Source Control Project by: 
+-- Antonio Diez, Qian He, Nelson Lieu, Hilarion Reyes, Anthony Regner, William Mak
 
 Resume Source Control 
 ===
