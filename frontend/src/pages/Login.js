@@ -157,7 +157,10 @@ const LogIn=()=>{
             //updateState({user:user, isLoggedIn: true});
             console.log("Success")
             console.log(user)
-            navigate('/mainpage')
+            localStorage.setItem('my-key', currCreds.identityId);
+            setTimeout( function(){
+              navigate('/mainpage')
+            }, 1500)
           }
 
         } catch(error){

@@ -13,16 +13,36 @@ import Resume from "./pages/Resume";
 import Blocks from "./pages/Blocks";
 import Settings from "./pages/Settings";
 import Application from "./pages/Application";
+//import BlockEditor from "./pages/BlockEditor";
+import Profile from "./pages/Profile";
+import TestPage from "./pages/TestPage";
 import BlockEditor from "./pages/BlockEditor";
 import ChangePassword from "./pages/EditPassword";
 import ChangeEmail from "./pages/EditEmail";
-
-import Profile from "./pages/Profile";
 import TextEditMCE from "./pages/TextEditMCE";
 
-//New Component
+
 import UploadToS3 from "./pages/Temp";
 
+//Method for listing objects
+import ListResumesFromS3 from "./pages/ListResumes";
+
+
+//DB
+import Data from "./pages/Data";
+
+import {UniContextProvider} from './context/UniContext'
+
+import UpdateContact from "./componentsDB/UpdateContact";
+
+import UpdateEducation from "./componentsDB/UpdateEducation";
+
+import UpdateJob from "./componentsDB/UpdateJob";
+import UpdateProject from "./componentsDB/UpdateProject";
+import UpdateExtracurricular from "./componentsDB/UpdateExtracurricular";
+
+
+import UpdateSkill from "./componentsDB/UpdateSkill";
 //<Route path="/blockeditor" element={<BlockEditor />} />
 export default function App() {
   
@@ -44,14 +64,32 @@ export default function App() {
             <Route path="/blockeditor" element={<BlockEditor />} />
 
             <Route path="/profile" element={<Profile />} />
+            <Route path="/testpage" element={<TestPage />} />
 
 
             {/* New route for upload Temp page */}
             <Route path="/upload" element={<UploadToS3 />} />
 
+            <Route path="/list" element={<ListResumesFromS3 />} />
+
+
+
 
         </Routes>
         </Session>
+
+        <UniContextProvider>
+        <Routes>
+            <Route path="/data" element={<Data/>} />
+            <Route path="/data/:id/updateContact" element={<UpdateContact/>}/>
+            <Route path="/data/:id/updateEducation" element={<UpdateEducation/>}/>
+            <Route path="/data/:id/updateJob" element={<UpdateJob/>}/>
+            <Route path="/data/:id/updateProject" element={<UpdateProject/>}/>
+            <Route path="/data/:id/updateExtracurricular" element={<UpdateExtracurricular/>}/>
+            <Route path="/data/:id/updateSkill" element={<UpdateSkill/>}/>
+
+        </Routes>
+        </UniContextProvider>
       </div>
   );
 }

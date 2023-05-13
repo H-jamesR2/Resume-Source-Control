@@ -2,10 +2,12 @@
   "name": "resume-website",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:5000",
   "dependencies": {
     "@ant-design/icons": "^5.0.1",
     "@aws-amplify/ui-react": "^4.4.3",
     "@aws-sdk/client-s3": "^3.303.0",
+    "@aws-sdk/s3-request-presigner": "^3.321.1",
     "@editorjs/editorjs": "^2.26.5",
     "@editorjs/header": "^2.7.0",
     "@editorjs/list": "^1.8.0",
@@ -23,6 +25,7 @@
     "antd": "^5.3.2",
     "aws-amplify": "^5.0.23",
     "aws-sdk": "^2.1347.0",
+    "axios": "^1.4.0",
     "babel-plugin-macros": "^3.1.0",
     "file-saver": "^2.0.5",
     "react": "^18.2.0",
@@ -31,10 +34,12 @@
     "react-dropdown": "^1.11.0",
     "react-router-dom": "^6.8.1",
     "react-scripts": "^5.0.1",
+    "tinymce": "^6.4.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
+    "start-backend": "cd backend && python -m flask run --no-debugger",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
