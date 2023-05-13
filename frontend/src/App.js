@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Outlet, Link, NavLink } from "react-router-dom";
 import './App.css';
-import './cssFiles/Login.css';
+import './cssFiles/styles.css';
 import './cssFiles/Login.css';
 import Homepage from './pages/Homepage';
 import {Session} from "./components/UserContext"
