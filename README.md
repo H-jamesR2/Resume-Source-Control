@@ -8,7 +8,7 @@ Resume Source Control
 Assuming you have the latest [Python](https://www.python.org/downloads/) and [React](https://react.dev/learn/installation) installed:
 
 ### PYTHON:
-IF python not upto-date, run the following commands in a terminal instance (on Mac):
+(**ON MacOS**)IF python not upto-date, run the following commands in a terminal instance:
 ```
 brew install python
 
