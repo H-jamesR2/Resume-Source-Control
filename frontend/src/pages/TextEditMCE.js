@@ -161,6 +161,9 @@ const TextEditMCE = () => {
     const save = () => {
         if (editorRef.current) {
             const content = editorRef.current.getContent();
+            console.log(content)
+            console.log(editorRef.current)
+            
             setDirty(false);
             editorRef.current.setDirty(false);
             /*setState({
@@ -180,6 +183,20 @@ const TextEditMCE = () => {
             console.log(content);
         }
     };
+
+    const addBlockContent = () => {
+        let sampleContent = `<p class="c25"><strong><span class="c5">Undergraduate Research Assistant&nbsp;</span></strong><span class="c1">June 2020 &ndash; Present&nbsp;</span><span class="c7">Texas A&amp;M University College Station, TX</span></p>
+        <ul>
+        <li class="c25"><span class="c0">Developed a REST API using FastAPI and PostgreSQL to store data from learning management systems</span></li>
+        <li class="c25"><span class="c0">Developed a full-stack web application using Flask, React, PostgreSQL and Docker to analyze GitHub data</span></li>
+        <li class="c25"><span class="c0">Explored ways to visualize GitHub collaboration in a classroom setting</span></li>
+        </ul>
+        `   
+        //window.tinymce
+        window.tinymce.execCommand('mceInsertContent', false, sampleContent);
+        //editorRef.current.execCommand('mceInsertContent', false, sampleContent);
+        //tinymce.activeEditor.execCommand('mceInsertContent', false, 'your content');
+    }
     /*
     const initialVal = useMemo(
         () =>
@@ -210,7 +227,6 @@ const TextEditMCE = () => {
                 <TopNav2 />
             <div className="page-wrapper">
                     <AppInfoSideBar />
-                    <NavBar/>
                 <div id="Editor_MCE">
                     <Editor
                         //use diff apiKey for renewing premium feature;
@@ -257,6 +273,7 @@ const TextEditMCE = () => {
                             }}
                         > getURLobject
                         </button>
+                        <button onClick={addBlockContent}> addBlockContent</button>
                     </div>
                 </div>
             </div>
