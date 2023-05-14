@@ -9,6 +9,6 @@
     "react-collapsed": "^4.0.2"
   },
   "scripts": {
-    "initalize-app": "pip install Flask && cd frontend && npm install && cd backend && npm install"
+    "initalize-app": "pip install Flask && cd frontend && npm install && cd ../ && cd backend && npm install"
   }
 }
