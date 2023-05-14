@@ -31,8 +31,8 @@ function Profile(prop)
             <div className="page-wrapper">
                 <NavBar/>
                 <div className="main-content">
-                  <div className="header-1">Edit your profile, username</div>                
-                  <div className="header-2">Profile picture</div>
+                  <h1>Edit your profile, username</h1>                
+                  <h2>Profile picture</h2>
                   <div style={{display:"flex", flexDirection:"row"}}>
                     <img src={Person1} style={{width:"128px"}}></img>
                     <div style={{display:"flex", flexDirection:"column", width:"120px"}}>
@@ -40,7 +40,7 @@ function Profile(prop)
                       <button className="smallnegative" style={{margin:"3px 0px 6px 10px"}}>Remove</button>
                     </div>
                   </div>
-                  <div className="header-2">Other information</div>
+                  <h2>Other information</h2>
                   <div className="name-split">
                   <input
                     className={"text"}

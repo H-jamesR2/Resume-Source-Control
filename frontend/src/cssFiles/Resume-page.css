@@ -1,4 +1,4 @@
-.header-1{
+h1{
   font-family: Lekton-Bold;
   font-size: 22pt;
   color: var(--primary-4);
@@ -6,7 +6,7 @@
   margin-bottom: 10px;
 }
 
-.header-2{
+h2{
   font-family: Lekton-Bold;
   font-size: 16.5pt;
   color: #09f;
