@@ -1,6 +1,7 @@
 import React, {useContext, useState, useEffect} from "react";
 import { BrowserRouter as Router, Routes, Route, Link, NavLink, useNavigate } from "react-router-dom";
-import TopNav2 from "../components/TopNav2";
+import TopNav from "../components/TopNav";
+import TopNav3 from "../components/TopNav3";
 import NavBar from "../components/Navbar";
 import '../cssFiles/Settings.css';
 import UserPool from "../UserPool";
@@ -28,7 +29,7 @@ function Settings(prop)
         <div>
           {isLoggedIn &&
             <>
-            <TopNav2/>
+            <TopNav3/>
             <div className="page-wrapper">
               <NavBar/>
                 <div className="main-content">
@@ -61,6 +62,16 @@ function Settings(prop)
               </div>
             </> 
           }
+          { !isLoggedIn && (
+            <div>   
+                <TopNav/>
+                <div className="page-wrapper">
+                    <div className="main-content">
+                    You are not logged in. Please log in or sign up to continue.
+                    </div>
+                </div>
+            </div>
+            )}
         </div>
     );
 }
@@ -73,7 +84,7 @@ export default Settings;
 // {   
 //     return(    
 //         <div>
-//           <TopNav2/>
+//           <TopNav3/>
 //           <div className="page-wrapper">
 //               <NavBar/>
 //               <div className="main-content">

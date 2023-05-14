@@ -1,6 +1,6 @@
 import React, {useState, useContext, useEffect} from "react";
 import { SessionContext } from "../components/UserContext";
-import TopNav2 from "../components/TopNav2";
+import TopNav3 from "../components/TopNav3";
 import NavBar from "../components/Navbar";
 import { useNavigate, Navigate } from "react-router-dom";
 import{Link} from "react-router-dom"
@@ -63,7 +63,7 @@ const ChangePassword = () =>{
       <div>
         {isLoggedIn &&
             <>
-        <TopNav2/>
+        <TopNav3/>
             <div className="page-wrapper">
                 <NavBar/>
                 

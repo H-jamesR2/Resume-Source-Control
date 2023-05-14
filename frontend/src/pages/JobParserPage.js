@@ -2,22 +2,22 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link, NavLink } from "react-router-dom";
 import TopNav3 from "../components/TopNav3";
 import NavBar from "../components/Navbar";
-import SourceControl from "../components/SourceControl";
+import JobParser from "../components/JobParser"
 
-
-function TestPage(prop)
+function JobParserPage(prop)
 {
     return(                    
         <div>
-            <TopNav3/>
+          <TopNav3/>
             <div className="page-wrapper">
-                <NavBar/>
-                <div className="main-content">
-                </div>                
-                <SourceControl/>
+              <NavBar/>
+              <div className="main-content">
+              <JobParser></JobParser>
+              </div>
             </div>
         </div>
     );
 }
 
-export default TestPage;
+
+export default JobParserPage;

@@ -28,7 +28,8 @@ function NavBar(prop) {
                 <nav className="sidebar-bottom">
                     <li><Link to="/resume"><div className="sidebar-text">Resumes</div></Link></li>
                     <li><Link to="/blocks"><div className="sidebar-text">Block</div></Link></li>
-                    <li><Link to="/applications"><div className="sidebar-text">Applications</div></Link></li>
+                    <li><Link to="/applications"><div className="sidebar-text">Applications</div></Link></li>                    
+                    <li><Link to="/jobparser"><div className="sidebar-text">Job Scanner</div></Link></li>
                 </nav>
             </div>
         </div>

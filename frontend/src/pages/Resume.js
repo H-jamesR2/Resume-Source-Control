@@ -1,5 +1,6 @@
 import React, {useState, useEffect, useContext} from "react";
 import { BrowserRouter as Router, Routes, Route, Link, NavLink } from "react-router-dom";
+import TopNav from "../components/TopNav";
 import TopNav2 from "../components/TopNav2";
 import NavBar from "../components/Navbar";
 import '../cssFiles/Resume-page.css';
@@ -71,6 +72,16 @@ function Resume(prop)
             </div>
             </>
            }
+           { !isLoggedIn && (
+            <div>   
+                <TopNav/>
+                <div className="page-wrapper">
+                    <div className="main-content">
+                    You are not logged in. Please log in or sign up to continue.
+                    </div>
+                </div>
+            </div>
+            )}
         </div>
     );
 }

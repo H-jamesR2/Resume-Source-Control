@@ -2,7 +2,7 @@ import React, {useState, useContext, useEffect} from "react"
 import { SessionContext } from "../components/UserContext";
 import { useNavigate } from "react-router-dom";
 import { CognitoUser, CognitoUserAttribute } from "amazon-cognito-identity-js";
-import TopNav2 from "../components/TopNav2";
+import TopNav3 from "../components/TopNav3";
 import NavBar from "../components/Navbar";
 import { Navigate } from "react-router-dom";
 
@@ -44,7 +44,7 @@ const ChangeEmail=()=>{
         <div>
           {isLoggedIn &&
           <>
-          <TopNav2/>
+          <TopNav3/>
               <div className="page-wrapper">
                   <NavBar/>
                   
