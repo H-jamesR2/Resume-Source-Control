@@ -26,6 +26,7 @@ import React, { useState, useContext, useEffect, useCallback, useMemo, useRef } 
 import { Editor } from '@tinymce/tinymce-react';
 import TopNav3 from "../components/TopNav3";
 import NavBar from "../components/Navbar";
+import AppInfoSideBar from "../components/AppInfoSideBar";
 
 import { SessionContext } from "../components/UserContext";
 import { configureAmplify, SetS3Config } from "../components/AmplifyConfigure";
@@ -70,24 +71,37 @@ const TextEditMCE = () => {
     /* GET: FILE 
         - update DocumentState+DocumentName
     */
-    const [urlName, urlFile] = JSON.parse(localStorage.getItem('myURLObject'));
+    //console.log(JSON.parse(localStorage.getItem('myURLObject')));
+
+    const [urlName, urlFile] = ["", ""];
+    // if URL object exists
+    if (localStorage.getItem("myURLObject") != null){
+        const [urlName, urlFile] = JSON.parse(localStorage.getItem('myURLObject'));
+    }
     //const urlTest ="https://resumeapps3.s3.us-east-2.amazonaws.com/protected/us-east-2%3A5f33bbfc-c966-45d1-8b59-2642bf875182/userFiles/jake_ryan_TestResume.html?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIA6DOFALTAH2DSHQGB%2F20230501%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230501T034632Z&X-Amz-Expires=3600&X-Amz-Signature=fe216a79c1cdc46aa15f4408ccaa03fa5a716f54d503ea4fd91c77c5e0f1b644&X-Amz-SignedHeaders=host&x-id=GetObject";
     //console.log(`${urlFile}`)
     //console.log(urlName.type, urlFile.type);
     DocumentState.resumeName = String(urlName);
-    fetch(`${urlFile}`)
-        .then(res => res.blob()) // Gets the response and returns it as a blob
-        .then(blob => {
-            //console.log("DEBUG"); 
-            //console.log(blob);
+     
+    // urlObject not found OR localStorage URLObject not found
+    if (urlFile === "" || localStorage.getItem("myURLObject") === null) {
+        DocumentState.resumeContent = "";
+    } else {
+        fetch(`${urlFile}`)
+            .then(res => res.blob()) // Gets the response and returns it as a blob
+            .then(blob => {
+                //console.log("DEBUG"); 
+                //console.log(blob);
 
-            blob.text().then(text => {
-                //let blobText = text;
-                //console.log(blobText);
-                DocumentState.resumeContent = text;
-            })
-            //console.log("DEBUG"); 
-        });
+                blob.text().then(text => {
+                    //let blobText = text;
+                    //console.log(blobText);
+                    DocumentState.resumeContent = text;
+                })
+                //console.log("DEBUG"); 
+            });
+    }
+
 
 
     /* Run Put Request on File TO S3 Database */
@@ -102,7 +116,11 @@ const TextEditMCE = () => {
                 //const upload = null;
                 alert('Document uploaded to S3')
 
+                // reset localStorage URL route to empty strings since SAVED
+                localStorage.setItem('myURLObject', JSON.stringify(
+                    ["", ""]))
                 // return to mainpage since urlLink File changed...
+                console.log(JSON.parse(localStorage.getItem('myURLObject')));
                 setTimeout(function(){
                     navigate('/mainpage')
                 }, 1500);
@@ -160,6 +178,9 @@ const TextEditMCE = () => {
     const save = () => {
         if (editorRef.current) {
             const content = editorRef.current.getContent();
+            console.log(content)
+            console.log(editorRef.current)
+            
             setDirty(false);
             editorRef.current.setDirty(false);
             /*setState({
@@ -170,7 +191,7 @@ const TextEditMCE = () => {
             console.log((DocumentState.resumeName));
             console.log((DocumentState.resumeContent));
             if(DocumentState.resumeName == ""){
-                DocumentState.resumeName = "jake_testResumeDEMOmay1.html";
+                DocumentState.resumeName = "testResumeDEMOmay15.html";
             }   
             DocumentState.resumeContent = file;
 
@@ -179,6 +200,37 @@ const TextEditMCE = () => {
             console.log(content);
         }
     };
+
+    const addBlockContent = () => {
+        let sampleContent = `<p class="c25"><strong><span class="c5">Undergraduate Research Assistant&nbsp;</span></strong><span class="c1">June 2020 &ndash; Present&nbsp;</span><span class="c7">Texas A&amp;M University College Station, TX</span></p>
+        <ul>
+        <li class="c25"><span class="c0">Developed a REST API using FastAPI and PostgreSQL to store data from learning management systems</span></li>
+        <li class="c25"><span class="c0">Developed a full-stack web application using Flask, React, PostgreSQL and Docker to analyze GitHub data</span></li>
+        <li class="c25"><span class="c0">Explored ways to visualize GitHub collaboration in a classroom setting</span></li>
+        </ul>
+        `   
+        //window.tinymce
+        window.tinymce.execCommand('mceInsertContent', false, sampleContent);
+        //editorRef.current.execCommand('mceInsertContent', false, sampleContent);
+        //tinymce.activeEditor.execCommand('mceInsertContent', false, 'your content');
+    }
+    
+    /*
+    window.addEventListener("beforeunload", function (e) {
+        var confirmationMessage = "\o/";
+
+        (e || window.event).returnValue = confirmationMessage; //Gecko + IE
+        console.log("CAN YOU READ THIS MESSAGE WITH Before Unload")
+        return confirmationMessage;                            //Webkit, Safari, Chrome
+    });
+    //Reload
+    window.addEventListener("unload", function (e) {
+        var confirmationMessage = "\o/";
+
+        (e || window.event).returnValue = confirmationMessage; //Gecko + IE
+        console.log("CAN YOU READ THIS MESSAGE WITH Unload/Reload")
+        return confirmationMessage;                            //Webkit, Safari, Chrome
+    }); */
     /*
     const initialVal = useMemo(
         () =>
@@ -208,13 +260,14 @@ const TextEditMCE = () => {
             <>
                 <TopNav3 />
             <div className="page-wrapper">
-                    <NavBar />
+                    <AppInfoSideBar />
                 <div id="Editor_MCE">
                     <Editor
                         //use diff apiKey for renewing premium feature;
-                        //key1: 1j3wp2mvnlew5lkynzdndnzangmi9xfjg4yerztdh39llgew
-                        //current: 2njwaznbravfvg70hgzv0dmeqfengiiqh340hmrb9vm262vm
-                        apiKey='2njwaznbravfvg70hgzv0dmeqfengiiqh340hmrb9vm262vm'
+                        //key1:     1j3wp2mvnlew5lkynzdndnzangmi9xfjg4yerztdh39llgew
+                        //key2:     2njwaznbravfvg70hgzv0dmeqfengiiqh340hmrb9vm262vm
+                        //current:  1fbg79iiulybcn5hw4rwdk5ysvr5ppfuhlslsrkr7mjjanvq
+                            apiKey='1fbg79iiulybcn5hw4rwdk5ysvr5ppfuhlslsrkr7mjjanvq'
                         onInit={(evt, editor) => (editorRef.current = editor)}
                         onDirty={() => setDirty(true)}
                         initialValue={initialValue}
@@ -254,6 +307,7 @@ const TextEditMCE = () => {
                             }}
                         > getURLobject
                         </button>
+                        <button onClick={addBlockContent}> addBlockContent</button>
                     </div>
                 </div>
             </div>

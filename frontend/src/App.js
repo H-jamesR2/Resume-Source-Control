@@ -45,6 +45,7 @@ import UpdateExtracurricular from "./componentsDB/UpdateExtracurricular";
 
 import UpdateSkill from "./componentsDB/UpdateSkill";
 //<Route path="/blockeditor" element={<BlockEditor />} />
+//            <Route path="/blocks" element={<Blocks/>}/>
 export default function App() {
   
   return (
@@ -57,7 +58,7 @@ export default function App() {
             <Route path="/mainpage" element={<Mainpage/>}/>
             <Route path="/mainpage/textEditorMCE" element={<TextEditMCE/>} />
             <Route path="/resume" element={<Resume/>}/>
-            <Route path="/blocks" element={<Blocks/>}/>            
+            
             <Route path="/settings" element={<Settings/>}/>
             <Route path="/changepassword" element={<ChangePassword/>}/>
             <Route path="/changeemail" element={<ChangeEmail/>}/>
@@ -81,13 +82,13 @@ export default function App() {
 
         <UniContextProvider>
         <Routes>
-            <Route path="/data" element={<Data/>} />
-            <Route path="/data/:id/updateContact" element={<UpdateContact/>}/>
-            <Route path="/data/:id/updateEducation" element={<UpdateEducation/>}/>
-            <Route path="/data/:id/updateJob" element={<UpdateJob/>}/>
-            <Route path="/data/:id/updateProject" element={<UpdateProject/>}/>
-            <Route path="/data/:id/updateExtracurricular" element={<UpdateExtracurricular/>}/>
-            <Route path="/data/:id/updateSkill" element={<UpdateSkill/>}/>
+            <Route path="/blocks" element={<Data/>} />
+            <Route path="/blocks/:id/updateContact" element={<UpdateContact/>}/>
+            <Route path="/blocks/:id/updateEducation" element={<UpdateEducation/>}/>
+            <Route path="/blocks/:id/updateJob" element={<UpdateJob/>}/>
+            <Route path="/blocks/:id/updateProject" element={<UpdateProject/>}/>
+            <Route path="/blocks/:id/updateExtracurricular" element={<UpdateExtracurricular/>}/>
+            <Route path="/blocks/:id/updateSkill" element={<UpdateSkill/>}/>
 
         </Routes>
         </UniContextProvider>

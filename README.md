@@ -5,7 +5,26 @@ Capstone Repository for Resume Source Control Project by:
 Resume Source Control 
 ===
 ## Run Locally
-Assuming you have [Python](https://www.python.org/downloads/) and [React](https://react.dev/learn/installation) installed:  
+Assuming you have the latest [Python](https://www.python.org/downloads/) and [React](https://react.dev/learn/installation) installed:
+
+### PYTHON:
+(**ON MacOS**) IF python not upto-date, run the following commands in a terminal instance which:
+```
+brew install python
+
+ln -s -f /usr/local/opt/python@3.11/bin/python3.11 /usr/local/bin/python
+
+/usr/local/opt/python@3.11/bin/python3.11 -m pip install flask
+/usr/local/opt/python@3.11/bin/python3.11 -m pip install python-dotenv
+/usr/local/opt/python@3.11/bin/python3.11 -m pip install spacy
+```
+-> will install latest version of python: 3.11
+
+-> will change the locally used python version to 3.11
+
+-> will install LIBRARIES: **Flask, python-dotenv, spacy**
+
+---
 First you need to clone repository then at the root directory "CS499_Capstone_Repository" run:
 ```
 npm run initalize-app
