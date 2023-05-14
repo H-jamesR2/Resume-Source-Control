@@ -73,7 +73,7 @@
 }
 a:link, a:visited {
     text-decoration: none;
-    color: black;
+    color: #000;
 }
 .button-wrapper:hover {
     background-color: var(--primary-5);

@@ -41,9 +41,13 @@ const SignUp = () => {
                     <div className={"login-info"}>
 
                         <div className={"partition"}>
-                            <span className={"header-1"}>
+                            <h1 style={{margin:"0"}}>
                             Welcome!
-                            </span>
+                            </h1>
+                        </div>
+
+                        <div style={{textAlign:"center",margin:"0 0 0 50px"}}>Already have an account? 
+                        <span style={{color:"#03F", marginRight:"8px"}}><Link to="/login"> Log in</Link></span>
                         </div>
 
                         <br></br>

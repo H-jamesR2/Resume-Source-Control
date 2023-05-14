@@ -53,23 +53,6 @@ const ChangeEmail=()=>{
   
   
                     <div className = "settings-dialog-box">
-                      {/* <div className ="settings-partition">
-                          <p className = "header-1" style={{textAlign:"center", margin:"0"}}>
-                            Account settings
-                          </p>
-                        </div> */}
-                      {/* <div className= "settings-partition" style={{padding:"0 0 5px 0"}}>
-                          <span>Current username: USERNAME</span>
-                          <br></br>
-                          <span>Username cannot be changed</span>
-                        </div>
-                        <div className= "settings-partition" style={{padding:"0 0 5px 0"}}>
-                          <span>Current email: EMAIL</span>
-                            <input
-                              className={"text"}
-                              placeholder={"Email"}
-                            ></input>
-                        </div> */}
                         <div className= "settings-partition" style={{padding:"0 0 5px 0"}}>
                             <input
                               className={"text"}
