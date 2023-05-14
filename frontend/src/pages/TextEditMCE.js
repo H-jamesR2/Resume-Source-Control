@@ -72,12 +72,21 @@ const TextEditMCE = () => {
         - update DocumentState+DocumentName
     */
     //console.log(JSON.parse(localStorage.getItem('myURLObject')));
-    const [urlName, urlFile] = JSON.parse(localStorage.getItem('myURLObject'));
+
+    const [urlName, urlFile] = ["", ""];
+    // if URL object exists
+    if (localStorage.getItem("myURLObject") != null){
+        const [urlName, urlFile] = JSON.parse(localStorage.getItem('myURLObject'));
+    }
     //const urlTest ="https://resumeapps3.s3.us-east-2.amazonaws.com/protected/us-east-2%3A5f33bbfc-c966-45d1-8b59-2642bf875182/userFiles/jake_ryan_TestResume.html?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIA6DOFALTAH2DSHQGB%2F20230501%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230501T034632Z&X-Amz-Expires=3600&X-Amz-Signature=fe216a79c1cdc46aa15f4408ccaa03fa5a716f54d503ea4fd91c77c5e0f1b644&X-Amz-SignedHeaders=host&x-id=GetObject";
     //console.log(`${urlFile}`)
     //console.log(urlName.type, urlFile.type);
     DocumentState.resumeName = String(urlName);
-    if (urlFile != "") {
+     
+    // urlObject not found OR localStorage URLObject not found
+    if (urlFile === "" || localStorage.getItem("myURLObject") === null) {
+        DocumentState.resumeContent = "";
+    } else {
         fetch(`${urlFile}`)
             .then(res => res.blob()) // Gets the response and returns it as a blob
             .then(blob => {
@@ -91,8 +100,6 @@ const TextEditMCE = () => {
                 })
                 //console.log("DEBUG"); 
             });
-    } else {
-        DocumentState.resumeContent = "";
     }
 
 
@@ -184,7 +191,7 @@ const TextEditMCE = () => {
             console.log((DocumentState.resumeName));
             console.log((DocumentState.resumeContent));
             if(DocumentState.resumeName == ""){
-                DocumentState.resumeName = "jake_testResumeDEMOmay1.html";
+                DocumentState.resumeName = "testResumeDEMOmay15.html";
             }   
             DocumentState.resumeContent = file;
 
@@ -224,7 +231,6 @@ const TextEditMCE = () => {
         console.log("CAN YOU READ THIS MESSAGE WITH Unload/Reload")
         return confirmationMessage;                            //Webkit, Safari, Chrome
     }); */
-    
     /*
     const initialVal = useMemo(
         () =>
