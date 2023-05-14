@@ -212,9 +212,10 @@ const TextEditMCE = () => {
                 <div id="Editor_MCE">
                     <Editor
                         //use diff apiKey for renewing premium feature;
-                        //key1: 1j3wp2mvnlew5lkynzdndnzangmi9xfjg4yerztdh39llgew
-                        //current: 2njwaznbravfvg70hgzv0dmeqfengiiqh340hmrb9vm262vm
-                        apiKey='2njwaznbravfvg70hgzv0dmeqfengiiqh340hmrb9vm262vm'
+                        //key1:     1j3wp2mvnlew5lkynzdndnzangmi9xfjg4yerztdh39llgew
+                        //key2:     2njwaznbravfvg70hgzv0dmeqfengiiqh340hmrb9vm262vm
+                        //current:  1fbg79iiulybcn5hw4rwdk5ysvr5ppfuhlslsrkr7mjjanvq
+                            apiKey='1fbg79iiulybcn5hw4rwdk5ysvr5ppfuhlslsrkr7mjjanvq'
                         onInit={(evt, editor) => (editorRef.current = editor)}
                         onDirty={() => setDirty(true)}
                         initialValue={initialValue}
