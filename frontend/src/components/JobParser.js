@@ -70,17 +70,20 @@ class JobParser extends Component {
         return(
             <div>
                 <div>
-                    <input
-                        type="text"
-                        value={this.state.jobDescription}
-                        onChange={this.HandleChange}
-                        
-                    />
-                </div>
-                <div>
-                    <button onClick={this.ParseJob}>
-                        Run Scanner
-                    </button>
+                    <span>
+                        <input
+                            type="text"
+                            value={this.state.jobDescription}
+                            onChange={this.HandleChange}
+                            style={{fontSize:"20px",padding:"7px",marginRight:"10px",width:"calc(100% - 86px)"}}
+                            placeholder="Enter some keywords here..."
+                        />
+                    </span>
+                    <span>
+                        <button onClick={this.ParseJob}>
+                            Scan
+                        </button>
+                    </span>
                 </div>
                 <div>
                     <KeywordList keywordList={this.state.keywordList}></KeywordList>
