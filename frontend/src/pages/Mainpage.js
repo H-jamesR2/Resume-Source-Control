@@ -170,7 +170,6 @@ function Mainpage()
             <div>   
                 <TopNav/>
                 <div className="page-wrapper">
-                    <NavBar/>
                     <div className="main-content">
                     You are not logged in. Please log in or sign up to continue.
                     </div>

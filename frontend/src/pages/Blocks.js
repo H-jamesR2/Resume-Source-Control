@@ -1,8 +1,8 @@
 import React, {useContext, useEffect, useState} from "react";
 import { BrowserRouter as Router, Routes, Route, Link, NavLink } from "react-router-dom";
+import TopNav from "../components/TopNav";
 import TopNav2 from "../components/TopNav2";
 import NavBar from "../components/Navbar";
-import TopNav from "../components/TopNav";
 import { Navigate } from "react-router-dom";
 import { SessionContext } from "../components/UserContext";
 import Editor from "../components/BlockEditor"
@@ -28,6 +28,16 @@ function Blocks(prop) {
             </div>
             </>
             }
+            { !isLoggedIn && (
+            <div>   
+                <TopNav/>
+                <div className="page-wrapper">
+                    <div className="main-content">
+                    You are not logged in. Please log in or sign up to continue.
+                    </div>
+                </div>
+            </div>
+            )}
         </div>
     );
 }

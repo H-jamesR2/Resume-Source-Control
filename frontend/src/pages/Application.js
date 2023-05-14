@@ -62,6 +62,16 @@ function Application(prop) {
             </div>
             </>
             }
+            { !isLoggedIn && (
+            <div>   
+                <TopNav/>
+                <div className="page-wrapper">
+                    <div className="main-content">
+                    You are not logged in. Please log in or sign up to continue.
+                    </div>
+                </div>
+            </div>
+            )}
         </div>
     );
 }
