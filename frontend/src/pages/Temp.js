@@ -1,7 +1,7 @@
 import React, { Component, useEffect, useState } from "react";
 import { configureAmplify, SetS3Config } from "../components/AmplifyConfigure";
 import { Storage } from "aws-amplify";
-import TopNav2 from "../components/TopNav2";
+import TopNav3 from "../components/TopNav3";
 import NavBar from "../components/Navbar";
 
 // UploadToS3 is a reusable component
@@ -56,7 +56,7 @@ class UploadToS3 extends Component {
   render() {
     return (
       <div>
-        <TopNav2/>
+        <TopNav3/>
         <div className="page-wrapper">
         <NavBar/>
         <div className="main-content">

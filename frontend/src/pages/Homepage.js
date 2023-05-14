@@ -2,7 +2,7 @@ import React, {useState, useEffect, useContext} from "react";
 import { BrowserRouter as Router, Routes, Route, Link, NavLink } from "react-router-dom";
 import Mainpage from "./Mainpage";
 import TopNav from "../components/TopNav";
-import TopNav2 from "../components/TopNav2";
+import TopNav3 from "../components/TopNav3";
 import Illustration from "../images/illustration.png"
 import "../cssFiles/homepage.css";
 import { SessionContext } from "../components/UserContext";
@@ -22,7 +22,7 @@ function Homepage(prop) {
     return (
         <div>
             { isLoggedIn && (
-            <TopNav2 />
+            <TopNav3 />
             )}
 
             { !isLoggedIn && (

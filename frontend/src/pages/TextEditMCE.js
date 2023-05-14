@@ -24,7 +24,7 @@
 
 import React, { useState, useContext, useEffect, useCallback, useMemo, useRef } from 'react'
 import { Editor } from '@tinymce/tinymce-react';
-import TopNav2 from "../components/TopNav2";
+import TopNav3 from "../components/TopNav3";
 import NavBar from "../components/Navbar";
 
 import { SessionContext } from "../components/UserContext";
@@ -198,7 +198,7 @@ const TextEditMCE = () => {
                 "
      */
     /*
-            <TopNav2 />
+            <TopNav3 />
             <NavBar />
     */
     //removed autoresize
@@ -206,7 +206,7 @@ const TextEditMCE = () => {
         <div>
             {isLoggedIn &&
             <>
-                <TopNav2 />
+                <TopNav3 />
             <div className="page-wrapper">
                     <NavBar />
                 <div id="Editor_MCE">

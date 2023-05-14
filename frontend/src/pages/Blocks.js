@@ -1,7 +1,7 @@
 import React, {useContext, useEffect, useState} from "react";
 import { BrowserRouter as Router, Routes, Route, Link, NavLink } from "react-router-dom";
 import TopNav from "../components/TopNav";
-import TopNav2 from "../components/TopNav2";
+import TopNav3 from "../components/TopNav3";
 import NavBar from "../components/Navbar";
 import { Navigate } from "react-router-dom";
 import { SessionContext } from "../components/UserContext";
@@ -18,7 +18,7 @@ function Blocks(prop) {
         <div>
             {isLoggedIn &&
                 <>
-            <TopNav2 />
+            <TopNav3 />
             <div className="page-wrapper">
                 <NavBar />
                 <div className="main-content">
