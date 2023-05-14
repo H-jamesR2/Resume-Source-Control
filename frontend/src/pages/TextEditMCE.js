@@ -26,6 +26,7 @@ import React, { useState, useContext, useEffect, useCallback, useMemo, useRef } 
 import { Editor } from '@tinymce/tinymce-react';
 import TopNav2 from "../components/TopNav2";
 import NavBar from "../components/Navbar";
+import AppInfoSideBar from "../components/AppInfoSideBar";
 
 import { SessionContext } from "../components/UserContext";
 import { configureAmplify, SetS3Config } from "../components/AmplifyConfigure";
@@ -208,7 +209,8 @@ const TextEditMCE = () => {
             <>
                 <TopNav2 />
             <div className="page-wrapper">
-                    <NavBar />
+                    <AppInfoSideBar />
+                    <NavBar/>
                 <div id="Editor_MCE">
                     <Editor
                         //use diff apiKey for renewing premium feature;
