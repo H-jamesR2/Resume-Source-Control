@@ -34,6 +34,7 @@ import { configureAmplify, SetS3Config } from "../components/AmplifyConfigure";
 import { Storage } from "aws-amplify";
 
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios'
 
 import "../cssFiles/TextEditMCE.css"
 
@@ -43,7 +44,7 @@ import "../cssFiles/TextEditMCE.css"
 
     await Storage.put("test.txt", "Hello");
 */
-
+const identityId = localStorage.getItem('my-key')
 
 const TextEditMCE = () => {
     const navigate = useNavigate();
@@ -231,8 +232,8 @@ const TextEditMCE = () => {
             }   
             DocumentState.resumeContent = file;
 
-            uploadResume(file);
-            //uploadDocument();
+            //uploadResume(file);
+            uploadDocument();
             // an application would save the editor content to the server here
             console.log(content);
         }
