@@ -13,6 +13,7 @@ const AddJob = () => {
     
 
     const handleSubmit = async (e) => {
+        console.log(e);
         e.preventDefault();
         try{
             const response = await ResumeUrl.post("v1/jobs", {

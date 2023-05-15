@@ -13,47 +13,48 @@ import AddJob from '../componentsDB/AddJob'
 import AddExtracurricular from '../componentsDB/AddExtracurricular'
 import AddEducation from '../componentsDB/AddEducation'
 import AddSkill from '../componentsDB/AddSkill'
+import "../cssFiles/blocks.css"
 
 const Data = () => {
   return (
     <div>
-        <TopNav2/>
-        <div className="page-wrapper">
-            <NavBar/>
-            <div className="main-content">
-      
-      <h1>Blocks...</h1>
-      
-      <h1>Contact</h1>
-      <ContactList/>
-      <AddContact/>
+      <TopNav2 />
+      <div className="page-wrapper">
+        <NavBar />
+        <div className="main-content">
+          <div className='block-content'></div>
+          <h1>Blocks...</h1>
+          <div className='block-wrapper'>
+          <h1>Contact</h1>
+          <ContactList />
+          <AddContact />
 
-      <h1>Education</h1>
-      <EducationList/>
-      <AddEducation/>
-      
-      <h1>Projects</h1>
-      <ProjectList/>
-      <AddProject/>
+          <h1>Education</h1>
+          <EducationList />
+          <AddEducation />
 
-      <h1>Jobs</h1>
-      <JobList/>
-      <AddJob/>
+          <h1>Projects</h1>
+          <ProjectList />
+          <AddProject />
 
-      
-      <h1>Extracurriculars</h1>
-      <ExtracurricularList/>
-      <AddExtracurricular/>
+          <h1>Jobs</h1>
+          <JobList />
+          <AddJob />
 
 
-      <h1>Skills</h1>
-      <SkillList/>
-      <AddSkill/>
+          <h1>Extracurriculars</h1>
+          <ExtracurricularList />
+          <AddExtracurricular />
 
 
+          <h1>Skills</h1>
+          <SkillList />
+          <AddSkill />
+          </div>
+
+        </div>
       </div>
-      </div>
-      
+
 
     </div>
   )

@@ -28,6 +28,9 @@
 #sidebar-wrapper.close .sidebar-text {
     display: none;
 }
+#sidebar-wrapper.close .label-text {
+    display: none;
+}
 #sidebar-wrapper.close .collapse-wrapper {
     display: none;
 }

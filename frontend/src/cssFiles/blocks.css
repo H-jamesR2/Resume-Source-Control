@@ -1,0 +1,28 @@
+.block-content{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+.block-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 80%;
+}
+.block-div {
+    width:80%;
+    display: flex;
+    background-color: #D9D9D9;
+}
+.block-name {
+    font-size: large;
+    font-weight: 900;
+    text-transform: capitalize;
+}
+
+
+.block-overlay:hover {
+    display: flex;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+}
