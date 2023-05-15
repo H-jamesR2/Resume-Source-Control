@@ -54,6 +54,7 @@
   display: inline-flex;
   text-align: center;  
   align-items: center;
+  height: 100%;
 }
 
 .nav-item:hover{    
