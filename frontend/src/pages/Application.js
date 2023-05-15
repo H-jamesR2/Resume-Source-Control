@@ -53,7 +53,7 @@ function Application(prop) {
                 status,
                 resume,
         })
-        addApplicatons(response.data.data.application)
+        // addApplicatons(response.data.data.application)
         }catch(err){}
         window.location.reload(false);
     }
@@ -164,7 +164,7 @@ function Application(prop) {
             title: "Action",
             render: (_, application) => {
                 return <>
-                    <EditTwoTone onClick={() => { handleEdit(e,application.id) }} />
+                    <EditTwoTone onClick={() => { handleEdit(application.id) }} />
                     <DeleteTwoTone onClick={(e) => {handleDelete(e,application.id)}} className="action-icon" twoToneColor="red" />
                 </>
             }
