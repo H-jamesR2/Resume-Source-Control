@@ -124,7 +124,7 @@ const TextEditMCE = () => {
                 // return to mainpage since urlLink File changed...
                 console.log(JSON.parse(localStorage.getItem('myURLObject')));
                 setTimeout(function(){
-                    navigate('/mainpage')
+                    navigate('/resume')
                 }, 1500);
                 //window.location.reload();
                 // this.setState({ response: "Success uploading file!" });
