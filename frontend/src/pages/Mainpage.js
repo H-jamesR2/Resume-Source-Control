@@ -15,6 +15,7 @@ import ResumeIcon from '../images/Resume Icon.png';
 import Resume from "./Resume";
 import { Amplify, Auth } from 'aws-amplify';
 import JobParser from "../components/JobParser"
+import VersionNavBar from "../components/VersionSideBar";
 
 // Need to parse better;
 const AWS_ACCESS_KEY_ID = 'AKIA6DOFALTAH2DSHQGB'
@@ -51,9 +52,11 @@ function Mainpage()
         }
     })
 
+    //const identity_Id = 'us-east-2:a8dcd4f1-9b03-4eec-a2a2-73ea8ec71440'
 
     async function getResumeKeys() {
         const path = `protected/${identityId}/userFiles`
+        //const path = `protected/${identity_Id}/userFiles`
         const command = new ListObjectsCommand({
             Bucket: AWS_BUCKET_NAME,
             Prefix: path
@@ -119,6 +122,7 @@ function Mainpage()
                 <TopNav3/>
                 <div className="page-wrapper">
                     <NavBar/>
+                    <VersionNavBar/>
                     <div className="main-content">
                         {/* add page content here */}
                         Main page after login

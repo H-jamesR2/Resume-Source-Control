@@ -1,0 +1,131 @@
+@font-face {
+    font-family: Lekton;
+    src: url(../fonts/Lekton-Regular.ttf)
+}
+
+@font-face {
+    font-family: Lekton-Bold;
+    src: url(../fonts/Lekton-Bold.ttf)
+}
+
+@font-face {
+    font-family: Lekton-Italic;
+    src: url(../fonts/Lekton-Italic.ttf)
+}
+
+.nav-wrapper-right {
+    font-family: Lekton-Bold !important;
+    
+}
+#sidebar-wrapper-right.close{
+    width: 30px;
+    height: calc(100vh - 65px);
+    background-color: var(--primary-3);
+    right:0;
+}
+#sidebar-wrapper-right.close #sidebar-top {
+    display: none;
+}
+#sidebar-wrapper-right.close .sidebar-text {
+    display: none;
+}
+#sidebar-wrapper-right.close #sidebar-top img {
+    display: none;
+}
+#sidebar-wrapper-right.open {
+    width: 250px;
+    height: calc(100vh - 65px);
+    font-weight: 900;
+    background-color: var(--gray-0);
+    right:0;
+    
+}
+#sidebar-wrapper-right {
+    transition: width 1s, background-color 1s;
+    transition-timing-function: ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    position: absolute;
+    right:0;
+    
+}
+
+#openButtonRight.close {
+    display: none;
+}
+#openButtonRight.open {
+    display: block;
+    padding: 20px;
+    align-self: flex-start;
+    right:0;
+    
+}
+
+.sidebar-bottom-right {
+    font-size: 30px;
+    padding: 15px;
+    text-align: left;
+    
+}
+
+.sidebar-bottom-right>li {
+    padding: 5px;
+    list-style-type: none;
+    
+}
+
+.sidebar-bottom-right>span {
+    text-decoration: none;
+    
+}
+
+#sidebar-top-right {
+    font-size: 26px;
+    padding: 15px 15px 10px 20px;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    background-color: var(--primary-3);
+}
+
+
+
+.icon {
+    width: 17px;
+    margin-left:20px;
+}
+
+.sidebar-bottom-right .sidebar-text-right{
+    font-size: 12px;
+    font-weight: 400;
+    color: #000;
+    text-align: left;
+    /* margin-right: 10px; */
+}
+
+.sidebar-top-text-right{
+    margin-left:20px;
+}
+
+:root {
+    --primary-0: #ddeaff;
+    --primary-1: #bcf;
+    --primary-2: #9af;
+    --primary-3: #68f;
+    --primary-4: #46f;
+    --primary-5: #03f;
+    --warning-1: #f99;
+    --warning-2: #f66;
+    --warning-3: #f33;
+    --warning-4: #f00;
+    --gray-0: #eee;
+    --gray-1: #ccc;
+    --gray-2: #999;
+    --gray-3: #666;
+    --gray-4: #333;
+    --lekton-reg: Lekton-Regular, Roboto Regular, Helvetica, Arial, sans-serif;
+    --lekton-bold: Lekton-Bold, Roboto Bold, Helvetica Bold, Arial Bold, sans-serif;
+  }
