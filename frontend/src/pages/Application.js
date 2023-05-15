@@ -164,10 +164,10 @@ function Application(prop) {
         },
         {
             title: "Action",
-            render: (_, record) => {
+            render: (_, application) => {
                 return <>
                     <EditTwoTone onClick={() => { editApplicationRecord(record) }} />
-                    <DeleteTwoTone onClick={(e) => handleDelete(e, application.id)} className="action-icon" twoToneColor="red" />
+                    <DeleteTwoTone onClick={(e) => {handleDelete(e,application.id)}} className="action-icon" twoToneColor="red" />
                 </>
             }
         },
