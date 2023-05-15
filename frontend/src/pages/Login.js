@@ -53,7 +53,7 @@ const LogIn=()=>{
             console.log(user)
             localStorage.setItem('my-key', currCreds.identityId);
             setTimeout( function(){
-              navigate('/mainpage')
+              navigate('/resume')
             }, 1500)
           }
 

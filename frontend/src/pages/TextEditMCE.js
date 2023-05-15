@@ -34,7 +34,7 @@ import { configureAmplify, SetS3Config } from "../components/AmplifyConfigure";
 import { Storage } from "aws-amplify";
 
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios'
+//import axios from 'axios'
 
 import "../cssFiles/TextEditMCE.css"
 
@@ -44,7 +44,7 @@ import "../cssFiles/TextEditMCE.css"
 
     await Storage.put("test.txt", "Hello");
 */
-const identityId = localStorage.getItem('my-key')
+//const identityId = localStorage.getItem('my-key')
 
 const TextEditMCE = () => {
     const navigate = useNavigate();
@@ -137,6 +137,7 @@ const TextEditMCE = () => {
             }
         );
     }; 
+    /*
     const uploadResume = async (file) => {
         //e.preventDefault();
         // const[post, setPost] = useState({
@@ -169,7 +170,7 @@ const TextEditMCE = () => {
         }, 1500);
                 //window.location.reload();
                 // this.setState({ response: "Success uploading file!" });
-    }
+    } */
 
     const editorRef = useRef(null);
     /*const log = () => {
