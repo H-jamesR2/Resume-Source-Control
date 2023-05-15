@@ -136,6 +136,39 @@ const TextEditMCE = () => {
             }
         );
     }; 
+    const uploadResume = async (file) => {
+        //e.preventDefault();
+        // const[post, setPost] = useState({
+        //     title: '',
+        //     content: ''
+        // })
+
+
+        const formData = new FormData();
+
+        //const contentBlob = new Blob([post.content], {type: 'text/html'});
+        formData.append('resume', file, `${DocumentState.resumeName}`);
+        const key = `protected/${identityId}/userFiles`
+
+        const response = await axios.post('http://localhost:3008/api/v1/resume/upload', formData, {
+            headers: {
+                "key": key
+            }
+        })
+        //const upload = null;
+        alert('Document uploaded to S3')
+
+        // reset localStorage URL route to empty strings since SAVED
+        localStorage.setItem('myURLObject', JSON.stringify(
+            ["", ""]))
+        // return to mainpage since urlLink File changed...
+        console.log(JSON.parse(localStorage.getItem('myURLObject')));
+        setTimeout(function () {
+            navigate('/resume')
+        }, 1500);
+                //window.location.reload();
+                // this.setState({ response: "Success uploading file!" });
+    }
 
     const editorRef = useRef(null);
     /*const log = () => {
@@ -198,7 +231,8 @@ const TextEditMCE = () => {
             }   
             DocumentState.resumeContent = file;
 
-            uploadDocument();
+            uploadResume(file);
+            //uploadDocument();
             // an application would save the editor content to the server here
             console.log(content);
         }
@@ -306,11 +340,6 @@ const TextEditMCE = () => {
                     <div id="footer-section">
                         <button onClick={save} disabled={!dirty}>Save</button>
                         {dirty && <p>You have unsaved content!</p>}
-                        <button onClick={e => {
-                                console.log(JSON.parse(localStorage.getItem('myURLObject')))
-                            }}
-                        > getURLobject
-                        </button>
                         <button onClick={addBlockContent}> addBlockContent</button>
                     </div>
                 </div>
@@ -320,6 +349,13 @@ const TextEditMCE = () => {
         </div>
     );
     //<button onClick={log}>Log editor content</button>
+    /*
+                            <button onClick={e => {
+                                console.log(JSON.parse(localStorage.getItem('myURLObject')))
+                            }}
+                        > getURLobject
+                        </button>
+    */
 }
 
 export default TextEditMCE;

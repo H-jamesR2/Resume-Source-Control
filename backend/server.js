@@ -708,7 +708,7 @@ app.post("/api/v1/resume/upload", asyncHandler(async(req, res)=>{
     const key  = req.headers['key'];
     const ct = req.headers['Content-Type']; 
     const cd = req.headers['Content-Disposition']
-    const result = await uploadResume(req.files['rsm'], key, ct, cd)
+    const result = await uploadResume(req.files['resume'], key, ct, cd)
 
     console.log("**********************Fifth:")
     console.log(result)
