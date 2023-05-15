@@ -69,11 +69,13 @@ function Application(prop) {
     
         }
     }
+
     const editApplicationRecord = (record) => {
         setIsEditing(true);
         setEditingRecord({ ...record });
-    };    
-    const handleEdit = (e, id) => {
+    };
+
+    const handleEdit = async (e, id) => {
         navigate(`/data/${id}/updateApplication`);
       }
 
@@ -87,10 +89,6 @@ function Application(prop) {
         fetchData();
     },[])
 
-
-    const handleButtonClick = () => {
-        setVisible(true);
-      };
 
 
     const columns = [
@@ -166,7 +164,7 @@ function Application(prop) {
             title: "Action",
             render: (_, application) => {
                 return <>
-                    <EditTwoTone onClick={() => { editApplicationRecord(record) }} />
+                    <EditTwoTone onClick={() => { handleEdit(e,application.id) }} />
                     <DeleteTwoTone onClick={(e) => {handleDelete(e,application.id)}} className="action-icon" twoToneColor="red" />
                 </>
             }
@@ -210,38 +208,7 @@ function Application(prop) {
                             <div>Applications Tracker</div>
                             
                             <Table className="table-container" dataSource={applications} columns = {columns}/>
-                            <table>
-                                <thead>
-                                <tr>
-                                    <th>Position</th>
-                                    <th>Company</th>
-                                    <th>Submission Date</th>
-                                    <th>Status</th>
-                                    <th>Resume</th>
-                                    <th>Edit</th>
-                                    <th>Delete</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                {applications && 
-                                            applications.map(application =>{
-                                            return(
-                                                <tr key={application.id}>
-                                                <td>{application.position}</td>
-                                                <td>{application.company}</td>
-                                                <td>{application.submission_date}</td>
-                                                <td>{application.status}</td>
-                                                <td>{application.resume}</td>
-                                                <td><button onClick={(e)=> handleEdit(e, application.id)}>Edit</button></td>
-                                                <td><button onClick={(e) => handleDelete(e, application.id)} >Delete</button></td>
-                                            </tr>
-
-                                            )
-                                            
-                                        } )}
-                                
-                                </tbody>
-                            </table>
+                            
                             {/* <ApplicationList/> */}
                             <ConfigProvider
                                 theme={{
@@ -253,14 +220,14 @@ function Application(prop) {
                                 }}>
                                     <br/>
                                     <Form>
-                                    <Form.Item name='position' label='Position' style={{ width: 250 }} size='large'
+                                    <Form.Item name='position' label='Position' style={{ width: 300 }} size='large'
                             rules={[
                                 { required: true, message: "Please input the title of job position!" }
                             ]}
                         >
                             <Input value={position} onChange={e=>setPosition(e.target.value)} type='text' />
                         </Form.Item>
-                        <Form.Item name='company' label='Company' style={{ width: 250 }} size='large'
+                        <Form.Item name='company' label='Company' style={{ width: 300 }} size='large'
                             rules={[
                                 { required: true, message: "Please input the company name!" }
                             ]}
@@ -287,9 +254,9 @@ function Application(prop) {
                                 { required: true, message: "Required!" }
                             ]}
                         >
-                            <Select value={resume} onChange={e=>SetResume(e.target.value)}>
-                                <Option value='jake ryan'>Jake Ryan</Option>
-                                 </Select>
+                            <select value={resume} onChange={e=>SetResume(e.target.value)}>
+                                <option value='jake ryan'>Jake Ryan</option>
+                                 </select>
                     
                         </Form.Item>
                         <button onClick={handleSubmit} type='submit'>Add</button>
