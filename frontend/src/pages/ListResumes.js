@@ -57,6 +57,7 @@ const ListResumesFromS3 = () => {
             
             }));
             setUrls(presignedUrls);
+            console.log(presignedUrls)
             //return {presignedUrls}
         } catch (error) {
             console.log(error);

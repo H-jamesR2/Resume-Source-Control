@@ -1,0 +1,7 @@
+.custom-upload {
+    display: inline-block;
+    padding:  8px 12px;
+    background-color: #eee;
+    color: #333;
+    cursor: pointer;
+}

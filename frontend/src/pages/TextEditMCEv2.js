@@ -32,7 +32,9 @@ import { configureAmplify, SetS3Config } from "../components/AmplifyConfigure";
 import { Storage } from "aws-amplify";
 
 import { useNavigate } from 'react-router-dom';
-import VersionNavBar from "../components/VersionSideBar";
+
+import axios from 'axios'
+
 import "../cssFiles/TextEditMCE.css"
 
 /*
@@ -42,8 +44,11 @@ import "../cssFiles/TextEditMCE.css"
     await Storage.put("test.txt", "Hello");
 */
 
+//const identityId = 'us-east-2:a8dcd4f1-9b03-4eec-a2a2-73ea8ec71440'
 
-const TextEditMCE = () => {
+const identityId = localStorage.getItem('my-key')
+
+const TextEditMCEv2 = () => {
     const navigate = useNavigate();
     const DocumentState = {
         resumeName: "",
@@ -93,28 +98,52 @@ const TextEditMCE = () => {
     /* Run Put Request on File TO S3 Database */
     
     // contentTYpe??
-    const uploadDocument = () => {
-        SetS3Config("resumeapps3", "protected");
-        Storage.put(`userFiles/${DocumentState.resumeName}`,
-            DocumentState.resumeContent,
-            { contentType: 'html'})
-            .then(result => {
-                //const upload = null;
-                alert('Document uploaded to S3')
+    // const uploadDocument = () => {
+    //     SetS3Config("resumeapps3", "protected");
+    //     Storage.put(`userFiles/${DocumentState.resumeName}`,
+    //         DocumentState.resumeContent,
+    //         { contentType: 'html'})
+    //         .then(result => {
+    //             //const upload = null;
+    //             alert('Document uploaded to S3')
 
-                // return to mainpage since urlLink File changed...
-                setTimeout(function(){
-                    navigate('/mainpage')
-                }, 1500);
-                //window.location.reload();
-                // this.setState({ response: "Success uploading file!" });
+    //             // return to mainpage since urlLink File changed...
+    //             setTimeout(function(){
+    //                 navigate('/mainpage')
+    //             }, 1500);
+    //             //window.location.reload();
+    //             // this.setState({ response: "Success uploading file!" });
+    //         })
+    //         .catch(err => {
+    //             alert(err);
+    //             window.location.reload();
+    //         }
+    //     );
+    // }; 
+
+    const uploadResume = async (file)=>{
+        //e.preventDefault();
+        // const[post, setPost] = useState({
+        //     title: '',
+        //     content: ''
+        // })
+        
+           
+            const formData = new FormData();
+
+            //const contentBlob = new Blob([post.content], {type: 'text/html'});
+            formData.append('doc', file, 'jake_testResumeDEMOapr17_noGET.html');
+            const key = `protected/${identityId}/userFiles`
+
+            const response = await axios.post('http://localhost:3008/api/v1/resume/upload', formData, {
+                headers: {
+                    "key" : key
+                  }
             })
-            .catch(err => {
-                alert(err);
-                window.location.reload();
-            }
-        );
-    }; 
+        
+
+    }
+
 
     const editorRef = useRef(null);
     /*const log = () => {
@@ -174,7 +203,7 @@ const TextEditMCE = () => {
             }   
             DocumentState.resumeContent = file;
 
-            uploadDocument();
+            uploadResume(file);
             // an application would save the editor content to the server here
             console.log(content);
         }
@@ -209,7 +238,6 @@ const TextEditMCE = () => {
                 <TopNav2 />
             <div className="page-wrapper">
                     <NavBar />
-                    <VersionNavBar/>
                 <div id="Editor_MCE">
                     <Editor
                         //use diff apiKey for renewing premium feature;
@@ -265,7 +293,7 @@ const TextEditMCE = () => {
     //<button onClick={log}>Log editor content</button>
 }
 
-export default TextEditMCE;
+export default TextEditMCEv2;
 
 
 /*
