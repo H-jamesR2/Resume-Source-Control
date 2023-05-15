@@ -53,7 +53,7 @@ class JobParser extends Component {
         formData.append('jobDescription', this.state.jobDescription);
         
         // Making request for scanner
-        axios.post("/AI/job-scan", formData)
+        axios.post("/api/AI/job-scan", formData)
         .then((response) => {
             this.setState({keywordList: response.data["entities"]});
             console.log(response.data);
