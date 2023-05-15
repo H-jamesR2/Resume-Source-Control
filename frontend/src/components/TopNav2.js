@@ -38,8 +38,10 @@ function TopNav2(props) {
                         <b>+ ADD</b>
                     <div id="add-items" class="popup-menu">
                         <div>
-                        <li className="popup-menu-item"><Link className='no-decor' to="/upload">Upload Resume</Link></li>
-                        <li className="popup-menu-item">Create Resume</li>
+                            <li className="popup-menu-item"><Link className='no-decor' to="/upload">
+                                Upload Resume</Link></li>
+                            <li className="popup-menu-item"><Link className='no-decor' to="/resume/textEditorMCE">
+                                Create Resume</Link></li>
                         </div>
                     </div>
                     </li>

@@ -117,8 +117,8 @@ const ListResumesFromS3 = () => {
 
                             // if document editable..
                             if (urlFileType == "html") {
-                                navigate('/mainpage/textEditorMCE');
-                                console.log("Navigating to: /mainpage/textEditorMCE")
+                                navigate('/resume/textEditorMCE');
+                                console.log("Navigating to: /resume/textEditorMCE")
                             }
                         }}> 
                         <a href={url} target="_blank" 
