@@ -239,14 +239,20 @@ function Application(prop) {
                                 { required: true, message: "Please input the date applied!" }
                             ]}
                         >
-                            <input value={submission_date} onChange={e=>SetSubmissionDate(e.target.value)} type='date' />
+                            <input value={submission_date} onChange={e=> {SetSubmissionDate(e.target.value)}} type='date' />
                         </Form.Item>
                         <Form.Item name='status ' label='Status: (Applied, Interviewing, Under Considerations, Hired, No Offer)' style={{ width: 1000 }} size='large'
                             rules={[
                                 { required: true, message: "Please select your application status! " }
                             ]}
                         >
-                            <Input value={status} onChange={e=>setStatus(e.target.value)} type='text' />
+                            <select value={status} onChange={e=>setStatus(e.target.value)}>
+                                <option value='Applied'>Applied</option>
+                                <option value='Interviewing'>Interviewing</option>
+                                <option value='Under Consideration'>Under Consideration</option>
+                                <option value='Hired'>Hired</option>
+                                <option value='No Offer'>No Offer</option>
+                            </select>
                         </Form.Item>
 
                         <Form.Item name='resume' label='Resume Used' style={{ width: 250 }} size='large'
@@ -255,7 +261,7 @@ function Application(prop) {
                             ]}
                         >
                             <select value={resume} onChange={e=>SetResume(e.target.value)}>
-                                <option value='jake ryan'>Jake Ryan</option>
+                                <option value='jake ryan, TESTING2'>Jake Ryan</option>
                                  </select>
                     
                         </Form.Item>
