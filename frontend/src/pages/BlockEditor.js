@@ -1,6 +1,6 @@
 import React, {useContext,useState, useEffect} from "react";
 import NavBar from "../components/Navbar";
-import TopNav2 from "../components/TopNav2";
+import TopNav3 from "../components/TopNav3";
 import { SessionContext } from "../components/UserContext";
 import Editor from "../components/BlockEditor"
 
@@ -22,7 +22,7 @@ function BlockEditor () {
     <div>
         {isLoggedIn &&
             <>
-        <TopNav2 />
+        <TopNav3 />
         <div className="page-wrapper">
             <NavBar />
             <div className="main-content">

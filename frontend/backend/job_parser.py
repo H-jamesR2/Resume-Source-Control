@@ -6,7 +6,7 @@ import spacy
 nerClassifier = spacy.load("model-best")
 api = Flask(__name__)
 
-@api.route('/AI/job-scan', methods=["GET", "POST"])
+@api.route('/api/AI/job-scan', methods=["GET", "POST"])
 def my_package():
     jobDescription = request.form.get('jobDescription')
     doc = nerClassifier(jobDescription)

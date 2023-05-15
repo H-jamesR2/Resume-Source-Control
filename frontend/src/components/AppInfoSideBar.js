@@ -63,12 +63,6 @@ function AppInfoSideBar(prop) {
                         </div>
                     </div>
                 </div>
-                <div className="sidebar-bottomhalf">
-                    <div id="sidebar-bottom2">
-                        <div className="sidebar-text">Job Description Scanner</div>
-                    </div>
-                    <Input className="sidebar-text" id="scanner" placeholder="Paste the job description"></Input>
-                </div>
             </div>
         </div>
     );

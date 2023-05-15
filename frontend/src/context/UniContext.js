@@ -56,6 +56,15 @@ export const UniContextProvider = (props) => {
         setSkills([...skills, skill])
     }
 
+    //Resumes
+    const [resumes, setResumes] = useState([]);
+
+    
+
+    const addResumes = (resume) => {
+        setResumes([...resumes, resume])
+    }
+
 
 
     return(
@@ -87,7 +96,11 @@ export const UniContextProvider = (props) => {
 
             skills, 
             setSkills, 
-            addSkills
+            addSkills,
+
+            resumes,
+            setResumes,
+            addResumes
             
 
             }}>

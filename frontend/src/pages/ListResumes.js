@@ -1,7 +1,7 @@
 import React, { Component, useEffect, useState } from "react";
 import {S3Client, GetObjectCommand, ListObjectsCommand} from '@aws-sdk/client-s3';
 import {getSignedUrl} from '@aws-sdk/s3-request-presigner';
-import TopNav2 from "../components/TopNav2";
+import TopNav3 from "../components/TopNav3";
 import NavBar from "../components/Navbar";
 import '../cssFiles/Resume-page.css';
 import ResumeIcon from '../images/Resume Icon.png';
@@ -57,6 +57,7 @@ const ListResumesFromS3 = () => {
             
             }));
             setUrls(presignedUrls);
+            console.log(presignedUrls)
             //return {presignedUrls}
         } catch (error) {
             console.log(error);
@@ -97,7 +98,7 @@ const ListResumesFromS3 = () => {
     return(
     
         <div>
-        <TopNav2/>
+        <TopNav3/>
         <div className="page-wrapper">
             <NavBar/>
             <div className="main-content">

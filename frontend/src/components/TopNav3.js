@@ -11,7 +11,7 @@ import UserPool from "../UserPool";
 import { useNavigate } from "react-router-dom";
 
 
-function TopNav2(props) {
+function TopNav3(props) {
   const temp = UserPool.getCurrentUser();
   const navigate = useNavigate();
   const signout=()=>{
@@ -33,18 +33,7 @@ function TopNav2(props) {
             <div className="nav-bar">
                 <ul className="nav-bar-left">
                     <li><img className={"resume-logo"} src={logo}></img></li>
-                    <li className='nav-item'><Link className='no-decor' to="/">Home</Link></li>                    
-                    <li className='nav-item'>
-                        <b>+ ADD</b>
-                    <div id="add-items" class="popup-menu">
-                        <div>
-                            <li className="popup-menu-item"><Link className='no-decor' to="/upload">
-                                Upload Resume</Link></li>
-                            <li className="popup-menu-item"><Link className='no-decor' to="/mainpage/textEditorMCE">
-                                Create Resume</Link></li>
-                        </div>
-                    </div>
-                    </li>
+                    <li className='nav-item'><Link className='no-decor' to="/">Home</Link></li>
                 </ul>
                 <ul className="nav-bar-right">
                     <li 
@@ -67,4 +56,4 @@ function TopNav2(props) {
 
 }
 
-export default TopNav2;
+export default TopNav3;

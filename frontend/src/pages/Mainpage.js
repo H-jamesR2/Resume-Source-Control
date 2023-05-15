@@ -1,6 +1,7 @@
 import React, {useContext, useState, useEffect} from "react";
 import { BrowserRouter as Router, Routes, Route, Link, NavLink } from "react-router-dom";
-import TopNav2 from "../components/TopNav2";
+import TopNav from "../components/TopNav";
+import TopNav3 from "../components/TopNav3";
 import NavBar from "../components/Navbar";
 import Settings from "./Settings";
 import { SessionContext } from "../components/UserContext";
@@ -14,6 +15,7 @@ import ResumeIcon from '../images/Resume Icon.png';
 import Resume from "./Resume";
 import { Amplify, Auth } from 'aws-amplify';
 import JobParser from "../components/JobParser"
+import VersionNavBar from "../components/VersionSideBar";
 
 // Need to parse better;
 const AWS_ACCESS_KEY_ID = 'AKIA6DOFALTAH2DSHQGB'
@@ -50,9 +52,11 @@ function Mainpage()
         }
     })
 
+    //const identity_Id = 'us-east-2:a8dcd4f1-9b03-4eec-a2a2-73ea8ec71440'
 
     async function getResumeKeys() {
         const path = `protected/${identityId}/userFiles`
+        //const path = `protected/${identity_Id}/userFiles`
         const command = new ListObjectsCommand({
             Bucket: AWS_BUCKET_NAME,
             Prefix: path
@@ -115,9 +119,10 @@ function Mainpage()
         <div>
             {isLoggedIn && (
             <div>   
-                <TopNav2/>
+                <TopNav3/>
                 <div className="page-wrapper">
                     <NavBar/>
+                    <VersionNavBar/>
                     <div className="main-content">
                         {/* add page content here */}
                         Main page after login
@@ -161,6 +166,16 @@ function Mainpage()
                             </ul>
                         </div>
                        
+                    </div>
+                </div>
+            </div>
+            )}
+            { !isLoggedIn && (
+            <div>   
+                <TopNav/>
+                <div className="page-wrapper">
+                    <div className="main-content">
+                    You are not logged in. Please log in or sign up to continue.
                     </div>
                 </div>
             </div>
