@@ -128,7 +128,7 @@ function Mainpage()
                         Main page after login
                         <br></br>
                         <button>
-                        <Link to="/resume/textEditorMCE"> TextEditMCE-placeholder-button </Link>
+                        <Link to="/mainpage/textEditorMCE"> TextEditMCE-placeholder-button </Link>
                         </button> 
                         <br></br>
                                          
@@ -150,8 +150,8 @@ function Mainpage()
                                         /*  if document editable.. 
                                             -> navigate to application-Resume editor */
                                         if(urlFileType == "html"){
-                                            navigate('/resume/textEditorMCE');
-                                            console.log("Navigating to: /resume/textEditorMCE")
+                                            navigate('/mainpage/textEditorMCE');
+                                            console.log("Navigating to: /mainpage/textEditorMCE")
                                         }
                                         // add function to navigate to field-Resume editor
                                     }}>

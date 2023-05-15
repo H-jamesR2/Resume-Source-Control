@@ -69,7 +69,7 @@ export default function App() {
             <Route path="/mainpage" element={<Mainpage/>}/>
             
             <Route path="/resume" element={<Resume/>}/>
-            <Route path="/resume/textEditorMCE" element={<TextEditMCE />} />
+            <Route path="/mainpage/textEditorMCE" element={<TextEditMCE />} />
             
             <Route path="/settings" element={<Settings/>}/>
             <Route path="/changepassword" element={<ChangePassword/>}/>
