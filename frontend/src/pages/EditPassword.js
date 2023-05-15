@@ -1,6 +1,6 @@
 import React, {useState, useContext, useEffect} from "react";
 import { SessionContext } from "../components/UserContext";
-import TopNav2 from "../components/TopNav2";
+import TopNav3 from "../components/TopNav3";
 import NavBar from "../components/Navbar";
 import { useNavigate, Navigate } from "react-router-dom";
 import{Link} from "react-router-dom"
@@ -63,7 +63,7 @@ const ChangePassword = () =>{
       <div>
         {isLoggedIn &&
             <>
-        <TopNav2/>
+        <TopNav3/>
             <div className="page-wrapper">
                 <NavBar/>
                 
@@ -72,23 +72,6 @@ const ChangePassword = () =>{
 
 
                   <div className = "settings-dialog-box">
-                    {/* <div className ="settings-partition">
-                        <p className = "header-1" style={{textAlign:"center", margin:"0"}}>
-                          Account settings
-                        </p>
-                      </div> */}
-                    {/* <div className= "settings-partition" style={{padding:"0 0 5px 0"}}>
-                        <span>Current username: USERNAME</span>
-                        <br></br>
-                        <span>Username cannot be changed</span>
-                      </div>
-                      <div className= "settings-partition" style={{padding:"0 0 5px 0"}}>
-                        <span>Current email: EMAIL</span>
-                          <input
-                            className={"text"}
-                            placeholder={"Email"}
-                          ></input>
-                      </div> */}
                       <div className= "settings-partition" style={{padding:"0 0 5px 0"}}>
                           <input
                             className={"text"}

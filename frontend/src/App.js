@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Outlet, Link, NavLink } from "react-router-dom";
 import './App.css';
-import './cssFiles/Login.css';
+import './cssFiles/styles.css';
 import './cssFiles/Login.css';
 import Homepage from './pages/Homepage';
 import {Session} from "./components/UserContext"
@@ -14,6 +14,7 @@ import Blocks from "./pages/Blocks";
 import Settings from "./pages/Settings";
 import Application from "./pages/Application";
 //import BlockEditor from "./pages/BlockEditor";
+import JobParserPage from "./pages/JobParserPage";
 import Profile from "./pages/Profile";
 import TestPage from "./pages/TestPage";
 import BlockEditor from "./pages/BlockEditor";
@@ -54,6 +55,7 @@ import UpdateSkill from "./componentsDB/UpdateSkill";
 import ResumeList from "./componentsDB/ResumeList";
 
 //<Route path="/blockeditor" element={<BlockEditor />} />
+//            <Route path="/blocks" element={<Blocks/>}/>
 export default function App() {
   
   return (
@@ -65,15 +67,16 @@ export default function App() {
             <Route path="/signup" element={<SignUp/>}/>
             <Route path="/login" element={<LogIn/>}/>
             <Route path="/mainpage" element={<Mainpage/>}/>
-            <Route path="/mainpage/textEditorMCE" element={<TextEditMCE/>} />
+            
             <Route path="/resume" element={<Resume/>}/>
-            <Route path="/blocks" element={<Blocks/>}/>            
+            <Route path="/resume/textEditorMCE" element={<TextEditMCE />} />
+            
             <Route path="/settings" element={<Settings/>}/>
             <Route path="/changepassword" element={<ChangePassword/>}/>
             <Route path="/changeemail" element={<ChangeEmail/>}/>
             <Route path="/applications" element={<Application/>}/>
-            <Route path="/blockeditor" element={<BlockEditor />} />
-
+            <Route path="/blockeditor" element={<BlockEditor />}/>
+            <Route path="/jobparser" element={<JobParserPage/>}/>
             <Route path="/profile" element={<Profile />} />
             <Route path="/testpage" element={<TestPage />} />
 
@@ -89,17 +92,14 @@ export default function App() {
             <Route path="/mainpage/textEditorMCEv2" element={<TextEditMCEv2/>} />
 
 
-            <Route path="/data" element={<Data/>} />
-            <Route path="/data/:id/updateContact" element={<UpdateContact/>}/>
-            <Route path="/data/:id/updateEducation" element={<UpdateEducation/>}/>
-            <Route path="/data/:id/updateJob" element={<UpdateJob/>}/>
-            <Route path="/data/:id/updateProject" element={<UpdateProject/>}/>
-            <Route path="/data/:id/updateExtracurricular" element={<UpdateExtracurricular/>}/>
-            <Route path="/data/:id/updateSkill" element={<UpdateSkill/>}/>
+            <Route path="/blocks" element={<Data/>} />
+            <Route path="/blocks/:id/updateContact" element={<UpdateContact/>}/>
+            <Route path="/blocks/:id/updateEducation" element={<UpdateEducation/>}/>
+            <Route path="/blocks/:id/updateJob" element={<UpdateJob/>}/>
+            <Route path="/blocks/:id/updateProject" element={<UpdateProject/>}/>
+            <Route path="/blocks/:id/updateExtracurricular" element={<UpdateExtracurricular/>}/>
+            <Route path="/blocks/:id/updateSkill" element={<UpdateSkill/>}/>
             <Route path="/versions" element={<ResumeList/>}/>
-
-
-
 
         </Routes>
         </UniContextProvider>

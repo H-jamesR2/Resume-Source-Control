@@ -1,6 +1,7 @@
 import React, {useContext, useEffect, useState} from "react";
 import { BrowserRouter as Router, Routes, Route, Link, NavLink } from "react-router-dom";
-import TopNav2 from "../components/TopNav2";
+import TopNav from "../components/TopNav";
+import TopNav3 from "../components/TopNav3";
 import NavBar from "../components/Navbar";
 import Settings from "./Settings";
 import Person1 from "../images/Person-1.png";
@@ -26,12 +27,12 @@ function Profile(prop)
         <div>
           {isLoggedIn &&
             <>
-            <TopNav2/>
+            <TopNav3/>
             <div className="page-wrapper">
                 <NavBar/>
                 <div className="main-content">
-                  <div className="header-1">Edit your profile, username</div>                
-                  <div className="header-2">Profile picture</div>
+                  <h1>Edit your profile, username</h1>                
+                  <h2>Profile picture</h2>
                   <div style={{display:"flex", flexDirection:"row"}}>
                     <img src={Person1} style={{width:"128px"}}></img>
                     <div style={{display:"flex", flexDirection:"column", width:"120px"}}>
@@ -39,7 +40,7 @@ function Profile(prop)
                       <button className="smallnegative" style={{margin:"3px 0px 6px 10px"}}>Remove</button>
                     </div>
                   </div>
-                  <div className="header-2">Other information</div>
+                  <h2>Other information</h2>
                   <div className="name-split">
                   <input
                     className={"text"}
@@ -77,6 +78,16 @@ function Profile(prop)
           </div>
           </>
           }
+          { !isLoggedIn && (
+            <div>   
+                <TopNav/>
+                <div className="page-wrapper">
+                    <div className="main-content">
+                    You are not logged in. Please log in or sign up to continue.
+                    </div>
+                </div>
+            </div>
+            )}
         </div>
     );
 }

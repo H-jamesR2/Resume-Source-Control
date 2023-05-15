@@ -125,7 +125,7 @@ app.get("/api/v1/applications/:id", asyncHandler(async(req, res)=>{
 //Create application
 app.post("/api/v1/applications", asyncHandler(async(req, res)=>{
     console.log(req.body)
-    const application = await db.query("INSERT INTO applications (resume_id, position, company, submission_date) VALUES ($1, $2, $3, $4) returning *", [req.body.resume_id, req.body.position, req.body.company, req.body.submission_date]);
+    const application = await db.query("INSERT INTO applications (resume_id, position, company, submission_date, status) VALUES ($1, $2, $3, $4, $5 ) returning *", [req.body.resume_id, req.body.position, req.body.company, req.body.submission_date, req.body.status]);
     console.log(application);
     res.status(201).json({
         status: "success",
@@ -150,8 +150,8 @@ app.delete("/api/v1/applications/:id", asyncHandler(async(req, res) => {
 //Update application
 app.put("/api/v1/applications/:id", asyncHandler(async(req, res)=>{
     const application = await db.query(
-        "UPDATE applications SET resume_id = $1, position = $2, company = $3, submission_date = $4 WHERE id = $5 returning *", 
-        [req.body.resume_id, req.body.position, req.body.company, req.body.submission_date, req.params.id])
+        "UPDATE applications SET resume_id = $1, position = $2, company = $3, submission_date = $4, status = $5, WHERE id = $6 returning *", 
+        [req.body.resume_id, req.body.position, req.body.company, req.body.submission_date,req.body.status, req.params.id])
     console.log(application)
     res.status(200).json({
         status: "success",
@@ -794,7 +794,7 @@ app.put("/api/v1/resumes/:id", asyncHandler(async(req, res)=>{
 
 
 
-const port = process.env.PORT || 3009;
+const port = process.env.PORT || 3008;
 app.listen(port, ()=>{
     console.log(`Server is up and listening on port ${port}`)
 });

@@ -1,6 +1,7 @@
 import React, {useContext, useState, useEffect} from "react";
 import { BrowserRouter as Router, Routes, Route, Link, NavLink } from "react-router-dom";
-import TopNav2 from "../components/TopNav2";
+import TopNav from "../components/TopNav";
+import TopNav3 from "../components/TopNav3";
 import NavBar from "../components/Navbar";
 import Settings from "./Settings";
 import { SessionContext } from "../components/UserContext";
@@ -118,7 +119,7 @@ function Mainpage()
         <div>
             {isLoggedIn && (
             <div>   
-                <TopNav2/>
+                <TopNav3/>
                 <div className="page-wrapper">
                     <NavBar/>
                     <VersionNavBar/>
@@ -127,7 +128,7 @@ function Mainpage()
                         Main page after login
                         <br></br>
                         <button>
-                        <Link to="/mainpage/textEditorMCE"> TextEditMCE-placeholder-button </Link>
+                        <Link to="/resume/textEditorMCE"> TextEditMCE-placeholder-button </Link>
                         </button> 
                         <br></br>
                                          
@@ -149,8 +150,8 @@ function Mainpage()
                                         /*  if document editable.. 
                                             -> navigate to application-Resume editor */
                                         if(urlFileType == "html"){
-                                            navigate('/mainpage/textEditorMCE');
-                                            console.log("Navigating to: /mainpage/textEditorMCE")
+                                            navigate('/resume/textEditorMCE');
+                                            console.log("Navigating to: /resume/textEditorMCE")
                                         }
                                         // add function to navigate to field-Resume editor
                                     }}>
@@ -165,6 +166,16 @@ function Mainpage()
                             </ul>
                         </div>
                        
+                    </div>
+                </div>
+            </div>
+            )}
+            { !isLoggedIn && (
+            <div>   
+                <TopNav/>
+                <div className="page-wrapper">
+                    <div className="main-content">
+                    You are not logged in. Please log in or sign up to continue.
                     </div>
                 </div>
             </div>

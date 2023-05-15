@@ -1,5 +1,7 @@
 import React, { Component, useEffect, useState } from "react";
-import TopNav2 from "../components/TopNav2";
+import { configureAmplify, SetS3Config } from "../components/AmplifyConfigure";
+import { Storage } from "aws-amplify";
+import TopNav3 from "../components/TopNav3";
 import NavBar from "../components/Navbar";
 import axios from 'axios'
 

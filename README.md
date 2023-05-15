@@ -1,8 +1,56 @@
-# [App Name]
-Capstone Repository for Resume Source Control Project
+# Resume App
+Capstone Repository for Resume Source Control Project by: 
+* Antonio Diez, Qian He, Nelson Lieu, Hilarion Reyes, Anthony Regner, William Mak
 
-[App Name] Resume Source Control [Github Trees-esque]	[Approved]
+Resume Source Control 
 ===
+## Run Locally
+Assuming you have the latest [Python](https://www.python.org/downloads/) and [React](https://react.dev/learn/installation) installed:
+
+### PYTHON:
+(**ON MacOS**) IF python not upto-date, run the following commands in a terminal instance which:
+```
+brew install python
+
+ln -s -f /usr/local/opt/python@3.11/bin/python3.11 /usr/local/bin/python
+
+/usr/local/opt/python@3.11/bin/python3.11 -m pip install flask
+/usr/local/opt/python@3.11/bin/python3.11 -m pip install python-dotenv
+/usr/local/opt/python@3.11/bin/python3.11 -m pip install spacy
+```
+-> will install latest version of python: 3.11
+
+-> will change the locally used python version to 3.11
+
+-> will install LIBRARIES: **Flask, python-dotenv, spacy**
+
+---
+First you need to clone repository then at the root directory "CS499_Capstone_Repository" run:
+```
+npm run initalize-app
+```
+This command above will:
+- Install dependencies for the frontend and backend folders
+- Install Flask for the python backend
+
+In the first/current terminal instance start the backend by running:
+```
+cd backend
+npm start
+```
+In another terminal instance start the python backend by running:
+```
+cd frontend
+npm run start-backend
+```
+In another terminal instance start the react app by running:
+```
+cd frontend
+npm run start
+```
+Then you can sign in with your own information or the provided login information here
+- username: adiez
+- password: P@ssword5
 
 ## Table of Contents
 1. [Overview](#Overview)
@@ -13,25 +61,14 @@ Capstone Repository for Resume Source Control Project
 ## Overview
 ### Description
 #### Pitch:
-* For the best results in your job search you must tailor make your resume for every job opening you apply for, but this quickly becomes a logistical nightmare with the 50-100 job applications it takes to get offers. So we propose a solution of resume source control application to help track changes throughout the years and individual applications.
-  * Similarly to other source control programs like git our application allows you to track changes and branch off of a certain version of your resume
-  * In addition to source control you can track which resume you used for which application saved in the source control system
-  * You can edit resume with a built in text editor
-  * If there is time we will also include tracking for cover letters
+- The general advice that is given in the job search is that you should tailor make your resume for each job posting this can easily become a logistical nightmare with hundreds of job applications and different versions of your resume, so our solution is Resume App a form of Resume Source Control that allows you to track the different versions of your resumes.
 
-#### Main Walkthrough:
-* You have a main resume that contains everything that you have done that belongs on a resume. Then you can branch off of that main resume and create resumes based on a specific field (i.e. Game Developer and Software Engineer) where you eliminate sections that are irrelevant to those fields. Then from those field branches you can branch off again for specific job applications where you can edit the language of the resume to appeal to those specific job applications.
-  * Similar to how git only tracks changes maybe, in the resume editor, if you edited a main branch project description the web app will make a suggestion “there have been changes in parent branch. Do you want to apply changes?” and thats how changes propagate
-* Text editor allowing you to edit resumes on the web app
-  * Templates for resumes in the text editor or at a homepage where it brings you to the text editor
-  * AI suggestions in the text editor, where you can give the application a job application and it will make suggestions for your current resume you are editing
-* Resumes are downloadable in different formats
-* Application trackers where you can see what resume you used for which job application
-  * Different views, you can sort by resume (and which applications you used the resume on) then by application (a list of applications and what you used on each)
-  * Stats, like how far you got in the application process for each type of resume
-* Users can create accounts and save their resumes
-* Also include tracking for cover letters, source control, and application statistics
-* Changes to the main resume propagate out to the other branches, for example if you change a project description for the main resume any other branch with that project will also have their description changed. Also there should be a feature to disconnect this change propagation because we want to tailor make some resume descriptions for a job application (I dont think were using this one)
+#### The General Advice / Purpose
+Generally how you should organize your information for a resume by having a main resume with EVERYTHING you have EVER done, and any information relavant to a resume. Then as you apply to jobs you should narrow down parts of your resume that are relevant to a specific position and company.
+### Our Method
+- To represent a main resume we decide to break your resume up into Block(s), i.e. a single project, or single job, etc.
+- Then you narrow down the resume into a Field Resume, made of Block(s) relevant to the field you are applying for, i.e. "Game Developer Resume" or "Software Engineer Resume".
+- Then you narrow down again into an Application Resume, this is a copy of a Field Resume and the user edits based on the company, i.e." Game Developer at Blizzard", "Game Developer at Riot", or "Software Engineer at Google".
 
 [Extra Notes]
 ======
