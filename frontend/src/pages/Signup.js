@@ -23,13 +23,21 @@ const SignUp = () => {
             if(error) {
                 console.error(error);
                 alert(error)
+                navigate('/signup')
             } else{
-            var user = result.user;
-            console.log(result);
-            console.log(user.getUsername() + " has signed up.");
-            alert("Please verify your email. We sent an email to " + email);
-            }            
-            navigate('/blocks');
+                var user = result.user;
+                console.log(result);
+                console.log(user.getUsername() + " has signed up.");
+                alert("Please verify your email. We sent an email to " + email);
+                
+                // reset localStorage URL route to empty strings since SAVED
+                localStorage.setItem('myURLObject', JSON.stringify(
+                    ["", ""]))
+                // return to mainpage since urlLink File changed...
+                console.log(JSON.parse(localStorage.getItem('myURLObject')));
+                
+                navigate('/');
+            }
             // window.location.reload();
         }) 
     };

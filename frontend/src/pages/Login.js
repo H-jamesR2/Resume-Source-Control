@@ -52,6 +52,13 @@ const LogIn=()=>{
             console.log("Success")
             console.log(user)
             localStorage.setItem('my-key', currCreds.identityId);
+            
+            // reset localStorage URL route to empty strings since SAVED
+            localStorage.setItem('myURLObject', JSON.stringify(
+              ["", ""]))
+            // return to mainpage since urlLink File changed...
+            console.log(JSON.parse(localStorage.getItem('myURLObject')));
+
             setTimeout( function(){
               navigate('/resume')
             }, 1500)
