@@ -69,7 +69,7 @@ export default function App() {
             <Route path="/mainpage" element={<Mainpage/>}/>
             
             <Route path="/resume" element={<Resume/>}/>
-            <Route path="/mainpage/textEditorMCE" element={<TextEditMCE />} />
+            <Route path="/resume/textEditorMCE" element={<TextEditMCE />} />
             
             <Route path="/settings" element={<Settings/>}/>
             <Route path="/changepassword" element={<ChangePassword/>}/>
@@ -89,7 +89,7 @@ export default function App() {
             
 
 
-            <Route path="/mainpage/textEditorMCEv2" element={<TextEditMCEv2/>} />
+            <Route path="/resume/textEditorMCEv2" element={<TextEditMCEv2/>} />
 
 
             <Route path="/blocks" element={<Data/>} />
@@ -118,7 +118,7 @@ export default function App() {
       //       <Route path="/signup" element={<SignUp/>}/>
       //       <Route path="/login" element={<LogIn/>}/>
       //       <Route path="/mainpage" element={<Mainpage/>}/>
-      //       <Route path="/mainpage/textEditorMCE" element={<TextEditMCE/>} />
+      //       <Route path="/resume/textEditorMCE" element={<TextEditMCE/>} />
       //       <Route path="/resume" element={<Resume/>}/>
       //       <Route path="/blocks" element={<Blocks/>}/>            
       //       <Route path="/settings" element={<Settings/>}/>
@@ -139,7 +139,7 @@ export default function App() {
       //       <Route path="/uploadfiles" element={<UploadFiles />} />
 
 
-      //       <Route path="/mainpage/textEditorMCEv2" element={<TextEditMCEv2/>} />
+      //       <Route path="/resume/textEditorMCEv2" element={<TextEditMCEv2/>} />
 
 
 

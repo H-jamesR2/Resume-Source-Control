@@ -35,6 +35,9 @@
   width: calc(100% - 250px);
   padding: 0;
 }
+.popup-menu{
+  z-index: 1000 !important;
+}
 
 .nav-bar-right, .nav-bar-left{
   list-style-type: none;

@@ -291,6 +291,13 @@ const TextEditMCE = () => {
     /*
             <TopNav3 />
             <NavBar />
+            
+    */
+    /*
+        <div className="page-wrapper">
+            <VersionNavBar/>
+            <AppInfoSideBar />
+        <div id="Editor_MCE"/> 
     */
     //removed autoresize
     return (
@@ -300,12 +307,13 @@ const TextEditMCE = () => {
                 <TopNav3 />
             <div className="page-wrapper">
                     
-                    <div>
-                    <AppInfoSideBar />
-                    </div>
                     
-                    <div classname='container' id="Editor_MCE">
+                    <AppInfoSideBar />
+                    
+                    
+                    <div id="Editor_MCE">
                     <Editor
+                        //classname ='container'
                         //use diff apiKey for renewing premium feature;
                         //key1:     1j3wp2mvnlew5lkynzdndnzangmi9xfjg4yerztdh39llgew
                         //key2:     2njwaznbravfvg70hgzv0dmeqfengiiqh340hmrb9vm262vm
@@ -350,9 +358,9 @@ const TextEditMCE = () => {
                     
                     </div>
                 
-               
-                    <div><VersionNavBar/></div>
+                    <VersionNavBar />
             </div>
+                    
             </>
             }
         </div>
