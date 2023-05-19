@@ -91,7 +91,7 @@ Then you can sign in with your own information or the provided login information
 - Copy and past a job description that is computer science related and it should display a list of relavant hard and soft skills from that job posting
 
 
-# Language & Technologies Used:
+# Language & Technologies
 - React.js, HTML/CSS, AWS, Github, MySQL
 - Flask, Python, spaCy
 - Figma, Indesign
