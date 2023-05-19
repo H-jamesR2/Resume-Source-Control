@@ -18,7 +18,7 @@ const UploadToS3 = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData();
-    formData.append('rsm', resume.resume )
+    formData.append('resume', resume.resume )
     const key = `protected/${identityId}/userFiles`
     const response = await axios.post('http://localhost:3008/api/v1/resume/upload', (formData), {
       headers: {
