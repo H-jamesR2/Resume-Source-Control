@@ -24,18 +24,21 @@
 
 import React, { useState, useContext, useEffect, useCallback, useMemo, useRef } from 'react'
 import { Editor } from '@tinymce/tinymce-react';
-import TopNav2 from "../components/TopNav2";
+import TopNav3 from "../components/TopNav3";
 import NavBar from "../components/Navbar";
+import AppInfoSideBar from "../components/AppInfoSideBar";
+import VersionNavBar from "../components/VersionSideBar";
 
 import { SessionContext } from "../components/UserContext";
 import { configureAmplify, SetS3Config } from "../components/AmplifyConfigure";
 import { Storage } from "aws-amplify";
 
 import { useNavigate } from 'react-router-dom';
-
 import axios from 'axios'
 
 import "../cssFiles/TextEditMCE.css"
+
+const identityId = localStorage.getItem('my-key')
 
 /*
     Access User Storage: from bucket
@@ -43,12 +46,9 @@ import "../cssFiles/TextEditMCE.css"
 
     await Storage.put("test.txt", "Hello");
 */
+//const identityId = localStorage.getItem('my-key')
 
-//const identityId = 'us-east-2:a8dcd4f1-9b03-4eec-a2a2-73ea8ec71440'
-
-const identityId = localStorage.getItem('my-key')
-
-const TextEditMCEv2 = () => {
+const TextEditMCE = () => {
     const navigate = useNavigate();
     const DocumentState = {
         resumeName: "",
@@ -64,35 +64,51 @@ const TextEditMCEv2 = () => {
     }, [])
 
     /* Run Fetch Request on a File... */
-    const readDocument = () => {
-        SetS3Config("resumeapps3", "protected");
-        DocumentState.resumeContent = Storage.get(
-            `userFiles/${DocumentState.resumeName}`,
-            {   download: true }
-        );
-    }
+
+    // const readDocument = () => {
+    //     SetS3Config("resumeapps3", "protected");
+    //     DocumentState.resumeContent = Storage.get(
+    //         `userFiles/${DocumentState.resumeName}`,
+    //         {   download: true }
+    //     );
+    // }
 
     /* GET: FILE 
         - update DocumentState+DocumentName
     */
-    const [urlName, urlFile] = JSON.parse(localStorage.getItem('myURLObject'));
+    //console.log(JSON.parse(localStorage.getItem('myURLObject')));
+
+    var [urlName, urlFile] = ["", ""];
+    // if URL object exists
+    if (localStorage.getItem("myURLObject") !== null){
+        [urlName, urlFile] = JSON.parse(localStorage.getItem('myURLObject'));
+    } else{
+
+    }
     //const urlTest ="https://resumeapps3.s3.us-east-2.amazonaws.com/protected/us-east-2%3A5f33bbfc-c966-45d1-8b59-2642bf875182/userFiles/jake_ryan_TestResume.html?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIA6DOFALTAH2DSHQGB%2F20230501%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230501T034632Z&X-Amz-Expires=3600&X-Amz-Signature=fe216a79c1cdc46aa15f4408ccaa03fa5a716f54d503ea4fd91c77c5e0f1b644&X-Amz-SignedHeaders=host&x-id=GetObject";
     //console.log(`${urlFile}`)
     //console.log(urlName.type, urlFile.type);
     DocumentState.resumeName = String(urlName);
-    fetch(`${urlFile}`)
-        .then(res => res.blob()) // Gets the response and returns it as a blob
-        .then(blob => {
-            //console.log("DEBUG"); 
-            //console.log(blob);
+     
+    // urlObjectLink not found OR localStorage URLObject not found
+    if (urlFile != "") {
+        fetch(`${urlFile}`)
+            .then(res => res.blob()) // Gets the response and returns it as a blob
+            .then(blob => {
+                //console.log("DEBUG"); 
+                //console.log(blob);
 
-            blob.text().then(text => {
-                //let blobText = text;
-                //console.log(blobText);
-                DocumentState.resumeContent = text;
-            })
-            //console.log("DEBUG"); 
-        });
+                blob.text().then(text => {
+                    //let blobText = text;
+                    //console.log(blobText);
+                    DocumentState.resumeContent = text;
+                })
+                //console.log("DEBUG"); 
+            });
+    } else {
+        DocumentState.resumeContent = "";
+    }
+
 
 
     /* Run Put Request on File TO S3 Database */
@@ -107,9 +123,13 @@ const TextEditMCEv2 = () => {
     //             //const upload = null;
     //             alert('Document uploaded to S3')
 
+    //             // reset localStorage URL route to empty strings since SAVED
+    //             localStorage.setItem('myURLObject', JSON.stringify(
+    //                 ["", ""]))
     //             // return to mainpage since urlLink File changed...
+    //             console.log(JSON.parse(localStorage.getItem('myURLObject')));
     //             setTimeout(function(){
-    //                 navigate('/mainpage')
+    //                 navigate('/resume')
     //             }, 1500);
     //             //window.location.reload();
     //             // this.setState({ response: "Success uploading file!" });
@@ -120,30 +140,38 @@ const TextEditMCEv2 = () => {
     //         }
     //     );
     // }; 
+    
+    const uploadResume = async (file) => {
+        const formData = new FormData();
 
-    const uploadResume = async (file)=>{
-        //e.preventDefault();
-        // const[post, setPost] = useState({
-        //     title: '',
-        //     content: ''
-        // })
-        
-           
-            const formData = new FormData();
+        //const contentBlob = new Blob([post.content], {type: 'text/html'});
+        formData.append('resume', file, `${DocumentState.resumeName}`);
+        const key = `protected/${identityId}/userFiles`
 
-            //const contentBlob = new Blob([post.content], {type: 'text/html'});
-            formData.append('doc', file, 'jake_testResumeDEMOapr17_noGET.html');
-            const key = `protected/${identityId}/userFiles`
-
-            const response = await axios.post('http://localhost:3008/api/v1/resume/upload', formData, {
-                headers: {
-                    "key" : key
-                  }
-            })
-        
+        const response = await axios.post('http://localhost:3008/api/v1/resume/upload', formData, {
+            headers: {
+                "key": key
+            }
+        })
+        alert("Resume uploaded to S3")
 
     }
 
+     /*
+        //const upload = null;
+        alert('Document uploaded to S3')
+
+        // reset localStorage URL route to empty strings since SAVED
+        localStorage.setItem('myURLObject', JSON.stringify(
+            ["", ""]))
+        // return to mainpage since urlLink File changed...
+        console.log(JSON.parse(localStorage.getItem('myURLObject')));
+        setTimeout(function () {
+            navigate('/resume')
+        }, 1500);
+                //window.location.reload();
+                // this.setState({ response: "Success uploading file!" });
+    } */
 
     const editorRef = useRef(null);
     /*const log = () => {
@@ -189,6 +217,9 @@ const TextEditMCEv2 = () => {
     const save = () => {
         if (editorRef.current) {
             const content = editorRef.current.getContent();
+            console.log(content)
+            console.log(editorRef.current)
+            
             setDirty(false);
             editorRef.current.setDirty(false);
             /*setState({
@@ -199,15 +230,47 @@ const TextEditMCEv2 = () => {
             console.log((DocumentState.resumeName));
             console.log((DocumentState.resumeContent));
             if(DocumentState.resumeName == ""){
-                DocumentState.resumeName = "jake_testResumeDEMOmay1.html";
+                DocumentState.resumeName = "testResumeDEMOmay15.html";
             }   
             DocumentState.resumeContent = file;
 
             uploadResume(file);
+            //uploadDocument();
             // an application would save the editor content to the server here
             console.log(content);
         }
     };
+
+    const addBlockContent = () => {
+        let sampleContent = `<p class="c25"><strong><span class="c5">Undergraduate Research Assistant&nbsp;</span></strong><span class="c1">June 2020 &ndash; Present&nbsp;</span><span class="c7">Texas A&amp;M University College Station, TX</span></p>
+        <ul>
+        <li class="c25"><span class="c0">Developed a REST API using FastAPI and PostgreSQL to store data from learning management systems</span></li>
+        <li class="c25"><span class="c0">Developed a full-stack web application using Flask, React, PostgreSQL and Docker to analyze GitHub data</span></li>
+        <li class="c25"><span class="c0">Explored ways to visualize GitHub collaboration in a classroom setting</span></li>
+        </ul>
+        `   
+        //window.tinymce
+        window.tinymce.execCommand('mceInsertContent', false, sampleContent);
+        //editorRef.current.execCommand('mceInsertContent', false, sampleContent);
+        //tinymce.activeEditor.execCommand('mceInsertContent', false, 'your content');
+    }
+    
+    /*
+    window.addEventListener("beforeunload", function (e) {
+        var confirmationMessage = "\o/";
+
+        (e || window.event).returnValue = confirmationMessage; //Gecko + IE
+        console.log("CAN YOU READ THIS MESSAGE WITH Before Unload")
+        return confirmationMessage;                            //Webkit, Safari, Chrome
+    });
+    //Reload
+    window.addEventListener("unload", function (e) {
+        var confirmationMessage = "\o/";
+
+        (e || window.event).returnValue = confirmationMessage; //Gecko + IE
+        console.log("CAN YOU READ THIS MESSAGE WITH Unload/Reload")
+        return confirmationMessage;                            //Webkit, Safari, Chrome
+    }); */
     /*
     const initialVal = useMemo(
         () =>
@@ -227,23 +290,36 @@ const TextEditMCEv2 = () => {
                 "
      */
     /*
-            <TopNav2 />
+            <TopNav3 />
             <NavBar />
+            
+    */
+    /*
+        <div className="page-wrapper">
+            <VersionNavBar/>
+            <AppInfoSideBar />
+        <div id="Editor_MCE"/> 
     */
     //removed autoresize
     return (
         <div>
             {isLoggedIn &&
             <>
-                <TopNav2 />
+                <TopNav3 />
             <div className="page-wrapper">
-                    <NavBar />
-                <div id="Editor_MCE">
+                    
+                    
+                    <AppInfoSideBar />
+                    
+                    
+                    <div id="Editor_MCE">
                     <Editor
+                        //classname ='container'
                         //use diff apiKey for renewing premium feature;
-                        //key1: 1j3wp2mvnlew5lkynzdndnzangmi9xfjg4yerztdh39llgew
-                        //current: 2njwaznbravfvg70hgzv0dmeqfengiiqh340hmrb9vm262vm
-                        apiKey='2njwaznbravfvg70hgzv0dmeqfengiiqh340hmrb9vm262vm'
+                        //key1:     1j3wp2mvnlew5lkynzdndnzangmi9xfjg4yerztdh39llgew
+                        //key2:     2njwaznbravfvg70hgzv0dmeqfengiiqh340hmrb9vm262vm
+                        //current:  1fbg79iiulybcn5hw4rwdk5ysvr5ppfuhlslsrkr7mjjanvq
+                            apiKey='1fbg79iiulybcn5hw4rwdk5ysvr5ppfuhlslsrkr7mjjanvq'
                         onInit={(evt, editor) => (editorRef.current = editor)}
                         onDirty={() => setDirty(true)}
                         initialValue={initialValue}
@@ -278,22 +354,29 @@ const TextEditMCEv2 = () => {
                     <div id="footer-section">
                         <button onClick={save} disabled={!dirty}>Save</button>
                         {dirty && <p>You have unsaved content!</p>}
-                        <button onClick={e => {
-                                console.log(JSON.parse(localStorage.getItem('myURLObject')))
-                            }}
-                        > getURLobject
-                        </button>
+                        <button onClick={addBlockContent}> addBlockContent</button>
                     </div>
-                </div>
+                    
+                    </div>
+                
+                    <VersionNavBar />
             </div>
+                    
             </>
             }
         </div>
     );
     //<button onClick={log}>Log editor content</button>
+    /*
+                            <button onClick={e => {
+                                console.log(JSON.parse(localStorage.getItem('myURLObject')))
+                            }}
+                        > getURLobject
+                        </button>
+    */
 }
 
-export default TextEditMCEv2;
+export default TextEditMCE;
 
 
 /*

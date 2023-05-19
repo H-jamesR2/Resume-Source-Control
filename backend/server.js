@@ -6,7 +6,7 @@ const asyncHandler = require('express-async-handler')
 const db = require('./db')
 
 const cors = require('cors');
-// const { uploadFile, readResume } = require('./S3Functions');
+
 const fileUpload = require('express-fileupload');
 
 const app = express();
@@ -17,77 +17,6 @@ app.use(cors());
 
 
 
-//*********** Resumes *****************
-//Get all resumes
-// app.get("/api/v1/resumes", asyncHandler(async(req, res)=>{
-//     const results = await  db.query("select * from resumes");
-//     console.log(results)
-//     res.status(200).json({
-//         status: "Success",
-//         results: results.rows.length,
-//         data: {
-//             resumes: results.rows
-//         }
-//     })
-
-// }))
-
-// //Get a resume
-// app.get("/api/v1/resumes/:id", asyncHandler(async(req, res)=>{
-//     //console.log(req)
-
-//     console.log(req.params.id)
-//     const resume = await db.query("select * from resumes where id = $1", [req.params.id])
-//     console.log(resume.rows[0])
-//     res.status(200).json({
-//         status: "success",
-//         data: {
-//             resume: resume.rows[0],
-//         }
-
-//     })
-
-// }))
-
-// //Create a resume
-// app.post("/api/v1/resumes", asyncHandler(async(req, res)=>{
-//     console.log(req.body)
-//     const resume = await db.query("INSERT INTO resumes (name, version_id) VALUES ($1, $2) returning *", [req.body.name, req.body.version_id]);
-//     console.log(resume);
-//     res.status(201).json({
-//         status: "success",
-//         data: {
-//             resume: resume.rows[0]
-//         }
-
-//     })
-// }))
-
-// // Delete a resume
-// app.delete("/api/v1/resumes/:id", asyncHandler(async(req, res) => {
-//     const resume = await db.query("DELETE FROM resumes WHERE id = $1", [req.params.id]);
-//     console.log(resume);
-//     res.status(204).json({
-//         status: "success"
-//     });
-// }));
-
-
-
-// //Update a resume
-// app.put("/api/v1/resumes/:id", asyncHandler(async(req, res)=>{
-//     const resume = await db.query(
-//         "UPDATE resumes SET name = $1, version_id = $2 WHERE id = $3 returning *", 
-//         [req.body.name, req.body.version_id, req.params.id])
-//     console.log(resume)
-//     res.status(200).json({
-//         status: "success",
-//         data: {
-//             resume: resume.rows[0]
-//         }
-
-//     })
-// }))
 
 //**********Application***********
 //Get all applications
@@ -623,7 +552,7 @@ const{uploadResume, readResume, getResumeUrl, deleteResume} = require('./S3Funct
 //*********** Resumes *****************
 //Get all resumes
 app.get("/api/v1/resumes", asyncHandler(async(req, res)=>{
-    const results = await  db.query("select * from resumes3 ORDER BY name, submission_date DESC" );
+    const results = await  db.query("select * from resumes ORDER BY name, submission_date DESC" );
     console.log(results)
     res.status(200).json({
         status: "Success",
@@ -636,91 +565,43 @@ app.get("/api/v1/resumes", asyncHandler(async(req, res)=>{
 }))
 
 
-//Get a resume
-
-// app.get("/api/v1/resumes/:id", asyncHandler(async(req, res)=>{
-//     //console.log(req)
-
-//     console.log(req.params.id)
-//     const resume = await db.query("select * from resumes3 where id = $1", [req.params.id])
-//     console.log(resume.rows[0])
-//     res.status(200).json({
-//         status: "success",
-//         data: {
-//             resume: resume.rows[0],
-//         }
-
-//     })
-
-// }))
-
 app.get("/api/v1/resumeurl", asyncHandler(async(req, res)=>{
-    //console.log(req)
     
-    //const name = 'protected/us-east-2:5f33bbfc-c966-45d1-8b59-2642bf875182/userFiles/jake_testResumeDEMOapr17_noGET.html'
-    //const version = 'ds51GIjZirCCK.sF9JZx4L1i3vOmh_RN'
     const name  = req.headers['name'];
     console.log(name)
     
     const version  = req.headers['version'];
     console.log(version)
 
-    // const n = "protected/us-east-2:5f33bbfc-c966-45d1-8b59-2642bf875182/userFiles/resumeswe.txt"
-    // const v = "BFRDZZ0m6eKOpdQfY5rymCtYAhgT1_6V"
-
-    // const name='protected/us-east-2:a8dcd4f1-9b03-4eec-a2a2-73ea8ec71440/userFiles/resumev5.html'
-    // const version= 'Qm37U1Fxq0_OSJvW2i4cDLSipRYN3ysS'
-
-    // const n = "protected/us-east-2:a8dcd4f1-9b03-4eec-a2a2-73ea8ec71440/userFiles/resumeswe.txt";
-    // const v = "BFRDZZ0m6eKOpdQfY5rymCtYAhgT1_6V"
     const result = await getResumeUrl(name, version)
     res.json({
         url: result
     })
 
-    // const resume = await db.query("select * from resumes3 where id = $1", [req.params.id])
-    // console.log(resume.rows[0])
-    // res.status(200).json({
-    //     status: "success",
-    //     data: {
-    //         resume: resume.rows[0],
-    //     }
-
-    // })
-
+    
 }))
 
 
 
 //Create a resume
 app.post("/api/v1/resume/upload", asyncHandler(async(req, res)=>{
-    //console.log(req.body)
-    // console.log('********************First: ')
-    // console.log(req.files)
-    // console.log('********************Second: ')
-    // console.log(req.files['rsm'])
-    // console.log('********************Third: ')
-    // console.log(req.files['rsm'].name)
-    // console.log('*********************Fourth: ')
-    // console.log(req.files['rsm'].tempFilePath)
-    // const result = await uploadResume(req.files['doc'].tempFilePath)
-    //const key = 'protected/us-east-2:a8dcd4f1-9b03-4eec-a2a2-73ea8ec71440/userFiles'
+   
     const key  = req.headers['key'];
     const ct = req.headers['Content-Type']; 
     const cd = req.headers['Content-Disposition']
-    const result = await uploadResume(req.files['resume'], key, ct, cd)
+    const result = await uploadResume(req.files['resume'], key, cd)
 
     console.log("**********************Fifth:")
     console.log(result)
     console.log('*******************Sixth: ')
     console.log(result.VersionId)
     
-    const name = req.files['rsm'].name
+    const name = req.files['resume'].name
     const version = result.VersionId
-    //res.send('Resume uploaded')
+    
  
 
-    const resume = await db.query("INSERT INTO resumes3 (name, version_id) VALUES ($1, $2) returning *", [name, version]);
+    const resume = await db.query("INSERT INTO resumes (name, version_id) VALUES ($1, $2) returning *", [name, version]);
     console.log(resume);
     res.status(201).json({
         status: "success",
@@ -734,45 +615,12 @@ app.post("/api/v1/resume/upload", asyncHandler(async(req, res)=>{
 
 // Delete a resume
 app.delete("/api/v1/resumes/:id", asyncHandler(async(req, res) => {
-    const resume = await db.query("DELETE FROM resumes3 WHERE id = $1", [req.params.id]);
+    const resume = await db.query("DELETE FROM resumes WHERE id = $1", [req.params.id]);
     console.log(resume);
     res.status(204).json({
         status: "success"
     });
 }));
-
-
-// app.delete("/api/v1/delete_resume", asyncHandler(async(req, res) => {
-//     const name = req.headers['name'];
-//     console.log('**********************',name)
-//     const version = req.headers['version'];
-//     console.log('**********************',version)
-//     const id = req.headers['id']
-//     console.log('**********************',id)
-//     const result = await deleteResume(name, version)
-
-//     const resume = await db.query("DELETE FROM resumes3 WHERE id = $1", [id]);
-//     console.log(resume);
-//     res.status(204).json({
-//         status: "success"
-//     });
-// }));
-
-
-// app.delete("/api/v1/delete_resume", asyncHandler(async(req, res) => {
-//     const name = 'protected/us-east-2:a8dcd4f1-9b03-4eec-a2a2-73ea8ec71440/userFiles/swe 2.html'
-//     const version = 'W1YJEMq29gKDle6GILHxQ9CWSldzdl4c'
-//     const id = '53'
-//     const result = await deleteResume(name, version)
-
-//     const resume = await db.query("DELETE FROM resumes3 WHERE id = $1", [id]);
-//     console.log(resume);
-    
-//     res.status(204).json({
-//         status: "success"
-//     });
-// }));
-
 
 
 
@@ -790,8 +638,6 @@ app.put("/api/v1/resumes/:id", asyncHandler(async(req, res)=>{
 
     })
 }))
-
-
 
 
 const port = process.env.PORT || 3008;

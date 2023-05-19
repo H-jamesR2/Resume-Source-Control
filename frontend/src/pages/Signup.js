@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import UserPool from "../UserPool";
-import { BrowserRouter as Router, Routes, Route, 
-    Outlet, Link, NavLink, useNavigate } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Outlet, Link, NavLink, useNavigate } from "react-router-dom";
 import TopNav from "../components/TopNav";
 import {CognitoUserAttribute} from "amazon-cognito-identity-js";
 import '../cssFiles/Login.css';
