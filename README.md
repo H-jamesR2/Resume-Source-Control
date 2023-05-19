@@ -4,6 +4,14 @@ Capstone Repository for Resume Source Control Project by:
 
 Resume Source Control 
 ===
+
+# Table of Contents
+1. [Overview](#Overview)
+2. [Run Locally](#Run-Locally)
+3. [Product Spec](#Product-Spec)
+4. [Wireframes](#Wireframes)
+5. [Schema](#Schema)
+
 ## Run Locally
 Assuming you have the latest [Python](https://www.python.org/downloads/) and [React](https://react.dev/learn/installation) installed:
 
@@ -52,11 +60,33 @@ Then you can sign in with your own information or the provided login information
 - username: adiez
 - password: P@ssword5
 
-## Table of Contents
-1. [Overview](#Overview)
-2. [Product Spec](#Product-Spec)
-3. [Wireframes](#Wireframes)
-4. [Schema](#Schema)
+# Test Scenarios
+## Login + Signup
+- Password needs to include a , uppercase character, lowercase character, number, symbol, and 8 characters total.
+- With new account you might load resumes from a different account, simply refresh page and it should show a blank Resume Main Page
+- Policy for authentication is short so you need to relogin periodically
+## Top Right Account 
+- Account Settings: you can change password and email
+- Logout
+- Profile: not functional
+## Resume Main Page
+- Upload resume from local computer (only HTML)
+- Create a new resume there, you can only make one resume without a custom name
+- Clicking on the resume will open your resume in a new tab and navigate the current page to the resume text editor
+- Left nav panel you can go to Blocks, Applications, and Job Scanner
+### Resume Text Editor
+- Type like a normal text editor
+- Export as pdf
+- There is a left panel that should include stats about any job applications using that specfic resume, the backend is not hooked up so there is default values there.
+- On the right side there should be a view that allows you to see the the versions that you had previously saved
+## Job Scanner
+- Copy and past a job description that is computer science related and it should display a list of relavant hard and soft skills from that job posting
+## Blocks
+- 
+## Applications
+- 
+
+
 
 ## Overview
 ### Description
@@ -70,57 +100,45 @@ Generally how you should organize your information for a resume by having a main
 - Then you narrow down the resume into a Field Resume, made of Block(s) relevant to the field you are applying for, i.e. "Game Developer Resume" or "Software Engineer Resume".
 - Then you narrow down again into an Application Resume, this is a copy of a Field Resume and the user edits based on the company, i.e." Game Developer at Blizzard", "Game Developer at Riot", or "Software Engineer at Google".
 
-[Extra Notes]
-======
-Personal tracker; resume matches successes; stats;
-Latex
-Preapproval for 2;
-Need for app made; group structures; database design / frontend / tools; timelines;
-Resume []
-
 ### Language/Technologies Used:
-* React.js, CSS, Figma, Github, MySQL
+- React.js, HTML/CSS, AWS, Github, MySQL
+- Flask, Python, spaCy
+- Figma, Indesign
+#### Dependencies
+```
+"@ant-design/icons": "^5.0.1",
+"@aws-amplify/ui-react": "^4.4.3",
+"@aws-sdk/client-s3": "^3.303.0",
+"@aws-sdk/s3-request-presigner": "^3.321.1",
+"@editorjs/editorjs": "^2.26.5",
+"@editorjs/header": "^2.7.0",
+"@editorjs/list": "^1.8.0",
+"@emotion/css": "^11.10.6",
+"@fortawesome/fontawesome-svg-core": "^6.3.0",
+"@fortawesome/free-regular-svg-icons": "^6.3.0",
+"@fortawesome/free-solid-svg-icons": "^6.3.0",
+"@fortawesome/react-fontawesome": "^0.2.0",
+"@testing-library/jest-dom": "^5.16.5",
+"@testing-library/react": "^13.4.0",
+"@testing-library/user-event": "^13.5.0",
+"@tinymce/tinymce-react": "^4.3.0",
+"amazon-cognito-identity-js": "^6.1.2",
+"ant-design": "^1.0.0",
+"antd": "^5.3.2",
+"aws-amplify": "^5.0.23",
+"aws-sdk": "^2.1347.0",
+"axios": "^1.4.0",
+"babel-plugin-macros": "^3.1.0",
+"file-saver": "^2.0.5",
+"http-proxy-middleware": "^2.0.6",
+"react": "^18.2.0",
+"react-collapsed": "^4.0.2",
+"react-dom": "^18.2.0",
+"react-dropdown": "^1.11.0",
+"react-router-dom": "^6.8.1",
+"react-scripts": "^5.0.1",
+"tinymce": "^6.4.1",
+"web-vitals": "^2.1.4"
+```
 
-## Product Spec
-### 1. User Stories (Required and Optional)
 
-**Required Must-have Stories** [Main-Features]
-..
-
-**Optional Nice-to-have Stories** [Optional-Features]
-..
-
-### 2. Screen Archetypes [Wireframes broken down]
-
-...
-
-## Wireframes
-
-[BONUS] Digital Wireframes & Mockups
-
-[BONUS] Demo
-
-## Schema
-### Models
-
-User
-Property | Type | Desciption 
---- | --- | --- 
-username| string | username for login  
-password| string | password for login
-createdAt| DateTime | date when account is created
-
-...
-...
-
-### Networking 
-- (Read/Get/Create/Post/Delete/Update/Put/etc.)
-
-## (Open-Source) Libraries Used
-
-## Sprint Progress
-### Sprint 1
-#### Items Completed
-
-#### Walkthrough 
-[Gif] [Slides]
