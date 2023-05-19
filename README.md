@@ -9,7 +9,7 @@ Resume Source Control
 1. [Description](#Description)
 2. [Run Locally](#Run-Locally)
 3. [Test Scenarios](#Test-Scenarios)
-4. [Language/Technologies](#Language/Technologies)
+4. [Language & Technologies](#Language & Technologies)
 
 # Description
 The general advice that is given in the job search is that you should tailor make your resume for each job posting this can easily become a logistical nightmare with hundreds of job applications and different versions of your resume, so our solution is Resume App a form of Resume Source Control that allows you to track the different versions of your resumes.
@@ -81,15 +81,15 @@ Then you can sign in with your own information or the provided login information
 - Export as pdf
 - There is a left panel that should include stats about any job applications using that specfic resume, the backend is not hooked up so there is default values there.
 - On the right side there should be a view that allows you to see the the versions that you had previously saved
-## Job Scanner
-- Copy and past a job description that is computer science related and it should display a list of relavant hard and soft skills from that job posting
-## Blocks
-- 
 ## Applications
 - 
+## Blocks
+- 
+## Job Scanner
+- Copy and past a job description that is computer science related and it should display a list of relavant hard and soft skills from that job posting
 
 
-# Language/Technologies Used:
+# Language & Technologies Used:
 - React.js, HTML/CSS, AWS, Github, MySQL
 - Flask, Python, spaCy
 - Figma, Indesign
