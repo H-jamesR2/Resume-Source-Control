@@ -97,6 +97,9 @@
     font-size: 18px;
     font-weight: 400px;
 }
+.sidebar-text{
+    margin-left:20px;
+}
 
 #sidebar-bottom2{
     font-size: 26px;
