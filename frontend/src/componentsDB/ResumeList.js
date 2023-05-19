@@ -77,7 +77,7 @@ const handleDelete = async (e, id) =>{
             return(
               <li onClick={(e)=> handleSelectVersion(e, resume.name, resume.version_id)} key={resume.id}>
               <span><div className="sidebar-text-right">{resume.name}</div></span>
-              <span><button onClick={(e) => handleDelete(e, resume.id, resume.name, resume.version_id)}>Delete</button></span>
+              {/* <span><button onClick={(e) => handleDelete(e, resume.id, resume.name, resume.version_id)}>Delete</button></span> */}
               {/* <td>{resume.version_id}</td> */}
               {/* <td>{resume.submission_date}</td> */}
               {/* <span><button onClick={(e)=> handlePreview(e, resume.name, resume.version_id)}>Preview</button></span> */}
