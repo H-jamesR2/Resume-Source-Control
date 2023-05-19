@@ -43,6 +43,7 @@ function Application(prop) {
 
 
 
+    //function to post input into database
     const handleSubmit = async (e) =>{
         e.preventDefault();
         try{
@@ -58,6 +59,7 @@ function Application(prop) {
         window.location.reload(false);
     }
 
+    //function to delete data from database
     const handleDelete =  async (e, id) =>{
         try{
             const response = await ResumeUrl.delete( `/v1/applications/${id}`)
@@ -91,6 +93,7 @@ function Application(prop) {
 
 
 
+    //layout of data to be outputted
     const columns = [
         {
             title: "id",
@@ -171,6 +174,8 @@ function Application(prop) {
         },
 
     ].filter(item => !item.hidden);
+
+    //prebuilt data
     const dataSource = [
         {
             id: 1,
@@ -207,10 +212,10 @@ function Application(prop) {
                         <div className="main-content">
                             <div>Applications Tracker</div>
                             
-                            <Table className="table-container" dataSource={applications} columns = {columns}/>
+                            {/* <Table className="table-container" dataSource={applications} columns = {columns}/> */}
                             
                             {/* <ApplicationList/> */}
-                            <ConfigProvider
+                            {/* <ConfigProvider
                                 theme={{
                                     token: {
                                         colorPrimary: "#6892FE",
@@ -269,7 +274,7 @@ function Application(prop) {
 
                         
                                     </Form>
-                            </ConfigProvider>
+                            </ConfigProvider> */}
                             <AppTable data={dataSource} />
 
                         </div>
