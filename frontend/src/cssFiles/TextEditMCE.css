@@ -7,6 +7,8 @@
     min-height: 5em;
     outline: none;
     width: 100%;
+    margin-left: 200px;
+    margin-right: 300px;
 }
 
 /* Untested */
@@ -25,4 +27,28 @@ button[disabled] {
     border: 1px solid var(--gray-2);
     background-color: var(--gray-1);
     color: var(--gray-3);
+}
+
+.container{
+    flex-grow: 1;
+    transition: margin-left 0.3 s, margin-right 0.3s;
+    margin-left: auto;
+    margin-right: auto;
+    
+    flex-shrink: 1;
+    flex-basis: 1024px;
+    clear: both;
+    white-space: normal;
+    outline: none;
+    
+}
+
+/* .container > *{
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+} */
+
+.page-wrapper{
+    display: flex;
 }

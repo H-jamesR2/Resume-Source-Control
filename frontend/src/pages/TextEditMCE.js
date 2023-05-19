@@ -299,9 +299,12 @@ const TextEditMCE = () => {
             <>
                 <TopNav3 />
             <div className="page-wrapper">
-                    <VersionNavBar/>
+                    
+                    <div>
                     <AppInfoSideBar />
-                <div id="Editor_MCE">
+                    </div>
+                    
+                    <div classname='container' id="Editor_MCE">
                     <Editor
                         //use diff apiKey for renewing premium feature;
                         //key1:     1j3wp2mvnlew5lkynzdndnzangmi9xfjg4yerztdh39llgew
@@ -344,7 +347,11 @@ const TextEditMCE = () => {
                         {dirty && <p>You have unsaved content!</p>}
                         <button onClick={addBlockContent}> addBlockContent</button>
                     </div>
-                </div>
+                    
+                    </div>
+                
+               
+                    <div><VersionNavBar/></div>
             </div>
             </>
             }

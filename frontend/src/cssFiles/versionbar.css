@@ -13,15 +13,16 @@
     src: url(../fonts/Lekton-Italic.ttf)
 }
 
-.nav-wrapper-right {
+.nav-wrapper {
     font-family: Lekton-Bold !important;
+    float: left;
     
 }
 #sidebar-wrapper-right.close{
-    width: 30px;
+    width: 70px;
     height: calc(100vh - 65px);
     background-color: var(--primary-3);
-    right:0;
+    
 }
 #sidebar-wrapper-right.close #sidebar-top {
     display: none;
@@ -37,7 +38,7 @@
     height: calc(100vh - 65px);
     font-weight: 900;
     background-color: var(--gray-0);
-    right:0;
+    
     
 }
 #sidebar-wrapper-right {
