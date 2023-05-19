@@ -9,7 +9,7 @@ Resume Source Control
 1. [Description](#Description)
 2. [Run Locally](#Run-Locally)
 3. [Test Scenarios](#Test-Scenarios)
-4. [Language & Technologies](#Language & Technologies)
+4. [Language & Technologies](#Language-&-Technologies)
 
 # Description
 The general advice that is given in the job search is that you should tailor make your resume for each job posting this can easily become a logistical nightmare with hundreds of job applications and different versions of your resume, so our solution is Resume App a form of Resume Source Control that allows you to track the different versions of your resumes.
@@ -64,7 +64,7 @@ Then you can sign in with your own information or the provided login information
 
 # Test Scenarios
 ## Login + Signup
-- Password needs to include a , uppercase character, lowercase character, number, symbol, and 8 characters total.
+- Password needs to include an uppercase character, lowercase character, number, symbol, and 8 characters total.
 - With new account you might load resumes from a different account, simply refresh page and it should show a blank Resume Main Page
 - Policy for authentication is short so you need to relogin periodically
 ## Top Right Account 
@@ -79,10 +79,12 @@ Then you can sign in with your own information or the provided login information
 ### Resume Text Editor
 - Type like a normal text editor
 - Export as pdf
-- There is a left panel that should include stats about any job applications using that specfic resume, the backend is not hooked up so there is default values there.
-- On the right side there should be a view that allows you to see the the versions that you had previously saved
+- There is a left panel that should include stats about any job applications using that specfic resume, the backend is not hooked up so there is default values there. 
+- On the right side there should be a view that allows you to see the the versions that you had previously saved resume versions, you can click on them to display the text on them (you cannot edit them)
 ## Applications
-- 
+- You can create application stats for the table
+- You can only edit the status of an applicaation row
+- The table is not hooked up to the backend so it starts with default values and does not save changes
 ## Blocks
 - 
 ## Job Scanner
