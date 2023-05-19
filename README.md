@@ -6,16 +6,18 @@ Resume Source Control
 ===
 
 # Table of Contents
-1. [Overview](#Overview)
+1. [Description](#Description)
 2. [Run Locally](#Run-Locally)
-3. [Product Spec](#Product-Spec)
-4. [Wireframes](#Wireframes)
-5. [Schema](#Schema)
+3. [Test Scenarios](#Test-Scenarios)
+4. [Language/Technologies](#Language/Technologies)
 
-## Run Locally
+# Description
+The general advice that is given in the job search is that you should tailor make your resume for each job posting this can easily become a logistical nightmare with hundreds of job applications and different versions of your resume, so our solution is Resume App a form of Resume Source Control that allows you to track the different versions of your resumes.
+
+# Run Locally
 Assuming you have the latest [Python](https://www.python.org/downloads/) and [React](https://react.dev/learn/installation) installed:
 
-### PYTHON:
+## PYTHON:
 (**ON MacOS**) IF python not upto-date, run the following commands in a terminal instance which:
 ```
 brew install python
@@ -87,24 +89,12 @@ Then you can sign in with your own information or the provided login information
 - 
 
 
-
-## Overview
-### Description
-#### Pitch:
-- The general advice that is given in the job search is that you should tailor make your resume for each job posting this can easily become a logistical nightmare with hundreds of job applications and different versions of your resume, so our solution is Resume App a form of Resume Source Control that allows you to track the different versions of your resumes.
-
-#### The General Advice / Purpose
-Generally how you should organize your information for a resume by having a main resume with EVERYTHING you have EVER done, and any information relavant to a resume. Then as you apply to jobs you should narrow down parts of your resume that are relevant to a specific position and company.
-### Our Method
-- To represent a main resume we decide to break your resume up into Block(s), i.e. a single project, or single job, etc.
-- Then you narrow down the resume into a Field Resume, made of Block(s) relevant to the field you are applying for, i.e. "Game Developer Resume" or "Software Engineer Resume".
-- Then you narrow down again into an Application Resume, this is a copy of a Field Resume and the user edits based on the company, i.e." Game Developer at Blizzard", "Game Developer at Riot", or "Software Engineer at Google".
-
-### Language/Technologies Used:
+# Language/Technologies Used:
 - React.js, HTML/CSS, AWS, Github, MySQL
 - Flask, Python, spaCy
 - Figma, Indesign
-#### Dependencies
+
+## Dependencies
 ```
 "@ant-design/icons": "^5.0.1",
 "@aws-amplify/ui-react": "^4.4.3",
