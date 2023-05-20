@@ -92,7 +92,7 @@ Then you can sign in with your own information or the provided login information
 
 
 # Language & Technologies
-- React.js, HTML/CSS, AWS, Github, MySQL
+- React.js, HTML/CSS, AWS, Github, MySQL, AntD
 - Flask, Python, spaCy
 - Figma, Indesign
 
