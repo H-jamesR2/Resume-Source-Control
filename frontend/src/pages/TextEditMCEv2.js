@@ -153,8 +153,20 @@ const TextEditMCE = () => {
                 "key": key
             }
         })
-        alert("Resume uploaded to S3")
+        console.log(response);
 
+
+        alert("Resume uploaded to S3 and is behind the current version!")
+
+        /*
+        // reset localStorage URL route to empty strings since SAVED
+        localStorage.setItem('myURLObject', JSON.stringify(
+            ["", ""]))
+        // return to mainpage since urlLink File changed...
+        console.log(JSON.parse(localStorage.getItem('myURLObject')));
+        setTimeout(function () {
+            navigate('/resume')
+        }, 1500); */
     }
 
      /*
