@@ -42,7 +42,7 @@ const UpdateExtracurricular = (props) => {
                 
                 
         });
-        navigate('/data')
+        navigate('/blocks')
 
     }
   return (

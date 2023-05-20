@@ -39,7 +39,7 @@ const UpdateEducation = (props) => {
                 relevant_coursework: relevantCoursework
                 
         });
-        navigate('/data')
+        navigate('/blocks')
 
     }
   return (

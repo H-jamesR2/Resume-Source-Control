@@ -30,7 +30,7 @@ const ContactList = (props) => {
     }
 }
 const handleEdit = (e, id) => {
-  navigate(`/data/${id}/updateContact`);
+  navigate(`/blocks/${id}/updateContact`);
 }
 
 

@@ -41,7 +41,7 @@ const UpdateContact = (props) => {
                 portfolio_website: portfolio
         });
         
-        navigate('/data')
+        navigate('/blocks')
 
     }
 

@@ -31,7 +31,7 @@ const ExtracurricularList = (props) => {
 }
 
 const handleEdit = (e, id) => {
-  navigate(`/data/${id}/updateExtracurricular`);
+  navigate(`/blocks/${id}/updateExtracurricular`);
 }
 
 

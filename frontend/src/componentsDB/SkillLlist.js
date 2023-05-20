@@ -33,7 +33,7 @@ const SkillList = (props) => {
 }
 const handleEdit = (e, id) => {
   
-  navigate(`/data/${id}/updateSkill`);
+  navigate(`/blocks/${id}/updateSkill`);
 }
 
   return (
