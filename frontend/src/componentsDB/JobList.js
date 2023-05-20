@@ -32,7 +32,7 @@ const JobList = (props) => {
     }
 }
 const handleEdit = (e, id) => {
-  navigate(`/data/${id}/updateJob`);
+  navigate(`/blocks/${id}/updateJob`);
 }
 
 

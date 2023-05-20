@@ -42,7 +42,7 @@ const UpdateJob = (props) => {
                 
                 
         });
-        navigate('/data')
+        navigate('/blocks')
     }
   return (
     <div>

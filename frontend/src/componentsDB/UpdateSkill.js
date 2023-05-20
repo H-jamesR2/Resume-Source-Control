@@ -34,7 +34,7 @@ const UpdateSkill = (props) => {
           technology,
           languages,
         });
-        navigate('/data')
+        navigate('/blocks')
     }
   return (
     <div>

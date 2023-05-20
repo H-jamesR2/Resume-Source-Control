@@ -31,7 +31,7 @@ const ProjectList = (props) => {
 }
 
 const handleEdit = (e, id) => {
-  navigate(`/data/${id}/updateProject`);
+  navigate(`/blocks/${id}/updateProject`);
 }
 
   return (

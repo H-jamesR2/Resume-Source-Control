@@ -32,7 +32,7 @@ const EducationList = (props) => {
 }
 
 const handleEdit = (e, id) => {
-  navigate(`/data/${id}/updateEducation`);
+  navigate(`/blocks/${id}/updateEducation`);
 }
   
 

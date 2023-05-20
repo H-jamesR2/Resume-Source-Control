@@ -42,7 +42,7 @@ const UpdateProject = (props) => {
                 
                 
         });
-        navigate('/data')
+        navigate('/blocks')
     }
 
   //console.log(id)
