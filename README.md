@@ -81,12 +81,15 @@ Then you can sign in with your own information or the provided login information
 - Export as pdf
 - There is a left panel that should include stats about any job applications using that specfic resume, the backend is not hooked up so there is default values there. 
 - On the right side there should be a view that allows you to see the the versions that you had previously saved resume versions, you can click on them to display the text on them (you cannot edit them)
+- The "addBlockContent" pastes a premade block into the resume editor (we intended to have a block side panel that contained the blocks you created so you can paste those in the editor)
 ## Applications
 - You can create application stats for the table
 - You can only edit the status of an applicaation row
 - The table is not hooked up to the backend so it starts with default values and does not save changes
 ## Blocks
-- 
+- You can enter and delete information from premade sections of a resume
+- The edit feature does not work currently
+- We intended to have these blocks pasted in the resume editor, this is demonstrated by the "addBlockContent" button in the resume editor
 ## Job Scanner
 - Copy and past a job description that is computer science related and it should display a list of relavant hard and soft skills from that job posting
 
