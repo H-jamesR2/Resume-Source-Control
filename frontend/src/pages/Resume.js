@@ -138,7 +138,8 @@ function Resume(prop)
                                         /*  if document editable.. 
                                             -> navigate to application-Resume editor */
                                         if(urlFileType == "html"){
-                                            navigate('/resume/textEditorMCEv2');
+                                            window.open("/resume/textEditorMCEv2", "_blank", "noreferrer");
+                                            // navigate('/resume/textEditorMCEv2');
                                             console.log("Navigating to: /resume/textEditorMCE")
                                         }
                                         // add function to navigate to field-Resume editor
