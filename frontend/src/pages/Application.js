@@ -210,7 +210,7 @@ function Application(prop) {
                     <div className="page-wrapper">
                         <NavBar />
                         <div className="main-content">
-                            <div>Applications Tracker</div>
+                            <h1>Applications Tracker</h1>
                             
                             {/* <Table className="table-container" dataSource={applications} columns = {columns}/> */}
                             
