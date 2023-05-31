@@ -330,8 +330,9 @@ const TextEditMCE = () => {
                         //use diff apiKey for renewing premium feature;
                         //key1:     1j3wp2mvnlew5lkynzdndnzangmi9xfjg4yerztdh39llgew
                         //key2:     2njwaznbravfvg70hgzv0dmeqfengiiqh340hmrb9vm262vm
-                        //current:  1fbg79iiulybcn5hw4rwdk5ysvr5ppfuhlslsrkr7mjjanvq
-                            apiKey='1fbg79iiulybcn5hw4rwdk5ysvr5ppfuhlslsrkr7mjjanvq'
+                        //key3:     1fbg79iiulybcn5hw4rwdk5ysvr5ppfuhlslsrkr7mjjanvq
+                        //current:  feenj5x1ww5kkuhd7npwcr5yk73e25e2bhdzawrzozswrbjw
+                            apiKey='feenj5x1ww5kkuhd7npwcr5yk73e25e2bhdzawrzozswrbjw'
                         onInit={(evt, editor) => (editorRef.current = editor)}
                         onDirty={() => setDirty(true)}
                         initialValue={initialValue}
