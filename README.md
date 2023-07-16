@@ -14,7 +14,7 @@ Resume Source Control
 # Description
 The general advice that is given in the job search is that you should tailor make your resume for each job posting this can easily become a logistical nightmare with hundreds of job applications and different versions of your resume, so our solution is Resume App a form of Resume Source Control that allows you to track the different versions of your resumes.
 
-# Run Locally
+# Run-Locally
 Assuming you have the latest [Python](https://www.python.org/downloads/) and [React](https://react.dev/learn/installation) installed:
 
 ## PYTHON:
@@ -62,7 +62,7 @@ Then you can sign in with your own information or the provided login information
 - username: adiez
 - password: P@ssword5
 
-# Test Scenarios
+# Test-Scenarios
 ## Login + Signup
 - Password needs to include an uppercase character, lowercase character, number, symbol, and 8 characters total.
 - With new account you might load resumes from a different account, simply refresh page and it should show a blank Resume Main Page
@@ -94,7 +94,7 @@ Then you can sign in with your own information or the provided login information
 - Copy and past a job description that is computer science related and it should display a list of relavant hard and soft skills from that job posting
 
 
-# Language & Technologies
+# Language-&-Technologies
 - React.js, HTML/CSS, AWS, Github, MySQL, AntD
 - Flask, Python, spaCy
 - Figma, Indesign
