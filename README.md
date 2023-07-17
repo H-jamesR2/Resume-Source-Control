@@ -4,6 +4,8 @@ Capstone Repository for Resume Source Control Project by:
 
 Resume Source Control 
 ===
+* Click on Demo-Section to view GIFs for:
+  * _**text-editor, application tracker, block-editor, job scanner**_
 
 # Table of Contents
 1. [Description](#description)
@@ -98,15 +100,19 @@ Then you can sign in with your own information or the provided login information
 ## Demo-Section
 
 ### TextEditor
+- <img align="center" width="60%" height="auto" src="https://github.com/H-jamesR2/Resume-Source-Control/blob/main/Images%2BVideos%2BDemoFolder/RSC_demo_00001.gif">
 
 ### TextEditor-SideBars
+- <img align="center" width="60%" height="auto" src="https://github.com/H-jamesR2/Resume-Source-Control/blob/main/Images%2BVideos%2BDemoFolder/RSC_demo_00005.gif">
 
 ### Applications
+- <img align="center" width="60%" height="auto" src="https://github.com/H-jamesR2/Resume-Source-Control/blob/main/Images%2BVideos%2BDemoFolder/RSC_demo_00003.gif">
 
 ### Blocks
+- <img align="center" width="60%" height="auto" src="https://github.com/H-jamesR2/Resume-Source-Control/blob/main/Images%2BVideos%2BDemoFolder/RSC_demo_00002.gif">
 
 ### Job Scanner
-
+- <img align="center" width="60%" height="auto" src="https://github.com/H-jamesR2/Resume-Source-Control/blob/main/Images%2BVideos%2BDemoFolder/RSC_demo_00004.gif">
 
 ## Language-&-Technologies
 - React.js, HTML/CSS, AWS, Github, MySQL, AntD
