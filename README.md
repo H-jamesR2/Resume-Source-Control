@@ -6,10 +6,10 @@ Resume Source Control
 ===
 
 # Table of Contents
-1. [Description](#Description)
-2. [Run-Locally](#Run-Locally)
-3. [Test-Scenarios](#Test-Scenarios)
-4. [Language-&-Technologies](#Language-&-Technologies)
+1. [Description](#description)
+2. [Run-Locally](#run-locally)
+3. [Test-Scenarios](#test-scenarios)
+4. [Language-&-Technologies](#language-&-technologies)
 
 ## Description
 The general advice that is given in the job search is that you should tailor make your resume for each job posting this can easily become a logistical nightmare with hundreds of job applications and different versions of your resume, so our solution is Resume App a form of Resume Source Control that allows you to track the different versions of your resumes.
