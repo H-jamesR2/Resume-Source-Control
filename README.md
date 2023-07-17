@@ -9,7 +9,8 @@ Resume Source Control
 1. [Description](#description)
 2. [Run-Locally](#run-locally)
 3. [Test-Scenarios](#test-scenarios)
-4. [Language-&-Technologies](#language--technologies)
+4. [Demo-Section](#demo-section)
+5. [Language-&-Technologies](#language--technologies)
 
 ## Description
 The general advice that is given in the job search is that you should tailor make your resume for each job posting this can easily become a logistical nightmare with hundreds of job applications and different versions of your resume, so our solution is Resume App a form of Resume Source Control that allows you to track the different versions of your resumes.
@@ -92,6 +93,19 @@ Then you can sign in with your own information or the provided login information
 - We intended to have these blocks pasted in the resume editor, this is demonstrated by the "addBlockContent" button in the resume editor
 ### Job Scanner
 - Copy and past a job description that is computer science related and it should display a list of relavant hard and soft skills from that job posting
+
+
+## Demo-Section
+
+### TextEditor
+
+### TextEditor-SideBars
+
+### Applications
+
+### Blocks
+
+### Job Scanner
 
 
 ## Language-&-Technologies
