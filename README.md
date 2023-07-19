@@ -15,7 +15,12 @@ Resume Source Control
 5. [Language-&-Technologies](#language--technologies)
 
 ## Description
-The general advice that is given in the job search is that you should tailor make your resume for each job posting this can easily become a logistical nightmare with hundreds of job applications and different versions of your resume, so our solution is Resume App a form of Resume Source Control that allows you to track the different versions of your resumes.
+The general advice that is given in the job search is that you should tailor make your resume for each job posting this can easily become a logistical nightmare with hundreds of job applications and different versions of your resume, so our solution is Resume App a form of Resume Source Control that allows you to:
+- track the different versions of your resumes,
+- track applications,
+- modify block-text (for templating),
+- parse job descriptions (hard/soft skills to include for ATS),
+- and more. . .
 
 ## Run-Locally
 Assuming you have the latest [Python](https://www.python.org/downloads/) and [React](https://react.dev/learn/installation) installed:
