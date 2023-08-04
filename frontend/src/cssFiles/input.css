@@ -1,0 +1,13 @@
+div.textbox > div > input {
+  font-size: 12pt;
+  width: 400px;
+  font-family: Lekton;
+  margin-bottom: 10px;
+}
+
+form.textbox2 > div > input {
+  font-size: 12pt;
+  width: 400px;
+  font-family: Lekton;
+  margin-left: 12px;
+}

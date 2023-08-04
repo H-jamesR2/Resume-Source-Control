@@ -1,6 +1,7 @@
 import React, {useContext, useState} from 'react'
 import ResumeUrl from '../api/ResumeUrl'
 import { UniContext } from '../context/UniContext'
+import "../cssFiles/input.css"
 
 
 const AddSkill = () => {
@@ -27,7 +28,7 @@ const AddSkill = () => {
   return (
     <div>
         <form>
-            <div> 
+            <div className="textbox">  
                 <div>
                     <input value={hardSkills} onChange={e=>setHardSkills(e.target.value)} type='text'
                     placeholder='hard skils'/>
