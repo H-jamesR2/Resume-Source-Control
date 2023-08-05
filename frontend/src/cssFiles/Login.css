@@ -129,11 +129,22 @@ button {
   font-size: 15pt;
   font-weight: 700;
   color: #fff;
-  font-family: Lekton-Bold;
+  font-family: Lekton-Bold;  
+  transition-duration: 0.5s;
+}
+
+button.secondary {
+  background-color: #fff;  
+  border-color: var(--primary-5);
+  color: var(--primary-5);
 }
 
 button:hover, button:active, button.small:hover, button.small:active {
   background-color: var(--primary-4);
+}
+
+button.secondary:hover, button.secondary:active {
+  background-color: var(--primary-1);
 }
 
 button.negative {

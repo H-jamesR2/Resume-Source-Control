@@ -2,6 +2,7 @@ import React, {useContext, useEffect} from 'react';
 import ResumeUrl from '../api/ResumeUrl';
 import { UniContext } from '../context/UniContext';
 import { useNavigate } from 'react-router-dom';
+import "../cssFiles/Login.css";
 
 
 const EducationList = (props) => {
@@ -61,8 +62,8 @@ const handleEdit = (e, id) => {
                         <td>{educationCenter.end_date}</td>
                         <td>{educationCenter.degree}</td>
                         <td>{educationCenter.relevant_coursework}</td>
-                        <td><button onClick={(e)=> handleEdit(e, educationCenter.id)}>Edit</button></td>
-                        <td><button onClick={(e) => handleDelete(e, educationCenter.id)}>Delete</button></td>
+                        <td><button className="secondary" onClick={(e)=> handleEdit(e, educationCenter.id)}>Edit</button></td>
+                        <td><button className="negative" onClick={(e) => handleDelete(e, educationCenter.id)}>Delete</button></td>
                     </tr>
                     )             
                 } )}
