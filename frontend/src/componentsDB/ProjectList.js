@@ -2,6 +2,7 @@ import React, {useContext, useEffect} from 'react';
 import ResumeUrl from '../api/ResumeUrl';
 import { UniContext } from '../context/UniContext';
 import { useNavigate } from 'react-router-dom';
+import "../cssFiles/Login.css";
 
 const ProjectList = (props) => {
   const {projects, setProjects} = useContext(UniContext)
@@ -59,8 +60,8 @@ const handleEdit = (e, id) => {
                         <td>{project.start_date}</td>
                         <td>{project.end_date}</td>
                         <td>{project.description}</td>
-                        <td><button onClick={(e)=> handleEdit(e, project.id)}>Edit</button></td>
-                        <td><button onClick={(e) => handleDelete(e, project.id)}>Delete</button></td>
+                        <td><button className="secondary" onClick={(e)=> handleEdit(e, project.id)}>Edit</button></td>
+                        <td><button className="negative" onClick={(e) => handleDelete(e, project.id)}>Delete</button></td>
                         </tr>
 
                     )

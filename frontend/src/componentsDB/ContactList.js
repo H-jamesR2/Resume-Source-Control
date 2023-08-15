@@ -2,6 +2,7 @@ import React, {useContext, useEffect} from 'react';
 import ResumeUrl from '../api/ResumeUrl';
 import { UniContext } from '../context/UniContext';
 import { useNavigate } from 'react-router-dom';
+import "../cssFiles/Login.css";
 
 const ContactList = (props) => {
   const {contacts, setContacts} = useContext(UniContext)
@@ -60,8 +61,8 @@ const handleEdit = (e, id) => {
                         <td>{contact.linkedin}</td>
                         <td>{contact.github}</td>
                         <td>{contact.portfolio_website}</td>
-                        <td><button onClick={(e)=> handleEdit(e, contact.id)}>Edit</button></td>
-                        <td><button onClick={(e) => handleDelete(e, contact.id)} >Delete</button></td>
+                        <td><button className="secondary" onClick={(e)=> handleEdit(e, contact.id)}>Edit</button></td>
+                        <td><button className="negative" onClick={(e) => handleDelete(e, contact.id)} >Delete</button></td>
                       </tr>
 
                     )

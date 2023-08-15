@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link, NavLink } from "react-rou
 import { Button, Table, Tag, Form, Modal, Input, Select, DatePicker, ConfigProvider, theme } from "antd";
 import { FileTextTwoTone, CloseCircleTwoTone, ScheduleOutlined, EditTwoTone, DeleteTwoTone, PlusOutlined, ClockCircleOutlined, CheckCircleOutlined, CarryOutOutlined } from '@ant-design/icons';
 import "../cssFiles/application.css";
-
+import "../cssFiles/styles.css";
 
 import dayjs from 'dayjs';
 
@@ -63,8 +63,8 @@ function AppTable(prop) {
                     icon = <ScheduleOutlined color="cyan" />;
                 }
                 if (record.status === "Under Consideration") {
-                    tagColor = "gold";
-                    icon = <CarryOutOutlined color="gray" />;
+                    tagColor = "yellow";
+                    icon = <CarryOutOutlined color="yellow" />;
                 }
                 if (record.status === "Hired") {
                     tagColor = "green";
@@ -154,7 +154,7 @@ function AppTable(prop) {
         <ConfigProvider
             theme={{
                 token: {
-                    colorPrimary: "#6892FE",
+                    colorPrimary: "#68F",       // used in place of --primary-3
                     fontFamily: "Lekton",
                     fontSize: "18px",
                 },
