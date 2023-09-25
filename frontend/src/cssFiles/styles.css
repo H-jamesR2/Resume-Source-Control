@@ -5,10 +5,14 @@
   --primary-3: #68f;
   --primary-4: #46f;
   --primary-5: #03f;
+  --primary-6: #02a;    /* For dark theme */
+  --primary-7: #015;    /* For dark theme */
   --warning-1: #f99;
   --warning-2: #f66;
   --warning-3: #f33;
   --warning-4: #f00;
+  --warning-5: #a00;    /* For dark theme */
+  --warning-6: #500;    /* For dark theme */
   --gray-0: #eee;
   --gray-1: #ccc;
   --gray-2: #999;
