@@ -22,6 +22,9 @@ import ChangePassword from "./pages/EditPassword";
 import ChangeEmail from "./pages/EditEmail";
 import TextEditMCE from "./pages/TextEditMCE";
 
+//import DraftEditor
+import DraftEditor from "./pages/DraftEditor";
+
 //TextEditMCEv2
 import TextEditMCEv2 from "./pages/TextEditMCEv2";
 import UploadToS3 from "./pages/Temp";
@@ -89,6 +92,8 @@ export default function App() {
             <Route path="/blocks/:id/updateExtracurricular" element={<UpdateExtracurricular/>}/>
             <Route path="/blocks/:id/updateSkill" element={<UpdateSkill/>}/>
             <Route path="/versions" element={<ResumeList/>}/>
+
+            <Route path="/drafteditor" element={<DraftEditor />} />
 
         </Routes>
         </UniContextProvider>

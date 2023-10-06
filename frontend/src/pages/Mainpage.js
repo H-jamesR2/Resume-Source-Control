@@ -131,6 +131,10 @@ function Mainpage()
                         <Link to="/resume/textEditorMCE"> TextEditMCE-placeholder-button </Link>
                         </button> 
                         <br></br>
+                        <button>
+                        <Link to="/drafteditor"> DraftEditor </Link>
+                        </button> 
+                        <br></br>
                                          
                         <Link to="/settings">Account Settings</Link>
                         <JobParser></JobParser>
