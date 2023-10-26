@@ -1,6 +1,7 @@
 import React from 'react';
 import {Editor, EditorState, getDefaultKeyBinding, RichUtils} from 'draft-js';
 import '../cssFiles/DraftEditor.css';
+import Axios from 'axios'
 
 class RichEditorExample extends React.Component {
     constructor(props) {
@@ -57,7 +58,28 @@ class RichEditorExample extends React.Component {
         )
       );
     }
+    // To save text, implement:
+    // extractTextFromEditor and saveToDatabase functions
+    extractTextFromEditor = (editorState) => {
+      const contentState = editorState.getCurrentContent();
+      const text = contentState.getPlainText();
+      return text;
+    };
 
+    saveToDatabase = () => {
+      const text = this.extractTextFromEditor(this.state.editorState);
+  
+      Axios.post('https://cawpam8pxh.execute-api.us-east-2.amazonaws.com/dev', { body: text })
+        .then((response) => {
+          alert('Text saved to database', response.data);
+          console.log('Text saved to database', response.data);
+        })
+        .catch((error) => {
+          alert('Error saving text to database', error);
+          console.error('Error saving text to database', error);
+        });
+    };
+    
     render() {
       const {editorState} = this.state;
 
@@ -94,6 +116,11 @@ class RichEditorExample extends React.Component {
               spellCheck={true}
             />
           </div>
+        {/* Button added */}
+          <div>
+            <button onClick={this.saveToDatabase}>Save</button>
+          </div>
+        </div>
         </div>
       );
     }
