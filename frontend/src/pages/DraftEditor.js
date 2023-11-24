@@ -121,7 +121,6 @@ class RichEditorExample extends React.Component {
             <button onClick={this.saveToDatabase}>Save</button>
           </div>
         </div>
-        </div>
       );
     }
   }
