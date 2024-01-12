@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {Editor, EditorState, getDefaultKeyBinding, RichUtils} from 'draft-js';
 import '../cssFiles/DraftEditor.css';
 import Axios from 'axios'
+
 
 class RichEditorExample extends React.Component {
     constructor(props) {
@@ -95,6 +96,7 @@ class RichEditorExample extends React.Component {
 
       return (
         <div className="RichEditor-root">
+          <Addtitle/>
           <BlockStyleControls
             editorState={editorState}
             onToggle={this.toggleBlockType}
@@ -224,6 +226,18 @@ class RichEditorExample extends React.Component {
         )}
       </div>
     );
+  };
+  const Addtitle = () => {
+    const [title, setTitle] = useState("")
+    
+
+    return (
+      <form>
+        <div>
+          <input value ={title} onChange={e=>setTitle(e.target.value)} type='text' placeholder='Untitled Document'></input>
+        </div>
+      </form>
+    )
   };
 
   export default RichEditorExample;
