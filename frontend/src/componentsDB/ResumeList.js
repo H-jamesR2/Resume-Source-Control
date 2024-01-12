@@ -73,16 +73,27 @@ const handleDelete = async (e, id) =>{
 
   return (
     <nav className="sidebar-bottom-right">
-          {resumes && resumes.map(resume =>{
-            return(
-              <li onClick={(e)=> handleSelectVersion(e, resume.name, resume.version_id)} key={resume.id}>
-              <span><div className="sidebar-text-right">{resume.name}</div><button className="small">Copy</button></span>              
+      <div className="sidebar-text-right">Anthony Regner - Developer</div>
+      <div className="sidebar-text-right">Date: 12/19/23</div>
+      <div className="sidebar-text-right">Anthony Regner - UI and UX</div>
+      <div className="sidebar-text-right">Date: 11/15/23</div>
+      <div className="sidebar-text-right">Anthony Regner - Community</div>
+      <div className="sidebar-text-right">Date: 11/15/23</div>
+
+          {/* {resumes && resumes.map(resume =>{ */}
+            {/* // return( */}
+              {/* // <li onClick={(e)=> handleSelectVersion(e, resume.name, resume.version_id)} key={resume.id}> */}
+              {/* <span> */}
+                {/* <div className="sidebar-text-right">{resume.name}</div> */}
+                {/* <div className="sidebar-text-right">Date: {resume.submission_date}</div> */}
+              {/* </span>               */}
               {/* <span><button onClick={(e) => handleDelete(e, resume.id, resume.name, resume.version_id)}>Delete</button></span> */}
-              {/* <td>{resume.version_id}</td> */}
-              {/* <td>{resume.submission_date}</td> */}
+              {/* { <td>{resume.version_id}</td> } */}
+              {/* { <td>{resume.submission_date}</td> } */}
               {/* <span><button onClick={(e)=> handlePreview(e, resume.name, resume.version_id)}>Preview</button></span> */}
-              </li>
-              )})}
+              {/* </li> */}
+              {/* )})} */}
+          
     </nav>
   )
 }
