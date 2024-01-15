@@ -6,6 +6,7 @@ import NavBar from '../components/Navbar';
 import VersionNavBar from '../components/VersionSideBar';
 import { useNavigate } from 'react-router-dom';
 import '../cssFiles/versionbar.css';
+import '../cssFiles/styles.css';
 
 const identityId = localStorage.getItem('my-key')
 console.log(identityId)
@@ -71,14 +72,19 @@ const handleDelete = async (e, id) =>{
 }
 }
 
+  function ResumeList(props) {
+    return (
+      <div style={{marginBottom:"10px"}}>
+        <div className="sidebar-text-right">{props.title}</div>
+        <div className="sidebar-text-right" style={{fontSize:"11px", color:"var(--gray-3)"}}>{props.date}</div>
+      </div>
+    )
+  }
   return (
     <nav className="sidebar-bottom-right">
-      <div className="sidebar-text-right">Anthony Regner - Developer</div>
-      <div className="sidebar-text-right">Date: 12/19/23</div>
-      <div className="sidebar-text-right">Anthony Regner - UI and UX</div>
-      <div className="sidebar-text-right">Date: 11/15/23</div>
-      <div className="sidebar-text-right">Anthony Regner - Community</div>
-      <div className="sidebar-text-right">Date: 11/15/23</div>
+      <ResumeList title="Anthony Regner - Software Engineer" date="12/19/23"></ResumeList>
+      <ResumeList title="Anthony Regner - UI/UX Designer" date="11/15/23"></ResumeList>
+      <ResumeList title="Anthony Regner - Community" date="11/15/23"></ResumeList>
 
           {/* {resumes && resumes.map(resume =>{ */}
             {/* // return( */}
