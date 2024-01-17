@@ -76,7 +76,7 @@ const handleDelete = async (e, id) =>{
     return (
       <div style={{marginBottom:"10px"}}>
         <div className="sidebar-text-right">{props.title}</div>
-        <div className="sidebar-text-right" style={{fontSize:"11px", color:"var(--gray-3)"}}>{props.date}</div>
+        <div className="sidebar-text-right" style={{fontSize:"11px", fontFamily:"Lekton", color:"var(--gray-3)"}}>{props.date}</div>
       </div>
     )
   }
