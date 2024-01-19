@@ -7,6 +7,7 @@ import VersionNavBar from '../components/VersionSideBar';
 import { useNavigate } from 'react-router-dom';
 import '../cssFiles/versionbar.css';
 import '../cssFiles/styles.css';
+import CopyButton from '../images/Copy-paste icon v2 white.png';
 
 const identityId = localStorage.getItem('my-key')
 console.log(identityId)
@@ -72,7 +73,7 @@ const handleDelete = async (e, id) =>{
 }
 }
 
-  function ResumeList(props) {
+  function ResumeItem(props) {
     return (
       <div style={{marginBottom:"10px"}}>
         <div className="sidebar-text-right">{props.title}</div>
@@ -80,11 +81,24 @@ const handleDelete = async (e, id) =>{
       </div>
     )
   }
+
+  function ResumeLatestItem(props) {
+    return (
+      <div style={{marginBottom:"10px",display:"grid"}}>
+        <div className="sidebar-text-right" style={{gridRow:"1/2"}}>{props.title}</div>
+        <div className="sidebar-text-right" style={{fontSize:"11px", fontFamily:"Lekton", color:"var(--gray-3)", gridRow:"2/3"}}>{props.date}</div>
+        <div className="sidebar-text-right" style={{gridColumn:"5/6"}}>src={CopyButton}</div>
+      </div>
+    )
+  }
+
+
   return (
-    <nav className="sidebar-bottom-right">
-      <ResumeList title="Anthony Regner - Software Engineer" date="12/19/23"></ResumeList>
-      <ResumeList title="Anthony Regner - UI/UX Designer" date="11/15/23"></ResumeList>
-      <ResumeList title="Anthony Regner - Community" date="11/15/23"></ResumeList>
+    <nav className="sidebar-bottom-right">      
+      <ResumeLatestItem title="Anthony Regner - Software Engineer v2.1" date="1/19/24"></ResumeLatestItem>
+      <ResumeItem title="Anthony Regner - Software Engineer v2" date="12/19/23"></ResumeItem>
+      <ResumeItem title="Anthony Regner - Software Engineer v1.1" date="11/17/23"></ResumeItem>
+      <ResumeItem title="Anthony Regner - Software Engineer v1" date="11/15/23"></ResumeItem>
 
           {/* {resumes && resumes.map(resume =>{ */}
             {/* // return( */}
