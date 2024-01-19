@@ -7,7 +7,7 @@ import VersionNavBar from '../components/VersionSideBar';
 import { useNavigate } from 'react-router-dom';
 import '../cssFiles/versionbar.css';
 import '../cssFiles/styles.css';
-import CopyButton from '../images/Copy-paste icon v2 white.png';
+import CopyButton from '../images/Copy-paste blue button.png';
 
 const identityId = localStorage.getItem('my-key')
 console.log(identityId)
