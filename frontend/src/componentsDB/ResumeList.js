@@ -6,6 +6,8 @@ import NavBar from '../components/Navbar';
 import VersionNavBar from '../components/VersionSideBar';
 import { useNavigate } from 'react-router-dom';
 import '../cssFiles/versionbar.css';
+import '../cssFiles/styles.css';
+import CopyButton from '../images/Copy-paste blue button.png';
 
 const identityId = localStorage.getItem('my-key')
 console.log(identityId)
@@ -71,18 +73,49 @@ const handleDelete = async (e, id) =>{
 }
 }
 
+  function ResumeItem(props) {
+    return (
+      <div style={{marginBottom:"10px"}}>
+        <div className="sidebar-text-right">{props.title}</div>
+        <div className="sidebar-text-right" style={{fontSize:"11px", fontFamily:"Lekton", color:"var(--gray-3)"}}>{props.date}</div>
+      </div>
+    )
+  }
+
+  function ResumeLatestItem(props) {
+    return (
+      <div style={{marginBottom:"10px",display:"grid"}}>
+        <div className="sidebar-text-right" style={{gridRow:"1/2"}}>{props.title}</div>
+        <div className="sidebar-text-right" style={{fontSize:"11px", fontFamily:"Lekton", color:"var(--gray-3)", gridRow:"2/3"}}>{props.date}</div>
+        <div className="sidebar-text-right" style={{gridColumn:"5/6"}}>
+          <img src={CopyButton} style={{width:"32px"}}></img>
+        </div>
+      </div>
+    )
+  }
+
+
   return (
-    <nav className="sidebar-bottom-right">
-          {resumes && resumes.map(resume =>{
-            return(
-              <li onClick={(e)=> handleSelectVersion(e, resume.name, resume.version_id)} key={resume.id}>
-              <span><div className="sidebar-text-right">{resume.name}</div><button className="small">Copy</button></span>              
+    <nav className="sidebar-bottom-right">      
+      <ResumeLatestItem title="Anthony Regner - Software Engineer v2.1" date="1/19/24"></ResumeLatestItem>
+      <ResumeItem title="Anthony Regner - Software Engineer v2" date="12/19/23"></ResumeItem>
+      <ResumeItem title="Anthony Regner - Software Engineer v1.1" date="11/17/23"></ResumeItem>
+      <ResumeItem title="Anthony Regner - Software Engineer v1" date="11/15/23"></ResumeItem>
+
+          {/* {resumes && resumes.map(resume =>{ */}
+            {/* // return( */}
+              {/* // <li onClick={(e)=> handleSelectVersion(e, resume.name, resume.version_id)} key={resume.id}> */}
+              {/* <span> */}
+                {/* <div className="sidebar-text-right">{resume.name}</div> */}
+                {/* <div className="sidebar-text-right">Date: {resume.submission_date}</div> */}
+              {/* </span>               */}
               {/* <span><button onClick={(e) => handleDelete(e, resume.id, resume.name, resume.version_id)}>Delete</button></span> */}
-              {/* <td>{resume.version_id}</td> */}
-              {/* <td>{resume.submission_date}</td> */}
+              {/* { <td>{resume.version_id}</td> } */}
+              {/* { <td>{resume.submission_date}</td> } */}
               {/* <span><button onClick={(e)=> handlePreview(e, resume.name, resume.version_id)}>Preview</button></span> */}
-              </li>
-              )})}
+              {/* </li> */}
+              {/* )})} */}
+          
     </nav>
   )
 }
