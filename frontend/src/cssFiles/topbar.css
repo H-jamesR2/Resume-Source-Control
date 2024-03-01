@@ -14,18 +14,13 @@
 }
 
 .nav-item-right{
-  padding: 15px 20px;
+  padding: 8px 20px;
   font-size: 20px;
   font-weight: 700;
   color: var(--primary-4);
   display: inline-flex;
   text-align: center;  
   align-items: center;
-}
-
-.nav-item-right :not(div.popup-menu, div, li.popup-menu-item, a.no-decor){
-  position: relative;
-  top: -7px;
 }
 
 .popup-menu{

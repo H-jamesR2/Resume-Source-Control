@@ -2,6 +2,7 @@ import React, {useContext, useEffect, useState} from 'react'
 import { useNavigate, useParams } from 'react-router'
 import { UniContext } from '../context/UniContext';
 import ResumeUrl from '../api/ResumeUrl';
+import "../cssFiles/input.css";
 
 const UpdateJob = (props) => {
   const {id} = useParams();
@@ -46,7 +47,7 @@ const UpdateJob = (props) => {
     }
   return (
     <div>
-      <form>
+      <form className="textbox2">
         <div>
             <label htmlFor='name'>Name</label>
             <input value={name} onChange={(e)=> setName(e.target.value)} id="name" type="text"/>

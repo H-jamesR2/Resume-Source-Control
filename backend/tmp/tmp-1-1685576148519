@@ -1,0 +1,67 @@
+<p class="c28"><em><strong><span class="c10">Jake Ryan</span></strong></em></p>
+<p class="c27"><span class="c0">123-456-7890&nbsp;</span><span class="c7">|&nbsp;</span><span class="c0">jake@su.edu&nbsp;</span><span class="c7">|&nbsp;</span><span class="c0">linkedin.com/in/jake&nbsp;</span><span class="c7">|&nbsp;</span><span class="c0">github.com/jake</span></p>
+<p class="c19"><span class="c17">Education</span></p>
+<p class="c11"><strong><span class="c5">Southwestern University</span></strong><span class="c1">&nbsp;Georgetown, TX&nbsp;</span><span class="c7">Bachelor of Arts in Computer Science, Minor in Business Aug. 2018 &ndash; May 2021</span></p>
+<p class="c13"><strong><span class="c5">Blinn College</span></strong><span class="c1"><strong>&nbsp;</strong>Bryan, TX&nbsp;</span><span class="c7">Associate&rsquo;s in Liberal Arts Aug. 2014 &ndash; May 2018</span></p>
+<p class="c26"><span class="c17">Experience</span></p>
+<p class="c25"><strong><span class="c5">Undergraduate Research Assistant&nbsp;</span></strong><span class="c1">June 2020 &ndash; Present&nbsp;</span><span class="c7">Texas A&amp;M University College Station, TX</span></p>
+<ul>
+<li class="c25"><span class="c0">Developed a REST API using FastAPI and PostgreSQL to store data from learning management systems</span></li>
+<li class="c25"><span class="c0">Developed a full-stack web application using Flask, React, PostgreSQL and Docker to analyze GitHub data</span></li>
+<li class="c25"><span class="c0">Explored ways to visualize GitHub collaboration in a classroom setting</span></li>
+</ul>
+<p class="c26"><span class="c17">&nbsp;</span></p>
+<p class="c25"><strong><span class="c5">Undergraduate Research Assistant&nbsp;</span></strong><span class="c1">June 2020 &ndash; Present&nbsp;</span><span class="c7">Texas A&amp;M University College Station, TX</span></p>
+<ul>
+<li class="c25"><span class="c0">Developed a REST API using FastAPI and PostgreSQL to store data from learning management systems</span></li>
+<li class="c25"><span class="c0">Developed a full-stack web application using Flask, React, PostgreSQL and Docker to analyze GitHub data</span></li>
+<li class="c25"><span class="c0">Explored ways to visualize GitHub collaboration in a classroom setting</span></li>
+</ul>
+<p class="c9"><strong><span class="c5">Information Technology Support Specialist</span></strong><span class="c1">&nbsp;Sep. 2018 &ndash; Present&nbsp;</span><span class="c7">Southwestern University Georgetown, TX</span></p>
+<ul>
+<li class="c9"><span class="c0">Communicate with managers to set up campus computers used on campus</span></li>
+<li><span class="c0">Assess and troubleshoot computer problems brought by students, faculty and staff</span></li>
+<li><span class="c0">Maintain upkeep of computers, classroom equipment, and 200 printers across campus</span></li>
+</ul>
+<p class="c12"><span class="c5"><strong>Artificial Intelligence Research Assistant</strong>&nbsp;</span><span class="c1">May 2019 &ndash; July 2019&nbsp;</span><span class="c7">Southwestern University Georgetown, TX&nbsp;</span><span class="c2">&bull;&nbsp;</span><span class="c0">Explored methods to generate video game dungeons based off of&nbsp;</span><span class="c7">The Legend of Zelda</span></p>
+<ul>
+<li class="c29"><span class="c0">Developed a game in Java to test the generated dungeons</span></li>
+<li class="c16"><span class="c0">Contributed 50K+ lines of code to an established codebase via Git</span></li>
+<li class="c18"><span class="c0">Conducted a human subject study to determine which video game dungeon generation technique is enjoyable</span></li>
+<li class="c18"><span class="c0">Wrote an 8-page paper and gave multiple presentations on-campus</span></li>
+<li class="c8"><span class="c0">Presented virtually to the World Conference on Computational Intelligence</span></li>
+</ul>
+<p class="c24"><span class="c17">Projects</span></p>
+<p class="c3"><em><strong><span class="c6">Gitlytics</span></strong></em><span class="c0">&nbsp;</span><span class="c7">| Python, Flask, React, PostgreSQL, Docker&nbsp;</span><span class="c1">June 2020 &ndash; Present</span></p>
+<ul>
+<li class="c3"><span class="c0">Developed a full-stack web application using with Flask serving a REST API with React as the frontend</span></li>
+<li class="c3"><span class="c0">Implemented GitHub OAuth to get data from user&rsquo;s repositories</span></li>
+<li class="c8"><span class="c0">Visualized GitHub data to show collaboration</span></li>
+<li class="c16"><span class="c0">Used Celery and Redis for asynchronous tasks</span></li>
+</ul>
+<p class="c14"><em><strong><span class="c6">Simple Paintball</span><span class="c0">&nbsp;</span></strong></em><span class="c7">| Spigot API, Java, Maven, TravisCI, Git&nbsp;</span><span class="c1">May 2018 &ndash; May 2020</span></p>
+<ul>
+<li class="c14"><span class="c0">Cooperated with team to design and construct off-road vehicles capable of handling harsh driving condition</span></li>
+<li class="c14"><span class="c0">Serviced components for previous competition vehicles including steering replacement, brake bleeding, greasing, etc.</span></li>
+<li class="c15"><span class="c0">Implemented continuous delivery using TravisCI to build the plugin upon new a release</span></li>
+<li class="c23"><span class="c0">Collaborated with Minecraft server administrators to suggest features and get feedback about the plugin&nbsp;</span><span class="c17">Technical Skills</span></li>
+</ul>
+<p class="c20"><strong><span class="c6">Languages</span></strong><span class="c0">: Java, Python, C/C++, SQL (Postgres), JavaScript, HTML/CSS, R</span></p>
+<p class="c22"><strong><span class="c6">Frameworks</span></strong><span class="c0">: React, Node.js, Flask, JUnit, WordPress, Material-UI, FastAPI</span></p>
+<p class="c4"><strong><span class="c6">Developer Tools</span></strong><span class="c0">: Git, Docker, TravisCI, Google Cloud Platform, VS Code, Visual Studio,&nbsp;</span><span class="c0">PyCharm, IntelliJ, Eclipse&nbsp;</span><span class="c6">Libraries</span><span class="c0">: pandas, NumPy, Matplotlib</span></p>
+<p class="c25"><strong><span class="c5">Undergraduate Research Assistant&nbsp;</span></strong><span class="c1">June 2020 &ndash; Present&nbsp;</span><span class="c7">Texas A&amp;M University College Station, TX</span></p>
+<ul>
+<li class="c25"><span class="c0">Developed a REST API using FastAPI and PostgreSQL to store data from learning management systems</span></li>
+<li class="c25"><span class="c0">Developed a full-stack web application using Flask, React, PostgreSQL and Docker to analyze GitHub data</span></li>
+<li class="c25"><span class="c0">Explored ways to visualize GitHub collaboration in a classroom setting</span></li>
+</ul>
+<p><span class="c0">&nbsp;TESTING WITH SAVE</span></p>
+<p class="c25"><strong><span class="c5">Undergraduate Research Assistant&nbsp;</span></strong><span class="c1">June 2020 &ndash; Present&nbsp;</span><span class="c7">Texas A&amp;M University College Station, TX</span></p>
+<ul>
+<li class="c25"><span class="c0">Developed a REST API using FastAPI and PostgreSQL to store data from learning management systems</span></li>
+<li class="c25"><span class="c0">Developed a full-stack web application using Flask, React, PostgreSQL and Docker to analyze GitHub data</span></li>
+<li class="c25"><span class="c0">Explored ways to visualize GitHub collaboration in a classroom setting</span></li>
+</ul>
+<p>test</p>
+<p>test test</p>
+<p>test test test</p>

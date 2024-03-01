@@ -315,11 +315,9 @@ const TextEditMCE = () => {
                     <Editor
                         //classname ='container'
                         //use diff apiKey for renewing premium feature;
-                        //key1:     1j3wp2mvnlew5lkynzdndnzangmi9xfjg4yerztdh39llgew
-                        //key2:     2njwaznbravfvg70hgzv0dmeqfengiiqh340hmrb9vm262vm
-                        //key3:     1fbg79iiulybcn5hw4rwdk5ysvr5ppfuhlslsrkr7mjjanvq
-                        //current:  feenj5x1ww5kkuhd7npwcr5yk73e25e2bhdzawrzozswrbjw
-                            apiKey='feenj5x1ww5kkuhd7npwcr5yk73e25e2bhdzawrzozswrbjw'
+                        //prev:     feenj5x1ww5kkuhd7npwcr5yk73e25e2bhdzawrzozswrbjw
+                        //current:  wstrhob4atni4m20engv36hcj71cugb5g74sk42au2nhrn4j
+                            apiKey='wstrhob4atni4m20engv36hcj71cugb5g74sk42au2nhrn4j'
                         onInit={(evt, editor) => (editorRef.current = editor)}
                         onDirty={() => setDirty(true)}
                         initialValue={initialValue}

@@ -42,6 +42,8 @@ function TopNav2(props) {
                                 Upload Resume</Link></li>
                             <li className="popup-menu-item"><Link className='no-decor' to="/resume/textEditorMCE">
                                 Create Resume</Link></li>
+                                <li className="popup-menu-item"><Link className='no-decor' to="/drafteditor">
+                                Draft Editor</Link></li>
                         </div>
                     </div>
                     </li>

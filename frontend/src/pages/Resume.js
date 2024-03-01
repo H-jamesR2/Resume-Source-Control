@@ -15,6 +15,7 @@ import { getSignedUrl } from '@aws-sdk/s3-request-presigner';
 import '../cssFiles/Resume-page.css';
 import { Amplify, Auth } from 'aws-amplify';
 import JobParser from "../components/JobParser"
+import ListTextEditorDB from '../components/ListTextEditorDB'
 
 // Need to parse better;
 const AWS_ACCESS_KEY_ID = 'AKIA6DOFALTAH2DSHQGB'
@@ -154,7 +155,11 @@ function Resume(prop)
                                 ))}
                             </ul>
                         </div>
+                <div>
+                <ListTextEditorDB/>
                 </div>
+                </div>
+        
             </div>
             </>
            }

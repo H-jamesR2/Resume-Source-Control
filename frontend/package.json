@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@ant-design/colors": "^7.0.0",
     "@ant-design/icons": "^5.0.1",
     "@aws-amplify/ui-react": "^4.4.3",
     "@aws-sdk/client-s3": "^3.303.0",
@@ -26,6 +27,7 @@
     "aws-sdk": "^2.1347.0",
     "axios": "^1.4.0",
     "babel-plugin-macros": "^3.1.0",
+    "draft-js": "^0.11.7",
     "file-saver": "^2.0.5",
     "http-proxy-middleware": "^2.0.6",
     "react": "^18.2.0",

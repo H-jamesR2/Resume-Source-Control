@@ -125,43 +125,49 @@ button {
   border: 1px;  
   border-style: solid;
   border-color: var(--primary-5);
-  background-color: var(--primary-4);
+  background-color: var(--primary-3);
   font-size: 15pt;
-  font-weight: 500;
+  font-weight: 700;
   color: #fff;
+  font-family: Lekton-Bold;  
+  transition-duration: 0.5s;
+}
+
+button.secondary {
+  background-color: #fff;  
+  border-color: var(--primary-5);
+  color: var(--primary-5);
+}
+
+button:hover, button:active, button.small:hover, button.small:active {
+  background-color: var(--primary-4);
+}
+
+button.secondary:hover, button.secondary:active {
+  background-color: var(--primary-1);
 }
 
 button.negative {
-  padding: 8px 15px;
-  border: 1px;
-  border-style: solid;
   border-color: var(--warning-4);  
   background-color: var(--warning-2);
-  font-size: 15pt;
-  font-weight: 500;
-  color: #fff;
+}
+
+button.negative:hover, button.negative:active, button.smallnegative:hover, button.smallnegative:active {
+  background-color: var(--warning-3);
 }
 
 button.small {
   padding: 6px 10px;
-  border: 1px;
-  border-style: solid;
   border-color: var(--primary-5);
-  background-color: var(--primary-4);
+  background-color: var(--primary-3);
   font-size: 12pt;
-  font-weight: 500;
-  color: #fff;
 }
 
 button.smallnegative {
   padding: 6px 10px;
-  border: 1px;
-  border-style: solid;
   border-color: var(--warning-4);  
   background-color: var(--warning-2);
   font-size: 12pt;
-  font-weight: 500;
-  color: #fff;
 }
 
 .checkbox-separators {

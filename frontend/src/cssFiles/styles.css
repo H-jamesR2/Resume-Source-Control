@@ -5,15 +5,39 @@
   --primary-3: #68f;
   --primary-4: #46f;
   --primary-5: #03f;
+  --primary-6: #02a;    /* For dark theme */
+  --primary-7: #015;    /* For dark theme */
   --warning-1: #f99;
   --warning-2: #f66;
   --warning-3: #f33;
   --warning-4: #f00;
+  --warning-5: #a00;    /* For dark theme */
+  --warning-6: #500;    /* For dark theme */
   --gray-0: #eee;
   --gray-1: #ccc;
   --gray-2: #999;
   --gray-3: #666;
   --gray-4: #333;
+  --orange-1: #fc9;
+  --orange-2: #fb6;
+  --orange-3: #fa3;
+  --orange-4: #f90;
+  --orange-5: #950;
+  --yellow-1: #ff9;
+  --yellow-2: #ff6;
+  --yellow-3: #ff3;
+  --yellow-4: #ff0;
+  --yellow-5: #990;
+  --green-1: #9fa;
+  --green-2: #6f8;
+  --green-3: #4f6;
+  --green-4: #0f3;
+  --green-5: #092;
+  --cyan-1: #9ff;
+  --cyan-2: #6ff;
+  --cyan-3: #3ff;
+  --cyan-4: #0ff;
+  --cyan-5: #099;
   --lekton-reg: Lekton-Regular, Roboto Regular, Helvetica, Arial, sans-serif;
   --lekton-bold: Lekton-Bold, Roboto Bold, Helvetica Bold, Arial Bold, sans-serif;
 }

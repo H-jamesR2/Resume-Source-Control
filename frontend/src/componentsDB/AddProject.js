@@ -1,6 +1,7 @@
 import React, {useContext, useState} from 'react'
 import ResumeUrl from '../api/ResumeUrl'
 import { UniContext } from '../context/UniContext'
+import "../cssFiles/input.css";
 
 
 const AddProject = () => {
@@ -30,7 +31,7 @@ const AddProject = () => {
   return (
     <div>
         <form>
-            <div> 
+            <div className="textbox"> 
                 <div>
                     <input value={name} onChange={e=>setName(e.target.value)} type='text'
                     placeholder='name'/>
